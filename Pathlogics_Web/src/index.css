@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.class-name {
+    @apply py-1;
+    transition: all 500ms ease;
+}
