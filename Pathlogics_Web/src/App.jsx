@@ -92,7 +92,6 @@ function App() {
     <>
     <Pop/>
       <Scrolltop />
-      
       <Pathinstitute />
       <Routes>
         <Route path="/" element={<Home />} />
