@@ -64,10 +64,11 @@ import StudentRegistration from "./StudentRegistration/Registration";
 import StudentLogin from "./StudentLogin/StudentLogin";
 import StudentDashboard from "./StudentDashboard/StudentDashboard";
 import Scrolltop from "./Scrolltop";
-
+import Pop from "../src/Home/pop/Pop"
 
 import Testing from "./SHORTCOURSES/Software/Testing";
 import QuickEnquiry from "./Quick Enquiry/QuickEnquiry";
+
 
 // import { useEffect } from "react";
 function App() {
@@ -89,7 +90,9 @@ function App() {
 
   return (
     <>
+    <Pop/>
       <Scrolltop />
+      
       <Pathinstitute />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -99,7 +102,7 @@ function App() {
         <Route path="/again" element={<Again />} />
         <Route path="/All" element={<All />} />
         <Route path="/Aboutus" element={<All />} />
-
+        <Route path = '/form' element={<Pop/>}/>
         <Route path="/Workspace" element={<Workspace />} />
         <Route path="/Short" element={<Short />} />
         <Route path="/Aws" element={<Aws />} />
