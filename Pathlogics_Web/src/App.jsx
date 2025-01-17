@@ -68,6 +68,7 @@ import Scrolltop from "./Scrolltop";
 
 import Testing from "./SHORTCOURSES/Software/Testing";
 import QuickEnquiry from "./Quick Enquiry/QuickEnquiry";
+import Quick from "./Quick Enquiry/Quick";
 
 // import { useEffect } from "react";
 function App() {
@@ -89,7 +90,7 @@ function App() {
 
   return (
     <>
-      <Scrolltop />
+       <Scrolltop />
       <Pathinstitute />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -104,7 +105,7 @@ function App() {
         <Route path="/Short" element={<Short />} />
         <Route path="/Aws" element={<Aws />} />
         <Route path="/Testing" element={<Testing />} />
-        <Route path="/QuickEnquiry" element={<QuickEnquiry />} />
+        <Route path="/QuickEnquiry" element={<Quick />} />
         <Route path="/studentregistration" element={<StudentRegistration />} />
         <Route path="/StudentLogin" element={<StudentLogin />} />
         <Route path="/StudentDashboard" element={<StudentDashboard />} />
@@ -114,9 +115,10 @@ function App() {
 
 
       </Routes>
-      <Footer />
-      {/* <Softhero/>
-        <Softover/> */}
+      <Footer /> 
+       {/* <Softhero/>
+        <Softover/>
+        <Aboutus/> */}
     
 
     </>
