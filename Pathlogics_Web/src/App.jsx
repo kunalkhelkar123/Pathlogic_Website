@@ -93,6 +93,7 @@ function App() {
       <Pathinstitute />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="JavaDevelopment" element={<Javadeveloper/>}/>
         <Route path="/fullstack" element={<Fullstack />} />
         <Route path="/placement" element={<Jobplacment />} />
         <Route path="/more" element={<More />} />
