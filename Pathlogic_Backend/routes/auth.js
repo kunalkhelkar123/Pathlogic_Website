@@ -51,13 +51,13 @@ router.post("/register", async (req, res) => {
     const [existingUser] = await db.query("SELECT email FROM students_info WHERE email = ?", [email]);
 
     if (existingUser.length > 0) {
-      console.log("Email already exists ",existingUser , email)
+      console.log("Email already exists ", existingUser, email)
       return res.status(401).json({ message: "Email already exists" });
     }
     const [existingUsername] = await db.query("SELECT email FROM students_info WHERE username = ?", [username]);
 
     if (existingUsername.length > 0) {
-      console.log("existingUsername already exists ",existingUsername , existingUsername)
+      console.log("existingUsername already exists ", existingUsername, existingUsername)
       return res.status(402).json({ message: "existingUsername already exists" });
     }
 
@@ -127,10 +127,10 @@ router.post("/login", async (req, res) => {
 
 router.post("/adminlogin", async (req, res) => {
   const { username, password } = req.body;
-
+  console.log("check")
   try {
     // Query to find user by username
-    const [userResult] = await db.query("SELECT * FROM admin_user WHERE username = ?", [username]);
+    const [userResult] = await db.query("SELECT * FROM admin_user WHERE email = ?", [username]);
 
     // Check if user exists
     if (userResult.length === 0) {
