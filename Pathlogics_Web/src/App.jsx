@@ -68,7 +68,7 @@ import Scrolltop from "./Scrolltop";
 
 import Testing from "./SHORTCOURSES/Software/Testing";
 import QuickEnquiry from "./Quick Enquiry/QuickEnquiry";
-import Digitalmk from "./"
+import Digitalmk from "./SHORTCOURSES/Digitalmk"
 
 // import { useEffect } from "react";
 function App() {
