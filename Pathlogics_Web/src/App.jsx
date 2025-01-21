@@ -68,6 +68,8 @@ import Pop from "../src/Home/pop/Pop"
 
 import Testing from "./SHORTCOURSES/Software/Testing";
 import QuickEnquiry from "./Quick Enquiry/QuickEnquiry";
+import Salesforce from "../src/SHORTCOURSES/Salesforce Developer/Salesforce";
+import SaForce from "./SHORTCOURSES/Salesforce Developer/SaForce";
 
 
 // import { useEffect } from "react";
@@ -96,6 +98,7 @@ function App() {
       <Pathinstitute />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/salesforce" element={<SaForce/>}/>
         <Route path="/fullstack" element={<Fullstack />} />
         <Route path="/placement" element={<Jobplacment />} />
         <Route path="/more" element={<More />} />
