@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 // import Pathinstitute from './@pathinstitute/Pathinstitute'
 import Banner from './Banner/Banner'
 import Blogs from './Blogs/Blogs'
@@ -11,12 +11,16 @@ import Testimonials from './Testimonials/Testimonials'
 import Questions from './Questions/Questions'
 import Loginform from './Loginform/Loginform'
 import Footer from './Footer/Footer'
-
+import Pop from './pop/Pop'
 
 function Home() {
+  useEffect(()=>{
+   <Pop/>
+  },[])
   return (
     <div>
  {/* <Pathinstitute/> */}
+ {/* <Pop/> */}
       <Banner/>
       <Blogs/>
       <Sticky/>
