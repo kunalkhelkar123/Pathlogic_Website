@@ -65,10 +65,11 @@ import StudentLogin from "./StudentLogin/StudentLogin";
 import StudentDashboard from "./StudentDashboard/StudentDashboard";
 import StudentNav from "./StudentDashboard/StudentNav";
 import Scrolltop from "./Scrolltop";
-
+import Pop from "../src/Home/pop/Pop"
 
 import Testing from "./SHORTCOURSES/Software/Testing";
 import QuickEnquiry from "./Quick Enquiry/QuickEnquiry";
+
 
 // import { useEffect } from "react";
 function App() {
@@ -96,9 +97,11 @@ function App() {
 
   return (
     <>
+    <Pop/>
       <Scrolltop />
       
       <Routes>
+
       <Route path="/" element={   <Layout>     <Home />   </Layout> }/>
       <Route path="/fullstack" element={   <Layout>     <Fullstack />   </Layout> } />
       <Route path="/placement" element={   <Layout>     <Jobplacment />   </Layout> }/>
