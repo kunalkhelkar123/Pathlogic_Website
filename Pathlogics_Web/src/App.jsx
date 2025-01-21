@@ -69,6 +69,7 @@ import Pop from "../src/Home/pop/Pop"
 
 import Testing from "./SHORTCOURSES/Software/Testing";
 import QuickEnquiry from "./Quick Enquiry/QuickEnquiry";
+import Digitalmk from "./"
 
 
 // import { useEffect } from "react";
@@ -101,6 +102,7 @@ function App() {
       <Scrolltop />
       
       <Routes>
+
 
       <Route path="/" element={   <Layout>     <Home />   </Layout> }/>
       <Route path="/fullstack" element={   <Layout>     <Fullstack />   </Layout> } />
