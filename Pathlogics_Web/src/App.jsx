@@ -68,6 +68,7 @@ import Scrolltop from "./Scrolltop";
 
 import Testing from "./SHORTCOURSES/Software/Testing";
 import QuickEnquiry from "./Quick Enquiry/QuickEnquiry";
+import Digitalmk from "./"
 
 // import { useEffect } from "react";
 function App() {
@@ -96,10 +97,12 @@ function App() {
         <Route path="JavaDevelopment" element={<Javadeveloper/>}/>
         <Route path="/fullstack" element={<Fullstack />} />
         <Route path="/placement" element={<Jobplacment />} />
+        <Route path="/digitalmk" element={<Digitalmk/>} />
         <Route path="/more" element={<More />} />
         <Route path="/again" element={<Again />} />
         <Route path="/All" element={<All />} />
         <Route path="/Aboutus" element={<All />} />
+
 
         <Route path="/Workspace" element={<Workspace />} />
         <Route path="/Short" element={<Short />} />

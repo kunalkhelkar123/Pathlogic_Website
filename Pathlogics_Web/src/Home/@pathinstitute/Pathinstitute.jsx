@@ -78,7 +78,7 @@ export default function Navbar() {
     { name: 'Software testing', path: '/Testing' },
     { name: 'Salesforce Developer', path: '/SalesforceDeveloper' },
     { name: 'DataScience with python', path: '/DataSciencewithpython' },
-    { name: 'Digital marketing', path: '/Digitalmarketingtraining' }
+    { name: 'Digital marketing', path: '/digitalmk' }
   ];
 
   const longTermCourses = [
