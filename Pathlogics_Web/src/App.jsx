@@ -65,6 +65,8 @@ import StudentLogin from "./StudentLogin/StudentLogin";
 import StudentDashboard from "./StudentDashboard/StudentDashboard";
 import Scrolltop from "./Scrolltop";
 import Pop from "../src/Home/pop/Pop"
+import AdminLogin from "./AdminLogin/AdminLogin";
+
 
 import Testing from "./SHORTCOURSES/Software/Testing";
 import QuickEnquiry from "./Quick Enquiry/QuickEnquiry";
@@ -102,6 +104,9 @@ function App() {
         <Route path="/All" element={<All />} />
         <Route path="/Aboutus" element={<All />} />
         <Route path = '/form' element={<Pop/>}/>
+
+
+        
         <Route path="/Workspace" element={<Workspace />} />
         <Route path="/Short" element={<Short />} />
         <Route path="/Aws" element={<Aws />} />
@@ -110,6 +115,8 @@ function App() {
         <Route path="/studentregistration" element={<StudentRegistration />} />
         <Route path="/StudentLogin" element={<StudentLogin />} />
         <Route path="/StudentDashboard" element={<StudentDashboard />} />
+        <Route path="/AdminLogin" element={<AdminLogin />} />
+
         {/* <Route path="/Loginform" element={<Loginform />} /> */}
 
 
