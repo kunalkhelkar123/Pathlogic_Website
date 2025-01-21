@@ -26,7 +26,7 @@ const StudentLogin = () => {
 
     try {
       // Make POST request to login API
-      const response = await axios.post("http://localhost:4000/api/auth/login", formData);
+      const response = await axios.post("http://localhost:8080/api/auth/login", formData);
 
       if (response.status === 200) {
         // Handle successful login
