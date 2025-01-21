@@ -69,7 +69,8 @@ import Pop from "../src/Home/pop/Pop"
 
 import Testing from "./SHORTCOURSES/Software/Testing";
 import QuickEnquiry from "./Quick Enquiry/QuickEnquiry";
-import Digitalmk from "./"
+
+import Quick from "./Quick Enquiry/Quick";
 
 
 // import { useEffect } from "react";
@@ -98,6 +99,7 @@ function App() {
 
   return (
     <>
+
     <Pop/>
       <Scrolltop />
       
@@ -121,15 +123,17 @@ function App() {
       <Route path="/StudentDashboard" element={ <> <StudentNav /> <StudentDashboard /></>
   } 
 />
+
         {/* <Route path="/Loginform" element={<Loginform />} /> */}
 
 
 
 
       </Routes>
-      <Footer />
-      {/* <Softhero/>
-        <Softover/> */}
+      <Footer /> 
+       {/* <Softhero/>
+        <Softover/>
+        <Aboutus/> */}
     
 
     </>
