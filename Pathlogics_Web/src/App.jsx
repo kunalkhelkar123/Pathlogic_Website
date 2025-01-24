@@ -68,7 +68,8 @@ import Pop from "../src/Home/pop/Pop"
 
 import Testing from "./SHORTCOURSES/Software/Testing";
 import QuickEnquiry from "./Quick Enquiry/QuickEnquiry";
-
+import Inter from "./Home/Longtermgoal/Inter";
+// import Intership from "./Home/Longtermgoal/Internship";
 
 // import { useEffect } from "react";
 function App() {
@@ -92,6 +93,7 @@ function App() {
     <>
     <Pop/>
       <Scrolltop />
+      {/* <Intership/> */}
       
       <Pathinstitute />
       <Routes>
@@ -112,6 +114,7 @@ function App() {
         <Route path="/StudentLogin" element={<StudentLogin />} />
         <Route path="/StudentDashboard" element={<StudentDashboard />} />
         {/* <Route path="/Loginform" element={<Loginform />} /> */}
+        <Route path="/Intern" element={<Inter />} />
 
 
 
