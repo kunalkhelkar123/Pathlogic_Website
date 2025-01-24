@@ -40,7 +40,7 @@ function Banner() {
                 {/* Title Section */}
                 <div className="max-w-3xl mb-4">
                   <h1 className="text-4xl md:text-5xl font-bold leading-tight">
-                    Recognized for Excellence hello
+                    Recognized for Excellence 
                   </h1>
                   <h2 className="text-3xl md:text-4xl font-bold mt-4 flex gap-2">
                     in <div style={{ color: "#FF6B00" }}>IT Training</div>
