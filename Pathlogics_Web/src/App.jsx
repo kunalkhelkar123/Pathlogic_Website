@@ -70,6 +70,7 @@ import Testing from "./SHORTCOURSES/Software/Testing";
 import QuickEnquiry from "./Quick Enquiry/QuickEnquiry";
 import Salesforce from "../src/SHORTCOURSES/Salesforce Developer/Salesforce";
 import SaForce from "./SHORTCOURSES/Salesforce Developer/SaForce";
+import DataS from "./SHORTCOURSES/DataScience With Python/DataS";
 
 
 // import { useEffect } from "react";
@@ -99,6 +100,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/salesforce" element={<SaForce/>}/>
+        <Route path="/Data" element={<DataS/>}/>
         <Route path="/fullstack" element={<Fullstack />} />
         <Route path="/placement" element={<Jobplacment />} />
         <Route path="/more" element={<More />} />

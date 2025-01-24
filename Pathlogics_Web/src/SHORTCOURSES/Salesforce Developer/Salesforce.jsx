@@ -1,10 +1,10 @@
 import React from "react";
 import { motion } from 'framer-motion';
-import image from "../../assets/Sale.png";
-
+import image from "../../assets/sff.png";
+import { Link } from "react-router-dom";
 function Salesforce() {
   return (
-    <div className="relative min-h-[600px] bg-gradient-to-r from-[#0070D2] via-[#00A9E0] to-[#FFFFFF] overflow-hidden">
+    <div className="relative min-h-[600px] bg-gradient-to-r from-[#4158D0] via-[#C850C0] to-[#FFCC70] overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0">
         <svg className="w-full h-full" viewBox="0 0 1440 800" fill="none">
@@ -57,7 +57,9 @@ function Salesforce() {
               whileTap={{ scale: 0.95 }}
               className="bg-white text-blue-700 px-8 py-3 rounded-md text-lg font-semibold hover:bg-opacity-90 transition-colors duration-200 shadow-lg"
             >
-              Enroll Now!
+         <Link to="/quickenquiry">
+         Enroll Now!
+         </Link>
             </motion.button>
           </motion.div>
 

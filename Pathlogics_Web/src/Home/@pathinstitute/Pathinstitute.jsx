@@ -80,12 +80,24 @@ export default function Navbar() {
   };
 
   const shortTermCourses = [
+    {name:'Core Java',path: '/Testing'},
+    {name:'Advanced Java', path: '/Testing'},
+    {name:'React.JS', path: '/Testing'},
+    {name:'Angular.JS', path: '/Testing'},
+    {name:'Node.JS', path: '/Testing'},
+    {name:'React Native', path: '/Testing'},
+    {name:'.Net Core', path: '/Testing'},
+    {name:'. Net With Angular', path: '/Testing'},
+    { name: 'Software testing', path: '/Testing' },
+    {name:'Manual Testing', path: '/Testing'},
+    {name:'Selenium With Java',path: '/Testing'},
+    {name:'PowerBI', path: '/Testing'},
+    { name: 'DataScience with python', path: '/Data' },
+    { name: 'Salesforce Developer', path: '/salesforce' }, 
     { name: 'Full stack Java Development', path: '/Java Development' },
     { name: 'Aws/Devops', path: '/Aws' },
-    { name: 'Software testing', path: '/Testing' },
-    { name: 'Salesforce Developer', path: '/salesforce' }, 
-    { name: 'DataScience with python', path: '/DataSciencewithpython' },
      { name: 'Digital marketing training', path: '/Digitalmarketingtraining' }
+
   ];
   const corparate = [
 

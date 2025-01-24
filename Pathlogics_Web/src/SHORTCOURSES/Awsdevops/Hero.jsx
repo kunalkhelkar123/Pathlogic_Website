@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from 'framer-motion';
-import hero from '../../assets/Awss.png';
+import hero from '../../assets/awscourse.png';
 
 function Hero() {
   return (
@@ -71,7 +71,8 @@ function Hero() {
             <img
               src={hero}
               alt="AWS DevOps Training"
-              className="bg-fixed bg-cover"
+              className="bg-fixed bg-cover h-full "
+          
             />
           </motion.div>
         </div>
