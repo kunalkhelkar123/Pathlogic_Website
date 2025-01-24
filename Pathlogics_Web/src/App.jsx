@@ -117,7 +117,7 @@ function App() {
       
       <Routes>
 
-//         <Route path="/" element={<Home />} />
+{/* //         <Route path="/" element={<Home />} />
 //         <Route path="/salesforce" element={<SaForce/>}/>
 //         <Route path="/fullstack" element={<Fullstack />} />
 //         <Route path="/placement" element={<Jobplacment />} />
@@ -133,7 +133,7 @@ function App() {
 //         <Route path="/QuickEnquiry" element={<QuickEnquiry />} />
 //         <Route path="/studentregistration" element={<StudentRegistration />} />
 //         <Route path="/StudentLogin" element={<StudentLogin />} />
-//         <Route path="/StudentDashboard" element={<StudentDashboard />} />
+//         <Route path="/StudentDashboard" element={<StudentDashboard />} /> */}
 
 
       <Route path="/" element={   <Layout>     <Home />   </Layout> }/>

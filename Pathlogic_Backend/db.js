@@ -5,7 +5,7 @@ const connection = mysql.createPool({
   host: "localhost",
   user: "root",
   // password: "admin",
-  password: "Root@1234",
+  password: "Kunal@123",
   database: "pathlogic_tech",
 });
 

@@ -76,18 +76,18 @@ export default function Navbar() {
     { name: 'Full stack web Development', path: '/fullstack' },
     { name: 'Aws/Devops', path: '/Aws' },
     { name: 'Software testing', path: '/Testing' },
-// <<<<<<< rohini_dev
-    { name: 'Salesforce Developer', path: '/salesforce' }, 
-// =======
-//     { name: 'Salesforce Developer', path: '/SalesforceDeveloper' },
-// >>>>>>> dev
+    // <<<<<<< rohini_dev
+    { name: 'Salesforce Developer', path: '/salesforce' },
+    // =======
+    //     { name: 'Salesforce Developer', path: '/SalesforceDeveloper' },
+    // >>>>>>> dev
     { name: 'DataScience with python', path: '/DataSciencewithpython' },
     { name: 'Digital marketing', path: '/digitalmk' }
   ];
 
   const longTermCourses = [
     { name: 'Certification', path: '/Certification' },
-    { name: 'Internship', path: '/Internship' },
+    { name: 'Internship', path: '/Intern' },
     { name: 'Stipend Program', path: '/StipendProgram' }
   ];
 
@@ -127,7 +127,7 @@ export default function Navbar() {
           <Link to="/" className="text-gray-700 hover:text-orange-500 font-medium">Home</Link>
           <Link to="/All" className="text-gray-700 hover:text-orange-500 font-medium">Institute</Link>
           <Link to="/fullstack" className="text-gray-700 hover:text-orange-500 font-medium">Full Stack Development</Link>
-          
+
           <div className="relative dropdown" onClick={(e) => e.stopPropagation()}>
             <button onClick={() => {
               setIsDropdownOpen(!isDropdownOpen);
@@ -149,7 +149,7 @@ export default function Navbar() {
               </div>
             )}
           </div>
-          
+
           <div className="relative dropdown" onClick={(e) => e.stopPropagation()}>
             <button onClick={() => {
               setIsDropdownOpen1(!isDropdownOpen1);
@@ -170,12 +170,11 @@ export default function Navbar() {
                 </ul>
               </div>
             )}
-// <<<<<<< rohini_dev
-          </div> */}
-                    <Link to="/Intern" className="text-gray-700 hover:text-orange-500 font-medium">Long Term Course</Link>
-// =======
-//           </div>
-// >>>>>>> dev
+
+
+          </div>
+          {/* // >>>>>>> dev */}
+          {/* <Link to="/Intern" className="text-gray-700 hover:text-orange-500 font-medium">Long Term Course</Link> */}
 
           <Link to="/Workspace" className="text-gray-700 hover:text-orange-500 font-medium">Workshops</Link>
           <Link to="/placement" className="text-gray-700 hover:text-orange-500 font-medium">Placements</Link>

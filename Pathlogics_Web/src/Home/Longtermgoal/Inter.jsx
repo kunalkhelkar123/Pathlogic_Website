@@ -8,6 +8,7 @@ import Fifthpage from "./Fifthpage";
 import Ugprogram from "./Ugprogram";
 function Inter(){
     return(<>
+    
     <Intership/>
     <Firstpage/>
     <Secondpage/>
