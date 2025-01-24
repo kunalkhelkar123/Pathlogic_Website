@@ -83,7 +83,7 @@ export default function Navbar() {
     { name: 'Full stack Java Development', path: '/Java Development' },
     { name: 'Aws/Devops', path: '/Aws' },
     { name: 'Software testing', path: '/Testing' },
-    { name: 'Salesforce Developer', path: '/SalesforceDeveloper' }, 
+    { name: 'Salesforce Developer', path: '/salesforce' }, 
     { name: 'DataScience with python', path: '/DataSciencewithpython' },
      { name: 'Digital marketing training', path: '/Digitalmarketingtraining' }
   ];
