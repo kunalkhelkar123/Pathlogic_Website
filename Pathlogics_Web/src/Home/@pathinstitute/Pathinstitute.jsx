@@ -87,7 +87,7 @@ export default function Navbar() {
 
   const longTermCourses = [
     { name: 'Certification', path: '/Certification' },
-    { name: 'Internship', path: '/Internship' },
+    { name: 'Internship', path: '/Intern' },
     { name: 'Stipend Program', path: '/StipendProgram' }
   ];
 
@@ -170,11 +170,11 @@ export default function Navbar() {
                 </ul>
               </div>
             )}
-{/* // <<<<<<< rohini_dev
-          </div> */}
-                    <Link to="/Intern" className="text-gray-700 hover:text-orange-500 font-medium">Long Term Course</Link>
+{/* {/* // <<<<<<< rohini_dev */}
+          </div> 
 
-          </div>
+          {/* </div> */}
+          {/* <Link to="/Intern" className="text-gray-700 hover:text-orange-500 font-medium">Long Term Course</Link> */}
 
           <Link to="/Workspace" className="text-gray-700 hover:text-orange-500 font-medium">Workshops</Link>
           <Link to="/placement" className="text-gray-700 hover:text-orange-500 font-medium">Placements</Link>
