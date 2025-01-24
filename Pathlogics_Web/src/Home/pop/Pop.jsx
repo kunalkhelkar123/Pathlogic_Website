@@ -2,14 +2,88 @@
 
 import React, { useState } from "react";
 import img from "../../assets/pop.png";
+import emailjs from "@emailjs/browser";
 function Pop() {
   let [isOpen, setIsOpen] = useState(true);
 
   function handleClose() {
     setIsOpen(false);
   }
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    city: "",
+    phone: "",
+    degree: "",
+    specialization: "",
+    currentYear: "",
+    passingYear: "",
+    course: "",
+  });
+
+  // Handle form input change
+  function handleChange(e) {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  }
+
+  // Handle closing the popup
+  function handleClose() {
+    setIsOpen(false);
+  }
+
+  // Send email using emailjs
+  const sendEmail = async (e) => {
+    e.preventDefault();
+
+    const templateParams = {
+      name: formData.fullName,
+      email: formData.email,
+      city: formData.city,
+      phone: formData.phone,
+      degree: formData.degree,
+      specialization: formData.specialization,
+      currentYear: formData.currentYear,
+      passingYear: formData.passingYear,
+      course: formData.course,
+    };
+    try {
+      const response = await emailjs.send("service_db5sgob", "template_326m16e", {
+        name: formData.fullName,
+        email: formData.email,
+        city: formData.city,
+        phone: formData.phone,
+        degree: formData.degree,
+        specialization: formData.specialization,
+        currentYear: formData.currentYear,
+        passingYear: formData.passingYear,
+        course: formData.course,
+      }, "k05tTTCLechKDk94r")
+
+      if (response) {
+
+        setIsOpen(false);
+        // console.log("send ")
+        // alert("send ")
+      }
+      else {
+        console.log("not send ")
+        alert(" not send ")
+
+
+      }
+    } catch (err) {
+      console.error("Failed to send email:", err);
+      setError("Failed to send your message. Please try again later.");
+    }
+  }
 
   return (
+
+
     isOpen && (
       <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 min-h-screen  ">
         <div
@@ -26,20 +100,21 @@ function Pop() {
           </div>
 
           <h1 className="text-2xl font-bold text-center mb-6">Contact Form</h1>
-          <form>
+          <form onSubmit={sendEmail} >
             {/* Full Name and Email */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <div>
                 <label
                   className="block font-medium text-gray-700 mb-1"
-                  htmlFor="full-name"
+                  htmlFor=" fullName"
                 >
                   Full Name
                 </label>
                 <input
                   type="text"
-                  id="full-name"
-                  name="full-name"
+                  id="fullName"
+                  name="fullName"
+                  onChange={handleChange}
                   placeholder="Enter your full name"
                   className="w-full border-gray-600 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 px-4 py-2"
                   required
@@ -53,6 +128,7 @@ function Pop() {
                   type="email"
                   id="email"
                   name="email"
+                  onChange={handleChange}
                   placeholder="Enter your email"
                   className="w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 px-4 py-2"
                   required
@@ -73,6 +149,7 @@ function Pop() {
                   type="text"
                   id="city"
                   name="city"
+                  onChange={handleChange}
                   placeholder="Enter your city"
                   className="w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 px-4 py-2"
                   required
@@ -86,6 +163,7 @@ function Pop() {
                   type="tel"
                   id="phone"
                   name="phone"
+                  onChange={handleChange}
                   placeholder="Ex: 9866666699"
                   className="w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 px-4 py-2"
                   required
@@ -102,6 +180,7 @@ function Pop() {
                 <select
                   id="degree"
                   name="degree"
+                  onChange={handleChange}
                   className="w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 px-4 py-2"
                   required
                 >
@@ -122,7 +201,10 @@ function Pop() {
                 </label>
 
                 <input
+                  id="specialization"
+                  name="specialization"
                   type="text"
+                  onChange={handleChange}
                   placeholder="enter specialization"
                   className="w-full border-gray-600 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 px-4 py-2"
                 />
@@ -139,8 +221,9 @@ function Pop() {
                   Current Year
                 </label>
                 <select
-                  id="current-year"
-                  name="current-year"
+                  id="currentYear"
+                  name="currentYear"
+                  onChange={handleChange}
                   className="w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 px-4 py-2"
                   required
                 >
@@ -158,13 +241,14 @@ function Pop() {
               <div>
                 <label
                   className="block font-medium mb-1"
-                  htmlFor="passing-year"
+                  htmlFor="passingYear"
                 >
                   Year of Passing
                 </label>
                 <select
-                  id="passing-year"
-                  name="passing-year"
+                  id="passingYear"
+                  onChange={handleChange}
+                  name="passingYear"
                   className="w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 px-4 py-2"
                   required
                 >
@@ -214,6 +298,7 @@ function Pop() {
                 <select
                   id="course"
                   name="course"
+                  onChange={handleChange}
                   className="w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 px-2 py-2"
                 >
                   <option value="" disabled selected>
