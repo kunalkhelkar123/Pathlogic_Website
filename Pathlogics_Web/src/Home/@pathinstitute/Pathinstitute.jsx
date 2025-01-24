@@ -76,7 +76,11 @@ export default function Navbar() {
     { name: 'Full stack web Development', path: '/fullstack' },
     { name: 'Aws/Devops', path: '/Aws' },
     { name: 'Software testing', path: '/Testing' },
-    { name: 'Salesforce Developer', path: '/SalesforceDeveloper' },
+// <<<<<<< rohini_dev
+    { name: 'Salesforce Developer', path: '/salesforce' }, 
+// =======
+//     { name: 'Salesforce Developer', path: '/SalesforceDeveloper' },
+// >>>>>>> dev
     { name: 'DataScience with python', path: '/DataSciencewithpython' },
     { name: 'Digital marketing', path: '/digitalmk' }
   ];
@@ -166,7 +170,12 @@ export default function Navbar() {
                 </ul>
               </div>
             )}
-          </div>
+// <<<<<<< rohini_dev
+          </div> */}
+                    <Link to="/Intern" className="text-gray-700 hover:text-orange-500 font-medium">Long Term Course</Link>
+// =======
+//           </div>
+// >>>>>>> dev
 
           <Link to="/Workspace" className="text-gray-700 hover:text-orange-500 font-medium">Workshops</Link>
           <Link to="/placement" className="text-gray-700 hover:text-orange-500 font-medium">Placements</Link>

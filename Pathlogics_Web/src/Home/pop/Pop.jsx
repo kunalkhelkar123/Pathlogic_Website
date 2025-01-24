@@ -307,6 +307,9 @@ function Pop() {
                   <option value="full-stack-development">
                     Full Stack Development
                   </option>
+                  <option value="full-stack-development">
+                    Full Stack Web Development
+                  </option>
                   <option value="mern-stack">MERN Stack</option>
                   <option value="java-development">Java Development</option>
                   <option value="python-data-science">
