@@ -16,6 +16,7 @@ module.exports = {
           to: { opacity: 1 },          // Fully visible
         },
       },
+      
     },
   },
   plugins: [],
