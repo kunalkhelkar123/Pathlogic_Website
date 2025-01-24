@@ -13,10 +13,12 @@ function Banner() {
       {/* Banner Section */}
       <div className="w-full">
         <Swiper
+
           spaceBetween={0}
           centeredSlides={false}
           autoplay={{
             delay: 2500,
+
             disableOnInteraction: false,
           }}
           pagination={{
@@ -38,7 +40,7 @@ function Banner() {
                 {/* Title Section */}
                 <div className="max-w-3xl mb-4">
                   <h1 className="text-4xl md:text-5xl font-bold leading-tight">
-                    Recognized for Excellence
+                    Recognized for Excellence hello
                   </h1>
                   <h2 className="text-3xl md:text-4xl font-bold mt-4 flex gap-2">
                     in <div style={{ color: "#FF6B00" }}>IT Training</div>
