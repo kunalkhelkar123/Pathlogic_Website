@@ -170,12 +170,11 @@ export default function Navbar() {
                 </ul>
               </div>
             )}
-// <<<<<<< rohini_dev
+{/* // <<<<<<< rohini_dev
           </div> */}
                     <Link to="/Intern" className="text-gray-700 hover:text-orange-500 font-medium">Long Term Course</Link>
-// =======
-//           </div>
-// >>>>>>> dev
+
+          </div>
 
           <Link to="/Workspace" className="text-gray-700 hover:text-orange-500 font-medium">Workshops</Link>
           <Link to="/placement" className="text-gray-700 hover:text-orange-500 font-medium">Placements</Link>
