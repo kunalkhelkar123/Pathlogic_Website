@@ -65,6 +65,8 @@ import StudentLogin from "./Login/StudentLogin/StudentLogin";
 import StudentDashboard from "./StudentDashboard/StudentDashboard";
 import AdminDashboard from "./Admin/AdminDashboard";
 import Scrolltop from "./Scrolltop";
+import Pop from "../src/Home/pop/Pop"
+import AdminLogin from "./AdminLogin/AdminLogin";
 
 
 import Testing from "./SHORTCOURSES/Software/Testing";
@@ -75,6 +77,18 @@ import Studentinfo from "./Admin/Studentinfo";
 import Test from "./Admin/Test/Test";
 import Courses from "./Admin/Test/Courses";
 import StudentProfileForm from "./Admin/StudentProfileForm";
+
+
+import Inter from "./Home/Longtermgoal/Inter";
+// import Intership from "./Home/Longtermgoal/Internship";
+
+import Salesforce from "../src/SHORTCOURSES/Salesforce Developer/Salesforce";
+import SaForce from "./SHORTCOURSES/Salesforce Developer/SaForce";
+
+
+import Quick from "./Quick Enquiry/Quick";
+
+
 
 // import { useEffect } from "react";
 function App() {
@@ -92,12 +106,21 @@ function App() {
   }, [location]); // This will run every time the route changes
   { loading && <Loader /> } {/* Show loader if loading state is true */ }
 
+  const Layout = ({ children }) => (
+    <>
+      <Pathinstitute />
+      {children}
+    </>
+  );
 
 
   return (
     <>
+
+    <Pop/>
       <Scrolltop />
-      <Pathinstitute />
+      {/* <Intership/> */}
+      
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/fullstack" element={<Fullstack />} />
@@ -134,9 +157,10 @@ function App() {
 
 
       </Routes>
-      <Footer />
-      {/* <Softhero/>
-        <Softover/> */}
+      <Footer /> 
+       {/* <Softhero/>
+        <Softover/>
+        <Aboutus/> */}
     
 
     </>

@@ -25,3 +25,12 @@ function Jobplacment() {
 }
 
 export default Jobplacment
+
+
+
+
+// <img
+// src={image}
+// alt="Slide 1"
+// className="mx-auto w-full h-screen object-cover md:h-auto" // Full height for mobile
+// />

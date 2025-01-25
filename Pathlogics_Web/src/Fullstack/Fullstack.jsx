@@ -7,17 +7,21 @@ import Roadmap from './roadmap/Roadmap'
 import Accordian from './Accordian/Accordian'
 import Companie from './Companies/Companie'
 import OurBlogs from './ourblogs bro/OurBlogs'
+import JavaDevelopment from './javadevelopment/JavaDevelopment'
+// import Javacarts from 
 
 function Fullstack() {
   return (
     <div>
-        <Promotion/>
+      <Promotion/>
       <Mernstack/>
       <Program/>
       <Roadmap/>
       <Accordian/>
       <Companie/>
       <OurBlogs/>
+      <JavaDevelopment/>
+      {/* <Javacarts/> */}
     </div>
   )
 }

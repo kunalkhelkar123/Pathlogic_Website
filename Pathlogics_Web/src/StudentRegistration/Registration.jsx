@@ -54,7 +54,7 @@ const StudentRegistration = () => {
 
     try {
       // Make the POST request to the backend API
-      const response = await axios.post("http://localhost:4000/api/auth/register", formData);
+      const response = await axios.post("http://localhost:6000/api/auth/register", formData);
 
       if (response.status === 201) {
         // Registration successful
