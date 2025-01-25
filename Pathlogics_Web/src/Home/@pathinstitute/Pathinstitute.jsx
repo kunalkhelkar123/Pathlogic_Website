@@ -1,6 +1,8 @@
-
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { FaLinkedin, FaFacebookF, FaInstagram, FaYoutube, FaWhatsapp } from "react-icons/fa";
+import { X } from "lucide-react";
+import image from "../../assets/patho.png"
 import axios from "axios";
 import image from "../../assets/patho.png";
 
@@ -17,26 +19,17 @@ export default function Navbar() {
   });
   const [submitStatus, setSubmitStatus] = useState({ message: '', isError: false });
   const [notificationCount, setNotificationCount] = useState(() => {
-    if (typeof window !== 'undefined') {
-      return parseInt(localStorage.getItem('notificationCount') || '0', 10);
-    }
-    return 0;
+    return typeof window !== 'undefined' ? parseInt(localStorage.getItem('notificationCount') || '0', 10) : 0;
   });
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isDropdownOpen1, setIsDropdownOpen1] = useState(false);
 
-  useEffect(() => {
-    const handleOutsideClick = (e) => {
-      if (!e.target.closest(".dropdown")) {
-        setIsDropdownOpen(false);
-        setIsDropdownOpen1(false);
-      }
-    };
-    document.addEventListener("click", handleOutsideClick);
-    return () => document.removeEventListener("click", handleOutsideClick);
-  }, []);
-
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const StudentRegistration = () => {
+    setIsQuickEnquiryOpen(!isQuickEnquiryOpen);
+    setSubmitStatus({ message: '', isError: false });
+    Navigate('/StudentRegistration');
+  };
   const toggleQuickEnquiry = () => {
     setIsQuickEnquiryOpen(!isQuickEnquiryOpen);
     setSubmitStatus({ message: '', isError: false });
@@ -45,10 +38,7 @@ export default function Navbar() {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prevData => ({
-      ...prevData,
-      [name]: value
-    }));
+    setFormData(prevData => ({ ...prevData, [name]: value }));
   };
 
   const handleSubmit = async () => {
@@ -71,30 +61,30 @@ export default function Navbar() {
     }
   };
 
+  const LoginBar = [
+    { name: "Student login", path: "/StudentLogin" },
+    { name: "Admin Login", path: "/adminLogin" }
+  ];
+
   const shortTermCourses = [
     { name: 'Full stack Java Development', path: '/JavaDevelopment' },
     { name: 'Full stack web Development', path: '/fullstack' },
     { name: 'Aws/Devops', path: '/Aws' },
     { name: 'Software testing', path: '/Testing' },
-    // <<<<<<< rohini_dev
-    { name: 'Salesforce Developer', path: '/salesforce' },
-    // =======
-    //     { name: 'Salesforce Developer', path: '/SalesforceDeveloper' },
-    // >>>>>>> dev
+    { name: 'Salesforce Developer', path: '/SalesforceDeveloper' }, 
     { name: 'DataScience with python', path: '/DataSciencewithpython' },
-    { name: 'Digital marketing', path: '/digitalmk' }
+     { name: 'Digital marketing training', path: '/Digitalmarketingtraining' }
   ];
+  const corparate = [
 
-  const longTermCourses = [
-    { name: 'Certification', path: '/Certification' },
-    { name: 'Internship', path: '/Intern' },
-    { name: 'Stipend Program', path: '/StipendProgram' }
-  ];
+    { name: 'Hire for us ', path: "/again " },
+    { name: 'train for us', path: "/more" },
+  ]
 
   return (
-    <header className="sticky top-0 bg-white z-50">
-      <div className="bg-black text-white py-2 px-4 md:px-8 flex flex-col md:flex-row justify-between items-center">
-        <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">
+    <header className="w-full  ">
+      <div className="bg-black  text-white py-2 px-4 md:px-8 flex flex-col md:flex-row justify-between items-center">
+        <div className="flex flex-col  sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">
           <span className="flex items-center space-x-2">
             <span>📧</span>
             <span>info@pathlogicstech.in</span>
@@ -105,15 +95,21 @@ export default function Navbar() {
           </span>
         </div>
         <div className="hidden sm:flex space-x-4 sm:space-x-6 mt-2 sm:mt-0 ml-auto">
-          <Link to="/StudentLogin" className="hover:underline">Student Login</Link>
-          <button onClick={() => navigate('/StudentRegistration')} className="hover:underline">Apply Online</button>
+          {/* <a href="#admission" className="hover:underline">Admission</a> */}
+          <a href="/StudentLogin" className="hover:underline">Student Login</a>
+          <button onClick={StudentRegistration} className="hover:underline">Apply Online</button>
           <button onClick={toggleQuickEnquiry} className="hover:underline">Quick Enquiry</button>
         </div>
       </div>
+
       <div className="w-full bg-white py-1 px-4 md:px-8 flex justify-between items-center border-b-2 border-orange-500">
         <div className="flex items-center">
-          <button onClick={() => navigate('/')} className="text-black focus:outline-none">
-            <img src={image} alt="Logo" />
+          <button onClick={() => Navigate('/')} className="text-black focus:outline-none">
+            <img
+              src={image}
+              alt=""
+            // className="mr-2"
+            />
           </button>
         </div>
         <div className="md:hidden">
@@ -128,15 +124,19 @@ export default function Navbar() {
           <Link to="/All" className="text-gray-700 hover:text-orange-500 font-medium">Institute</Link>
           <Link to="/fullstack" className="text-gray-700 hover:text-orange-500 font-medium">Full Stack Development</Link>
 
-          <div className="relative dropdown" onClick={(e) => e.stopPropagation()}>
-            <button onClick={() => {
-              setIsDropdownOpen(!isDropdownOpen);
-              setIsDropdownOpen1(false);
-            }} className="text-gray-700 hover:text-orange-500 font-medium">
+
+          <div className="relative" onClick={(e) => e.stopPropagation()}>
+            <button
+              onClick={() => setIsDropdownOpen((prevState) => !prevState)}
+              className="text-gray-700 hover:text-orange-500 font-medium"
+            >
               Short Term Courses
             </button>
             {isDropdownOpen && (
-              <div className="absolute left-0 mt-2 w-48 bg-white border border-gray-300 rounded-md shadow-lg z-20">
+              <div
+                className="absolute left-0 mt-2 w-48 bg-white border border-gray-300 rounded-md shadow-lg"
+                style={{ zIndex: 222 }}
+              >
                 <ul className="space-y-2 p-2">
                   {shortTermCourses.map((course, index) => (
                     <li key={index}>
@@ -150,32 +150,31 @@ export default function Navbar() {
             )}
           </div>
 
-          <div className="relative dropdown" onClick={(e) => e.stopPropagation()}>
-            <button onClick={() => {
-              setIsDropdownOpen1(!isDropdownOpen1);
-              setIsDropdownOpen(false);
-            }} className="text-gray-700 hover:text-orange-500 font-medium">
-              Long Term Courses
+
+
+
+
+
+
+          {/* <div className="relative">
+            <button
+              onClick={() => setIsDropdownOpen1(!isDropdownOpen1)}
+              className="text-gray-700 hover:text-orange-500 font-medium"
+            >
+              Corparates
             </button>
             {isDropdownOpen1 && (
-              <div className="absolute left-0 mt-2 w-48 bg-white border border-gray-300 rounded-md shadow-lg z-20">
+              <div className="absolute left-0 mt-2 w-48 bg-white border border-gray-300 rounded-md shadow-lg" style={{zIndex:222}}>
                 <ul className="space-y-2 p-2">
-                  {longTermCourses.map((course, index) => (
+                  {corparate.map((course, index) => (
                     <li key={index}>
-                      <Link to={course.path} className="block text-gray-700 hover:text-orange-500 px-4 py-2 text-sm">
-                        {course.name}
-                      </Link>
+                      <Link to={course.path} className="block text-gray-700 hover:text-orange-500 px-4 py-2 text-sm">{course.name}</Link>
                     </li>
                   ))}
                 </ul>
               </div>
             )}
-
-
-          </div>
-          {/* // >>>>>>> dev */}
-          {/* <Link to="/Intern" className="text-gray-700 hover:text-orange-500 font-medium">Long Term Course</Link> */}
-
+          </div> */}
           <Link to="/Workspace" className="text-gray-700 hover:text-orange-500 font-medium">Workshops</Link>
           <Link to="/placement" className="text-gray-700 hover:text-orange-500 font-medium">Placements</Link>
         </nav>
