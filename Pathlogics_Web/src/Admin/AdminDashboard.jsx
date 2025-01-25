@@ -8,8 +8,8 @@ import DashboardComponent from './DashboardComponent';
 function AdminDashboard() {
   return (
     <>
-    <DashboardComponent/>
     <AdminNavbar/>
+    <DashboardComponent/>
     <Studentinfo/>
     </>
   )

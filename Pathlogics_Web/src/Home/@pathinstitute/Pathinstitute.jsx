@@ -4,7 +4,7 @@ import { FaLinkedin, FaFacebookF, FaInstagram, FaYoutube, FaWhatsapp } from "rea
 import { X } from "lucide-react";
 import image from "../../assets/patho.png"
 import axios from "axios";
-import image from "../../assets/patho.png";
+// import image from "../../assets/patho.png";
 
 export default function Navbar() {
   const navigate = useNavigate();
