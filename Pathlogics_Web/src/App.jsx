@@ -61,13 +61,20 @@ import Course from "./SHORTCOURSES/Awsdevops/Course";
 import Aws from "./SHORTCOURSES/Awsdevops/Aws";
 import Softhero from "./SHORTCOURSES/Software/Softhero";
 import StudentRegistration from "./StudentRegistration/Registration";
-import StudentLogin from "./StudentLogin/StudentLogin";
+import StudentLogin from "./Login/StudentLogin/StudentLogin";
 import StudentDashboard from "./StudentDashboard/StudentDashboard";
+import AdminDashboard from "./Admin/AdminDashboard";
 import Scrolltop from "./Scrolltop";
 
 
 import Testing from "./SHORTCOURSES/Software/Testing";
 import QuickEnquiry from "./Quick Enquiry/QuickEnquiry";
+import Knowmore from "./Home/Know More/AutoStar/Knowmore";
+import AdminLogin from "./Login/StudentLogin/AdminLogin";
+import Studentinfo from "./Admin/Studentinfo";
+import Test from "./Admin/Test/Test";
+import Courses from "./Admin/Test/Courses";
+import StudentProfileForm from "./Admin/StudentProfileForm";
 
 // import { useEffect } from "react";
 function App() {
@@ -99,16 +106,29 @@ function App() {
         <Route path="/again" element={<Again />} />
         <Route path="/All" element={<All />} />
         <Route path="/Aboutus" element={<All />} />
-
+        
+        <Route path="/knowmore" element={<Knowmore/>}/>
         <Route path="/Workspace" element={<Workspace />} />
         <Route path="/Short" element={<Short />} />
         <Route path="/Aws" element={<Aws />} />
         <Route path="/Testing" element={<Testing />} />
         <Route path="/QuickEnquiry" element={<QuickEnquiry />} />
         <Route path="/studentregistration" element={<StudentRegistration />} />
+        <Route path="/adminLogin" element = {<AdminLogin/>}/>
         <Route path="/StudentLogin" element={<StudentLogin />} />
         <Route path="/StudentDashboard" element={<StudentDashboard />} />
-        {/* <Route path="/Loginform" element={<Loginform />} /> */}
+        <Route path="/admindashboard" element={<AdminDashboard />} />
+        <Route path="/StudentProfileForm" element={<StudentProfileForm />} />
+
+        <Route path="/admin/studentinfo" element={<Studentinfo />} />
+
+        <Route path="/admin/studentinfo" element={<Studentinfo />} />
+        {/* <Route path="/admin/courseDetails" element={< />} /> */}
+        <Route path="/admin/CourseSection" element={<Courses />} />
+        <Route path="/CourseSection/Test" element={<Test />} />
+        {/* <Route path="/admin/Workshop" element={<Studentinfo />} /> */}
+        {/* <Route path="/admin/Staffinfo" element={<Studentinfo />} /> */}
+
 
 
 
