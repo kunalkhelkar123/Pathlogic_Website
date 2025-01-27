@@ -158,7 +158,7 @@ const AdminLogin = () => {
 
     try {
       // Make POST request to login API for Admin
-      const response = await axios.post("http://localhost:4000/api/auth/loginadmin/", formData);
+      const response = await axios.post("http://localhost:4000/api/auth/loginadmin", formData);
       console.log(response);
       if (response.status === 200) {
         // Handle successful login

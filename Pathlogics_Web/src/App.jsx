@@ -246,6 +246,7 @@ import AdminDashboard from "./Admin/AdminDashboard";
 import Testing from "./SHORTCOURSES/Software/Testing";
 import QuickEnquiry from "./Quick Enquiry/QuickEnquiry";
 import Studentinfo from "./Admin/Studentinfo";
+import StudentProfileForm from "./Admin/StudentProfileForm"
 // 
 
 // import { useEffect } from "react";
@@ -299,7 +300,7 @@ function App() {
         <Route path="/adminLogin" element={<AdminLogin />} />
         <Route path="/admindashboard" element={<AdminDashboard />} />
 
-        <Route path="/admin/studentinfo" element={<Studentinfo />} />
+        {/* <Route path="/admin/studentinfo" element={<Studentinfo />} /> */}
 
         <Route path="/admin/studentinfo" element={<Studentinfo />} />
         {/* <Route path="/admin/courseDetails" element={< />} /> */}
@@ -307,6 +308,7 @@ function App() {
         <Route path="/CourseSection/Test" element={<Test />} />
         {/* <Route path="/admin/Workshop" element={<Studentinfo />} /> */}
         {/* <Route path="/admin/Staffinfo" element={<Studentinfo />} /> */}
+        <Route path="/StudentProfileForm" element={<StudentProfileForm />} />
 
         {/* <Route path="/Loginform" element={<Loginform />} /> */}
 

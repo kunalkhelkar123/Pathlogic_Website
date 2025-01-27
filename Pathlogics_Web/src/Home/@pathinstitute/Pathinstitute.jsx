@@ -97,6 +97,7 @@ export default function Navbar() {
         <div className="hidden sm:flex space-x-4 sm:space-x-6 mt-2 sm:mt-0 ml-auto">
           {/* <a href="#admission" className="hover:underline">Admission</a> */}
           <a href="/StudentLogin" className="hover:underline">Student Login</a>
+          <a href="/adminlogin" className="hover: unbderline">Admin Login</a>
           <button onClick={StudentRegistration} className="hover:underline">Apply Online</button>
           <button onClick={toggleQuickEnquiry} className="hover:underline">Quick Enquiry</button>
         </div>

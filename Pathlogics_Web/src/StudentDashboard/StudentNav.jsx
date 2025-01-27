@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 import { X } from "lucide-react";
 // import image from "../../../assets/patho.png"
-import image from "../../../Pathlogics_Web/src/assets/patho.png";
+import image from "../assets/patho.png";
 
 
 import axios from "axios";
@@ -104,7 +104,7 @@ export default function Navbar() {
           >
             <img
               src={image}
-              alt=""
+              alt="ICON"
               // className="mr-2"
             />
           </button>
