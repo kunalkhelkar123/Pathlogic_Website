@@ -12,6 +12,7 @@ import {
   FaChalkboardTeacher,
   FaUsers,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const DashboardComponent = () => {
   return (
@@ -89,7 +90,7 @@ const DashboardComponent = () => {
               <h3 className="text-2xl font-bold">{card.title}</h3>
               <p className="mt-2 text-center">{card.description}</p>
               <button className="mt-4 bg-yellow-500 text-white px-4 py-2 rounded-lg hover:bg-yellow-600 transition">
-                <a href={card.path}>View</a>
+                <Link to={card.path}>View</Link>
               </button>
             </div>
           ))}

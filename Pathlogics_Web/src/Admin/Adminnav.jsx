@@ -1,19 +1,20 @@
 import React, { useState } from "react";
 import { FaHome, FaBook, FaPhoneAlt, FaUserCircle } from "react-icons/fa";
+import logo from "../assets/patho.png"
 
 export default function AdminNavbar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   return (
-    <header className="w-full">
-      <div className="w-full bg-white py-1 px-4 md:px-8 flex justify-between items-center border-b-2 border-orange-500">
+    <header className="w-full h-[100px]">
+      <div className="w-full h-[100px] bg-white py-1 px-4 md:px-8 flex justify-between items-center border-b-2 border-orange-500">
         {/* Logo Section */}
-        <div className="flex items-center">
+        <div className="flex items-center ">
           <button className="text-black focus:outline-none">
             <img
-              src="/path-to-your-image/logo.png" // Replace with the correct logo path
+              src={logo} // Replace with the correct logo path
               alt="Logo"
-              className="h-10 w-auto" // Adjust the height and width as needed
+              className="h-50 w-auto" // Adjust the height and width as needed
             />
           </button>
         </div>
@@ -80,7 +81,7 @@ export default function AdminNavbar() {
             </button>
             {isDropdownOpen && (
               <div
-                className="absolute top-8 w-[130px] bg-white border border-gray-200 shadow-lg rounded-md"
+                className="absolute z-700 top-8 w-[130px] bg-white border border-gray-200 shadow-lg rounded-md"
                 onMouseEnter={() => setIsDropdownOpen(true)}
                 onMouseLeave={() => setIsDropdownOpen(false)}
               >

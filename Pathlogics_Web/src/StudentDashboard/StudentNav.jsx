@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import { X } from "lucide-react";
-// import image from "../../../assets/patho.png"
-import image from "../assets/patho.png";
+import image from "../assets/patho.png"
+// import image from "../assets/patho.png";
 
 
 import axios from "axios";
