@@ -105,7 +105,7 @@ const StudentInfo = () => {
   return (
     <>
       <div className="p-6 bg-gray-50 min-h-screen">
-        <h2 className="text-3xl font-semibold mb-6">User Information</h2>
+        <h2 className="text-center text-3xl font-semibold mb-6">Student Information</h2>
         <div className="overflow-x-auto">
           <table className="min-w-full border-collapse border border-gray-300">
             <thead className="bg-orange-600 text-white">

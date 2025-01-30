@@ -121,63 +121,7 @@ router.put("/updateStudent", async (req, res) => {
   }
 });
 
-router.put('/updateStatus', async (req, res) => {
-  try {
-    // console.log("Insaide Update Status");
-    
-    const { id, isactive } = req.body;
-console.log("Updated Body" ,  req.body);
-
-    if (!id || !isactive) {
-      // console.log("update status");
-      
-      return res.status(400).json({ message: "Student ID and isActive status are required." });
-    }
-    // console.log("Update STudent 1")
-    const sqlgetuser =  "SELECT * FROM students_info WHERE id = ? "
-    const getuser =  await db.query(sqlgetuser, [id]);
-    // console.log("Update STudent 2")
-
-    if(getuser.length <= 0 ){
-      return req.status(202).json({message:"User not Found"})
-    
-    }
-    let value = ""
-
-    //  console.log("isactive out", isactive)
-    if(isactive == "true" || isactive == true){
-      // console.log("isactive if", isactive)
-
-    value = "false"
-    }
-    else{
-      // console.log("isactive else", isactive)
-
-      value = "true"
-    }
-    
-    try{
-      const query = 'UPDATE students_info SET isactive = ? WHERE id = ?';
-      const values = [value, id];
-  
-      const [result] = await db.query(query, values);
-  
-      if (result.affectedRows === 0) {
-        return res.status(202).json({ message: "Student not found." });
-      }
-  // console.log("Student Updated Successfully")
-      res.status(200).json({ message: "Status updated successfully." });
-    }
-    catch(err){
-      console.error('Error updating student status:', err);
-    res.status(500).json({ message: "Failed to update status." });
-
-    }
-  } catch (err) {
-    console.error('Error updating student status:', err);
-    res.status(500).json({ message: "Failed to update status." });
-  }
-});
+ 
  
 
 module.exports = router;

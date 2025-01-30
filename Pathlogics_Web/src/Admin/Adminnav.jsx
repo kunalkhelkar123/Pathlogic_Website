@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { FaHome, FaBook, FaPhoneAlt, FaUserCircle } from "react-icons/fa";
 import logo from "../assets/patho.png"
+import { Link } from "react-router-dom";
+import AdminDashboard from "./AdminDashboard";
 
 export default function AdminNavbar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -14,7 +16,7 @@ export default function AdminNavbar() {
             <img
               src={logo} // Replace with the correct logo path
               alt="Logo"
-              className="h-50 w-auto" // Adjust the height and width as needed
+              className="h-20 w-auto" // Adjust the height and width as needed
             />
           </button>
         </div>
@@ -40,34 +42,34 @@ export default function AdminNavbar() {
 
         {/* Navigation Links */}
         <nav className="hidden md:flex space-x-2 sm:space-x-4 md:space-x-6 ml-auto">
-        <a
-            href="#"
+        <Link
+            to="#"
             className="text-gray-700 hover:text-orange-500 font-medium flex items-center"
           >
             <FaHome className="mr-2" />
             Info
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            to="/admindashboard"
             className="text-gray-700 hover:text-orange-500 font-medium flex items-center"
           >
             <FaHome className="mr-2" />
             Home
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            to="#"
             className="text-gray-700 hover:text-orange-500 font-medium flex items-center"
           >
             <FaBook className="mr-2" />
             students
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            to="#"
             className="text-gray-700 hover:text-orange-500 font-medium flex items-center"
           >
             <FaPhoneAlt className="mr-2" />
             Contact Us
-          </a>
+          </Link>
 
           {/* Profile Dropdown */}
           <div className="relative">
@@ -81,24 +83,24 @@ export default function AdminNavbar() {
             </button>
             {isDropdownOpen && (
               <div
-                className="absolute z-700 top-8 w-[130px] bg-white border border-gray-200 shadow-lg rounded-md"
+                className="absolute top-8 w-[130px] bg-white border border-gray-200 shadow-lg rounded-md"
                 onMouseEnter={() => setIsDropdownOpen(true)}
                 onMouseLeave={() => setIsDropdownOpen(false)}
               >
-                <ul className="space-y-2 p-2">
+                <ul className="space-y-1 ">
                   <li className="hover:bg-orange-100 p-2 rounded-md cursor-pointer">
                     Option 1
                   </li>
                   <li className="hover:bg-orange-100 p-2 rounded-md cursor-pointer">
                     Option 2
                   </li>
-                  <li className="hover:bg-orange-100 p-2 rounded-md cursor-pointer">
+                  {/* <li className="hover:bg-orange-100 p-2 rounded-md cursor-pointer">
                     Option 3
-                  </li>
+                  </li> */}
                   <li className="hover:bg-orange-100 p-2 rounded-md cursor-pointer">
-                    <a href="#" className="block p-2 text-gray-700">
-                      Log out
-                    </a>
+                  <Link to="/adminLogin" className="block p-2 text-gray-700">
+                    Log out
+                  </Link>
                   </li>
                 </ul>
               </div>
