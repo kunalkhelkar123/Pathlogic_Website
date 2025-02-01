@@ -24,8 +24,8 @@ const DashboardComponent = () => {
           <ul className="space-y-6">
             {[
               { icon: <FaHome className="text-xl" />, label: "Home" },
-              { icon: <FaUserGraduate className="text-xl" />, label: "Student" },
-              { icon: <FaPlus className="text-xl" />, label: "Test" },
+              { icon: <FaUserGraduate className="text-xl" />, label: "Student" , path:"/admin/Studentinfo" },
+              { icon: <FaPlus className="text-xl" />, label: "Test Question" ,path:"admin/CourseSection" },
               { icon: <FaUser className="text-xl" />, label: "Profile" },
               { icon: <FaBook className="text-xl" />, label: "Contact us" },
               { icon: <FaSignOutAlt className="text-xl" />, label: "Logout" },
@@ -35,7 +35,7 @@ const DashboardComponent = () => {
                 className="flex items-center space-x-3 hover:text-yellow-300 cursor-pointer"
               >
                 {item.icon}
-                <a href="/adminLogin">{item.label}</a>
+                <a href={item.path}>{item.label}</a>
               </li>
             ))}
           </ul>
@@ -53,18 +53,18 @@ const DashboardComponent = () => {
             {
               icon: <FaUserGraduate className="text-4xl mb-4" />,
               title: "Students",
-              description: "Manage student records and details",
+              description: "Manage student records and update details",
               path: "/admin/Studentinfo",
             },
             {
               icon: <FaBook className="text-4xl mb-4" />,
               title: "Courses",
-              description: "View and update available courses",
+              description: "View and update available student courses",
               path: "/admin/courseDetails"
             },
             {
               icon: <FaClipboardList className="text-4xl mb-4" />,
-              title: "Tests",
+              title: "Tests Questions",
               description: "Manage student test data",
               path : "/admin/CourseSection"
             },

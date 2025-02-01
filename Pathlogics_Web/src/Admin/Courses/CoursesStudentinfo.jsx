@@ -1,7 +1,15 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useLocation } from "react-router-dom";
+import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
+import { useNavigate } from "react-router-dom";
+const CoursesStudentinfo = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { courseId, courseName } = location.state || {}; // Get the passed data
 
-const StudentInfo = () => {
+  console.log("courseId, courseName", courseId, courseName)
+
   const [users, setUsers] = useState([]); // State to store user data
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedUser, setSelectedUser] = useState(null);
@@ -11,27 +19,19 @@ const StudentInfo = () => {
   useEffect(() => {
     const fetchStudentDetails = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/api/admin/getStudent",{});
-        // console.log("Fetched Student Data:", response.data);
-        setUsers(response.data?.StudentData || []); // Set data to state
+        const response = await axios.post("http://localhost:4000/api/admin/getStudentbyname",
+          { activecourse_name: courseName }, // Send data in request body
+          { headers: { "Content-Type": "application/json" } } // Set content type
+        );
+
+        setUsers(response.data?.StudentData || []); // Update state with fetched data
       } catch (error) {
         console.error("Error fetching student details:", error);
       }
     };
+
     fetchStudentDetails();
   }, [datachanges]); // Empty dependency array ensures it runs only on mount
-
-
-  const fetchStudentDetails = async () => {
-    try {
-      const response = await axios.get("http://localhost:4000/api/admin/getStudent",{});
-      // console.log("Fetched Student Data:", response.data);
-      setUsers(response.data?.StudentData || []); // Set data to state
-    } catch (error) {
-      console.error("Error fetching student details:", error);
-    }
-  };
-
 
   // Handle input changes in the form
   const handleInputChange = (e) => {
@@ -42,37 +42,6 @@ const StudentInfo = () => {
     }));
   };
 
-  const handelstatus = async (id, isactive) =>{
-    console.log("inside updating status ")
-    console.log("insaide Handel Status",  id)
-    console.log("insaide Handel Status",  isactive)
-    try {
-      const response = await fetch('http://localhost:4000/api/admin/updateStatus', {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ id, isactive }), // Send user ID and new status
-      });
-
-      if (response.ok) {
-        setDataChanges(!datachanges);
-        fetchStudentDetails();
-        // console.log('Status updated successfully!');
-      } else {
-        console.error('Failed to update status');
-      }
-    } catch (error) {
-      console.error('Error:', error);
-    }
-  }
-
-  // Open the modal and set selected user data
-  const toggleModal = (user) => {
-    setSelectedUser(user);
-    setFormData(user); // Populate the form with the selected user's data
-    setIsModalOpen(!isModalOpen);
-  };
 
   const courses = [
     { title: "Core Java", id: "1", name: "corejava" },
@@ -104,36 +73,66 @@ const StudentInfo = () => {
     { title: "Salesforce Development", id: "27", name: "salesforcedevelopment" }
   ];
 
-  
+
+  const handelstatus = async (id, isactive) => {
+    // console.log("insaide Handel Status",  id)
+    // console.log("insaide Handel Status",  isactive)
+    try {
+      const response = await fetch('http://localhost:4000/api/admin/updateStatus', {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ id, isactive }), // Send user ID and new status
+      });
+
+      if (response.ok) {
+        setDataChanges(!datachanges);
+        // console.log('Status updated successfully!');
+      } else {
+        console.error('Failed to update status');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  }
+
+  // Open the modal and set selected user data
+  const toggleModal = (user) => {
+    setSelectedUser(user);
+    setFormData(user); // Populate the form with the selected user's data
+    setIsModalOpen(!isModalOpen);
+  };
+
 
   const handleUpdate = async (e) => {
     e.preventDefault(); // Prevent default form submission
-  
+
     try {
       // Ensure formData contains the correct data (including id for the update)
       if (!formData.id) {
         alert("Student ID is missing");
         return;
       }
-  
+
       // Send the updated data to the backend via PUT request
-      console.log("FormData from update status", formData); // Log form data for debugging
-  
-      console.log("updating student")
+      console.log("FormData", formData); // Log form data for debugging
+
       const response = await axios.put('http://localhost:4000/api/admin/updateStudent', formData);
-  
+
       console.log("Update Response:", response.data); // Log the response for debugging
-  
+
+      alert("student details update sucessfully")
       // If the update is successful, update the users array in the state
       const updatedUsers = [...users];
       const index = updatedUsers.findIndex((user) => user.id === selectedUser.id); // Using `id` to identify the user
-  
+
       if (index !== -1) {
         // Update the user data in the array with the new formData
         updatedUsers[index] = { ...updatedUsers[index], ...formData }; // Merge old data with updated form data
         setUsers(updatedUsers); // Update the users state
       }
-  
+
       // Close the modal after successful update
       setIsModalOpen(false);
     } catch (error) {
@@ -142,7 +141,7 @@ const StudentInfo = () => {
     }
   };
 
-  
+
   // Handle cancel button in the modal
   const handleCancel = () => {
     setIsModalOpen(false); // Close modal without saving changes
@@ -153,7 +152,9 @@ const StudentInfo = () => {
       <div className="p-6 bg-gray-50 min-h-screen">
         <h2 className="text-center text-3xl font-semibold mb-6">Student Information</h2>
         <div className="overflow-x-auto">
-          <table className="min-w-full border-collapse border border-gray-300">
+
+        
+          {users && (<table className="min-w-full border-collapse border border-gray-300">
             <thead className="bg-orange-600 text-white">
               <tr>
                 <th className="px-6 py-3 text-left border border-gray-300">Sr. No.</th>
@@ -166,6 +167,8 @@ const StudentInfo = () => {
               </tr>
             </thead>
             <tbody>
+
+
               {users.map((user, index) => (
                 <tr
                   key={index}
@@ -177,27 +180,28 @@ const StudentInfo = () => {
                   <td className="px-6 py-4 border border-gray-300">{user.phone}</td>
                   <td className="px-6 py-4 border border-gray-300">{user.activecourse_name}</td>
                   <td className="px-6 py-4 border border-gray-300">
-                  {user.isactive == "TRUE" ? (
-                            <>
-                              <label className="mr-8"> Active </label>
-                              <button
-                                onClick={() => handelstatus(user.id, user.isactive)}
-                                className="w-30 px-4 py-2 bg-red-800 text-white rounded-md  mt-4 sm:mt-0"
-                              >
-                                Inactivate
-                              </button>
-                            </>
-                          ) : (
-                            <>
-                              <label className="mr-6"> Inactive </label>
-                              <button
-                                onClick={() => handelstatus(user.id, user.isactive)}
-                                className="w-30 px-4 py-2 bg-green-800 text-white rounded-md  mt-4 sm:mt-0"
-                              >
-                                Activate
-                              </button>
-                            </>
-                          )}
+                    {user.isactive === "TRUE" ? (
+                      <>
+                        <label className="mr-8"> Active </label>
+                        <button
+                          onClick={() => handelstatus(user.id, user.isactive)}
+                          className="w-30 px-4 py-2 bg-red-800 text-white rounded-md  mt-4 sm:mt-0"
+                        >
+                          Inactivate
+                        </button>
+                      </>
+                    ) : (
+                      <>
+                        <label className="mr-6"> Inactive </label>
+                        <button
+                          onClick={() => handelstatus(user.id, user.isactive)}
+                          className="w-30 px-4 py-2 bg-green-800 text-white rounded-md  mt-4 sm:mt-0"
+                        >
+                          Activate
+                        </button>
+                      </>
+                    )}
+
                   </td>
                   <td className="px-6 py-4 border border-gray-300">
                     <button
@@ -209,23 +213,34 @@ const StudentInfo = () => {
                   </td>
                 </tr>
               ))}
+              
             </tbody>
-          </table>
+          </table>)}
+
         </div>
+
+        {users.length === 0 && (
+  <div className="flex flex-col items-center justify-center p-6 bg-gray-100 rounded-lg shadow-md">
+    <h1 className="text-xl font-semibold text-gray-800">
+      No students enrolled for this course
+    </h1>
+    <p className="text-gray-600 text-sm mt-2">Please check back later.</p>
+  </div>
+)}
 
         {/* Modal for Editing Student Profile */}
         {isModalOpen && selectedUser && (
-          <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center">
-            <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-4xl h-auto overflow-y-auto">
+          <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center overflow-y-auto mt-[150px]items-center z-20">
+            <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-5xl h-auto ">
               <h3 className="text-2xl font-semibold mb-4">Update Student Profile</h3>
-              <h1>Student ID :{formData.id}</h1>
-              <form onSubmit={handleUpdate}>
-                <div className="grid grid-cols-3 gap-6">
+              <h1>Student ID: {formData.id}</h1>
+              <form onSubmit={handleUpdate} className="space-y-4">
+                <div className="grid grid-cols-4 gap-6">
                   <div className="mb-4">
                     <label className="block text-gray-700">Student Name</label>
                     <input
                       type="text"
-                      name="name" // Corrected name attribute
+                      name="name"
                       value={formData.name}
                       onChange={handleInputChange}
                       className="w-full px-4 py-2 border border-gray-300 rounded-md"
@@ -297,7 +312,7 @@ const StudentInfo = () => {
                       value={formData.college_name}
                       onChange={handleInputChange}
                       className="w-full px-4 py-2 border border-gray-300 rounded-md"
-                      placeholder="Enter fees"
+                      placeholder="Enter college name"
                     />
                   </div>
                   <div className="mb-4">
@@ -365,25 +380,25 @@ const StudentInfo = () => {
                       placeholder="Enter Your College Branch"
                     />
                   </div>
+                  <div className="mb-4">
+                    <label className="block text-gray-700">Course Name</label>
+                    <select
+                      name="course_name"
+                      value={formData.course_name}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-md"
+                    >
+                      <option value="">Select a Course</option>
+                      {courses.map((course) => (
+                        <option key={course.id} value={course.name}>
+                          {course.title}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
                 </div>
 
-                <div className="mb-4">
-                  <label className="block text-gray-700">Course Name</label>
-                  <select
-                    name="activecourse_name"
-                    value={formData.activecourse_name}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md"
-                  >
-                    <option value="">Select a Course</option>
-                    {courses.map((course) => (
-                      <option key={course.id} value={course.name}>
-                        {course.title}
-                        
-                      </option>
-                    ))}
-                  </select>
-                </div>
+
 
                 <div className="flex justify-between mt-6">
                   <button
@@ -403,10 +418,20 @@ const StudentInfo = () => {
               </form>
             </div>
           </div>
+
         )}
+          <button
+          className="z-20 fixed bottom-4 right-6 rounded-md p-2 bg-orange-600 text-white shadow-md hover:bg-orange-800"
+          onClick={() => navigate("/admin/courseDetails")}
+        >
+           
+           <ArrowCircleLeftIcon fontSize="large" />
+          {/* <span className="material-icons text-3xl">arrow_circle_left</span> */}
+
+        </button>
       </div>
     </>
   );
 };
 
-export default StudentInfo;
+export default CoursesStudentinfo;

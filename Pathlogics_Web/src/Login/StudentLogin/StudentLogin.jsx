@@ -13,6 +13,9 @@ const StudentLogin = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false); // State to toggle password visibility
   const navigate = useNavigate();
+
+
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -26,6 +29,8 @@ const StudentLogin = () => {
 
     try {
       // Make POST request to login API
+
+      
       const response = await axios.post("http://localhost:4000/api/auth/login", formData);
 
       if (response.status === 200) {

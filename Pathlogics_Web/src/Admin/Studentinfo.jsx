@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-
+import { useNavigate } from "react-router-dom";
+// import Icon from '@material-ui/core/Icon';
+import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
 const StudentInfo = () => {
   const [users, setUsers] = useState([]); // State to store user data
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -8,6 +10,9 @@ const StudentInfo = () => {
   const [formData, setFormData] = useState({}); // State to handle form data
   const [datachanges, setDataChanges] = useState(false);
   // Fetch student details on component mount
+  const navigate = useNavigate();
+
+
   useEffect(() => {
     const fetchStudentDetails = async () => {
       try {
@@ -29,6 +34,38 @@ const StudentInfo = () => {
       [name]: value,
     }));
   };
+
+
+  const courses = [
+    { title: "Core Java", id: "1", name: "corejava" },
+    { title: "Advanced Java", id: "2", name: "advancedjava" },
+    { title: "React.JS", id: "3", name: "reactjs" },
+    { title: "Angular.JS", id: "4", name: "angularjs" },
+    { title: "Node.JS", id: "5", name: "nodejs" },
+    { title: "Python Programming", id: "6", name: "python" },
+    { title: "React Native", id: "7", name: "reactnative" },
+    { title: "Full Stack Java Development", id: "8", name: "fullstackjava" },
+    { title: ".NET Core Development", id: "9", name: "netcore" },
+    { title: ".NET with Angular", id: "10", name: "netangular" },
+    { title: "Software Testing", id: "11", name: "softwaretesting" },
+    { title: "Power BI", id: "12", name: "powerbi" },
+    { title: "Data Science with Python", id: "13", name: "datascience" },
+    { title: "AWS & DevOps", id: "14", name: "awsdevops" },
+    { title: "Digital Marketing Training", id: "15", name: "digitalmarketing" },
+    { title: "FullStack Java Developer", id: "16", name: "fullstackjavadeveloper" },
+    { title: "FullStack .Net Developer", id: "17", name: "fullstacknetdeveloper" },
+    { title: "FullStack Devops Engineer", id: "18", name: "fullstackdevops" },
+    { title: "FullStack Salesforce Developer", id: "19", name: "fullstacksalesforce" },
+    { title: "FullStack Testing", id: "20", name: "fullstacktesting" },
+    { title: "FullStack Python Developer", id: "21", name: "fullstackpython" },
+    { title: "FullStack Development with AI", id: "22", name: "fullstackai" },
+    { title: "Diploma in Digital Marketing", id: "23", name: "diplomadigitalmarketing" },
+    { title: "FullStack Web Developer", id: "24", name: "fullstackwebdeveloper" },
+    { title: "Manual Testing", id: "25", name: "manualtesting" },
+    { title: "Selenium with Java", id: "26", name: "seleniumwithjava" },
+    { title: "Salesforce Development", id: "27", name: "salesforcedevelopment" }
+  ];
+
 
   const handelstatus = async (id, isactive) => {
     // console.log("insaide Handel Status",  id)
@@ -78,6 +115,7 @@ const StudentInfo = () => {
 
       console.log("Update Response:", response.data); // Log the response for debugging
 
+      alert("student details update sucessfully")
       // If the update is successful, update the users array in the state
       const updatedUsers = [...users];
       const index = updatedUsers.findIndex((user) => user.id === selectedUser.id); // Using `id` to identify the user
@@ -131,7 +169,7 @@ const StudentInfo = () => {
                   <td className="px-6 py-4 border border-gray-300">{user.phone}</td>
                   <td className="px-6 py-4 border border-gray-300">{user.activecourse_name}</td>
                   <td className="px-6 py-4 border border-gray-300">
-                    {user.isactive === "true" ? (
+                    {user.isactive === "TRUE" ? (
                       <>
                         <label className="mr-8"> Active </label>
                         <button
@@ -169,17 +207,17 @@ const StudentInfo = () => {
 
         {/* Modal for Editing Student Profile */}
         {isModalOpen && selectedUser && (
-          <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center">
-            <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-4xl h-auto overflow-y-auto">
+          <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center overflow-y-auto mt-[150px]items-center z-20">
+            <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-5xl h-auto ">
               <h3 className="text-2xl font-semibold mb-4">Update Student Profile</h3>
-              <h1>Student ID :{formData.id}</h1>
-              <form onSubmit={handleUpdate}>
-                <div className="grid grid-cols-3 gap-6">
+              <h1>Student ID: {formData.id}</h1>
+              <form onSubmit={handleUpdate} className="space-y-4">
+                <div className="grid grid-cols-4 gap-6">
                   <div className="mb-4">
                     <label className="block text-gray-700">Student Name</label>
                     <input
                       type="text"
-                      name="name" // Corrected name attribute
+                      name="name"
                       value={formData.name}
                       onChange={handleInputChange}
                       className="w-full px-4 py-2 border border-gray-300 rounded-md"
@@ -251,7 +289,7 @@ const StudentInfo = () => {
                       value={formData.college_name}
                       onChange={handleInputChange}
                       className="w-full px-4 py-2 border border-gray-300 rounded-md"
-                      placeholder="Enter fees"
+                      placeholder="Enter college name"
                     />
                   </div>
                   <div className="mb-4">
@@ -319,41 +357,35 @@ const StudentInfo = () => {
                       placeholder="Enter Your College Branch"
                     />
                   </div>
+                  <div className="mb-4">
+                    <label className="block text-gray-700">Current active course name</label>
+                    <input
+                      type="text"
+                      name="Branch Name"
+                      value={formData.activecourse_name}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-md"
+                      placeholder="Enter Your College Branch"
+                    />
+                  </div>
+                  <div className="mb-4">
+                    <label className="block text-gray-700"> Change Active Course </label>
+                    <select
+                      name="activecourse_name"
+                      value={formData.activecourse_name}
+                      // onChange={handleInputChange}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-md"
+                    >
+                      <option value="">Select a Course</option>
+                      {courses.map((course) => (
+                        <option key={course.id} value={course.name}>
+                          {course.title}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
                 </div>
 
-                <div className="mb-4">
-                  <label className="block text-gray-700">Course Name</label>
-                  <select
-                    name="course_name"
-                    value={formData.course_name}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md"
-                  >
-                    <option value="">Select a Course</option>
-                    {courses.map((course) => (
-                      <option key={course.id} value={course.name}>
-                        {course.title}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
-                <div className="mb-4">
-                  <label className="block text-gray-700">Course Name</label>
-                  <select
-                    name="course_name"
-                    value={formData.course_name}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md"
-                  >
-                    <option value="">Select a Course</option>
-                    {courses.map((course) => (
-                      <option key={course.id} value={course.name}>
-                        {course.title}
-                      </option>
-                    ))}
-                  </select>
-                </div>
 
 
                 <div className="flex justify-between mt-6">
@@ -373,8 +405,23 @@ const StudentInfo = () => {
                 </div>
               </form>
             </div>
+
           </div>
+
         )}
+
+        <button
+          className="z-20 fixed bottom-4 right-6 rounded-md p-2 bg-orange-600 text-white shadow-md hover:bg-orange-800"
+          onClick={() => navigate("/admindashboard")}
+        >
+           
+           <ArrowCircleLeftIcon fontSize="large" />
+          {/* <span className="material-icons text-3xl">arrow_circle_left</span> */}
+
+        </button>
+
+
+
       </div>
     </>
   );

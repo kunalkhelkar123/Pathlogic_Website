@@ -53,11 +53,11 @@ import Javadeveloper from "./SHORTCOURSES/Javadeveloper";
 import Courseoverveiw from "./SHORTCOURSES/Courseoverveiw";
 import Modules from "./SHORTCOURSES/Modules";
 // import Question from "./SHORTCOURSES/Question";
-import Answer from "./SHORTCOURSES/Answer";
+import CoursesQuestions from "./Admin/Test/CoursesQuestions";
 import Short from "./SHORTCOURSES/Short";
 import Hero from "./SHORTCOURSES/Awsdevops/Hero";
 import Overview from "./SHORTCOURSES/Awsdevops/Overveiw";
-import Course from "./SHORTCOURSES/Awsdevops/Course";
+import CoursesStudentinfo from "./Admin/Courses/CoursesStudentinfo";
 import Aws from "./SHORTCOURSES/Awsdevops/Aws";
 import Studentdetails from "./StudentDashboard/Studentdetails";
 import StudentRegistration from "./StudentRegistration/Registration";
@@ -140,6 +140,8 @@ function App() {
         <Route path="/StudentDashboard" element={<> <StudentNav /> <StudentDashboard /></>}/>
         <Route path="/StudentCourseDetails" element={<> <StudentNav /> <StudentCourseDetails /></>} />
         <Route path="/admin/studentdetails" element={<><AdminNavbar /> <Studentdetails /></>} />
+        <Route path="/admin/CoursesStudentinfo" element={<><AdminNavbar /> <CoursesStudentinfo /></>} />
+        <Route path="/admin/CoursesQuestions" element={<><AdminNavbar /> <CoursesQuestions /></>} />
 
         {/* <Route path="/Loginform" element={<Loginform />} /> */}
 
