@@ -59,7 +59,7 @@ import Hero from "./SHORTCOURSES/Awsdevops/Hero";
 import Overview from "./SHORTCOURSES/Awsdevops/Overveiw";
 import Course from "./SHORTCOURSES/Awsdevops/Course";
 import Aws from "./SHORTCOURSES/Awsdevops/Aws";
-import Softhero from "./SHORTCOURSES/Software/Softhero";
+import Studentdetails from "./StudentDashboard/Studentdetails";
 import StudentRegistration from "./StudentRegistration/Registration";
 import StudentLogin from "./Login/StudentLogin/StudentLogin";
 import StudentDashboard from "./StudentDashboard/StudentDashboard";
@@ -76,7 +76,7 @@ import QuickEnquiry from "./Quick Enquiry/QuickEnquiry";
 import Studentinfo from "./Admin/Studentinfo";
 import StudentProfileForm from "./Admin/StudentProfileForm"
 import AdminNavbar from "./Admin/Adminnav";
-import StudentInfo from "./Admin/Studentinfo";
+import StudentCourseDetails from "./StudentDashboard/StudentCourseDetails";
 import CoursesList from "./Admin/Courses/CoursesList";
 // 
 
@@ -125,21 +125,21 @@ function App() {
         <Route path="/QuickEnquiry" element={<Layout><QuickEnquiry /></Layout>} />
         <Route path="/studentregistration" element={<Layout><StudentRegistration /> </Layout>} />
         <Route path="/StudentLogin" element={<Layout> <StudentLogin /></Layout>} />
-        <Route path="/StudentDashboard" element={<> <StudentNav /> <StudentDashboard /></>
-        }
-        />
         <Route path="/adminLogin" element={<AdminLogin />} />
         <Route path="/admindashboard" element={<AdminDashboard />} />
 
         {/* <Route path="/admin/studentinfo" element={<Studentinfo />} /> */}
 
-        <Route path="/admin/studentinfo" element={<><AdminNavbar/> <Studentinfo /></>} />
-        <Route path="/admin/courseDetails" element={<><AdminNavbar/> <CoursesList/></>} />
+        <Route path="/admin/studentinfo" element={<><AdminNavbar /> <Studentinfo /></>} />
+        <Route path="/admin/courseDetails" element={<><AdminNavbar /> <CoursesList /></>} />
         <Route path="/admin/CourseSection" element={<Courses />} />
         <Route path="/CourseSection/Test" element={<Test />} />
         {/* <Route path="/admin/Workshop" element={<Studentinfo />} /> */}
         {/* <Route path="/admin/Staffinfo" element={<Studentinfo />} /> */}
         <Route path="/StudentProfileForm" element={<StudentProfileForm />} />
+        <Route path="/StudentDashboard" element={<> <StudentNav /> <StudentDashboard /></>}/>
+        <Route path="/StudentCourseDetails" element={<> <StudentNav /> <StudentCourseDetails /></>} />
+        <Route path="/admin/studentdetails" element={<><AdminNavbar /> <Studentdetails /></>} />
 
         {/* <Route path="/Loginform" element={<Loginform />} /> */}
 

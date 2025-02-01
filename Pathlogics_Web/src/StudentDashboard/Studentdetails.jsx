@@ -11,7 +11,7 @@ const StudentInfo = () => {
   useEffect(() => {
     const fetchStudentDetails = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/api/admin/getStudent");
+        const response = await axios.get("http://localhost:4000/api/admin/getStudent",{});
         // console.log("Fetched Student Data:", response.data);
         setUsers(response.data?.StudentData || []); // Set data to state
       } catch (error) {
@@ -30,7 +30,7 @@ const StudentInfo = () => {
     }));
   };
 
-  const handelstatus = async (id, isactive) => {
+  const handelstatus = async (id, isactive) =>{
     // console.log("insaide Handel Status",  id)
     // console.log("insaide Handel Status",  isactive)
     try {
@@ -60,34 +60,66 @@ const StudentInfo = () => {
     setIsModalOpen(!isModalOpen);
   };
 
+  const courses = [
+    { title: "Core Java", id: "1", name: "corejava" },
+    { title: "Advanced Java", id: "2", name: "advancedjava" },
+    { title: "React.JS", id: "3", name: "reactjs" },
+    { title: "Angular.JS", id: "4", name: "angularjs" },
+    { title: "Node.JS", id: "5", name: "nodejs" },
+    { title: "Python Programming", id: "6", name: "python" },
+    { title: "React Native", id: "7", name: "reactnative" },
+    { title: "Full Stack Java Development", id: "8", name: "fullstackjava" },
+    { title: ".NET Core Development", id: "9", name: "netcore" },
+    { title: ".NET with Angular", id: "10", name: "netangular" },
+    { title: "Software Testing", id: "11", name: "softwaretesting" },
+    { title: "Power BI", id: "12", name: "powerbi" },
+    { title: "Data Science with Python", id: "13", name: "datascience" },
+    { title: "AWS & DevOps", id: "14", name: "awsdevops" },
+    { title: "Digital Marketing Training", id: "15", name: "digitalmarketing" },
+    { title: "FullStack Java Developer", id: "16", name: "fullstackjavadeveloper" },
+    { title: "FullStack .Net Developer", id: "17", name: "fullstacknetdeveloper" },
+    { title: "FullStack Devops Engineer", id: "18", name: "fullstackdevops" },
+    { title: "FullStack Salesforce Developer", id: "19", name: "fullstacksalesforce" },
+    { title: "FullStack Testing", id: "20", name: "fullstacktesting" },
+    { title: "FullStack Python Developer", id: "21", name: "fullstackpython" },
+    { title: "FullStack Development with AI", id: "22", name: "fullstackai" },
+    { title: "Diploma in Digital Marketing", id: "23", name: "diplomadigitalmarketing" },
+    { title: "FullStack Web Developer", id: "24", name: "fullstackwebdeveloper" },
+    { title: "Manual Testing", id: "25", name: "manualtesting" },
+    { title: "Selenium with Java", id: "26", name: "seleniumwithjava" },
+    { title: "Salesforce Development", id: "27", name: "salesforcedevelopment" }
+  ];
+
+  
 
   const handleUpdate = async (e) => {
     e.preventDefault(); // Prevent default form submission
-
+  
     try {
       // Ensure formData contains the correct data (including id for the update)
       if (!formData.id) {
         alert("Student ID is missing");
         return;
       }
-
+  
       // Send the updated data to the backend via PUT request
       console.log("FormData", formData); // Log form data for debugging
-
+  
+      console.log("updating student")
       const response = await axios.put('http://localhost:4000/api/admin/updateStudent', formData);
-
+  
       console.log("Update Response:", response.data); // Log the response for debugging
-
+  
       // If the update is successful, update the users array in the state
       const updatedUsers = [...users];
       const index = updatedUsers.findIndex((user) => user.id === selectedUser.id); // Using `id` to identify the user
-
+  
       if (index !== -1) {
         // Update the user data in the array with the new formData
         updatedUsers[index] = { ...updatedUsers[index], ...formData }; // Merge old data with updated form data
         setUsers(updatedUsers); // Update the users state
       }
-
+  
       // Close the modal after successful update
       setIsModalOpen(false);
     } catch (error) {
@@ -96,7 +128,7 @@ const StudentInfo = () => {
     }
   };
 
-
+  
   // Handle cancel button in the modal
   const handleCancel = () => {
     setIsModalOpen(false); // Close modal without saving changes
@@ -131,27 +163,27 @@ const StudentInfo = () => {
                   <td className="px-6 py-4 border border-gray-300">{user.phone}</td>
                   <td className="px-6 py-4 border border-gray-300">{user.activecourse_name}</td>
                   <td className="px-6 py-4 border border-gray-300">
-                    {user.isactive === "true" ? (
-                      <>
-                        <label className="mr-8"> Active </label>
-                        <button
-                          onClick={() => handelstatus(user.id, user.isactive)}
-                          className="w-30 px-4 py-2 bg-red-800 text-white rounded-md  mt-4 sm:mt-0"
-                        >
-                          Inactivate
-                        </button>
-                      </>
-                    ) : (
-                      <>
-                        <label className="mr-6"> Inactive </label>
-                        <button
-                          onClick={() => handelstatus(user.id, user.isactive)}
-                          className="w-30 px-4 py-2 bg-green-800 text-white rounded-md  mt-4 sm:mt-0"
-                        >
-                          Activate
-                        </button>
-                      </>
-                    )}
+                  {user.isactive === "true" ? (
+                            <>
+                              <label className="mr-8"> Active </label>
+                              <button
+                                onClick={() => handelstatus(user.id, user.isactive)}
+                                className="w-30 px-4 py-2 bg-red-800 text-white rounded-md  mt-4 sm:mt-0"
+                              >
+                                Inactivate
+                              </button>
+                            </>
+                          ) : (
+                            <>
+                              <label className="mr-6"> Inactive </label>
+                              <button
+                                onClick={() => handelstatus(user.id, user.isactive)}
+                                className="w-30 px-4 py-2 bg-green-800 text-white rounded-md  mt-4 sm:mt-0"
+                              >
+                                Activate
+                              </button>
+                            </>
+                          )}
                   </td>
                   <td className="px-6 py-4 border border-gray-300">
                     <button
@@ -324,8 +356,8 @@ const StudentInfo = () => {
                 <div className="mb-4">
                   <label className="block text-gray-700">Course Name</label>
                   <select
-                    name="course_name"
-                    value={formData.course_name}
+                    name="activecourse_name"
+                    value={formData.activecourse_name}
                     onChange={handleInputChange}
                     className="w-full px-4 py-2 border border-gray-300 rounded-md"
                   >
@@ -333,28 +365,11 @@ const StudentInfo = () => {
                     {courses.map((course) => (
                       <option key={course.id} value={course.name}>
                         {course.title}
+                        
                       </option>
                     ))}
                   </select>
                 </div>
-
-                <div className="mb-4">
-                  <label className="block text-gray-700">Course Name</label>
-                  <select
-                    name="course_name"
-                    value={formData.course_name}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md"
-                  >
-                    <option value="">Select a Course</option>
-                    {courses.map((course) => (
-                      <option key={course.id} value={course.name}>
-                        {course.title}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
 
                 <div className="flex justify-between mt-6">
                   <button

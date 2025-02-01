@@ -35,7 +35,7 @@ const DashboardComponent = () => {
                 className="flex items-center space-x-3 hover:text-yellow-300 cursor-pointer"
               >
                 {item.icon}
-                <a href="#">{item.label}</a>
+                <a href="/adminLogin">{item.label}</a>
               </li>
             ))}
           </ul>

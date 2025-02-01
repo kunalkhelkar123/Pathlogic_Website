@@ -10,7 +10,7 @@ function AdminDashboard() {
     <>
     <AdminNavbar/>
     <DashboardComponent/>
-    <Studentinfo/>
+    {/* <Studentinfo/> */}
     </>
   )
 }

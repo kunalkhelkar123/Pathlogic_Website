@@ -333,142 +333,35 @@ const CoursesList = () => {
   const [filter, setFilter] = useState("all");
 
   const courses = [
-    {
-      title: "Core Java",
-      type: "ShortTerm Courses",
-      path: "/admin/studentinfo"
-    },
-    {
-      title: "Advanced Java",
-      type: "ShortTerm Courses",
-      path: "/admin/studentinfo"
-    },
-    {
-      title: "React.JS",
-      type: "ShortTerm Courses",
-      path: "/admin/studentinfo"
-    },
-    {
-      title: "Angular.JS",
-      type: "ShortTerm Courses",
-      path: "/admin/studentinfo"
-    },
-    {
-      title: "Node.JS",
-      type: "ShortTerm Courses",
-      path: "/admin/studentinfo"
-    },
-    {
-      title: "Python Programming",
-      type: "ShortTerm Courses",
-      path: "/admin/studentinfo"
-    },
-    {
-      title: "React Native",
-      type: "ShortTerm Courses",
-      path: "/admin/studentinfo"
-    },
-    {
-      title: "Full Stack Java Development",
-      type: "ShortTerm Courses",
-      path: "/admin/studentinfo"
-    },
-    {
-      title: ".NET Core Development",
-      type: "ShortTerm Courses",
-      path: "/admin/studentinfo"
-    },
-    {
-      title: ".NET with Angular",
-      type: "ShortTerm Courses",
-      path: "/admin/studentinfo"
-    },
-    {
-      title: "Software Testing",
-      type: "ShortTerm Courses",
-      path: "/admin/studentinfo"
-    },
-    {
-      title: "Power BI",
-      type: "ShortTerm Courses",
-      path: "/admin/studentinfo"
-    },
-    {
-      title: "Data Science with Python",
-      type: "ShortTerm Courses",
-      path: "/admin/studentinfo"
-    },
-    {
-      title: "AWS & DevOps",
-      type: "ShortTerm Courses",
-      path: "/admin/studentinfo"
-    },
-    {
-      title: "Digital Marketing Training",
-      type: "ShortTerm Courses",
-      path: "/admin/studentinfo"
-    },
-    {
-      title: "FullStack Java Developer",
-      type: "Long Term Courses",
-      path: "/admin/studentinfo"
-    },
-    {
-      title: "FullStack .Net Developer",
-      type: "Long Term Courses",
-      path: "/admin/studentinfo"
-    },
-    {
-      title: "FullStack Devops Engineer",
-      type: "Long Term Courses",
-      path: "/admin/studentinfo"
-    },
-    {
-      title: "FullStack Salesforce Developer",
-      type: "Long Term Courses",
-      path: "/admin/studentinfo"
-    },
-    {
-      title: "FullStack Testing",
-      type: "Long Term Courses",
-      path: "/admin/studentinfo"
-    },
-    {
-      title: "FullStack Python Developer",
-      type: "Long Term Courses",
-      path: "/admin/studentinfo"
-    },
-    {
-      title: "FullStack Development with AI",
-      type: "Long Term Courses",
-      path: "/admin/studentinfo"
-    },
-    {
-      title: "Diploma in Digital Marketing",
-      type: "Long Term Courses",
-      path: "/admin/studentinfo"
-    },
-    {
-      title: "FullStack Web Developer",
-      type: "Long Term Courses",
-      path: "/admin/studentinfo"
-    },
-    {
-      title: "Manual Testing",
-      type: "ShortTerm Courses",
-      path: "/admin/studentinfo"
-    },
-    {
-      title: "Selenium with Java",
-      type: "ShortTerm Courses",
-      path: "/admin/studentinfo"
-    },
-    {
-      title: "Salesforce Development",
-      type: "ShortTerm Courses",
-      path: "/admin/studentinfo"
-    }
+    { title: "Core Java", id: "1", name: "corejava" },
+    { title: "Advanced Java", id: "2", name: "advancedjava" },
+    { title: "React.JS", id: "3", name: "reactjs" },
+    { title: "Angular.JS", id: "4", name: "angularjs" },
+    { title: "Node.JS", id: "5", name: "nodejs" },
+    { title: "Python Programming", id: "6", name: "python" },
+    { title: "React Native", id: "7", name: "reactnative" },
+    { title: "Full Stack Java Development", id: "8", name: "fullstackjava" },
+    { title: ".NET Core Development", id: "9", name: "netcore" },
+    { title: ".NET with Angular", id: "10", name: "netangular" },
+    { title: "Software Testing", id: "11", name: "softwaretesting" },
+    { title: "Power BI", id: "12", name: "powerbi" },
+    { title: "Data Science with Python", id: "13", name: "datascience" },
+    { title: "AWS & DevOps", id: "14", name: "awsdevops" },
+    { title: "Digital Marketing Training", id: "15", name: "digitalmarketing" },
+    { title: "FullStack Java Developer", id: "16", name: "fullstackjavadeveloper" },
+    { title: "FullStack .Net Developer", id: "17", name: "fullstacknetdeveloper" },
+    { title: "FullStack Devops Engineer", id: "18", name: "fullstackdevops" },
+    { title: "FullStack Salesforce Developer", id: "19", name: "fullstacksalesforce" },
+    { title: "FullStack Testing", id: "20", name: "fullstacktesting" },
+    { title: "FullStack Python Developer", id: "21", name: "fullstackpython" },
+    { title: "FullStack Development with AI", id: "22", name: "fullstackai" },
+    { title: "Diploma in Digital Marketing", id: "23", name: "diplomadigitalmarketing" },
+    { title: "FullStack Web Developer", id: "24", name: "fullstackwebdeveloper" },
+    { title: "Manual Testing", id: "25", name: "manualtesting" },
+    { title: "Selenium with Java", id: "26", name: "seleniumwithjava" },
+    { title: "Salesforce Development", id: "27", name: "salesforcedevelopment" }
   ];
+  
   
     
   
@@ -531,7 +424,7 @@ const CoursesList = () => {
                   
                   {/* Buttons */}
                   <div className="flex gap-4">
-                    <Link to={course.path}>
+                  <Link to={{ pathname: course.path }} state={{ courseId: course.id, courseName: course.name }}>
                       <button className="flex-1 border border-[#ff6b33] text-[#ff6b33] py-2 px-4 rounded-lg hover:bg-[#ff6b33] hover:text-white transition-colors">
                         Student Details
                       </button>

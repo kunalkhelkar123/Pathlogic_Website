@@ -131,7 +131,7 @@ export default function Navbar() {
         </div>
         <nav className="hidden md:flex space-x-2 sm:space-x-4 md:space-x-6 ml-auto">
           <Link
-            to="/"
+            to="/StudentDashboard"
             className="text-gray-700 hover:text-orange-500 font-medium flex items-center"
           >
             <FaHome className="mr-2" />

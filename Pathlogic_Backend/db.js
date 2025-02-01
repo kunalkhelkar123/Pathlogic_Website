@@ -4,8 +4,8 @@ const mysql = require("mysql2/promise"); // Use `mysql2/promise` for async/await
 const connection = mysql.createPool({
   host: "localhost",
   user: "root",
-  // password: "admin",
-  password: "root@123",
+  password: "Kunal@123",
+  // password: "root@123",
   database: "pathlogic_tech",
 });
 

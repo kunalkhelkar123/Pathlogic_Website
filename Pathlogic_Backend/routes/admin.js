@@ -60,7 +60,7 @@ router.post("/addStudent", async (req, res) => {
 // Update an existing student
 router.put("/updateStudent", async (req, res) => {
   try {
-    // console.log("inside update student", req.body);
+    console.log("inside update student", req.body);
 
     const {
       id,
@@ -78,6 +78,7 @@ router.put("/updateStudent", async (req, res) => {
       year_of_passout,
       interested_course,
       activecourse_name,
+      
     } = req.body;
     // console.log("id in update student", id);
 
@@ -109,6 +110,11 @@ router.put("/updateStudent", async (req, res) => {
     ]; // Include the student's ID to identify which student to update
     // console.log("Update Values In DB");
     const [result] = await db.query(query, values);
+
+
+
+console.log("result ", result)
+
     // console.log("Updated Data");
     if (result.affectedRows === 0) {
       return res.status(404).json({ message: "Student not found." });
