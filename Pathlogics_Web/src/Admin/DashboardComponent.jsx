@@ -25,17 +25,17 @@ const DashboardComponent = () => {
             {[
               { icon: <FaHome className="text-xl" />, label: "Home" },
               { icon: <FaUserGraduate className="text-xl" />, label: "Student" , path:"/admin/Studentinfo" },
-              { icon: <FaPlus className="text-xl" />, label: "Test Question" ,path:"admin/CourseSection" },
-              { icon: <FaUser className="text-xl" />, label: "Profile" },
-              { icon: <FaBook className="text-xl" />, label: "Contact us" },
-              { icon: <FaSignOutAlt className="text-xl" />, label: "Logout" },
+              { icon: <FaPlus className="text-xl" />, label: "Test Question" ,path:"/admin/CourseSection" },
+              { icon: <FaUser className="text-xl" />, label: "Profile",path:"/admindashboard" },
+              // { icon: <FaBook className="text-xl" />, label: "Contact us" ,path:"/admin/CourseSection"},
+              { icon: <FaSignOutAlt className="text-xl" />, label: "Logout" ,path:"/adminLogin"},
             ].map((item, index) => (
               <li
                 key={index}
                 className="flex items-center space-x-3 hover:text-yellow-300 cursor-pointer"
               >
                 {item.icon}
-                <a href={item.path}>{item.label}</a>
+                <Link to={item.path}>{item.label}</Link>
               </li>
             ))}
           </ul>
@@ -77,9 +77,9 @@ const DashboardComponent = () => {
           
             {
               icon: <FaUsers className="text-4xl mb-4" />,
-              title: "Staff",
+              title: "Trainers",
               description: "View and assign staff roles",
-              path: "/admin/Staffinfo"
+              path: "/admin/Trainerinfo"
             },
           ].map((card, index) => (
             <div

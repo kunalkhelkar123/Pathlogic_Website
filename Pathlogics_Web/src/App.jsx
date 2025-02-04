@@ -78,6 +78,8 @@ import StudentProfileForm from "./Admin/StudentProfileForm"
 import AdminNavbar from "./Admin/Adminnav";
 import StudentCourseDetails from "./StudentDashboard/StudentCourseDetails";
 import CoursesList from "./Admin/Courses/CoursesList";
+import Trainerinfo from "./Trainers/Staff/TrainerDashboard";
+
 // 
 
 // import { useEffect } from "react";
@@ -142,6 +144,7 @@ function App() {
         <Route path="/admin/studentdetails" element={<><AdminNavbar /> <Studentdetails /></>} />
         <Route path="/admin/CoursesStudentinfo" element={<><AdminNavbar /> <CoursesStudentinfo /></>} />
         <Route path="/admin/CoursesQuestions" element={<><AdminNavbar /> <CoursesQuestions /></>} />
+        <Route path="/admin/Trainerinfo" element={<><AdminNavbar /> <Trainerinfo /></>} />
 
         {/* <Route path="/Loginform" element={<Loginform />} /> */}
 

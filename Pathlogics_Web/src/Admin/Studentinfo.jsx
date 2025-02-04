@@ -35,7 +35,11 @@ const StudentInfo = () => {
     }));
   };
 
-
+  const trainer = [
+    { title: "Shailesh Sir", id: "1", trainerid: "Shailesh123" },
+    { title: "Kunal Sir", id: "2", trainerid: "Kunal123" },
+    // { title: "React.JS", id: "3", name: "reactjs" }
+  ]
   const courses = [
     { title: "Core Java", id: "1", name: "corejava" },
     { title: "Advanced Java", id: "2", name: "advancedjava" },
@@ -207,8 +211,8 @@ const StudentInfo = () => {
 
         {/* Modal for Editing Student Profile */}
         {isModalOpen && selectedUser && (
-          <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center overflow-y-auto mt-[150px]items-center z-20">
-            <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-5xl h-auto ">
+          <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center overflow-y-auto mt-[120px]items-center z-20">
+            <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-7xl h-[800px] ">
               <h3 className="text-2xl font-semibold mb-4">Update Student Profile</h3>
               <h1>Student ID: {formData.id}</h1>
               <form onSubmit={handleUpdate} className="space-y-4">
@@ -385,7 +389,35 @@ const StudentInfo = () => {
                     </select>
                   </div>
                 </div>
+                <div className="mb-4">
+                    <label className="block text-gray-700">Trainer Name</label>
+                    <input
+                      type="text"
+                      name="trainerid"
+                      value={formData.trainerid}
+                      // onChange={handleInputChange}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-md"
+                      placeholder="Enter Your College Branch"
+                    />
+                  </div>
 
+                <div className="mb-4">
+                  <label className="block text-gray-700">Trainer Name</label>
+                  <select
+                    name="trainerid"
+                    value={formData.trainerid}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md"
+                  >
+                    <option value="">Select a trainer</option>
+                    {trainer.map((trainer) => (
+                      <option key={trainer.id} value={trainer.trainerid}>
+                        {trainer.title}
+                        
+                      </option>
+                    ))}
+                  </select>
+                </div>
 
 
                 <div className="flex justify-between mt-6">

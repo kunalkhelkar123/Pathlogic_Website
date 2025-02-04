@@ -215,9 +215,10 @@ router.put("/updateStudent", async (req, res) => {
       year_of_passout,
       interested_course,
       activecourse_name,
+      trainerid
 
     } = req.body;
-    // console.log("id in update student", id);
+    console.log("trainerid in update student", trainerid);
 
     // const { studentName, email, phoneNumber, activeCourse, isActive } = req.body;
 
@@ -226,7 +227,7 @@ router.put("/updateStudent", async (req, res) => {
     }
 
     const query = `UPDATE students_info 
-    SET name = ?, email = ?, city = ?, pin = ?, isactive = ?, username = ?, phone = ?, college_name = ?, course_name = ?, current_year = ?, year_of_admission = ?, year_of_passout = ?, interested_course = ?, activecourse_name = ? 
+    SET name = ?, email = ?, city = ?, pin = ?, isactive = ?, username = ?, phone = ?, college_name = ?, course_name = ?, current_year = ?, year_of_admission = ?, year_of_passout = ?, interested_course = ?, activecourse_name = ? ,trainerid = ?
     WHERE id = ?`; // Assuming you're updating a specific student by ID
     const values = [
       name,
@@ -243,6 +244,7 @@ router.put("/updateStudent", async (req, res) => {
       year_of_passout,
       interested_course,
       activecourse_name,
+      trainerid,
       id,
     ]; // Include the student's ID to identify which student to update
     // console.log("Update Values In DB");
@@ -314,5 +316,157 @@ router.put("/updateStatus", async (req, res) => {
     res.status(500).json({ message: "Failed to update student." });
   }
 });
+
+
+
+router.get("/getTrainer", async (req, res) => {
+  try {
+    console.log("check1 from trainer ");
+
+    const [user] = await db.query("SELECT * FROM trainers_info");
+    // console.log("check2");
+
+    if (user.length === 0) {
+      console.log(user);
+      return res.status(201).json({ message: "Student Not Found." });
+    }
+
+    console.log("check3");
+    res
+      .status(200)
+      .json({ message: "Trainer Data Fetch Successfully", TrainerData: user });
+  } catch (err) {
+    console.log("check4 ");
+    console.error(err);
+    res.status(500).json({ message: "Internal Server Error" });
+  }
+});
+
+router.post("/addTrainer", async (req, res) => {
+  try {
+    const { name, phone, email, status, password } =
+      req.body;
+
+    if (!name || !email || !phone || !status || !password) {
+      return res.status(400).json({ message: "All fields are required." });
+    }
+
+    const query =
+      "INSERT INTO trainers_info (name, email, phone, status, password) VALUES (?, ?, ?, ?, ?)";
+    const values = [
+      name,
+      email,
+      phone,
+      status,
+      password,
+    ];
+
+    await db.query(query, values);
+
+    res.status(201).json({ message: "trainer added successfully." });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: "Failed to add trainer." });
+  }
+});
+
+router.delete("/deleteTrainer/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    if (!id) {
+      return res.status(400).json({ message: "Trainer ID is required." });
+    }
+
+    const query = "DELETE FROM trainers_info WHERE id = ?";
+    const values = [id];
+
+    const [result] = await db.query(query, values);
+
+    if (result.affectedRows === 0) {
+      return res.status(404).json({ message: "Trainer not found." });
+    }
+
+    res.status(200).json({ message: "Trainer deleted successfully." });
+  } catch (err) {
+    console.error("Error deleting trainer:", err);
+    res.status(500).json({ message: "Failed to delete trainer." });
+  }
+});
+
+router.put("/updateTrainerStatus/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { status } = req.body;
+
+    if (!status || !id) {
+      return res.status(400).json({ message: "Trainer ID and status are required." });
+    }
+
+    // Validate the status to ensure it's either 'active' or 'inactive'
+    if (status !== "active" && status !== "inactive") {
+      return res.status(400).json({ message: "Invalid status value. It must be either 'active' or 'inactive'." });
+    }
+
+    const query = "UPDATE trainers_info SET status = ? WHERE id = ?";
+    const values = [status, id];
+
+    const [result] = await db.query(query, values);
+
+    if (result.affectedRows === 0) {
+      return res.status(404).json({ message: "Trainer not found." });
+    }
+
+    res.status(200).json({ message: `Trainer status updated to ${status}` });
+  } catch (err) {
+    console.error("Error updating trainer status:", err);
+    res.status(500).json({ message: "Failed to update trainer status." });
+  }
+});
+
+router.put("/updateTrainer/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { name, phone, email, status, password } = req.body;
+
+    console.log("insdiedee", name, phone, email, status, password, id)
+    // Validate required fields
+    if (!name || !phone || !email || !status || !password || !id) {
+      return res.status(400).json({ message: "All fields (name, phone, email, status, password, id) are required." });
+    }
+
+    // Validate the status to ensure it's either 'active' or 'inactive'
+    if (status !== "active" && status !== "inactive") {
+      return res.status(400).json({ message: "Invalid status value. It must be either 'active' or 'inactive'." });
+    }
+
+    // Query to check if the trainer exists
+    const response = await db.query('SELECT * FROM trainers_info WHERE id = ?', [id])
+
+
+    if (response.length === 0) {
+      return res.status(200).json({ message: "Trainer not found" });
+
+    }
+      
+      
+    const query = "UPDATE trainers_info SET name = ?, phone = ?, email = ?, status = ?, password = ? WHERE id = ?";
+    const values = [name, phone, email, status, password, id];
+      
+      
+      const response2=await db.query(query, values,)
+      
+      
+      if (response2.affectedRows === 0) {
+        return res.status(404).json({ message: "Trainer not found" });
+      }
+      
+      res.status(200).json({ message: "Trainer updated successfully" });
+    
+  } catch (err) {
+  console.error("Error in updateTrainer route:", err);
+  res.status(500).json({ message: "Failed to update trainer." });
+}})
+
 
 module.exports = router;

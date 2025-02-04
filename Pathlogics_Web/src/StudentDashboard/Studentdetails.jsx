@@ -74,6 +74,12 @@ const StudentInfo = () => {
     setIsModalOpen(!isModalOpen);
   };
 
+  const trainer = [
+    { title: "Shailesh Sir", id: "1", name: "MERN Stack" },
+    { title: "Kunal Sir", id: "2", name: "MERN Stack" },
+    // { title: "React.JS", id: "3", name: "reactjs" }
+  ]
+
   const courses = [
     { title: "Core Java", id: "1", name: "corejava" },
     { title: "Advanced Java", id: "2", name: "advancedjava" },
@@ -384,6 +390,26 @@ const StudentInfo = () => {
                     ))}
                   </select>
                 </div>
+
+                <div className="mb-4">
+                  <label className="block text-gray-700">Trainer Name</label>
+                  <select
+                    name="trainer"
+                    value={formData.trainer}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md"
+                  >
+                    <option value="">Select a trainer</option>
+                    {trainer.map((trainer) => (
+                      <option key={trainer.id} value={trainer.title}>
+                        {trainer.title}
+                        
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+
 
                 <div className="flex justify-between mt-6">
                   <button

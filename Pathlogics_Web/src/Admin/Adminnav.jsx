@@ -42,13 +42,13 @@ export default function AdminNavbar() {
 
         {/* Navigation Links */}
         <nav className="hidden md:flex space-x-2 sm:space-x-4 md:space-x-6 ml-auto">
-        <Link
+        {/* <Link
             to="#"
             className="text-gray-700 hover:text-orange-500 font-medium flex items-center"
           >
             <FaHome className="mr-2" />
             Info
-          </Link>
+          </Link> */}
           <Link
             to="/admindashboard"
             className="text-gray-700 hover:text-orange-500 font-medium flex items-center"
@@ -57,26 +57,26 @@ export default function AdminNavbar() {
             Home
           </Link>
           <Link
-            to="#"
+            to="/admin/Studentinfo"
             className="text-gray-700 hover:text-orange-500 font-medium flex items-center"
           >
             <FaBook className="mr-2" />
             students
           </Link>
-          <Link
+          {/* <Link
             to="#"
             className="text-gray-700 hover:text-orange-500 font-medium flex items-center"
           >
             <FaPhoneAlt className="mr-2" />
             Contact Us
-          </Link>
+          </Link> */}
 
           {/* Profile Dropdown */}
           <div className="relative">
             <button
               className="text-gray-700 hover:text-orange-500 font-medium flex items-center"
               onMouseEnter={() => setIsDropdownOpen(true)}
-              onMouseLeave={() => setIsDropdownOpen(false)}
+              // onMouseLeave={() => setIsDropdownOpen(false)}
             >
               <FaUserCircle className="mr-2" />
               My Profile
@@ -89,11 +89,11 @@ export default function AdminNavbar() {
               >
                 <ul className="space-y-1 ">
                   <li className="hover:bg-orange-100 p-2 rounded-md cursor-pointer">
-                    Option 1
+                    Profile
                   </li>
-                  <li className="hover:bg-orange-100 p-2 rounded-md cursor-pointer">
+                  {/* <li className="hover:bg-orange-100 p-2 rounded-md cursor-pointer">
                     Option 2
-                  </li>
+                  </li> */}
                   {/* <li className="hover:bg-orange-100 p-2 rounded-md cursor-pointer">
                     Option 3
                   </li> */}
