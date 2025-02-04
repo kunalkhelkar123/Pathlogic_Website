@@ -185,7 +185,7 @@ const AdminLogin = () => {
       <div className="max-w-md w-full p-8 rounded-xl shadow-lg"
         style={{ backgroundColor: "rgba(155, 147, 147, 0.8)" }} // Set transparency here
       >
-        <h2 className="text-2xl font-bold text-center text-gray-700 mb-6"><Link></Link></h2>
+        <h2 className="text-2xl font-bold text-center text-gray-700 mb-6">Admin Login</h2>
         <form onSubmit={handleSubmit} className="space-y-6">
           {error && <div className="text-red-500 text-sm text-center">{error}</div>}
 
