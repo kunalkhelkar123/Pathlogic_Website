@@ -51,6 +51,7 @@ const StudentCourseDetails = () => {
             { label: "Year of Passout", value: student.year_of_passout || "N/A" },
             { label: "Interested Course", value: student.interested_course || "N/A" },
             { label: "Active Course", value: student.activecourse_name || "N/A" },
+            { label: "Trainer Name", value: student.trainerid || "N/A" },
           ].map((item, index) => (
             <div key={index} className="p-4 bg-gray-100 rounded-lg shadow">
               <p className="text-lg font-semibold text-indigo-600">{item.label}:</p>

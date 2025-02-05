@@ -115,9 +115,16 @@ router.post("/login", async (req, res) => {
       console.log(isMatch);
       return res.status(401).json({ message: "Invalid username or password." });
     }
-
+    const accessToken = jwt.sign(
+      {
+        id: user.id,
+        email: user.name,
+      },
+      process.env.JWT_SECRET,
+      { expiresIn: "6hr" }
+    );
     // Handle successful login (return JWT or session)
-    res.status(200).json({ message: "Login successful", user: user[0] });
+    res.status(200).json({ message: "Login successful", user: user[0] , token:accessToken});
 
   } catch (err) {
     console.error(err);
@@ -137,15 +144,24 @@ router.post("/loginadmin", async (req, res) => {
     return res.status(401).json({ message: "Invalid email or password." });
   }
   console.log("user array data", user[0].password)
-  const isMatch =  bcrypt.compare(password, user[0].password);
+  const isMatch = bcrypt.compare(password, user[0].password);
   // console.log("is Match is",isMatch);
   if (!isMatch) {
     console.log(isMatch)
     return res.status(401).json({ message: "Invalid email or password." });
   }
 
+  const accessToken = jwt.sign(
+    {
+      id: user.id,
+      email: user.email,
+    },
+    process.env.JWT_SECRET,
+    { expiresIn: "6hr" }
+  );
+
   // Handle successful login (return JWT or session)
-  res.status(200).json({ message: "Login successful", user: user[0] });
+  res.status(200).json({ message: "Login successful", user: user[0] , token :accessToken});
 
   // } catch (err) {
   //   console.error(err);
@@ -154,6 +170,42 @@ router.post("/loginadmin", async (req, res) => {
 });
 
 
+router.post("/trainerlogin", async (req, res) => {
+  console.log(req.body)
+  const { username, password } = req.body;
+
+
+  const [user] = await db.query("SELECT * FROM trainers_info WHERE email = ?", [username]);
+  console.log("data is", user)
+  if (user.length === 0) {
+
+    return res.status(401).json({ message: "Invalid email or password." });
+  }
+  console.log("user array data", user[0].password)
+  const isMatch = bcrypt.compare(password, user[0].password);
+  // console.log("is Match is",isMatch);
+  if (!isMatch) {
+    console.log(isMatch)
+    return res.status(401).json({ message: "Invalid email or password." });
+  }
+
+
+  const accessToken = jwt.sign(
+    {
+      id: user.id,
+      email: user.email,
+    },
+    process.env.JWT_SECRET,
+    { expiresIn: "6hr" }
+  );
+  // Handle successful login (return JWT or session)
+  res.status(200).json({ message: "Login successful", user: user[0] , token:accessToken});
+
+  // } catch (err) {
+  //   console.error(err);
+  //   res.status(500).json({ message: "Internal Server Error" });
+  // }
+});
 
 
 

@@ -422,7 +422,7 @@ const CoursesStudentinfo = () => {
         )}
           <button
           className="z-20 fixed bottom-4 right-6 rounded-md p-2 bg-orange-600 text-white shadow-md hover:bg-orange-800"
-          onClick={() => navigate("/trainer/courseDetails")}
+          onClick={() => navigate("/admin/courseDetails")}
         >
            
            <ArrowCircleLeftIcon fontSize="large" />

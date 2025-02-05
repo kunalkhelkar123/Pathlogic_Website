@@ -63,7 +63,8 @@ export default function Navbar() {
 
   const LoginBar = [
     { name: "Student login", path: "/StudentLogin" },
-    { name: "Admin Login", path: "/adminLogin" }
+    { name: "Admin Login", path: "/adminLogin" },
+    { name: "Trainer Login", path: "/trainerLogin" }
   ];
 
   const shortTermCourses = [

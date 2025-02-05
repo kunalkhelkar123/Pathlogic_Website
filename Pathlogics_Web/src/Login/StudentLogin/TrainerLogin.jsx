@@ -158,16 +158,16 @@ const AdminLogin = () => {
 
     try {
       // Make POST request to login API for Admin
-      const response = await axios.post("http://localhost:4000/api/auth/loginadmin", formData);
+      const response = await axios.post("http://localhost:4000/api/auth/trainerlogin", formData);
       console.log(response);
       if (response.status === 200) {
         // Handle successful login
-        sessionStorage.setItem("adminData", JSON.stringify(response.data));
+        sessionStorage.setItem("trainerData", JSON.stringify(response.data));
 
         // Redirect to the admin dashboard
-        navigate("/admindashboard");
-        console.log("Admin Login Successful", response.data.token);
-        alert("Admin login successful!");
+        navigate("/trainerDashboard");
+        console.log("trainer Login Successful", response.data);
+        alert("Trainer login successful!");
       }
     } catch (err) {
       console.error("Login failed", err);
@@ -185,7 +185,7 @@ const AdminLogin = () => {
       <div className="max-w-md w-full p-8 rounded-xl shadow-lg"
         style={{ backgroundColor: "rgba(155, 147, 147, 0.8)" }} // Set transparency here
       >
-        <h2 className="text-2xl font-bold text-center text-gray-700 mb-6"><Link to="/"> Admin Login</Link></h2>
+        <h2 className="text-2xl font-bold text-center text-gray-700 mb-6"><Link to="/"> Trainer Login</Link></h2>
         <form onSubmit={handleSubmit} className="space-y-6">
           {error && <div className="text-red-500 text-sm text-center">{error}</div>}
 
@@ -236,11 +236,11 @@ const AdminLogin = () => {
                 name="rememberMe"
                 className="h-4 w-4 text-blue-500 border-gray-300 rounded focus:ring-blue-500"
               />
-              <label htmlFor="rememberMe" className="ml-2 text-sm text-gray-600">
+              <label htmlFor="rememberMe" className="ml-2 text-sm text-gray-800">
                 Remember me
               </label>
             </div>
-            <a href="#" className="text-sm text-blue-500 hover:underline">
+            <a href="#" className="text-sm text-black hover:underline">
               Forgot password?
             </a>
           </div>
