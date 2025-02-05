@@ -68,6 +68,8 @@ import Scrolltop from "./Scrolltop";
 import Pop from "../src/Home/pop/Pop"
 import Courses from "./Admin/Test/Courses";
 import Test from "./Admin/Test/Test";
+import Test2 from "./ABOUT/Test";
+
 import AdminLogin from "./Login/StudentLogin/AdminLogin";
 import AdminDashboard from "./Admin/AdminDashboard";
 
@@ -78,7 +80,12 @@ import StudentProfileForm from "./Admin/StudentProfileForm"
 import AdminNavbar from "./Admin/Adminnav";
 import StudentCourseDetails from "./StudentDashboard/StudentCourseDetails";
 import CoursesList from "./Admin/Courses/CoursesList";
-import Trainerinfo from "./Trainers/Staff/TrainerDashboard";
+import Trainerinfo from "./Admin/TrainerDashboard";
+import TrainerLogin from "./Login/StudentLogin/TrainerLogin";
+import TrainerDashboard from "./Trainers/TrainerDashboard";
+import StudentInfo from "./Trainers/Studentinfo";
+import TrainerCoursesList from "./Trainers/Courses/CoursesList";
+import TrainerCourses from "./Trainers/Courses";
 
 // 
 
@@ -129,6 +136,7 @@ function App() {
         <Route path="/StudentLogin" element={<Layout> <StudentLogin /></Layout>} />
         <Route path="/adminLogin" element={<AdminLogin />} />
         <Route path="/admindashboard" element={<AdminDashboard />} />
+        <Route path="/test" element={<Test2 />} />
 
         {/* <Route path="/admin/studentinfo" element={<Studentinfo />} /> */}
 
@@ -148,6 +156,13 @@ function App() {
 
         {/* <Route path="/Loginform" element={<Loginform />} /> */}
 
+        <Route path="/trainerLogin" element={<TrainerLogin />} />
+        <Route path="/trainerdashboard" element={<TrainerDashboard />} />
+        <Route path="/trainer/studentinfo" element={<StudentInfo />} />
+        <Route path="/trainer/courseDetails" element={<TrainerCoursesList/>} />
+        <Route path="/trainer/CoursesStudentinfo" element={<> <CoursesStudentinfo /></>} />
+        <Route path="/trainer/CourseSection" element={<TrainerCourses />} />
+        <Route path="/trainer/CoursesQuestions" element={<> <CoursesQuestions /></>} />
 
 
 

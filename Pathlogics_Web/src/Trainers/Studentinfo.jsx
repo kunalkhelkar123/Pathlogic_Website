@@ -1,37 +1,49 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useLocation } from "react-router-dom";
-import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
 import { useNavigate } from "react-router-dom";
-const CoursesStudentinfo = () => {
-  const navigate = useNavigate();
-  const location = useLocation();
-  const { courseId, courseName } = location.state || {}; // Get the passed data
-
-  console.log("courseId, courseName", courseId, courseName)
-
+// import Icon from '@material-ui/core/Icon';
+import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
+const StudentInfo = () => {
   const [users, setUsers] = useState([]); // State to store user data
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedUser, setSelectedUser] = useState(null);
   const [formData, setFormData] = useState({}); // State to handle form data
   const [datachanges, setDataChanges] = useState(false);
   // Fetch student details on component mount
+  const navigate = useNavigate();
+  const [trainerid, setTrainerid] = useState(null)
+
+
+
+  useEffect(() => {
+    try {
+      const trainerData = sessionStorage.getItem("trainerData");
+      if (trainerData) {
+        const trainer = JSON.parse(trainerData);
+        console.log("trainer==> ", trainer?.user?.trainerid);
+        setTrainerid(trainer?.user?.trainerid);
+      }
+    } catch (error) {
+      console.error("Error parsing trainer data: ", error);
+      // navigate("/admin"); // Uncomment if you have navigation logic
+    }
+  }, []);
+
+
+
   useEffect(() => {
     const fetchStudentDetails = async () => {
       try {
-        const response = await axios.post("http://localhost:4000/api/admin/getStudentbyname",
-          { activecourse_name: courseName }, // Send data in request body
-          { headers: { "Content-Type": "application/json" } } // Set content type
-        );
-
-        setUsers(response.data?.StudentData || []); // Update state with fetched data
+        console.log("traineridddddd", trainerid)
+        const response = await axios.post(`http://localhost:4000/api/admin/getStudent/${trainerid}`);
+        // console.log("Fetched Student Data:", response.data);
+        setUsers(response.data?.StudentData || []); // Set data to state
       } catch (error) {
         console.error("Error fetching student details:", error);
       }
     };
-
     fetchStudentDetails();
-  }, [datachanges]); // Empty dependency array ensures it runs only on mount
+  }, [datachanges , trainerid]); // Empty dependency array ensures it runs only on mount
 
   // Handle input changes in the form
   const handleInputChange = (e) => {
@@ -42,7 +54,11 @@ const CoursesStudentinfo = () => {
     }));
   };
 
-
+  const trainer = [
+    { title: "Shailesh Sir", id: "1", trainerid: "Shailesh123" },
+    { title: "Kunal Sir", id: "2", trainerid: "Kunal123" },
+    // { title: "React.JS", id: "3", name: "reactjs" }
+  ]
   const courses = [
     { title: "Core Java", id: "1", name: "corejava" },
     { title: "Advanced Java", id: "2", name: "advancedjava" },
@@ -152,9 +168,7 @@ const CoursesStudentinfo = () => {
       <div className="p-6 bg-gray-50 min-h-screen">
         <h2 className="text-center text-3xl font-semibold mb-6">Student Information</h2>
         <div className="overflow-x-auto">
-
-        
-          {users && (<table className="min-w-full border-collapse border border-gray-300">
+          <table className="min-w-full border-collapse border border-gray-300">
             <thead className="bg-orange-600 text-white">
               <tr>
                 <th className="px-6 py-3 text-left border border-gray-300">Sr. No.</th>
@@ -167,8 +181,6 @@ const CoursesStudentinfo = () => {
               </tr>
             </thead>
             <tbody>
-
-
               {users.map((user, index) => (
                 <tr
                   key={index}
@@ -201,7 +213,6 @@ const CoursesStudentinfo = () => {
                         </button>
                       </>
                     )}
-
                   </td>
                   <td className="px-6 py-4 border border-gray-300">
                     <button
@@ -213,25 +224,14 @@ const CoursesStudentinfo = () => {
                   </td>
                 </tr>
               ))}
-              
             </tbody>
-          </table>)}
-
+          </table>
         </div>
-
-        {users.length === 0 && (
-  <div className="flex flex-col items-center justify-center p-6 bg-gray-100 rounded-lg shadow-md">
-    <h1 className="text-xl font-semibold text-gray-800">
-      No students enrolled for this course
-    </h1>
-    <p className="text-gray-600 text-sm mt-2">Please check back later.</p>
-  </div>
-)}
 
         {/* Modal for Editing Student Profile */}
         {isModalOpen && selectedUser && (
-          <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center overflow-y-auto mt-[150px]items-center z-20">
-            <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-5xl h-auto ">
+          <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center overflow-y-auto mt-[120px]items-center z-20">
+            <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-7xl h-[600px] ">
               <h3 className="text-2xl font-semibold mb-4">Update Student Profile</h3>
               <h1>Student ID: {formData.id}</h1>
               <form onSubmit={handleUpdate} className="space-y-4">
@@ -381,23 +381,62 @@ const CoursesStudentinfo = () => {
                     />
                   </div>
                   <div className="mb-4">
-                    <label className="block text-gray-700">Course Name</label>
-                    <select
-                      name="course_name"
-                      value={formData.course_name}
+                    <label className="block text-gray-700">Current active course name</label>
+                    <input
+                      type="text"
+                      name="Branch Name"
+                      value={formData.activecourse_name}
                       onChange={handleInputChange}
                       className="w-full px-4 py-2 border border-gray-300 rounded-md"
-                    >
-                      <option value="">Select a Course</option>
+                      placeholder="Enter Your College Branch"
+                    />
+                  </div>
+                  <div className="mb-4">
+                    <label className="block text-gray-700"> Change Active Course </label>
+                    <input
+                      name="activecourse_name"
+                      value={formData.activecourse_name}
+                      // onChange={handleInputChange}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-md"
+                   / >
+                      {/* <option value="">Select a Course</option>
                       {courses.map((course) => (
                         <option key={course.id} value={course.name}>
                           {course.title}
                         </option>
-                      ))}
-                    </select>
+                      ))} */}
+                    {/* </select> */}
                   </div>
                 </div>
+                {/* <div className="mb-4">
+                  <label className="block text-gray-700">Trainer Name</label>
+                  <input
+                    type="text"
+                    name="trainerid"
+                    value={formData.trainerid}
+                    // onChange={handleInputChange}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md"
+                    placeholder="Enter Your College Branch"
+                  />
+                </div>
 
+                <div className="mb-4">
+                  <label className="block text-gray-700">Trainer Name</label>
+                  <select
+                    name="trainerid"
+                    value={formData.trainerid}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md"
+                  >
+                    <option value="">Select a trainer</option>
+                    {trainer.map((trainer) => (
+                      <option key={trainer.id} value={trainer.trainerid}>
+                        {trainer.title}
+
+                      </option>
+                    ))}
+                  </select>
+                </div> */}
 
 
                 <div className="flex justify-between mt-6">
@@ -417,21 +456,26 @@ const CoursesStudentinfo = () => {
                 </div>
               </form>
             </div>
+
           </div>
 
         )}
-          <button
+
+        <button
           className="z-20 fixed bottom-4 right-6 rounded-md p-2 bg-orange-600 text-white shadow-md hover:bg-orange-800"
-          onClick={() => navigate("/trainer/courseDetails")}
+          onClick={() => navigate("/admindashboard")}
         >
-           
-           <ArrowCircleLeftIcon fontSize="large" />
+
+          <ArrowCircleLeftIcon fontSize="large" />
           {/* <span className="material-icons text-3xl">arrow_circle_left</span> */}
 
         </button>
+
+
+
       </div>
     </>
   );
 };
 
-export default CoursesStudentinfo;
+export default StudentInfo;
