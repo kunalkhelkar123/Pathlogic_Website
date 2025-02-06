@@ -81,9 +81,17 @@ import SaForce from "./SHORTCOURSES/Salesforce Developer/SaForce";
 
 
 import Quick from "./Quick Enquiry/Quick";
-
-
-
+// import Courses from "./Home/Longtermgoal/FullstackJava/Courses";
+import Courses from "./Home/Longtermgoal/FullstackWebCourses/Courses";
+import JavaComponent from "./Home/Longtermgoal/JavaDev/JavaComponent";
+import DotNerComponent from "./Home/Longtermgoal/DotNet/DotNetComponent";
+import DevComp from "./Home/Longtermgoal/Devops/DevComp";
+import SalesComp from "./Home/Longtermgoal/SalesForce/SalesComp";
+import TestingComp from "./Home/Longtermgoal/Testing/TestingComp";
+import PythonComp from "./Home/Longtermgoal/Python/PythonComp";
+import AiComp from "./Home/Longtermgoal/FullStackAI/AiComp";
+import DigitalComp from "./Home/Longtermgoal/DigitalMarketing/DigitalComp";
+import ManualComp from "./Home/Longtermgoal/ManualTesting/ManualComp";
 // import { useEffect } from "react";
 function App() {
   const [loading, setLoading] = useState(false);
@@ -117,7 +125,7 @@ function App() {
       
       <Routes>
 
-//         <Route path="/" element={<Home />} />
+{/* //         <Route path="/" element={<Home />} />
 //         <Route path="/salesforce" element={<SaForce/>}/>
 //         <Route path="/fullstack" element={<Fullstack />} />
 //         <Route path="/placement" element={<Jobplacment />} />
@@ -133,7 +141,7 @@ function App() {
 //         <Route path="/QuickEnquiry" element={<QuickEnquiry />} />
 //         <Route path="/studentregistration" element={<StudentRegistration />} />
 //         <Route path="/StudentLogin" element={<StudentLogin />} />
-//         <Route path="/StudentDashboard" element={<StudentDashboard />} />
+//         <Route path="/StudentDashboard" element={<StudentDashboard />} /> */}
 
 
       <Route path="/" element={   <Layout>     <Home />   </Layout> }/>
@@ -152,14 +160,26 @@ function App() {
       <Route path="/QuickEnquiry"element={<Layout><QuickEnquiry /></Layout>}/>
       <Route path="/studentregistration"element={<Layout><StudentRegistration /> </Layout>}/>
       <Route path="/StudentLogin"element={ <Layout> <StudentLogin /></Layout> }/>
-      <Route path="/StudentDashboard" element={ <> <StudentNav /> <StudentDashboard /></>
-  } 
-/>
+      <Route path="/StudentDashboard" element={ <> <StudentNav /> <StudentDashboard /></>}/>
+      <Route path="/FullMERN"element={ <Layout> <Courses/></Layout> }/>
+      <Route path="/LongTermJava"element={ <Layout> <JavaComponent/></Layout> }/>
+      <Route path="/NetDev"element={ <Layout> <DotNerComponent/></Layout> }/>
+
+      <Route path="/Devops"element={ <Layout> <DevComp/></Layout> }/>
+      <Route path="/Salesforce1"element={ <Layout> <SalesComp/></Layout> }/>
+
+      <Route path="/Testing1"element={ <Layout> <TestingComp/></Layout> }/>
+      <Route path="/PythonDev"element={ <Layout> <PythonComp/></Layout> }/>
+      <Route path="/Development"element={ <Layout> <AiComp/></Layout> }/>
+      <Route path="/Diploma"element={ <Layout> <DigitalComp/></Layout> }/>
+
+      <Route path="/ManualTest"element={ <Layout> <ManualComp/></Layout> }/>
+      
 
 
 
         {/* <Route path="/Loginform" element={<Loginform />} /> */}
-        <Route path="/Intern" element={<Inter />} />
+        <Route path="/Intern" element={<Inter/>} />
 
 
 

@@ -6,6 +6,7 @@ import Thirdpage from "./Thirdpage";
 import Fourthpage from "./Fourthpage";
 import Fifthpage from "./Fifthpage";
 import Ugprogram from "./Ugprogram";
+// import ImportantDates from "./ImportantDates";
 function Inter(){
     return(<>
     <Intership/>
@@ -15,6 +16,7 @@ function Inter(){
     <Fourthpage/>
     <Fifthpage/>
     <Ugprogram/>
+    {/* <ImportantDates/> */}
     </>)
 }
 export default Inter;
