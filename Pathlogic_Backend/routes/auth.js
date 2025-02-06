@@ -51,13 +51,13 @@ router.post("/register", async (req, res) => {
     const [existingUser] = await db.query("SELECT email FROM students_info WHERE email = ?", [email]);
 
     if (existingUser.length > 0) {
-      console.log("Email already exists ",existingUser , email)
+      console.log("Email already exists ", existingUser, email)
       return res.status(401).json({ message: "Email already exists" });
     }
     const [existingUsername] = await db.query("SELECT email FROM students_info WHERE username = ?", [username]);
 
     if (existingUsername.length > 0) {
-      console.log("existingUsername already exists ",existingUsername , existingUsername)
+      console.log("existingUsername already exists ", existingUsername, existingUsername)
       return res.status(402).json({ message: "existingUsername already exists" });
     }
 
@@ -100,28 +100,113 @@ router.post("/register", async (req, res) => {
 
 router.post("/login", async (req, res) => {
   const { username, password } = req.body;
-
+  console.log("Login data:", { username, password });
   try {
     const [user] = await db.query("SELECT * FROM students_info WHERE username = ?", [username]);
 
     if (user.length === 0) {
+      console.log(user)
       return res.status(401).json({ message: "Invalid username or password." });
     }
 
     const isMatch = await bcrypt.compare(password, user[0].password);
 
     if (!isMatch) {
+      console.log(isMatch);
       return res.status(401).json({ message: "Invalid username or password." });
     }
-
+    const accessToken = jwt.sign(
+      {
+        id: user.id,
+        email: user.name,
+      },
+      process.env.JWT_SECRET,
+      { expiresIn: "6hr" }
+    );
     // Handle successful login (return JWT or session)
-    res.status(200).json({ message: "Login successful", user: user[0] });
+    res.status(200).json({ message: "Login successful", user: user[0] , token:accessToken});
 
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: "Internal Server Error" });
   }
 });
+
+router.post("/loginadmin", async (req, res) => {
+  console.log(req.body)
+  const { username, password } = req.body;
+
+
+  const [user] = await db.query("SELECT * FROM admin_user WHERE email = ?", [username]);
+  console.log("data is", user)
+  if (user.length === 0) {
+
+    return res.status(401).json({ message: "Invalid email or password." });
+  }
+  console.log("user array data", user[0].password)
+  const isMatch = bcrypt.compare(password, user[0].password);
+  // console.log("is Match is",isMatch);
+  if (!isMatch) {
+    console.log(isMatch)
+    return res.status(401).json({ message: "Invalid email or password." });
+  }
+
+  const accessToken = jwt.sign(
+    {
+      id: user.id,
+      email: user.email,
+    },
+    process.env.JWT_SECRET,
+    { expiresIn: "6hr" }
+  );
+
+  // Handle successful login (return JWT or session)
+  res.status(200).json({ message: "Login successful", user: user[0] , token :accessToken});
+
+  // } catch (err) {
+  //   console.error(err);
+  //   res.status(500).json({ message: "Internal Server Error" });
+  // }
+});
+
+
+router.post("/trainerlogin", async (req, res) => {
+  console.log(req.body)
+  const { username, password } = req.body;
+
+
+  const [user] = await db.query("SELECT * FROM trainers_info WHERE email = ?", [username]);
+  console.log("data is", user)
+  if (user.length === 0) {
+
+    return res.status(401).json({ message: "Invalid email or password." });
+  }
+  console.log("user array data", user[0].password)
+  const isMatch = bcrypt.compare(password, user[0].password);
+  // console.log("is Match is",isMatch);
+  if (!isMatch) {
+    console.log(isMatch)
+    return res.status(401).json({ message: "Invalid email or password." });
+  }
+
+
+  const accessToken = jwt.sign(
+    {
+      id: user.id,
+      email: user.email,
+    },
+    process.env.JWT_SECRET,
+    { expiresIn: "6hr" }
+  );
+  // Handle successful login (return JWT or session)
+  res.status(200).json({ message: "Login successful", user: user[0] , token:accessToken});
+
+  // } catch (err) {
+  //   console.error(err);
+  //   res.status(500).json({ message: "Internal Server Error" });
+  // }
+});
+
 
 
 
