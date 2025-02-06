@@ -82,6 +82,22 @@ import QuickEnquiry from "./Quick Enquiry/QuickEnquiry";
 
 // import Salesforce from "../src/SHORTCOURSES/Salesforce Developer/Salesforce";
 import SaForce from "./SHORTCOURSES/Salesforce Developer/SaForce";
+
+
+
+import Quick from "./Quick Enquiry/Quick";
+// import Courses from "./Home/Longtermgoal/FullstackJava/Courses";
+import Courses from "./Home/Longtermgoal/FullstackWebCourses/Courses";
+import JavaComponent from "./Home/Longtermgoal/JavaDev/JavaComponent";
+import DotNerComponent from "./Home/Longtermgoal/DotNet/DotNetComponent";
+import DevComp from "./Home/Longtermgoal/Devops/DevComp";
+import SalesComp from "./Home/Longtermgoal/SalesForce/SalesComp";
+import TestingComp from "./Home/Longtermgoal/Testing/TestingComp";
+import PythonComp from "./Home/Longtermgoal/Python/PythonComp";
+import AiComp from "./Home/Longtermgoal/FullStackAI/AiComp";
+import DigitalComp from "./Home/Longtermgoal/DigitalMarketing/DigitalComp";
+import ManualComp from "./Home/Longtermgoal/ManualTesting/ManualComp";
+
 import Java from "./SHORTCOURSES/CJava/Java";
 import Advanced from "./SHORTCOURSES/AdvJava/Advanced";
 import React from "./SHORTCOURSES/React/ReactCourse";
@@ -133,6 +149,63 @@ function App() {
     <>
       {/* <Pop /> */}
       <Scrolltop />
+// <<<<<<< rohini_dev
+      {/* <Intership/> */}
+      
+      <Routes>
+
+{/* //         <Route path="/" element={<Home />} />
+//         <Route path="/salesforce" element={<SaForce/>}/>
+//         <Route path="/fullstack" element={<Fullstack />} />
+//         <Route path="/placement" element={<Jobplacment />} />
+//         <Route path="/more" element={<More />} />
+//         <Route path="/again" element={<Again />} />
+//         <Route path="/All" element={<All />} />
+//         <Route path="/Aboutus" element={<All />} />
+     
+//         <Route path="/Workspace" element={<Workspace />} />
+//         <Route path="/Short" element={<Short />} />
+//         <Route path="/Aws" element={<Aws />} />
+//         <Route path="/Testing" element={<Testing />} />
+//         <Route path="/QuickEnquiry" element={<QuickEnquiry />} />
+//         <Route path="/studentregistration" element={<StudentRegistration />} />
+//         <Route path="/StudentLogin" element={<StudentLogin />} />
+//         <Route path="/StudentDashboard" element={<StudentDashboard />} /> */}
+
+
+      <Route path="/" element={   <Layout>     <Home />   </Layout> }/>
+                               <Route path="/salesforce" element={<SaForce/>}/>
+      <Route path="/fullstack" element={   <Layout>     <Fullstack />   </Layout> } />
+      <Route path="/placement" element={   <Layout>     <Jobplacment />   </Layout> }/>
+      <Route path="/more" element={ <Layout>   <More /> </Layout> } />
+      <Route path="/again" element={   <Layout>     <Again />   </Layout> }/>
+      <Route path="/All" element={   <Layout>  <All /></Layout> } />
+                                           <Route path = '/form' element={<Pop/>}/>
+      <Route path="/Aboutus" element={ <Layout> <All /> </Layout> }/>
+      <Route path="/Workspace"element={  <Layout> <Workspace />  </Layout> }/>
+      <Route path="/Short"element={ <Layout>   <Short />  </Layout> } />
+      <Route path="/Aws"        element={ <Layout> <Aws /> </Layout> } />
+      <Route path="/Testing"element={<Layout><Testing /></Layout>}/>
+      <Route path="/QuickEnquiry"element={<Layout><QuickEnquiry /></Layout>}/>
+      <Route path="/studentregistration"element={<Layout><StudentRegistration /> </Layout>}/>
+      <Route path="/StudentLogin"element={ <Layout> <StudentLogin /></Layout> }/>
+      <Route path="/StudentDashboard" element={ <> <StudentNav /> <StudentDashboard /></>}/>
+      <Route path="/FullMERN"element={ <Layout> <Courses/></Layout> }/>
+      <Route path="/LongTermJava"element={ <Layout> <JavaComponent/></Layout> }/>
+      <Route path="/NetDev"element={ <Layout> <DotNerComponent/></Layout> }/>
+
+      <Route path="/Devops"element={ <Layout> <DevComp/></Layout> }/>
+      <Route path="/Salesforce1"element={ <Layout> <SalesComp/></Layout> }/>
+
+      <Route path="/Testing1"element={ <Layout> <TestingComp/></Layout> }/>
+      <Route path="/PythonDev"element={ <Layout> <PythonComp/></Layout> }/>
+      <Route path="/Development"element={ <Layout> <AiComp/></Layout> }/>
+      <Route path="/Diploma"element={ <Layout> <DigitalComp/></Layout> }/>
+
+      <Route path="/ManualTest"element={ <Layout> <ManualComp/></Layout> }/>
+      
+// =======
+// >>>>>>> dev2
 
       <Routes>
 
@@ -197,6 +270,10 @@ function App() {
         <Route path="/admin/Trainerinfo" element={<><AdminNavbar /> <Trainerinfo /></>} />
 
         {/* <Route path="/Loginform" element={<Loginform />} /> */}
+// <<<<<<< rohini_dev
+        <Route path="/Intern" element={<Inter/>} />
+// =======
+// >>>>>>> dev2
 
         <Route path="/trainerLogin" element={<TrainerLogin />} />
         <Route path="/trainerdashboard" element={<TrainerDashboard />} />
