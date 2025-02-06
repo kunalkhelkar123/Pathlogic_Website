@@ -55,11 +55,15 @@ import Modules from "./SHORTCOURSES/Modules";
 // import Question from "./SHORTCOURSES/Question";
 import CoursesQuestions from "./Admin/Test/CoursesQuestions";
 import Short from "./SHORTCOURSES/Short";
+
+import Softhero from "./SHORTCOURSES/Software/Softhero";
+
 import Hero from "./SHORTCOURSES/Awsdevops/Hero";
 import Overview from "./SHORTCOURSES/Awsdevops/Overveiw";
 import CoursesStudentinfo from "./Admin/Courses/CoursesStudentinfo";
 import Aws from "./SHORTCOURSES/Awsdevops/Aws";
 import Studentdetails from "./StudentDashboard/Studentdetails";
+
 import StudentRegistration from "./StudentRegistration/Registration";
 import StudentLogin from "./Login/StudentLogin/StudentLogin";
 import StudentDashboard from "./StudentDashboard/StudentDashboard";
@@ -75,6 +79,20 @@ import AdminDashboard from "./Admin/AdminDashboard";
 
 import Testing from "./SHORTCOURSES/Software/Testing";
 import QuickEnquiry from "./Quick Enquiry/QuickEnquiry";
+
+// import Salesforce from "../src/SHORTCOURSES/Salesforce Developer/Salesforce";
+import SaForce from "./SHORTCOURSES/Salesforce Developer/SaForce";
+import Java from "./SHORTCOURSES/CJava/Java";
+import Advanced from "./SHORTCOURSES/AdvJava/Advanced";
+import React from "./SHORTCOURSES/React/ReactCourse";
+import ReactCourse from "./SHORTCOURSES/React/ReactCourse";
+import AngularCourse from "./SHORTCOURSES/Angular/AngularCourse";
+import NodeCourse from "./SHORTCOURSES/Node/NodeCourse";
+import NativeCourse from "./SHORTCOURSES/Native/NativeCourse";
+import DotNetCourse from "./SHORTCOURSES/DotNetCore/DotNetCourse";
+import DotnetAngular from "./SHORTCOURSES/DotNetAngular/DotnetAngularCourse";
+import DotnetAngularCourse from "./SHORTCOURSES/DotNetAngular/DotnetAngularCourse";
+
 import Studentinfo from "./Admin/Studentinfo";
 import StudentProfileForm from "./Admin/StudentProfileForm"
 import AdminNavbar from "./Admin/Adminnav";
@@ -86,8 +104,6 @@ import TrainerDashboard from "./Trainers/TrainerDashboard";
 import StudentInfo from "./Trainers/Studentinfo";
 import TrainerCoursesList from "./Trainers/Courses/CoursesList";
 import TrainerCourses from "./Trainers/Courses";
-
-// 
 
 // import { useEffect } from "react";
 function App() {
@@ -119,6 +135,32 @@ function App() {
       <Scrolltop />
 
       <Routes>
+
+        <Route path="/" element={<Home />} />
+        <Route path="/salesforce" element={<SaForce/>}/>
+        <Route path="/Corejava" element={<Java/>}/>
+        <Route path="/Advancedjava" element={<Advanced/>}/>
+        <Route path="/Reactjs" element={<ReactCourse/>}/>
+        <Route path="/Angularjs" element={<AngularCourse/>}/>
+        <Route path="/Native" element={<NativeCourse/>}/>
+        <Route path="/Nodejs" element={<NodeCourse/>}/>
+        <Route path="/Dotnetcore" element={<DotNetCourse/>}/>
+        <Route path="/Dotnetangular" element={<DotnetAngularCourse/>}/>
+        <Route path="/fullstack" element={<Fullstack />} />
+        <Route path="/placement" element={<Jobplacment />} />
+        <Route path="/more" element={<More />} />
+        <Route path="/again" element={<Again />} />
+        <Route path="/All" element={<All />} />
+        <Route path="/Aboutus" element={<All />} />
+        <Route path = '/form' element={<Pop/>}/>
+        <Route path="/Workspace" element={<Workspace />} />
+        <Route path="/Short" element={<Short />} />
+        <Route path="/Testing" element={<Testing />} />
+        <Route path="/QuickEnquiry" element={<QuickEnquiry />} />
+        <Route path="/studentregistration" element={<StudentRegistration />} />
+        <Route path="/StudentLogin" element={<StudentLogin />} />
+        <Route path="/StudentDashboard" element={<StudentDashboard />} />
+
 
         <Route path="/" element={<Layout>     <Home />   </Layout>} />
         <Route path="/fullstack" element={<Layout>     <Fullstack />   </Layout>} />

@@ -23,7 +23,7 @@ const Softover = () => {
       </section>
 
       <section className="mb-16 px-16 py-24o
-       bg-gradient-to-r from-[#f78f53] via-[#f0c45e] to-[#ffcb9c]">
+       bg-gradient-to-r from-[#4158D0] via-[#C850C0] to-[#FFCC70] overflow-hidden">
         <h2 className="text-4xl font-semibold text-blue-500 text-center mb-8">Course Modules</h2>
         <div className="grid md:grid-cols-2 gap-8">
           {/* Module 1 */}
