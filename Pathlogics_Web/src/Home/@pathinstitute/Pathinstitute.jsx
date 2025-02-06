@@ -90,13 +90,13 @@ export default function Navbar() {
   ];
 
   const shortTermCourses = [
-    { name: 'Full stack Java Development', path: '/JavaDevelopment' },
-    { name: 'Full stack web Development', path: '/fullstack' },
-    { name: 'Aws/Devops', path: '/Aws' },
-    { name: 'Software testing', path: '/Testing' },
-    { name: 'Salesforce Developer', path: '/SalesforceDeveloper' }, 
-    { name: 'DataScience with python', path: '/DataSciencewithpython' },
-     { name: 'Digital marketing training', path: '/Digitalmarketingtraining' }
+    {  },
+    {  },
+    { },
+    {  },
+    {  }, 
+    { },
+     { }
   ];
 
   const corparate = [
@@ -190,10 +190,10 @@ export default function Navbar() {
                 className="absolute left-0 mt-2 bg-white border border-gray-300 rounded-md shadow-lg ml-[-518px]"
                 style={{
                   zIndex: 222,
-                  width: "800px", // Adjusted width for dropdown
+                  width: "650px", // Adjusted width for dropdown
                   padding: "20px",
-                  maxHeight: "400px", // Set max height to avoid overflow
-                  overflowY: "auto", // Add scroll for long lists
+                  maxHeight: "290px", // Set max height to avoid overflow
+                   // Add scroll for long lists
                 }}
               >
 
@@ -251,7 +251,7 @@ export default function Navbar() {
                     </li>
                   ))}
                 </ul>
->
+
               </div>
             )}
           </div>

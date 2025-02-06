@@ -58,10 +58,10 @@ import Short from "./SHORTCOURSES/Short";
 
 import Softhero from "./SHORTCOURSES/Software/Softhero";
 
-import Hero from "./SHORTCOURSES/Awsdevops/Hero";
-import Overview from "./SHORTCOURSES/Awsdevops/Overveiw";
+// import Hero from "./SHORTCOURSES/Awsdevops/Hero";
+// import Overview from "./SHORTCOURSES/Awsdevops/Overveiw";
 import CoursesStudentinfo from "./Admin/Courses/CoursesStudentinfo";
-import Aws from "./SHORTCOURSES/Awsdevops/Aws";
+// import Aws from "./SHORTCOURSES/Awsdevops/Aws";
 import Studentdetails from "./StudentDashboard/Studentdetails";
 
 import StudentRegistration from "./StudentRegistration/Registration";
@@ -136,17 +136,17 @@ function App() {
 
       <Routes>
 
-        <Route path="/" element={<Home />} />
-        <Route path="/salesforce" element={<SaForce/>}/>
-        <Route path="/Corejava" element={<Java/>}/>
-        <Route path="/Advancedjava" element={<Advanced/>}/>
-        <Route path="/Reactjs" element={<ReactCourse/>}/>
-        <Route path="/Angularjs" element={<AngularCourse/>}/>
-        <Route path="/Native" element={<NativeCourse/>}/>
-        <Route path="/Nodejs" element={<NodeCourse/>}/>
-        <Route path="/Dotnetcore" element={<DotNetCourse/>}/>
-        <Route path="/Dotnetangular" element={<DotnetAngularCourse/>}/>
-        <Route path="/fullstack" element={<Fullstack />} />
+        <Route path="/AdminNavbar" element={ <Layout> <Home />  </Layout>} />
+        <Route path="/salesforce" element={ <Layout> <SaForce/> </Layout>}/>
+        <Route path="/Corejava" element={ <Layout> <Java/>  </Layout>}/>
+        <Route path="/Advancedjava" element={<Layout> <Advanced/> </Layout>}/>
+        <Route path="/Reactjs" element={<Layout> <ReactCourse/> </Layout>}/>
+        <Route path="/Angularjs" element={<Layout> <AngularCourse/> </Layout>}/>
+        <Route path="/Native" element={<Layout> <NativeCourse/> </Layout>}/>
+        <Route path="/Nodejs" element={<Layout> <NodeCourse/> </Layout>}/>
+        <Route path="/Dotnetcore" element={<Layout> <DotNetCourse/> </Layout>}/>
+        <Route path="/Dotnetangular" element={<Layout> <DotnetAngularCourse/> </Layout>}/>
+        <Route path="/fullstack" element={ <Layout> <Fullstack /> </Layout>} />
         <Route path="/placement" element={<Jobplacment />} />
         <Route path="/more" element={<More />} />
         <Route path="/again" element={<Again />} />
@@ -171,7 +171,7 @@ function App() {
         <Route path="/Aboutus" element={<Layout> <All /> </Layout>} />
         <Route path="/Workspace" element={<Layout> <Workspace />  </Layout>} />
         <Route path="/Short" element={<Layout>   <Short />  </Layout>} />
-        <Route path="/Aws" element={<Layout> <Aws /> </Layout>} />
+        {/* <Route path="/Aws" element={<Layout> <Aws /> </Layout>} /> */}
         <Route path="/Testing" element={<Layout><Testing /></Layout>} />
         <Route path="/QuickEnquiry" element={<Layout><QuickEnquiry /></Layout>} />
         <Route path="/studentregistration" element={<Layout><StudentRegistration /> </Layout>} />
