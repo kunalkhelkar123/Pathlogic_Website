@@ -55,10 +55,6 @@ import Modules from "./SHORTCOURSES/Modules";
 // import Question from "./SHORTCOURSES/Question";
 import Answer from "./SHORTCOURSES/Answer";
 import Short from "./SHORTCOURSES/Short";
-import Hero from "./SHORTCOURSES/Awsdevops/Hero";
-import Overview from "./SHORTCOURSES/Awsdevops/Overveiw";
-import Course from "./SHORTCOURSES/Awsdevops/Course";
-import Aws from "./SHORTCOURSES/Awsdevops/Aws";
 import Softhero from "./SHORTCOURSES/Software/Softhero";
 import StudentRegistration from "./StudentRegistration/Registration";
 import StudentLogin from "./StudentLogin/StudentLogin";
@@ -68,11 +64,18 @@ import Pop from "../src/Home/pop/Pop"
 
 import Testing from "./SHORTCOURSES/Software/Testing";
 import QuickEnquiry from "./Quick Enquiry/QuickEnquiry";
-import Salesforce from "../src/SHORTCOURSES/Salesforce Developer/Salesforce";
+// import Salesforce from "../src/SHORTCOURSES/Salesforce Developer/Salesforce";
 import SaForce from "./SHORTCOURSES/Salesforce Developer/SaForce";
-import DataS from "./SHORTCOURSES/DataScience With Python/DataS";
-
-
+import Java from "./SHORTCOURSES/CJava/Java";
+import Advanced from "./SHORTCOURSES/AdvJava/Advanced";
+import React from "./SHORTCOURSES/React/ReactCourse";
+import ReactCourse from "./SHORTCOURSES/React/ReactCourse";
+import AngularCourse from "./SHORTCOURSES/Angular/AngularCourse";
+import NodeCourse from "./SHORTCOURSES/Node/NodeCourse";
+import NativeCourse from "./SHORTCOURSES/Native/NativeCourse";
+import DotNetCourse from "./SHORTCOURSES/DotNetCore/DotNetCourse";
+import DotnetAngular from "./SHORTCOURSES/DotNetAngular/DotnetAngularCourse";
+import DotnetAngularCourse from "./SHORTCOURSES/DotNetAngular/DotnetAngularCourse";
 // import { useEffect } from "react";
 function App() {
   const [loading, setLoading] = useState(false);
@@ -100,7 +103,14 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/salesforce" element={<SaForce/>}/>
-        <Route path="/Data" element={<DataS/>}/>
+        <Route path="/Corejava" element={<Java/>}/>
+        <Route path="/Advancedjava" element={<Advanced/>}/>
+        <Route path="/Reactjs" element={<ReactCourse/>}/>
+        <Route path="/Angularjs" element={<AngularCourse/>}/>
+        <Route path="/Native" element={<NativeCourse/>}/>
+        <Route path="/Nodejs" element={<NodeCourse/>}/>
+        <Route path="/Dotnetcore" element={<DotNetCourse/>}/>
+        <Route path="/Dotnetangular" element={<DotnetAngularCourse/>}/>
         <Route path="/fullstack" element={<Fullstack />} />
         <Route path="/placement" element={<Jobplacment />} />
         <Route path="/more" element={<More />} />
@@ -110,7 +120,6 @@ function App() {
         <Route path = '/form' element={<Pop/>}/>
         <Route path="/Workspace" element={<Workspace />} />
         <Route path="/Short" element={<Short />} />
-        <Route path="/Aws" element={<Aws />} />
         <Route path="/Testing" element={<Testing />} />
         <Route path="/QuickEnquiry" element={<QuickEnquiry />} />
         <Route path="/studentregistration" element={<StudentRegistration />} />

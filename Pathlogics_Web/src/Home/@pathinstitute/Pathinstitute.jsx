@@ -79,26 +79,26 @@ export default function Navbar() {
     }
   };
 
-  const shortTermCourses = [
-    {name:'Core Java',path: '/Testing'},
-    {name:'Advanced Java', path: '/Testing'},
-    {name:'React.JS', path: '/Testing'},
-    {name:'Angular.JS', path: '/Testing'},
-    {name:'Node.JS', path: '/Testing'},
-    {name:'React Native', path: '/Testing'},
-    {name:'.Net Core', path: '/Testing'},
-    {name:'. Net With Angular', path: '/Testing'},
-    { name: 'Software testing', path: '/Testing' },
-    {name:'Manual Testing', path: '/Testing'},
-    {name:'Selenium With Java',path: '/Testing'},
-    {name:'PowerBI', path: '/Testing'},
-    { name: 'DataScience with python', path: '/Data' },
-    { name: 'Salesforce Developer', path: '/salesforce' }, 
-    { name: 'Full stack Java Development', path: '/Java Development' },
-    { name: 'Aws/Devops', path: '/Aws' },
-     { name: 'Digital marketing training', path: '/Digitalmarketingtraining' }
+  // const shortTermCourses = [
+  //   { name: 'Core Java', path: ' ' },
+  //   { name: 'Advanced Java', path: ' ' },
+  //   { name: 'React.JS', path: '/Testing' },
+  //   { name: 'Angular.JS', path: '/Testing' },
+  //   { name: 'Node.JS', path: '/Testing' },
+  //   { name: 'React Native', path: '/Testing' },
+  //   { name: '.Net Core', path: '/Testing' },
+  //   { name: '. Net With Angular', path: '/Testing' },
+  //   { name: 'Software testing', path: '/Testing' },
+  //   { name: 'Manual Testing', path: '/Testing' },
+  //   { name: 'Selenium With Java', path: '/Testing' },
+  //   { name: 'PowerBI', path: '/Testing' },
+  //   { name: 'DataScience with python', path: '/Data' },
+  //   { name: 'Salesforce Developement', path: '/salesforce' },
+  //   { name: 'Full stack Java Development', path: '/Java Development' },
+  //   { name: 'Aws/Devops', path: '/Aws' },
+  //   { name: 'Digital marketing training', path: '/Digitalmarketingtraining' }
 
-  ];
+  // ];
   const corparate = [
 
     { name: 'Hire for us ', path: "/again " },
@@ -151,14 +151,16 @@ export default function Navbar() {
           </button>
         </div>
         <nav className="hidden md:flex space-x-2 sm:space-x-4 md:space-x-6 ml-auto">
-        <Link to="/" className="text-gray-700 hover:text-orange-500 font-medium">Home</Link>
+          <Link to="/" className="text-gray-700 hover:text-orange-500 font-medium">Home</Link>
 
           <Link to="/All" className="text-gray-700 hover:text-orange-500 font-medium">Institute</Link>
           {/* <a href="#embedded" className="text-gray-700 hover:text-orange-500 font-medium">Embedded Systems</a> */}
           <Link to="/fullstack" className="text-gray-700 hover:text-orange-500 font-medium">Full Stack Development</Link>
 
-
-          <div className="relative" onClick={(e) => e.stopPropagation()}>
+          <div className="relative" onClick={(e) => e.stopPropagation()} 
+            onMouseEnter={() => setIsDropdownOpen(true)}
+            // onMouseLeave={() => setIsDropdownOpen(false)}
+            >
             <button
               onClick={() => setIsDropdownOpen((prevState) => !prevState)}
               className="text-gray-700 hover:text-orange-500 font-medium"
@@ -167,50 +169,66 @@ export default function Navbar() {
             </button>
             {isDropdownOpen && (
               <div
-                className="absolute left-0 mt-2 w-48 bg-white border border-gray-300 rounded-md shadow-lg"
-                style={{ zIndex: 222 }}
+                className="absolute left-0 mt-2 bg-white border border-gray-300 rounded-md shadow-lg ml-[-518px]"
+                style={{
+                  zIndex: 222,
+                  width: "800px", // Adjusted width for dropdown
+                  padding: "20px",
+                  maxHeight: "400px", // Set max height to avoid overflow
+                  overflowY: "auto", // Add scroll for long lists
+                }}
               >
-                <ul className="space-y-2 p-2">
-                  {shortTermCourses.map((course, index) => (
-                    <li key={index}>
-                      <Link
-                        to={course.path}
-                        className="block text-gray-700 hover:text-orange-500 px-4 py-2 text-sm"
-                      >
-                        {course.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
+                <div className="grid grid-cols-3 gap-6">
+                  {/* Programming Courses */}
+                  <div>
+                    <h4 className="text-lg font-semibold text-orange-500 mb-2">
+                      Programming Courses
+                    </h4>
+                    <ul className="space-y-2">
+                      <li><Link to="/Corejava" className="text-gray-700 hover:text-orange-500" onClick={() => setIsDropdownOpen(false)}>Core Java</Link></li>
+                      <li><Link to="/Advancedjava" className="text-gray-700 hover:text-orange-500" onClick={() => setIsDropdownOpen(false)}>Advanced Java</Link></li>
+                      <li><Link to="/Reactjs" className="text-gray-700 hover:text-orange-500" onClick={() => setIsDropdownOpen(false)}>React.JS</Link></li>
+                      <li><Link to="/Angularjs" className="text-gray-700 hover:text-orange-500" onClick={() => setIsDropdownOpen(false)}>Angular.JS</Link></li>
+                      <li><Link to="/Nodejs" className="text-gray-700 hover:text-orange-500" onClick={() => setIsDropdownOpen(false)}>Node.JS</Link></li>
+                      <li><Link to="/Native" className="text-gray-700 hover:text-orange-500" onClick={() => setIsDropdownOpen(false)}>React Native</Link></li>
+                    </ul>
+                  </div>
+
+                  {/* .Net & Testing */}
+                  <div>
+                    <h4 className="text-lg font-semibold text-orange-500 mb-2">
+                      DotNet & Testing
+                    </h4>
+                    <ul className="space-y-2">
+                      <li><Link to="/Dotnetcore" className="text-gray-700 hover:text-orange-500" onClick={() => setIsDropdownOpen(false)}>DotNet Core</Link></li>
+                      <li><Link to="/Dotnetangular" className="text-gray-700 hover:text-orange-500" onClick={() => setIsDropdownOpen(false)}>DotNet With Angular</Link></li>
+                      <li><Link to="/Testing" className="text-gray-700 hover:text-orange-500" onClick={() => setIsDropdownOpen(false)}>Software Testing</Link></li>
+                      <li><Link to="/Testing" className="text-gray-700 hover:text-orange-500" onClick={() => setIsDropdownOpen(false)}>Manual Testing</Link></li>
+                      <li><Link to="/Testing" className="text-gray-700 hover:text-orange-500" onClick={() => setIsDropdownOpen(false)}>Selenium With Java</Link></li>
+                    </ul>
+                  </div>
+ 
+                  {/* Advanced Courses */}
+                  <div>
+                    <h4 className="text-lg font-semibold text-orange-500 mb-2">
+                      Advanced Courses
+                    </h4>
+                    <ul className="space-y-2">
+                      <li><Link to="/Testing" className="text-gray-700 hover:text-orange-500" onClick={() => setIsDropdownOpen(false)}>PowerBI</Link></li>
+                      <li><Link to="/Data" className="text-gray-700 hover:text-orange-500" onClick={() => setIsDropdownOpen(false)}>Data Science with Python</Link></li>
+                      <li><Link to="/salesforce" className="text-gray-700 hover:text-orange-500" onClick={() => setIsDropdownOpen(false)}>Salesforce Developement</Link></li>
+                      <li><Link to="/Java Development" className="text-gray-700 hover:text-orange-500" onClick={() => setIsDropdownOpen(false)}>Full Stack Java Development</Link></li>
+                      <li><Link to="/Aws" className="text-gray-700 hover:text-orange-500" onClick={() => setIsDropdownOpen(false)}>AWS/DevOps</Link></li>
+                      <li><Link to="/Digitalmarketingtraining" className="text-gray-700 hover:text-orange-500" onClick={() => setIsDropdownOpen(false)}>Digital Marketing Training</Link></li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             )}
           </div>
 
 
 
-
-
-
-
-          {/* <div className="relative">
-            <button
-              onClick={() => setIsDropdownOpen1(!isDropdownOpen1)}
-              className="text-gray-700 hover:text-orange-500 font-medium"
-            >
-              Corparates
-            </button>
-            {isDropdownOpen1 && (
-              <div className="absolute left-0 mt-2 w-48 bg-white border border-gray-300 rounded-md shadow-lg" style={{zIndex:222}}>
-                <ul className="space-y-2 p-2">
-                  {corparate.map((course, index) => (
-                    <li key={index}>
-                      <Link to={course.path} className="block text-gray-700 hover:text-orange-500 px-4 py-2 text-sm">{course.name}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </div> */}
           <Link to="/Workspace" className="text-gray-700 hover:text-orange-500 font-medium">Workshops</Link>
           <Link to="/placement" href="#placements" className="text-gray-700 hover:text-orange-500 font-medium">Placements</Link>
         </nav>

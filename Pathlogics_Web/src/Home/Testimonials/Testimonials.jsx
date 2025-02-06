@@ -75,7 +75,7 @@ const Testimonials = () => {
   return (
     <section className="py-10 bg-gray-100">
       <div className="max-w-7xl mx-auto text-center ">
-        <h2 className="text-3xl font-bold mb-8 text-orange-600">Testimonials</h2>
+        <h2 className="text-3xl font-bold mb-8 text-orange-600">Our Placed Students</h2>
         <Slider {...settings}>
           {testimonials.map((testimonial, index) => (
             <div
