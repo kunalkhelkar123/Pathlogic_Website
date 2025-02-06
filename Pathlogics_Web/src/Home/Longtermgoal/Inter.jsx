@@ -9,6 +9,7 @@ import Ugprogram from "./Ugprogram";
 // import ImportantDates from "./ImportantDates";
 function Inter(){
     return(<>
+    
     <Intership/>
     <Firstpage/>
     <Secondpage/>

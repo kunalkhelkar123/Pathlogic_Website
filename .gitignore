@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> d9095cd75616c81ccc34044c5ade90112cf46467
 # Node.js
 node_modules/
 npm-debug.log*
@@ -47,4 +50,7 @@ Thumbs.db
 # Miscellaneous
 *.bak
 *.tmp
+<<<<<<< HEAD
 
+=======
+>>>>>>> d9095cd75616c81ccc34044c5ade90112cf46467

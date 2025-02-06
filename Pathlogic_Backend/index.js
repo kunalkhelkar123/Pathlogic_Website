@@ -6,7 +6,7 @@ const authRoute = require("./routes/auth");
 // const staff = require("./routes/staff");
 // const visitesadmin = require("./routes/visitesadmin");
 // const dailyscrum = require("./routes/dailyscrum")
-// const client = require("./routes/client")
+const admin = require("./routes/admin")
 
 
 
@@ -40,7 +40,7 @@ app.use(express.urlencoded({ extended: true }));
 // // app.use("/api/uploads", propertyDetails);
 
 app.use("/api/auth", authRoute);
-// app.use("/api/client", client);
+app.use("/api/admin", admin);
 // app.use("/api/staff", staff);
 // app.use("/api/adminstaffvisites", visitesadmin);
 // app.use("/api/dailyscrum", dailyscrum);
@@ -56,6 +56,6 @@ app.get("/check", async (req, res) => {
 app.get("/check2", async (req, res) => {
   res.send("Hello world");
 });
-app.listen(process.env.PORT || 8080, () => {
-  console.log("Server is Running on:6001");
+app.listen(process.env.PORT || 4000, () => {
+  console.log("Server is Running on:4000");
 });
