@@ -4,6 +4,7 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const db = require("../db");
 
+
 // Fetch all student data
 router.get("/getStudent", async (req, res) => {
   try {
@@ -351,6 +352,7 @@ router.post("/addTrainer", async (req, res) => {
       return res.status(400).json({ message: "All fields are required." });
     }
 
+    const hashedPassword = await bcrypt.hash(password, 10);
     const query =
       "INSERT INTO trainers_info (name, email, phone, status, password) VALUES (?, ?, ?, ?, ?)";
     const values = [
@@ -358,7 +360,7 @@ router.post("/addTrainer", async (req, res) => {
       email,
       phone,
       status,
-      password,
+      hashedPassword,
     ];
 
     await db.query(query, values);
@@ -468,5 +470,55 @@ router.put("/updateTrainer/:id", async (req, res) => {
   res.status(500).json({ message: "Failed to update trainer." });
 }})
 
+
+router.post("/getStudent/:trainerid", async (req, res) => {
+  try {
+    const { trainerid } = req.params;
+ 
+    console.log("trainerid ==> ",  trainerid);
+    const [user] = await db.query("SELECT * FROM students_info WHERE trainerid =? ", [trainerid]);
+    console.log("user ",user);
+
+    if (user.length === 0) {
+      console.log(user);
+      return res.status(201).json({ message: "Student Not Found." });
+    }
+
+    console.log("check3");
+    res
+      .status(200)
+      .json({ message: "Student Data Fetch Successfully", StudentData: user });
+  } catch (err) {
+    console.log("check4 ");
+    console.error(err);
+    res.status(500).json({ message: "Internal Server Error" });
+  }
+});
+
+
+
+
+router.get("/diplomadigitalmarketing", async (req, res) => {
+  try {
+    console.log("check111");
+
+    const [user] = await db.query("SELECT * FROM diplomadigitalmarketing");
+    console.log("check2");
+
+    if (user.length === 0) {
+      console.log(user);
+      return res.status(201).json({ message: "Student Not Found." });
+    }
+
+    console.log("check3");
+    res
+      .status(200)
+      .json({ message: "Student Data Fetch Successfully", data: user });
+  } catch (err) {
+    console.log("check4 ");
+    console.error(err);
+    res.status(500).json({ message: "Internal Server Error" });
+  }
+});
 
 module.exports = router;

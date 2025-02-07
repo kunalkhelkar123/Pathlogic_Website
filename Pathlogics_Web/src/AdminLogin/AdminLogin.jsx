@@ -8,6 +8,7 @@ const StudentLogin = () => {
     username: "",
     password: "",
   });
+  
 
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -34,7 +35,7 @@ const StudentLogin = () => {
 
         // Redirect to the dashboard
         navigate("/StudentDashboard");
-        console.log("Login Successful", response.data);
+        console.log("Login Successful admin ", response.data);
         alert("Login successful!");
         // Redirect user to dashboard or another page after successful login
       }
