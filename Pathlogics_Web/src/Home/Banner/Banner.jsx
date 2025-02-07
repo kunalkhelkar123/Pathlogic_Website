@@ -5,16 +5,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
 import { Link } from "react-router-dom";
-// <<<<<<< rohini_dev
-// <<<<<<< HEAD
-import image from "../../assets/Homebanner.jpg";
-
-// =======
-// import image from "../../assets/Awss.png";
-// >>>>>>> b3f75a51476b5feed2a3b71e37a39eaab5312a16
-// =======
-// import image from "../../assets/Banner1.jpeg";
-// >>>>>>> dev2
+import image from "../../assets/Banner1.jpeg";
 
 function Banner() {
   return (
@@ -41,10 +32,6 @@ function Banner() {
           <SwiperSlide>
             <div
               style={{
-// <<<<<<< rohini_dev
-// <<<<<<< HEAD
-//                 backgroundImage: `url(${image})`
-// =======
                 backgroundImage: `url(${image})`,
               }}
               className=" relative z-[1] flex items-center justify-center bg-cover bg-center h-screen gap-[17px] flex flex-col sm:flex-row items-center justify-center text-white text-center px-4"
