@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -24,12 +23,14 @@ export default function Navbar() {
   });
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isDropdownOpen1, setIsDropdownOpen1] = useState(false);
+  const [isDropdownOpen2, setIsDropdownOpen2] = useState(false);
 
   useEffect(() => {
     const handleOutsideClick = (e) => {
       if (!e.target.closest(".dropdown")) {
         setIsDropdownOpen(false);
         setIsDropdownOpen1(false);
+        setIsDropdownOpen2(false);
       }
     };
     document.addEventListener("click", handleOutsideClick);
@@ -76,11 +77,7 @@ export default function Navbar() {
     { name: 'Full stack web Development', path: '/fullstack' },
     { name: 'Aws/Devops', path: '/Aws' },
     { name: 'Software testing', path: '/Testing' },
-    // <<<<<<< rohini_dev
     { name: 'Salesforce Developer', path: '/salesforce' },
-    // =======
-    //     { name: 'Salesforce Developer', path: '/SalesforceDeveloper' },
-    // >>>>>>> dev
     { name: 'DataScience with python', path: '/DataSciencewithpython' },
     { name: 'Digital marketing', path: '/digitalmk' }
   ];
@@ -89,6 +86,18 @@ export default function Navbar() {
     { name: 'Certification', path: '/Certification' },
     { name: 'Internship', path: '/Intern' },
     { name: 'Stipend Program', path: '/StipendProgram' }
+  ];
+
+  const placementProgram = [
+    { name: 'Full Stack Java Development', path: '/PlacementJava' },
+    { name: 'Full Stack Web Development', path: '/PlacementWeb' },
+    { name: 'Full Stack Testing', path: '/MainTesting' },
+    { name: 'DevOps', path: '/MainDevops' },
+    { name: 'Digital Marketing', path: '/MainDigitalMarketing' },
+    { name: 'Internship', path: '/Certification' },
+    { name: 'Certification', path: '/Certification' },
+    { name: 'Stipend', path: '/Certification' },
+    
   ];
 
   return (
@@ -132,6 +141,7 @@ export default function Navbar() {
             <button onClick={() => {
               setIsDropdownOpen(!isDropdownOpen);
               setIsDropdownOpen1(false);
+              setIsDropdownOpen2(false);
             }} className="text-gray-700 hover:text-orange-500 font-medium">
               Short Term Courses
             </button>
@@ -154,6 +164,7 @@ export default function Navbar() {
             <button onClick={() => {
               setIsDropdownOpen1(!isDropdownOpen1);
               setIsDropdownOpen(false);
+              setIsDropdownOpen2(false);
             }} className="text-gray-700 hover:text-orange-500 font-medium">
               Long Term Courses
             </button>
@@ -170,11 +181,30 @@ export default function Navbar() {
                 </ul>
               </div>
             )}
-
-
           </div>
-          {/* // >>>>>>> dev */}
-          {/* <Link to="/Intern" className="text-gray-700 hover:text-orange-500 font-medium">Long Term Course</Link> */}
+
+          <div className="relative dropdown" onClick={(e) => e.stopPropagation()}>
+            <button onClick={() => {
+              setIsDropdownOpen2(!isDropdownOpen2);
+              setIsDropdownOpen(false);
+              setIsDropdownOpen1(false);
+            }} className="text-gray-700 hover:text-orange-500 font-medium">
+              Placement Program
+            </button>
+            {isDropdownOpen2 && (
+              <div className="absolute left-0 mt-2 w-48 bg-white border border-gray-300 rounded-md shadow-lg z-20">
+                <ul className="space-y-2 p-2">
+                  {placementProgram.map((course, index) => (
+                    <li key={index}>
+                      <Link to={course.path} className="block text-gray-700 hover:text-orange-500 px-4 py-2 text-sm">
+                        {course.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
 
           <Link to="/Workspace" className="text-gray-700 hover:text-orange-500 font-medium">Workshops</Link>
           <Link to="/placement" className="text-gray-700 hover:text-orange-500 font-medium">Placements</Link>

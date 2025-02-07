@@ -81,6 +81,13 @@ import SaForce from "./SHORTCOURSES/Salesforce Developer/SaForce";
 
 
 import Quick from "./Quick Enquiry/Quick";
+import Java from "./Fullstack/PlacementProg/FullStackJava/Java";
+import FullstackWebPlacement from "./Fullstack/PlacementProg/FullStackWebDev/FullstackWebPlacement";
+import MainDigitalMarketing from "./Fullstack/PlacementProg/DigitalMaketingPlacement/MainDigitalMarketing";
+import MainDevops from "./Fullstack/PlacementProg/DevOps/MainDevops";
+import MainTesting from "./Fullstack/PlacementProg/FullStackTesting/MainTesting";
+// import FullWebBanner from "./Fullstack/PlacementProg/FullWebDev/FullWEbBanner";
+
 
 
 
@@ -135,7 +142,7 @@ function App() {
 //         <Route path="/StudentLogin" element={<StudentLogin />} />
 //         <Route path="/StudentDashboard" element={<StudentDashboard />} /> */}
 
-
+       
       <Route path="/" element={   <Layout>     <Home />   </Layout> }/>
                                <Route path="/salesforce" element={<SaForce/>}/>
       <Route path="/fullstack" element={   <Layout>     <Fullstack />   </Layout> } />
@@ -152,9 +159,15 @@ function App() {
       <Route path="/QuickEnquiry"element={<Layout><QuickEnquiry /></Layout>}/>
       <Route path="/studentregistration"element={<Layout><StudentRegistration /> </Layout>}/>
       <Route path="/StudentLogin"element={ <Layout> <StudentLogin /></Layout> }/>
-      <Route path="/StudentDashboard" element={ <> <StudentNav /> <StudentDashboard /></>
-  } 
-/>
+      <Route path="/StudentDashboard" element={ <> <StudentNav /> <StudentDashboard /></>}/>
+      <Route path="/PlacementJava" element={<Layout> <Java/></Layout> } />
+      <Route path="/PlacementWeb" element={<Layout> <FullstackWebPlacement/></Layout> } />
+      <Route path="/MainDigitalMarketing" element={<Layout> <MainDigitalMarketing/></Layout> } />
+      <Route path="/MainDevops" element={<Layout> <MainDevops/></Layout> } />
+      <Route path="/MainTesting" element={<Layout> <MainTesting/></Layout> } />
+      
+      
+
 
 
 
