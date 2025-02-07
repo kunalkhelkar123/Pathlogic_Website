@@ -102,20 +102,29 @@ router.post("/login", async (req, res) => {
   const { username, password } = req.body;
   console.log("Login data:", { username, password });
   try {
-    const [user] = await db.query("SELECT * FROM students_info WHERE username = ?",  [username]);
-   
+    const [user] = await db.query("SELECT * FROM students_info WHERE username = ?", [username]);
+
     if (user.length === 0) {
+      console.log(user)
       return res.status(401).json({ message: "Invalid username or password." });
     }
 
     const isMatch = await bcrypt.compare(password, user[0].password);
 
     if (!isMatch) {
+      console.log(isMatch);
       return res.status(401).json({ message: "Invalid username or password." });
     }
-
+    const accessToken = jwt.sign(
+      {
+        id: user.id,
+        email: user.name,
+      },
+      process.env.JWT_SECRET,
+      { expiresIn: "6hr" }
+    );
     // Handle successful login (return JWT or session)
-    res.status(200).json({ message: "Login successful", user: user[0] });
+    res.status(200).json({ message: "Login successful", user: user[0] , token:accessToken});
 
   } catch (err) {
     console.error(err);
@@ -123,44 +132,79 @@ router.post("/login", async (req, res) => {
   }
 });
 
-
-
-router.post("/adminlogin", async (req, res) => {
+router.post("/loginadmin", async (req, res) => {
+  console.log(req.body)
   const { username, password } = req.body;
-  console.log("check")
-  try {
-    // Query to find user by username
-    const [userResult] = await db.query("SELECT * FROM admin_user WHERE email = ?", [username]);
 
-    // Check if user exists
-    if (userResult.length === 0) {
-      return res.status(401).json({ message: "Invalid username or password." });
-    }
 
-    const user = userResult[0];
+  const [user] = await db.query("SELECT * FROM admin_user WHERE email = ?", [username]);
+  console.log("data is", user)
+  if (user.length === 0) {
 
-    // Check if password matches either bcrypt-hashed or plain-text password
-    const isMatch = (await bcrypt.compare(password, user.password)) || password === user.password;
-
-    if (!isMatch) {
-      return res.status(401).json({ message: "Invalid username or password." });
-    }
-
-    // Successful login response
-    res.status(200).json({
-      message: "Login successful",
-      user: {
-        id: user.id,
-        username: user.username,
-        role: user.role,
-        org: user.org,
-      },
-    });
-
-  } catch (err) {
-    console.error("Error during login:", err);
-    res.status(500).json({ message: "Internal Server Error" });
+    return res.status(401).json({ message: "Invalid email or password." });
   }
+  console.log("user array data", user[0].password)
+  const isMatch = bcrypt.compare(password, user[0].password);
+  // console.log("is Match is",isMatch);
+  if (!isMatch) {
+    console.log(isMatch)
+    return res.status(401).json({ message: "Invalid email or password." });
+  }
+
+  const accessToken = jwt.sign(
+    {
+      id: user.id,
+      email: user.email,
+    },
+    process.env.JWT_SECRET,
+    { expiresIn: "6hr" }
+  );
+
+  // Handle successful login (return JWT or session)
+  res.status(200).json({ message: "Login successful", user: user[0] , token :accessToken});
+
+  // } catch (err) {
+  //   console.error(err);
+  //   res.status(500).json({ message: "Internal Server Error" });
+  // }
+});
+
+
+router.post("/trainerlogin", async (req, res) => {
+  console.log(req.body)
+  const { username, password } = req.body;
+
+
+  const [user] = await db.query("SELECT * FROM trainers_info WHERE email = ?", [username]);
+  console.log("data is", user)
+  if (user.length === 0) {
+
+    return res.status(401).json({ message: "Invalid email or password." });
+  }
+  console.log("user array data", user[0].password)
+  const isMatch = bcrypt.compare(password, user[0].password);
+  // console.log("is Match is",isMatch);
+  if (!isMatch) {
+    console.log(isMatch)
+    return res.status(401).json({ message: "Invalid email or password." });
+  }
+
+
+  const accessToken = jwt.sign(
+    {
+      id: user.id,
+      email: user.email,
+    },
+    process.env.JWT_SECRET,
+    { expiresIn: "6hr" }
+  );
+  // Handle successful login (return JWT or session)
+  res.status(200).json({ message: "Login successful", user: user[0] , token:accessToken});
+
+  // } catch (err) {
+  //   console.error(err);
+  //   res.status(500).json({ message: "Internal Server Error" });
+  // }
 });
 
 

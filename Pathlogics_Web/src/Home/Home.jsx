@@ -12,7 +12,7 @@ import Questions from './Questions/Questions'
 import Loginform from './Loginform/Loginform'
 import Footer from './Footer/Footer'
 import Pop from './pop/Pop'
-import Intership from './Longtermgoal/Internship'
+//import Intership from './Longtermgoal/Internship'
 function Home() {
   useEffect(()=>{
    <Pop/>

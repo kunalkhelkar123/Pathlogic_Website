@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import { X } from "lucide-react";
-// import image from "../../../assets/patho.png"
-import image from "../../../Pathlogics_Web/src/assets/patho.png";
+import image from "../assets/patho.png"
+// import image from "../assets/patho.png";
 
 
 import axios from "axios";
@@ -104,7 +104,7 @@ export default function Navbar() {
           >
             <img
               src={image}
-              alt=""
+              alt="ICON"
               // className="mr-2"
             />
           </button>
@@ -131,7 +131,7 @@ export default function Navbar() {
         </div>
         <nav className="hidden md:flex space-x-2 sm:space-x-4 md:space-x-6 ml-auto">
           <Link
-            to="/"
+            to="/StudentDashboard"
             className="text-gray-700 hover:text-orange-500 font-medium flex items-center"
           >
             <FaHome className="mr-2" />

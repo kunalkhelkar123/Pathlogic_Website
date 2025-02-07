@@ -10,6 +10,7 @@ const courses = [
     duration: '6 Months',
     mode: 'Offline',
     image: fullstockimage,
+    path:"/",
   },
   {
     id: 2,
@@ -18,6 +19,7 @@ const courses = [
     duration: '5 Months',
     mode: 'Offline',
     image: fullstockimage,
+    path:"/",
   },
   {
     id: 3,
@@ -26,6 +28,7 @@ const courses = [
     duration: '4 Months',
     mode: 'Online',
     image: fullstockimage,
+    path:"/Knowmore",
   },
   {
     id: 4,
@@ -34,6 +37,7 @@ const courses = [
     duration: '3 Months',
     mode: 'Online',
     image: fullstockimage,
+    path:"/",
   },
   {
     id: 5,
@@ -42,6 +46,7 @@ const courses = [
     duration: '4 Months',
     mode: 'Offline',
     image: fullstockimage,
+    path:"/",
   },
   {
     id: 6,
@@ -50,6 +55,7 @@ const courses = [
     duration: '3 Months',
     mode: 'Online',
     image: fullstockimage,
+    path:"/",
   },
   {
     id: 7,
@@ -58,6 +64,7 @@ const courses = [
     duration: '5 Months',
     mode: 'Offline',
     image: fullstockimage,
+    path:"/",
   },
   {
     id: 8,
@@ -66,6 +73,7 @@ const courses = [
     duration: '6 Months',
     mode: 'Offline',
     image: fullstockimage,
+    path:"/",
   }
 ];
 
@@ -77,7 +85,7 @@ export default function Component() {
       <div
         className="flex justify-center items-center min-h-screen bg-cover bg-center"
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto p-4 bg-white bg-opacity-80 rounded-lg shadow-lg">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto p-4 bg-white  rounded-lg shadow-lg">
 
           {courses.map(course => (
             <div
@@ -87,7 +95,7 @@ export default function Component() {
                 backgroundImage: `url(${course.image})`,
                 height: "400px",
                 position: "relative",
-                backgroundColor: 'rgba(0, 0, 0, 0.95)',
+                backgroundColor: 'rgba(12, 11, 11, 0.95)',
                 // boxShadow: 'inset -20px 0px 0px 20px rgba(0, 0, 0, 0.7), inset 20px 0px 0px 20px rgba(0, 0, 0, 0.5)' 
               }}
             >
@@ -109,10 +117,10 @@ export default function Component() {
   </button>
 </Link>
 
-                
+                <Link to={course.path} className="w-full">
                 <button className="w-full bg-transparent border border-orange-500 text-orange-500 font-semibold py-2 rounded-md hover:bg-orange-100">
                   Know More
-                </button>
+                </button></Link>
                 {/* <button className="w-full bg-transparent border border-orange-500 text-orange-500 font-semibold py-2 rounded-md hover:bg-orange-100">
                   Brochure
                 </button> */}

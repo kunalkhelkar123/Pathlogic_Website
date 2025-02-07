@@ -1,6 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import {
+  FaHome,
+  FaBuilding,
+  FaUser,
+  FaSignOutAlt,
+  FaPlus,
+  FaBook,
+  FaTasks,
+  FaClipboardList,
+  FaUserGraduate,
+  FaChalkboardTeacher,
+  FaUsers,
+} from "react-icons/fa";
+import { Link } from "react-router-dom";
 const StudentDashboard = () => {
   const [userData, setUserData] = useState(null);
   const navigate = useNavigate();
@@ -68,49 +81,59 @@ const StudentDashboard = () => {
       </div>
 
       {/* Main Content */}
-      <main className="flex-1 p-8">
-        <div className="max-w-4xl mx-auto bg-white p-10 rounded-xl shadow-xl">
-          <h2 className="text-3xl font-bold text-orange-600 mb-4">
-            Welcome, {userData.username}!
-          </h2>
-          <p className="text-lg text-gray-600 mb-6">
-            Here's your personalized dashboard.
-          </p>
-
-          <div className="bg-gray-50 p-6 rounded-lg shadow-sm border">
-            <h3 className="text-xl font-semibold text-gray-700 mb-4">
-              Your Information:
-            </h3>
-            <ul className="list-disc pl-6 text-gray-600">
-              <li>
-                <strong>Username:</strong> {userData.username}
-              </li>
-              <li>
-                <strong>Email:</strong> {userData.email}
-              </li>
-              <li>
-                <strong>City:</strong> {userData.city}
-              </li>
-              <li>
-                <strong>Current Year:</strong> {userData.currentYear}
-              </li>
-              <li>
-                <strong>Course:</strong> {userData.courseName}
-              </li>
-            </ul>
-          </div>
-
-          <button
-            onClick={() => {
-              sessionStorage.removeItem("userData");
-              navigate("/");
-            }}
-            className="mt-8 w-full py-3 px-6 bg-orange-500 text-white text-lg font-medium rounded-md shadow-md hover:bg-[rgb(9,78,74)] focus:outline-none focus:ring-4 focus:ring-[rgb(9,78,74)]"
-          >
-            Logout
-          </button>
-        </div>
-      </main>
+       <div className="flex-1 p-10">
+              <h2 className="text-4xl font-semibold mb-10 text-orange-500">
+                Welcome, 
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+                {/* Cards */}
+                {[
+                  {
+                    icon: <FaUserGraduate className="text-4xl mb-4" />,
+                    title: "Your current course",
+                    description: "Manage course details",
+                    path: "/StudentCourseDetails",
+                  },
+                  {
+                    icon: <FaBook className="text-4xl mb-4" />,
+                    title: "Given tests",
+                    description: "View and update available courses",
+                    path: "/StudentDashboard"
+                  },
+                  {
+                    icon: <FaClipboardList className="text-4xl mb-4" />,
+                    title: "Results",
+                    description: "Manage student test data",
+                    path : "/StudentDashboard"
+                  },
+                  {
+                    icon: <FaChalkboardTeacher className="text-4xl mb-4" />,
+                    title: "Take test",
+                    description: "View and schedule workshops",
+                    path: "/StudentDashboard"
+                  },
+                
+                  // {
+                  //   icon: <FaUsers className="text-4xl mb-4" />,
+                  //   title: "Staff",
+                  //   description: "View and assign staff roles",
+                  //   path: "/admin/Staffinfo"
+                  // },
+                ].map((card, index) => (
+                  <div
+                    key={index}
+                    className="bg-orange-500 text-white p-8 rounded-lg shadow-lg hover:scale-105 transform transition flex flex-col items-center"
+                  >
+                    {card.icon}
+                    <h3 className="text-2xl font-bold">{card.title}</h3>
+                    <p className="mt-2 text-center">{card.description}</p>
+                    <button className="mt-4 bg-yellow-500 text-white px-4 py-2 rounded-lg hover:bg-yellow-600 transition">
+                      <Link to={card.path}>View</Link>
+                    </button>
+                  </div>
+                ))}
+              </div>
+            </div>
     </div>
   );
 };
