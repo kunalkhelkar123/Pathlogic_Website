@@ -1,3 +1,6 @@
+
+import React, { useState, useEffect } from "react";
+
 // <<<<<<< rohini_dev
 
 // // import React, { useState, useEffect } from "react";
@@ -695,17 +698,58 @@
 ///******************************************************************************************************* */
 
 import React, { useState } from "react";
+
 import { Link, useNavigate } from "react-router-dom";
 import image from "../../assets/patho.png";
 
 export default function Navbar() {
   const navigate = useNavigate();
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isQuickEnquiryOpen, setIsQuickEnquiryOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    mobile: '',
+    course: '',
+    enquiry: ''
+  });
+  const [submitStatus, setSubmitStatus] = useState({ message: '', isError: false });
+  const [notificationCount, setNotificationCount] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return parseInt(localStorage.getItem('notificationCount') || '0', 10);
+    }
+    return 0;
+  });
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isDropdownOpen1, setIsDropdownOpen1] = useState(false);
+  const [isDropdownOpen2, setIsDropdownOpen2] = useState(false);
+
+  useEffect(() => {
+    const handleOutsideClick = (e) => {
+      if (!e.target.closest(".dropdown")) {
+        setIsDropdownOpen(false);
+        setIsDropdownOpen1(false);
+        setIsDropdownOpen2(false);
+      }
+    };
+    document.addEventListener("click", handleOutsideClick);
+    return () => document.removeEventListener("click", handleOutsideClick);
+  }, []);
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const toggleQuickEnquiry = () => {
+    setIsQuickEnquiryOpen(!isQuickEnquiryOpen);
+    setSubmitStatus({ message: '', isError: false });
+    navigate('/quickenquiry');
+
   const [isShortTermOpen, setIsShortTermOpen] = useState(false);
   const [isLongTermOpen, setIsLongTermOpen] = useState(false);
 
   const handleShortTermHover = () => {
     setIsShortTermOpen(true);
     setIsLongTermOpen(false);
+
   };
 
   const handleLongTermHover = () => {
@@ -739,6 +783,8 @@ export default function Navbar() {
     ],
   };
 
+
+ 
   const longTermCourses = {
     programming: [
       { name: "FullStack Web Development", path: "/FullMERN1" },
@@ -758,6 +804,19 @@ export default function Navbar() {
     ],
   };
 
+
+  const placementProgram = [
+    { name: 'Full Stack Java Development', path: '/PlacementJava' },
+    { name: 'Full Stack Web Development', path: '/PlacementWeb' },
+    { name: 'Full Stack Testing', path: '/MainTesting' },
+    { name: 'DevOps', path: '/MainDevops' },
+    { name: 'Digital Marketing', path: '/MainDigitalMarketing' },
+    { name: 'Internship', path: '/Certification' },
+    { name: 'Certification', path: '/Certification' },
+    { name: 'Stipend', path: '/Certification' },
+    
+  ];
+
   return (
     <header className="w-full">
       <div className="w-full bg-white py-1 px-4 md:px-8 flex justify-between items-center border-b-2 border-orange-500">
@@ -772,6 +831,14 @@ export default function Navbar() {
           <Link to="/All" className="text-gray-700 hover:text-orange-500 font-medium">Institute</Link>
           <Link to="/fullstack" className="text-gray-700 hover:text-orange-500 font-medium">Full Stack Development</Link>
 
+
+          <div className="relative dropdown" onClick={(e) => e.stopPropagation()}>
+            <button onClick={() => {
+              setIsDropdownOpen(!isDropdownOpen);
+              setIsDropdownOpen1(false);
+              setIsDropdownOpen2(false);
+            }} className="text-gray-700 hover:text-orange-500 font-medium">
+
           {/* Short Term Courses */}
           <div
             className="relative dropdown "
@@ -782,6 +849,7 @@ export default function Navbar() {
             onClick={() => setIsShortTermOpen(true)}
           >
             <button className="text-gray-700 hover:text-orange-500 font-medium">
+
               Short Term Courses
             </button>
             {isShortTermOpen && (
@@ -832,6 +900,50 @@ export default function Navbar() {
               </div>
             )}
           </div>
+
+
+          <div className="relative dropdown" onClick={(e) => e.stopPropagation()}>
+            <button onClick={() => {
+              setIsDropdownOpen1(!isDropdownOpen1);
+              setIsDropdownOpen(false);
+              setIsDropdownOpen2(false);
+            }} className="text-gray-700 hover:text-orange-500 font-medium">
+              Long Term Courses
+            </button>
+            {isDropdownOpen1 && (
+              <div className="absolute left-0 mt-2 w-48 bg-white border border-gray-300 rounded-md shadow-lg z-20">
+                <ul className="space-y-2 p-2">
+                  {longTermCourses.map((course, index) => (
+                    <li key={index}>
+                      <Link to={course.path} className="block text-gray-700 hover:text-orange-500 px-4 py-2 text-sm">
+                        {course.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+
+          <div className="relative dropdown" onClick={(e) => e.stopPropagation()}>
+            <button onClick={() => {
+              setIsDropdownOpen2(!isDropdownOpen2);
+              setIsDropdownOpen(false);
+              setIsDropdownOpen1(false);
+            }} className="text-gray-700 hover:text-orange-500 font-medium">
+              Placement Program
+            </button>
+            {isDropdownOpen2 && (
+              <div className="absolute left-0 mt-2 w-48 bg-white border border-gray-300 rounded-md shadow-lg z-20">
+                <ul className="space-y-2 p-2">
+                  {placementProgram.map((course, index) => (
+                    <li key={index}>
+                      <Link to={course.path} className="block text-gray-700 hover:text-orange-500 px-4 py-2 text-sm">
+                        {course.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
 
           {/* Long Term Courses */}
           <div
@@ -889,6 +1001,7 @@ export default function Navbar() {
                     </ul>
                   </div>
                 </div>
+
               </div>
             )}
           </div>
