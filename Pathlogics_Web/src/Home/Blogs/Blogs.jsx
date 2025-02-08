@@ -1,5 +1,5 @@
 import React from 'react';
-
+import abc from "../../../src/assets/Awss.png"
 export default function Blogs() {
   return (
     <>
@@ -18,7 +18,7 @@ export default function Blogs() {
         {/* Image Section */}
         <div className="md:w-1/2 flex justify-center">
           <img
-            src="https://via.placeholder.com/500" // Replace with your actual image path later
+           src={abc} // Replace with your actual image path later
             alt="500px,300px"
             className="w-full h-auto sm:w-auto sm:h-auto max-w-xs sm:max-w-md md:max-w-full rounded-lg shadow-md"
             style={{ objectFit: 'cover' }}
@@ -27,10 +27,10 @@ export default function Blogs() {
       </div>
 
       {/* Padding to ensure separation between sections */}
-      <div className="h-12"></div>
+      <div className=""></div>
 
       {/* Placement statistics */}
-      <div className="bg-gray-100 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-4 md:p-8 lg:p-12 xl:p-16">
+      <div className="bg-gray-200 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-4 md:p-8 lg:p-12 xl:p-16">
         <div className="text-center">
           <p className="text-lg sm:text-xl font-semibold">MNC's hired in 2022</p>
           <hr className="my-1 border-orange-500 w-2/3 mx-auto" />

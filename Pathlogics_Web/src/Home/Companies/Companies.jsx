@@ -54,7 +54,7 @@ const Companies = () => {
   return (
     <>
       {/* Companies Carousel */}
-      <div className="bg-gray-100 py-8 pt-[70px]">
+      {/* <div className="bg-gray-100 py-8 pt-[70px]">
         <Slider {...settings}>
           {companies.map((company, index) => (
             <div key={index} className="px-4">
@@ -68,12 +68,12 @@ const Companies = () => {
             </div>
           ))}
         </Slider>
-      </div>
+      </div> */}
 
       {/* Button */}
       <div className="flex items-center justify-center mt-8">
         <div className="mb-4">
-          <button className="px-6 sm:px-8 py-3 sm:py-4 bg-orange-400 rounded-[30px] text-white relative after:-z-20 after:absolute after:h-1 after:w-1 after:bg-rose-800 after:left-5 overflow-hidden after:bottom-0 after:translate-y-full after:rounded-md after:hover:scale-[300] after:hover:transition-all after:hover:duration-700 after:transition-all after:duration-700 transition-all duration-700 text-lg sm:text-2xl">
+          <button className="px-6 sm:px-8 py-3 sm:py-4 bg-orange-400 rounded-[5px] text-white relative after:-z-20 after:absolute after:h-1 after:w-1 after:bg-rose-800 after:left-5 overflow-hidden after:bottom-0 after:translate-y-full after:rounded-md after:hover:scale-[300] after:hover:transition-all after:hover:duration-700 after:transition-all after:duration-700 transition-all duration-700 text-lg sm:text-2xl">
             <Link  to={'/Aboutus'} >More about Pathlogics Technologies</Link>
           </button>
         </div>

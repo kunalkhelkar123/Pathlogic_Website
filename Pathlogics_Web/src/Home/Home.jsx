@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react'
+import React, { useEffect } from 'react'
 // import Pathinstitute from './@pathinstitute/Pathinstitute'
 import Banner from './Banner/Banner'
 import Blogs from './Blogs/Blogs'
@@ -14,25 +14,25 @@ import Footer from './Footer/Footer'
 import Pop from './pop/Pop'
 //import Intership from './Longtermgoal/Internship'
 function Home() {
-  useEffect(()=>{
-   <Pop/>
-  },[])
+  useEffect(() => {
+    <Pop />
+  }, [])
   return (
     <div>
- {/* <Pathinstitute/> */}
- {/* <Pop/> */}
-      <Banner/>
+      {/* <Pathinstitute/> */}
+      {/* <Pop/> */}
+      <Banner />
       {/* <Intership/> */}
-      <Blogs/>
-      <Sticky/>
-      <Companies/>
-      <Courses_offer/>
-      <Header/>
-      <Workweoffers/>
-      <Testimonials/>
-      <Questions/>
+      <Blogs />
+      <Sticky />
+      <Companies />
+      <Courses_offer />
+      <Header />
+      {/* <Workweoffers/> */}
+      <Testimonials />
+      <Questions />
       {/* <OurBLogs/> */}
-      <Loginform/>
+      <Loginform />
       {/* <Footer/> */}
 
     </div>

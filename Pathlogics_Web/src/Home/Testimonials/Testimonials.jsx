@@ -95,7 +95,7 @@ const Testimonials = () => {
                 className="bg-white p-6 rounded-lg shadow-md flex flex-col justify-between items-center text-center mx-4"
                 style={{
                   width: '331px', // Set fixed width
-                  height: '304px', // Set fixed height
+                  height: '340px', // Set fixed height
                   margin: '0 10px', // Gap between cards
                   overflow: 'hidden', // Prevent overflowing content
                   display: 'flex', // Use flexbox for consistent layout

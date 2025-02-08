@@ -19,6 +19,8 @@ const companies = [
   { id: 6, name: "Pathlogic", logo: company6 },
 ];
 
+
+
 function Header() {
   // Settings for react-slick slider with responsiveness
   const settings = {

@@ -264,7 +264,7 @@ export default function Navbar() {
               </div>)}
           </div>
           <Link to="/Workspace" className="text-gray-700 hover:text-orange-500 font-medium">Workshops</Link>
-          <Link to="/placement" className="text-gray-700 hover:text-orange-500 font-medium">Placements</Link>
+          {/* <Link to="/placement" className="text-gray-700 hover:text-orange-500 font-medium">Placements</Link> */}
         </nav>
       </div>
     </header>
