@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import image from "../../assets/Bannerrr.jpeg";
 
-// import brochurePDF from "../../../assets/Brochure.pdf";
+import brochurePDF from "../.././assets/Brochure.pdf";
+
 
 export default function ShortTermAngular() {
   const [showPopup, setShowPopup] = useState(false);

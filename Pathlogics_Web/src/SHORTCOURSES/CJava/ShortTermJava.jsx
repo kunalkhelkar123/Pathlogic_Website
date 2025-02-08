@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import image from "../../assets/Bannerrr.jpeg";
 
-// import brochurePDF from "../../../assets/Brochure.pdf";
+import brochurePDF from "../../../src/assets/Brochure.pdf";
 
 export default function ShortTermCoreJava() {
   const [showPopup, setShowPopup] = useState(false);

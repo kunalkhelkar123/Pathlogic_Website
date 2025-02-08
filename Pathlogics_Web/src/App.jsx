@@ -132,20 +132,35 @@ import PythonComp from "./LongtermCourses/Python/PythonComp";
 import AiComp from "./LongtermCourses/FullStackAI/AiComp";
 import JavaComponent from "./LongtermCourses/JavaDev/JavaComponent";
 import WebCourses from "./LongtermCourses/FullstackWebCourses/WebCourses";
+
+import AllComponent from "./Home/ShorttermCourses/DigitalMarketing/AllComponent";
+import AwsComponent from "./Home/ShorttermCourses/AWS/Deveops/AwsComponent";
+import Softallcomponent from "./Home/ShorttermCourses/Softweretesting/Softallcomponent";
+import Seleniumjavaall from "./Home/ShorttermCourses/SeleniumJAVA/Seleniumjavaall";
+import Powerbiall from "./Home/ShorttermCourses/POWER BI/powerbiall";
+import Datascienceall from "./Home/ShorttermCourses/DATAscience/Datascienceall";
+import Manualall from "./Home/ShorttermCourses/MANUALtesting/Manualall";
+import Fullstackall from "./Home/ShorttermCourses/Full Stack Java/Fullstackall";
+
+
+
+
+
 function App() {
   const [loading, setLoading] = useState(false);
   const location = useLocation();
 
-  useEffect(() => {
-    setLoading(true); // Show loader on route change
-    const timer = setTimeout(() => {
-      setLoading(false); // Hide loader after a delay
-    }, 1000); // Simulate loading time (adjust as necessary)
+  // useEffect(() => {
+  //   setLoading(true); // Show loader on route change
+  //   const timer = setTimeout(() => {
+  //     setLoading(false); // Hide loader after a delay
+  //   }, 1000); // Simulate loading time (adjust as necessary)
 
-    // Clean up the timer when the component unmounts
-    return () => clearTimeout(timer);
-  }, [location]); // This will run every time the route changes
-  { loading && <Loader /> } {/* Show loader if loading state is true */ }
+  //   // Clean up the timer when the component unmounts
+  //   return () => clearTimeout(timer);
+  // }, [location]);
+  //  // This will run every time the route changes
+  // { loading && <Loader /> } {/* Show loader if loading state is true */ }
 
   const Layout = ({ children }) => (
     <>
@@ -160,10 +175,10 @@ function App() {
       {/* <Pop /> */}
       <Scrolltop />
       {/* <Intership/> */}
-      
+
       <Routes>
 
-{/* //         <Route path="/" element={<Home />} />
+        {/* //         <Route path="/" element={<Home />} />
 //         <Route path="/salesforce" element={<SaForce/>}/>
 //         <Route path="/fullstack" element={<Fullstack />} />
 //         <Route path="/placement" element={<Jobplacment />} />
@@ -181,66 +196,67 @@ function App() {
 //         <Route path="/StudentLogin" element={<StudentLogin />} />
 //         <Route path="/StudentDashboard" element={<StudentDashboard />} /> */}
 
-       
-      <Route path="/" element={   <Layout>     <Home />   </Layout> }/>
-                               <Route path="/salesforce" element={<SaForce/>}/>
-      <Route path="/fullstack" element={   <Layout>     <Fullstack />   </Layout> } />
-      <Route path="/placement" element={   <Layout>     <Jobplacment />   </Layout> }/>
-      <Route path="/more" element={ <Layout>   <More /> </Layout> } />
-      <Route path="/again" element={   <Layout>     <Again />   </Layout> }/>
-      <Route path="/All" element={   <Layout>  <All /></Layout> } />
-                                           <Route path = '/form' element={<Pop/>}/>
-      <Route path="/Aboutus" element={ <Layout> <All /> </Layout> }/>
-      <Route path="/Workspace"element={  <Layout> <Workspace />  </Layout> }/>
-      <Route path="/Short"element={ <Layout>   <Short />  </Layout> } />
-      {/* <Route path="/Aws"        element={ <Layout> <Aws /> </Layout> } /> */}
-      <Route path="/Testing"element={<Layout><Testing /></Layout>}/>
-      <Route path="/QuickEnquiry"element={<Layout><QuickEnquiry /></Layout>}/>
-      <Route path="/studentregistration"element={<Layout><StudentRegistration /> </Layout>}/>
-      <Route path="/StudentLogin"element={ <Layout> <StudentLogin /></Layout> }/>
-      <Route path="/StudentDashboard" element={ <> <StudentNav /> <StudentDashboard /></>}/>
-      <Route path="/PlacementJava" element={<Layout> <PlacementJava/></Layout> } />
-      <Route path="/PlacementWeb" element={<Layout> <FullstackWebPlacement/></Layout> } />
-      <Route path="/MainDigitalMarketing" element={<Layout> <MainDigitalMarketing/></Layout> } />
-      <Route path="/MainDevops" element={<Layout> <MainDevops/></Layout> } />
-      <Route path="/MainTesting" element={<Layout> <MainTesting/></Layout> } />
-      
-      
+
+        <Route path="/" element={<Layout>     <Home />   </Layout>} />
+        <Route path="/salesforce" element={<Layout><SaForce /></Layout>} />
+        <Route path="/fullstack" element={<Layout>     <Fullstack />   </Layout>} />
+        <Route path="/placement" element={<Layout>     <Jobplacment />   </Layout>} />
+        <Route path="/more" element={<Layout>   <More /> </Layout>} />
+        <Route path="/again" element={<Layout>     <Again />   </Layout>} />
+        <Route path="/All" element={<Layout>  <All /></Layout>} />
+        <Route path='/form' element={<Pop />} />
+        <Route path="/Aboutus" element={<Layout> <All /> </Layout>} />
+        <Route path="/Workspace" element={<Layout> <Workspace />  </Layout>} />
+        <Route path="/Short" element={<Layout>   <Short />  </Layout>} />
+        {/* <Route path="/Aws"        element={ <Layout> <Aws /> </Layout> } /> */}
+        <Route path="/Testing" element={<Layout><Testing /></Layout>} />
+        <Route path="/QuickEnquiry" element={<Layout><QuickEnquiry /></Layout>} />
+        <Route path="/studentregistration" element={<Layout><StudentRegistration /> </Layout>} />
+        <Route path="/StudentLogin" element={<Layout> <StudentLogin /></Layout>} />
+        <Route path="/StudentDashboard" element={<> <StudentNav /> <StudentDashboard /></>} />
+        <Route path="/PlacementJava" element={<Layout> <PlacementJava /></Layout>} />
+        <Route path="/PlacementWeb" element={<Layout> <FullstackWebPlacement /></Layout>} />
+        <Route path="/MainDigitalMarketing" element={<Layout> <MainDigitalMarketing /></Layout>} />
+        <Route path="/MainDevops" element={<Layout> <MainDevops /></Layout>} />
+        <Route path="/MainTesting" element={<Layout> <MainTesting /></Layout>} />
 
 
 
-      {/* <Routes> */}
 
-        <Route path="/AdminNavbar" element={ <Layout> <Home />  </Layout>} />
-        <Route path="/salesforce" element={ <Layout> <SaForce/> </Layout>}/>
-        <Route path="/Corejava" element={ <Layout> <Java/>  </Layout>}/>
-        <Route path="/Advancedjava" element={<Layout> <Advanced/> </Layout>}/>
-        <Route path="/Reactjs" element={<Layout> <ReactCourse/> </Layout>}/>
-        <Route path="/Angularjs" element={<Layout> <AngularCourse/> </Layout>}/>
-        <Route path="/Native" element={<Layout> <NativeCourse/> </Layout>}/>
-        <Route path="/Nodejs" element={<Layout> <NodeCourse/> </Layout>}/>
-        <Route path="/Dotnetcore" element={<Layout> <DotNetCourse/> </Layout>}/>
-        <Route path="/Dotnetangular" element={<Layout> <DotnetAngularCourse/> </Layout>}/>
-        <Route path="/fullstack" element={ <Layout> <Fullstack /> </Layout>} />
 
-        
+        {/* <Routes> */}
 
-        <Route path="/placement" element={<Jobplacment />} />
-        <Route path="/more" element={<More />} />
-        <Route path="/again" element={<Again />} />
-        <Route path="/All" element={<All />} />
-        <Route path="/Aboutus" element={<All />} />
-        <Route path = '/form' element={<Pop/>}/>
-        <Route path="/Workspace" element={<Workspace />} />
-        <Route path="/Short" element={<Short />} />
-        <Route path="/Testing" element={<Testing />} />
-        <Route path="/QuickEnquiry" element={<QuickEnquiry />} />
-        <Route path="/studentregistration" element={<StudentRegistration />} />
-        <Route path="/StudentLogin" element={<StudentLogin />} />
+        <Route path="/AdminNavbar" element={<Layout> <Home />  </Layout>} />
+        <Route path="/salesforce" element={<Layout> <SaForce /> </Layout>} />
+        <Route path="/Corejava" element={<Layout> <Java />  </Layout>} />
+        <Route path="/Advancedjava" element={<Layout> <Advanced /> </Layout>} />
+        <Route path="/Reactjs" element={<Layout> <ReactCourse /> </Layout>} />
+        <Route path="/Angularjs" element={<Layout> <AngularCourse /> </Layout>} />
+        <Route path="/Native" element={<Layout> <NativeCourse /> </Layout>} />
+        <Route path="/Nodejs" element={<Layout> <NodeCourse /> </Layout>} />
+        <Route path="/Dotnetcore" element={<Layout> <DotNetCourse /> </Layout>} />
+        <Route path="/Dotnetangular" element={<Layout> <DotnetAngularCourse /> </Layout>} />
+        <Route path="/fullstack" element={<Layout> <Fullstack /> </Layout>} />
+
+
+
+        {/* <Route path="/placement" element={<Jobplacment />} /> */}
+        {/* <Route path="/more" element={<More />} /> */}
+        {/* <Route path="/again" element={<Again />} /> */}
+        {/* <Route path="/All" element={<All />} /> */}
+        {/* <Route path="/Aboutus" element={<All />} /> */}
+        {/* <Route path="/Workspace" element={<Workspace />} /> */}
+        {/* <Route path="/Short" element={<Short />} /> */}
+        {/* <Route path="/Testing" element={<Testing />} /> */}
+        {/* <Route path="/QuickEnquiry" element={<QuickEnquiry />} /> */}
+        {/* <Route path="/studentregistration" element={<StudentRegistration />} /> */}
+        {/* <Route path="/StudentLogin" element={<StudentLogin />} /> */}
         <Route path="/StudentDashboard" element={<StudentDashboard />} />
 
 
         <Route path="/" element={<Layout>     <Home />   </Layout>} />
+        <Route path='/form' element={<Pop />} />
+
         <Route path="/fullstack" element={<Layout>     <Fullstack />   </Layout>} />
         <Route path="/placement" element={<Layout>     <Jobplacment />   </Layout>} />
         <Route path="/more" element={<Layout>   <More /> </Layout>} />
@@ -259,16 +275,16 @@ function App() {
         <Route path="/test" element={<Test2 />} />
 
 
-        <Route path="/ManualComp" element={<Layout>     < ManualComp/>   </Layout>} />
-        <Route path="/Devops" element={<Layout>     < DevComp/>   </Layout>} />
-        <Route path="/Diploma" element={<Layout>     < DigitalComp/>   </Layout>} />
-        <Route path="/DotNet" element={<Layout>     < DotNetComponent/>   </Layout>} />
-        <Route path="/FullstackTesting" element={<Layout>     < TestingComp/>   </Layout>} />
-        <Route path="/Salesforce1" element={<Layout>     < SalesComp/>   </Layout>} />
-        <Route path="/PythonDev" element={<Layout>     < PythonComp/>   </Layout>} />
-        <Route path="/Development" element={<Layout>     < AiComp/>   </Layout>} />
-        <Route path="/FullJavaDev" element={<Layout>     <JavaComponent/>   </Layout>} />
-        <Route path="/FullMERN1" element={<Layout>     <WebCourses/>   </Layout>} />
+        <Route path="/ManualComp" element={<Layout>     < ManualComp />   </Layout>} />
+        <Route path="/Devops" element={<Layout>     < DevComp />   </Layout>} />
+        <Route path="/Diploma" element={<Layout>     < DigitalComp />   </Layout>} />
+        <Route path="/DotNet" element={<Layout>     < DotNetComponent />   </Layout>} />
+        <Route path="/FullstackTesting" element={<Layout>     < TestingComp />   </Layout>} />
+        <Route path="/Salesforce1" element={<Layout>     < SalesComp />   </Layout>} />
+        <Route path="/PythonDev" element={<Layout>     < PythonComp />   </Layout>} />
+        <Route path="/Development" element={<Layout>     < AiComp />   </Layout>} />
+        <Route path="/FullJavaDev" element={<Layout>     <JavaComponent />   </Layout>} />
+        <Route path="/FullMERN1" element={<Layout>     <WebCourses />   </Layout>} />
 
         {/* <Route path="/admin/studentinfo" element={<Studentinfo />} /> */}
 
@@ -279,7 +295,7 @@ function App() {
         {/* <Route path="/admin/Workshop" element={<Studentinfo />} /> */}
         {/* <Route path="/admin/Staffinfo" element={<Studentinfo />} /> */}
         <Route path="/StudentProfileForm" element={<StudentProfileForm />} />
-        <Route path="/StudentDashboard" element={<> <StudentNav /> <StudentDashboard /></>}/>
+        <Route path="/StudentDashboard" element={<> <StudentNav /> <StudentDashboard /></>} />
         <Route path="/StudentCourseDetails" element={<> <StudentNav /> <StudentCourseDetails /></>} />
         <Route path="/admin/studentdetails" element={<><AdminNavbar /> <Studentdetails /></>} />
         <Route path="/admin/CoursesStudentinfo" element={<><AdminNavbar /> <CoursesStudentinfo /></>} />
@@ -291,10 +307,22 @@ function App() {
         <Route path="/trainerLogin" element={<TrainerLogin />} />
         <Route path="/trainerdashboard" element={<TrainerDashboard />} />
         <Route path="/trainer/studentinfo" element={<StudentInfo />} />
-        <Route path="/trainer/courseDetails" element={<TrainerCoursesList/>} />
+        <Route path="/trainer/courseDetails" element={<TrainerCoursesList />} />
         <Route path="/trainer/CoursesStudentinfo" element={<> <CoursesStudentinfo /></>} />
         <Route path="/trainer/CourseSection" element={<TrainerCourses />} />
         <Route path="/trainer/CoursesQuestions" element={<> <CoursesQuestions /></>} />
+
+
+        <Route path="/Powerbipage" element={ <Layout>  < Powerbiall /> </Layout> } />
+        <Route path="/softweretesting" element={<Layout>  < Softallcomponent /> </Layout> } />
+        <Route path="/manualtesting" element={ <Layout>  < Manualall /> </Layout>} />
+        <Route path="/seleniumJAVA" element={ <Layout>  < Seleniumjavaall /> </Layout>} />
+        <Route path="/AwsDevops" element={ <Layout>  < AwsComponent /> </Layout> } />
+        <Route path="/DigitalMarketing" element={ <Layout>  < AllComponent /> </Layout>} />
+        <Route path="/DataScience" element={ <Layout>  < Datascienceall /> </Layout>} />
+        <Route path="/JavaDevelopmet" element={<Layout>  < Fullstackall /> </Layout>} />
+
+
 
 
 

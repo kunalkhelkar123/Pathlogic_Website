@@ -145,6 +145,8 @@
 
 import React, { useState } from "react";
 import image from "../../assets/Banner1.jpeg";
+// import brochurePDF from "../../..//assets/";
+import brochurePDF from "../.././assets/Brochure.pdf";
 
 export default function DevFirstPage() {
   const [showPopup, setShowPopup] = useState(false);
@@ -172,12 +174,16 @@ export default function DevFirstPage() {
     setShowPopup(true);
     setTimeout(() => setShowPopup(false), 3000);
 
-    // Simulate file download (Replace with actual brochure link)
+    // Open in new tab
+    window.open(brochurePDF, "_blank");
+
+    // Create an invisible download link
     const link = document.createElement("a");
-    link.download = "Brochure.pdf";
+    link.href = brochurePDF;
+    link.download = "Brochure.pdf"; // Set the file name
     document.body.appendChild(link);
     link.click();
-    document.body.removeChild(link);
+    document.body.removeChild(link); // Clean up the DOM
   };
 
   const details = [

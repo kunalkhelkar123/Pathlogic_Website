@@ -1,8 +1,27 @@
 import React from "react";
 import { motion } from "framer-motion";
 import image from "../../assets/Bannerrr.jpeg";
+// import brochurePDF from "../.././assets/Brochure.pdf";
+import brochurePDF from "../.././assets/Brochure.pdf";
 
 export default function ShortTermDotNet() {
+  const handleDownload = () => {
+    // setShowPopup(true);
+    // setTimeout(() => setShowPopup(false), 3000);
+
+    // Open in new tab
+    window.open(brochurePDF, "_blank");
+
+    // Create an invisible download link
+    const link = document.createElement("a");
+    link.href = brochurePDF;
+    link.download = "Brochure.pdf"; // Set the file name
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link); // Clean up the DOM
+  };
+
+
   const details = [
     {
       title: "DotNet Core Fundamentals",
@@ -133,26 +152,27 @@ export default function ShortTermDotNet() {
             </div>
 
             <div className="mt-6 text-center flex justify-center gap-10">
-            <motion.button
+              <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 className="bg-orange-600 text-white font-bold py-2 px-4  rounded-lg hover:bg-orange-700 transition duration-300"
               >
-                Submit 
+                Submit
               </motion.button>
               <motion.button
                 whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                className="bg-orange-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-orange-700 transition duration-300"
+                className="bg-orange-600 hover:bg-orange-700 text-white py-2 px-4 rounded-[5px]"
+                type="button"
+                onClick={handleDownload}
               >
                 Download Brochure
               </motion.button>
             </div>
           </form>
         </motion.div>
-        
+
       </div>
-      
+
     </div>
   )
 }

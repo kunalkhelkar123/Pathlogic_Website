@@ -6,7 +6,7 @@ export default function Navbar() {
   const navigate = useNavigate();
   const [isShortTermOpen, setIsShortTermOpen] = useState(false);
   const [isLongTermOpen, setIsLongTermOpen] = useState(false);
-  
+
 
   const handleShortTermHover = () => {
     setIsShortTermOpen(true);
@@ -44,18 +44,18 @@ export default function Navbar() {
       { name: "React Native", path: "/Native" },
     ],
     testing: [
-      {name:"DotNet Core", path: "/Dotnetcore"},
-      {name:"DotNet with Angular", path: "/Dotnetangular"},
-      { name: "Software Testing", path: "/Testing" },
-      { name: "Manual Testing", path: "/ManualTest" },
-      { name: "Selenium with Java", path: "/SeleniumJava" },
+      { name: "DotNet Core", path: "/Dotnetcore" },
+      { name: "DotNet with Angular", path: "/Dotnetangular" },
+      { name: "Software Testing", path: "/softweretesting" },
+      { name: "Manual Testing", path: "/manualtesting" },
+      { name: "Selenium with Java", path: "/seleniumJAVA" },
     ],
     advanced: [
-      { name: "Power BI", path: "/PowerBI" },
+      { name: "Power BI", path: "/Powerbipage" },
       { name: "Data Science with Python", path: "/DataScience" },
       { name: "Salesforce Development", path: "/Salesforce" },
       { name: "AWS/DevOps", path: "/AwsDevops" },
-      { name: "FullStack Java Development", path: "/Java Developmet" },
+      { name: "FullStack Java Development", path: "/JavaDevelopmet" },
       { name: "Digital Marketing Training", path: "/DigitalMarketing" },
     ],
   };
@@ -88,7 +88,7 @@ export default function Navbar() {
     { name: 'Internship', path: '/Certification' },
     { name: 'Certification', path: '/Certification' },
     { name: 'Stipend', path: '/Certification' },
-    
+
   ];
 
   return (
@@ -109,9 +109,9 @@ export default function Navbar() {
           <div
             className="relative dropdown "
             //onMouseEnter={() => setIsShortTermOpen(true)}
-           // onClick={handleShortTermClick}
-             onMouseEnter={handleShortTermHover}
-            
+            // onClick={handleShortTermClick}
+            onMouseEnter={handleShortTermHover}
+
             onClick={() => setIsShortTermOpen(true)}
           >
             <button className="text-gray-700 hover:text-orange-500 font-medium">
@@ -171,7 +171,7 @@ export default function Navbar() {
             className="relative dropdown "
             //onMouseEnter={() => setIsLongTermOpen(true)}
             onMouseEnter={handleLongTermHover}
-            
+
             onClick={() => setIsLongTermOpen(true)}
           >
             <button className="text-gray-700 hover:text-orange-500 font-medium" >
@@ -221,14 +221,14 @@ export default function Navbar() {
                       ))}
                     </ul>
                   </div>
-                  
+
                 </div>
-                
+
               </div>
             )}
           </div>
-  
-           {/* placementProgram
+
+          {/* placementProgram
            <div>
                     <h4 className="text-lg font-semibold text-orange-500 mb-2">Placement Program</h4>
                     <ul className="space-y-2">
@@ -242,27 +242,27 @@ export default function Navbar() {
                     </ul>
                   </div> */}
 
-<div className="relative dropdown" onClick={(e) => e.stopPropagation()}>
-                                    <button onClick={() => {
-                                        setIsDropdownOpen2(!isDropdownOpen2);
-                                        setIsDropdownOpen(false);
-                                        setIsDropdownOpen1(false);
-                                    }} className="text-gray-700 hover:text-orange-500 font-medium">
-                                        Placement Program
-                                    </button>
-                                    {isDropdownOpen2 && (
-                                        <div className="absolute left-0 mt-2 w-48 bg-white border border-gray-300 rounded-md shadow-lg z-20">
-                                            <ul className="space-y-2 p-2">
-                                                {placementProgram.map((course, index) => (
-                                                    <li key={index}>
-                                                        <Link to={course.path} className="block text-gray-700 hover:text-orange-500 px-4 py-2 text-sm">
-                                                            {course.name}
-                                                        </Link>
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                 </div>)}
-                                </div>
+          <div className="relative dropdown" onClick={(e) => e.stopPropagation()}>
+            <button onClick={() => {
+              setIsDropdownOpen2(!isDropdownOpen2);
+              setIsDropdownOpen(false);
+              setIsDropdownOpen1(false);
+            }} className="text-gray-700 hover:text-orange-500 font-medium">
+              Placement Program
+            </button>
+            {isDropdownOpen2 && (
+              <div className="absolute left-0 mt-2 w-48 bg-white border border-gray-300 rounded-md shadow-lg z-20">
+                <ul className="space-y-2 p-2">
+                  {placementProgram.map((course, index) => (
+                    <li key={index}>
+                      <Link to={course.path} className="block text-gray-700 hover:text-orange-500 px-4 py-2 text-sm">
+                        {course.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>)}
+          </div>
           <Link to="/Workspace" className="text-gray-700 hover:text-orange-500 font-medium">Workshops</Link>
           <Link to="/placement" className="text-gray-700 hover:text-orange-500 font-medium">Placements</Link>
         </nav>

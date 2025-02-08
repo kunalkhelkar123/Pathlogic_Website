@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import image from "../../assets/Banner1.jpeg";
-//import brochurePDF from "../../../assets/Brochure.pdf";
+// import brochurePDF from "../../../assets/";
+import brochurePDF from "../../../src/assets/Brochure.pdf";
 
 export default function CoreWeb() {
   const [showPopup, setShowPopup] = useState(false);

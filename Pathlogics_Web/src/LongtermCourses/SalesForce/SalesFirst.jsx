@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import image from "../../assets/Banner1.jpeg";
 //import brochurePDF from "../../../assets/Brochure.pdf";
+import brochurePDF from "../.././assets/Brochure.pdf";
 
 export default function SalesFirst() {
   const [showPopup, setShowPopup] = useState(false);
@@ -54,10 +55,10 @@ export default function SalesFirst() {
       title: "Salesforce Lightning",
       description: "Learn to build dynamic, responsive web pages using the Salesforce Lightning framework and Lightning Web Components.",
     },
-    {
-      title: "Salesforce Integration",
-      description: "Understand how to integrate Salesforce with external applications and APIs using RESTful services and middleware.",
-    },
+    // {
+    //   title: "Salesforce Integration",
+    //   description: "Understand how to integrate Salesforce with external applications and APIs using RESTful services and middleware.",
+    // },
   ];
 
   return (

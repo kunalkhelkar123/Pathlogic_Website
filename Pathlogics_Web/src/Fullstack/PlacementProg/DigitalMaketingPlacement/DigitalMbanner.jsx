@@ -107,7 +107,12 @@ export default function DigitalMBanner() {
               <motion.button whileHover={{ scale: 1.1 }} className="bg-orange-600 hover:bg-orange-700 text-white py-2 px-4 rounded-[5px]" type="submit">
                 Submit
               </motion.button>
-              <motion.button whileHover={{ scale: 1.1 }} className="bg-orange-600 hover:bg-orange-700 text-white py-2 px-4 rounded-[5px] " type="button" onClick={handleDownload}>
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                className="bg-orange-600 hover:bg-orange-700 text-white py-2 px-4 rounded-[5px]"
+                type="button"
+                onClick={handleDownload}
+              >
                 Download Brochure
               </motion.button>
             </div>
