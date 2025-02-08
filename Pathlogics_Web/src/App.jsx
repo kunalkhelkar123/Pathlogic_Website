@@ -86,11 +86,11 @@ import SaForce from "./SHORTCOURSES/Salesforce Developer/SaForce";
 
 
 import Quick from "./Quick Enquiry/Quick";
-import Java from "./Fullstack/PlacementProg/FullStackJava/Java";
+import PlacementJava from "./Fullstack/PlacementProg/FullStackJava/Java";
 import FullstackWebPlacement from "./Fullstack/PlacementProg/FullStackWebDev/FullstackWebPlacement";
 import MainDigitalMarketing from "./Fullstack/PlacementProg/DigitalMaketingPlacement/MainDigitalMarketing";
 import MainDevops from "./Fullstack/PlacementProg/DevOps/MainDevops";
-import MainTesting from "./Fullstack/PlacementProg/FullStackTesting/MainTesting";
+import MainTesting from "./Fullstack/PlacementProg/FullStackTesting/MainTesting"
 // import FullWebBanner from "./Fullstack/PlacementProg/FullWebDev/FullWEbBanner";
 
 
@@ -193,13 +193,13 @@ function App() {
       <Route path="/Aboutus" element={ <Layout> <All /> </Layout> }/>
       <Route path="/Workspace"element={  <Layout> <Workspace />  </Layout> }/>
       <Route path="/Short"element={ <Layout>   <Short />  </Layout> } />
-      <Route path="/Aws"        element={ <Layout> <Aws /> </Layout> } />
+      {/* <Route path="/Aws"        element={ <Layout> <Aws /> </Layout> } /> */}
       <Route path="/Testing"element={<Layout><Testing /></Layout>}/>
       <Route path="/QuickEnquiry"element={<Layout><QuickEnquiry /></Layout>}/>
       <Route path="/studentregistration"element={<Layout><StudentRegistration /> </Layout>}/>
       <Route path="/StudentLogin"element={ <Layout> <StudentLogin /></Layout> }/>
       <Route path="/StudentDashboard" element={ <> <StudentNav /> <StudentDashboard /></>}/>
-      <Route path="/PlacementJava" element={<Layout> <Java/></Layout> } />
+      <Route path="/PlacementJava" element={<Layout> <PlacementJava/></Layout> } />
       <Route path="/PlacementWeb" element={<Layout> <FullstackWebPlacement/></Layout> } />
       <Route path="/MainDigitalMarketing" element={<Layout> <MainDigitalMarketing/></Layout> } />
       <Route path="/MainDevops" element={<Layout> <MainDevops/></Layout> } />
@@ -209,7 +209,7 @@ function App() {
 
 
 
-      <Routes>
+      {/* <Routes> */}
 
         <Route path="/AdminNavbar" element={ <Layout> <Home />  </Layout>} />
         <Route path="/salesforce" element={ <Layout> <SaForce/> </Layout>}/>
