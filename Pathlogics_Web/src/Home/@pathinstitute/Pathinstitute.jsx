@@ -21,7 +21,7 @@ export default function Navbar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isDropdownOpen1, setIsDropdownOpen1] = useState(false);
   const [isDropdownOpen2, setIsDropdownOpen2] = useState(false);
-
+  const Navigate = useNavigate();
   useEffect(() => {
     const handleOutsideClick = (e) => {
       if (!e.target.closest(".dropdown")) {
@@ -91,8 +91,75 @@ export default function Navbar() {
 
   ];
 
+
+  const StudentRegistration = () => {
+    setIsQuickEnquiryOpen(!isQuickEnquiryOpen);
+    setSubmitStatus({ message: '', isError: false });
+    Navigate('/StudentRegistration');
+  };
+  const toggleQuickEnquiry = () => {
+    setIsQuickEnquiryOpen(!isQuickEnquiryOpen);
+    setSubmitStatus({ message: '', isError: false });
+    Navigate('/quickenquiry');
+  };
+  const LoginBar = [
+    { name: "Student login", path: "/StudentLogin" },
+    { name: "Admin Login", path: "/adminLogin" },
+    { name: "Trainer Login", path: "/trainerLogin" }
+  ];
+
+  
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
   return (
     <header className="w-full">
+            <div className="bg-black  text-white py-2 px-4 md:px-8 flex flex-col md:flex-row justify-between items-center">
+        <div className="flex flex-col  sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">
+          <span className="flex items-center space-x-2">
+            <span>📧</span>
+            <span>info@pathlogicstech.in</span>
+          </span>
+          <span className="flex items-center space-x-2">
+            <span>📞</span>
+            <span>+91 7364036464</span>
+          </span>
+        </div>
+        {/* <div className="hidden sm:flex space-x-4 sm:space-x-6 mt-2 sm:mt-0 ml-auto"> */}
+          {/* <a href="#admission" className="hover:underline">Admission</a> */}
+          <div className="hidden sm:flex space-x-4 sm:space-x-6 mt-2 sm:mt-0 ml-auto">
+          {/* <a href="#admission" className="hover:underline">Admission</a> */}
+          
+          <div className="relative" onClick={(e) => e.stopPropagation()}>
+            <button
+              onClick={() => setIsDropdownOpen1((prevState) => !prevState)}
+              className="text-white-700 hover:underline "
+            >
+              Login
+            </button>
+            {isDropdownOpen1 && (
+              <div
+                className="absolute left-0 mt-2 w-48 bg-white border border-gray-300 rounded-md shadow-lg"
+                style={{ zIndex: 222 }}
+              >
+                <ul className="space-y-2 p-2">
+                  {LoginBar.map((course, index) => (
+                    <li key={index}>
+                      <Link to={course.path} className="block text-gray-700 hover:text-orange-500 px-4 py-2 text-sm">
+                        {course.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+          {/* <a href="/StudentLogin" className="hover:underline">Student Login</a> */}
+          <button onClick={StudentRegistration} className="hover:underline">Apply Online</button>
+          <button onClick={toggleQuickEnquiry} className="hover:underline">Quick Enquiry</button>
+          {/* <a href="#gallery" className="hover:underline">Gallery</a> */}
+        </div>
+      </div>
+    
       <div className="w-full bg-white py-1 px-4 md:px-8 flex justify-between items-center border-b-2 border-orange-500">
         <div className="flex items-center">
           <button onClick={() => navigate('/')} className="text-black focus:outline-none">

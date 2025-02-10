@@ -77,6 +77,8 @@ import Test2 from "./ABOUT/Test";
 import AdminLogin from "./Login/StudentLogin/AdminLogin";
 import AdminDashboard from "./Admin/AdminDashboard";
 
+
+
 import Testing from "./SHORTCOURSES/Software/Testing";
 import QuickEnquiry from "./Quick Enquiry/QuickEnquiry";
 
@@ -236,7 +238,7 @@ function App() {
 
         <Route path="/admin/studentinfo" element={<><AdminNavbar /> <Studentinfo /></>} />
         <Route path="/admin/courseDetails" element={<><AdminNavbar /> <CoursesList /></>} />
-        <Route path="/admin/CourseSection" element={<Courses />} />
+        <Route path="/admin/CourseSection" element={  <><AdminNavbar /> <Courses /></>} />
         <Route path="/CourseSection/Test" element={<Test />} />
         {/* <Route path="/admin/Workshop" element={<Studentinfo />} /> */}
         {/* <Route path="/admin/Staffinfo" element={<Studentinfo />} /> */}
@@ -267,6 +269,7 @@ function App() {
         <Route path="/DigitalMarketing" element={<Layout>  < AllComponent /> </Layout>} />
         <Route path="/DataScience" element={<Layout>  < Datascienceall /> </Layout>} />
         <Route path="/JavaDevelopmet" element={<Layout>  < Fullstackall /> </Layout>} />
+        
 
 
 
