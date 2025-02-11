@@ -301,8 +301,8 @@ const technologies = [
         duration: "4-5 Hours",
         mode: "Online / Offline",
         techUri: 'python-programming',
-        backgroundImage: "/src/assets/bg-python.webp",
-        flowChartImage: "/src/assets/python-flow.png",
+        backgroundImage: "/src/assets/bg-python.jpeg",
+        flowChartImage: "/src/assets/python-flow_m.png",
         details: {
             preRequisites: [],
             courseContent: [
