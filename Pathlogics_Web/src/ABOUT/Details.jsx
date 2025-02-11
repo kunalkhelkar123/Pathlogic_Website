@@ -31,13 +31,13 @@ export default function Details({ backgroundImage = "" }) {
 
           {/* Description */}
           <p className="text-xl text-white/90">
-            We are Pune&apos;s finest and practical-oriented IT Training Institute.
+            We are Pune's finest and practical-oriented IT Training Institute.
           </p>
 
           {/* Additional content */}
           <div className="mt-8 flex gap-4">
             <div className="rounded-lg bg-white/10 px-6 py-4 backdrop-blur-sm">
-              <p className="text-3xl font-bold text-white">500+</p>
+              <p className="text-3xl font-bold text-white">2000+</p>
               <p className="text-sm text-white/80">Students Trained</p>
             </div>
             <div className="rounded-lg bg-white/10 px-6 py-4 backdrop-blur-sm">
