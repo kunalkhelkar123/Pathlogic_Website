@@ -1,5 +1,3 @@
-
-
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import image from "../../../assets/Homebanner.jpeg";
@@ -41,21 +39,24 @@ export default function DigitalPlacement() {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link); // Clean up the DOM
-};
+  };
 
   const details = [
     {
       title: "SEO Optimization",
-      description: "Learn how to optimize websites for search engines, increasing visibility and traffic.",
+      description:
+        "Learn how to optimize websites for search engines, increasing visibility and traffic.",
     },
     {
       title: "Social Media Marketing",
-      description: "Master platforms like Facebook, Instagram, and LinkedIn to grow brand awareness and engagement.",
+      description:
+        "Master platforms like Facebook, Instagram, and LinkedIn to grow brand awareness and engagement.",
     },
     {
       title: "Content Marketing",
-      description: "Understand how to create and distribute valuable content that attracts and retains customers.",
-    }
+      description:
+        "Understand how to create and distribute valuable content that attracts and retains customers.",
+    },
   ];
 
   return (
@@ -63,12 +64,18 @@ export default function DigitalPlacement() {
       className="min-h-screen bg-cover bg-center text-gray-900 flex flex-col items-center py-10 px-4"
       style={{ backgroundImage: `url(${image})` }}
     >
-      <motion.div initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-        <h1 className="text-4xl text-white font-bold mb-6">
-          Digital Marketing <span className="text-orange-600">Placement Guarantee</span> Program
+      <motion.div
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <h1 className="text-4xl text-white font-bold mb-6 text-center">
+          Short-Term <span className="text-orange-600">Digital Marketing</span>{" "}
+          Program
         </h1>
         <p className="text-lg text-white mb-12 text-center">
-          Master Digital Marketing strategies and get <strong>100% Placement Support</strong> with expert-led training.
+          Master Digital Marketing concepts and become a proficient Digital
+          Marketing developer with expert-led training.
         </p>
       </motion.div>
 
@@ -82,35 +89,90 @@ export default function DigitalPlacement() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
             >
-              <h2 className="text-xl font-bold mb-4 text-orange-600">{detail.title}</h2>
+              <h2 className="text-xl font-bold mb-4 text-orange-600">
+                {detail.title}
+              </h2>
               <p className="text-white">{detail.description}</p>
             </motion.div>
           ))}
         </div>
 
-        <motion.div className="bg-gray-800 bg-opacity-60 p-6 w-full max-w-md rounded-lg shadow-lg" initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }}>
-          <h2 className="text-2xl font-bold text-orange-600 mb-4">Enquiry Form</h2>
+        <motion.div
+          className="bg-gray-800 bg-opacity-60 p-6 w-full max-w-md rounded-lg shadow-lg"
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+        >
+          <h2 className="text-2xl font-bold text-orange-600 mb-4">
+            Enquiry Form
+          </h2>
           <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
-            <input type="text" name="name" placeholder="Full Name" value={formData.name} onChange={handleChange} className="w-full p-2 border rounded-lg" required />
-            <input type="email" name="email" placeholder="Email Address" value={formData.email} onChange={handleChange} className="w-full p-2 border rounded-lg" required />
-            <input type="tel" name="phone" placeholder="Phone Number" value={formData.phone} onChange={handleChange} className="w-full p-2 border rounded-lg" required />
-            <select name="passingYear" value={formData.passingYear} onChange={handleChange} className="w-full p-2 border rounded-lg" required>
+            <input
+              type="text"
+              name="name"
+              placeholder="Full Name"
+              value={formData.name}
+              onChange={handleChange}
+              className="w-full p-2 border rounded-lg"
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email Address"
+              value={formData.email}
+              onChange={handleChange}
+              className="w-full p-2 border rounded-lg"
+              required
+            />
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Phone Number"
+              value={formData.phone}
+              onChange={handleChange}
+              className="w-full p-2 border rounded-lg"
+              required
+            />
+            <select
+              name="passingYear"
+              value={formData.passingYear}
+              onChange={handleChange}
+              className="w-full p-2 border rounded-lg"
+              required
+            >
               <option value="">Select Passing Year</option>
               <option value="Pursuing">Pursuing</option>
               <option value="Completed">Completed</option>
             </select>
-            <select name="interest" value={formData.interest} onChange={handleChange} className="w-full p-2 border rounded-lg" required>
+            <select
+              name="interest"
+              value={formData.interest}
+              onChange={handleChange}
+              className="w-full p-2 border rounded-lg"
+              required
+            >
               <option value="">Select Interest</option>
               <option value="SEO Optimization">SEO Optimization</option>
-              <option value="Social Media Marketing">Social Media Marketing</option>
+              <option value="Social Media Marketing">
+                Social Media Marketing
+              </option>
               <option value="Content Marketing">Content Marketing</option>
             </select>
 
             <div className="mt-6 flex gap-10 justify-center">
-              <motion.button whileHover={{ scale: 1.1 }} className="bg-orange-600 text-white py-2 px-4 rounded-lg" type="submit">
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                className="bg-orange-600 text-white py-2 px-4 rounded-[5px] hover:bg-orange-700"
+                type="submit"
+              >
                 Submit
               </motion.button>
-              <motion.button whileHover={{ scale: 1.1 }} className="bg-orange-600 text-white py-2 px-4 rounded-lg" type="button" onClick={handleDownload}>
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                className="bg-orange-600 text-white py-2 px-4 rounded-[5px] hover:bg-orange-700"
+                type="button"
+                onClick={handleDownload}
+              >
                 Download Brochure
               </motion.button>
             </div>
@@ -119,13 +181,23 @@ export default function DigitalPlacement() {
       </div>
 
       {showPopup && (
-        <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} className="fixed top-5 right-5 bg-gradient-to-br from-gray-900 to-teal-600 text-white px-6 py-3 rounded-lg shadow-lg">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          className="fixed top-5 right-5 bg-gradient-to-br from-gray-900 to-teal-600 text-white px-6 py-3 rounded-lg shadow-lg"
+        >
           ✅ Brochure Download Started!
         </motion.div>
       )}
 
       {formPopup && (
-        <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} className="fixed bottom-10 right-10 bg-gradient-to-br from-gray-900 to-teal-900 text-white px-6 py-3 rounded-lg shadow-lg">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          className="fixed bottom-10 right-10 bg-gradient-to-br from-gray-900 to-teal-900 text-white px-6 py-3 rounded-lg shadow-lg"
+        >
           ✅ Form Submitted Successfully!
         </motion.div>
       )}

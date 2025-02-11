@@ -4,7 +4,7 @@ export default function Program() {
   return (
     <div className="min-h-screen">
       {/* Program Overview Section */}
-      <div className="relative bg-gradient-to-br from-orange-500 to-orange-600 py-20">
+      <div className="relative bg-gradient-to-br from-gray-900 to-teal-600 py-20">
         <div className="absolute inset-0 bg-[url('/diagonal-pattern.svg')] opacity-10"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-8">
@@ -49,8 +49,8 @@ export default function Program() {
                 </li>
               </ul>
             </div>
-            <div className="px-8 py-4 bg-gray-900">
-              <button className="text-white font-semibold hover:text-orange-300 transition duration-300">
+            <div className="px-8 py-4 bg-orange-600 hover:bg-orange-700 rounded-[5px]">
+              <button className="text-white font-semibold text-bold hover:text-teal-900 transition duration-300">
                 Know More
               </button>
             </div>
@@ -77,8 +77,8 @@ export default function Program() {
                 </li>
               </ul>
             </div>
-            <div className="px-8 py-4 bg-gray-900">
-              <button className="text-white font-semibold hover:text-orange-300 transition duration-300">
+            <div className="px-8 py-4 bg-orange-600 hover:bg-orange-700 rounded-[5px]">
+              <button className="text-white font-semibold text-bold hover:text-teal-900 transition duration-300">
                 Know More
               </button>
             </div>
