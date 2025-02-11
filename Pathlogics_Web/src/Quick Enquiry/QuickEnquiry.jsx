@@ -63,7 +63,7 @@ const ContactForm = () => {
     };
 
     return (
-        <div className="max-w-screen-lg w-full h-full m-0 p-0 grid grid-cols-1 sm:space-x-6 lg:grid-cols-2 items-start justify-evenly mx-auto px-2">
+        <div className=" w-full bg-gray-200 h-full m-0 p-0 grid grid-cols-1 sm:space-x-6 lg:grid-cols-2 items-start justify-evenly mx-auto px-2">
             {/* Google Map */}
             <div className="md:mt-8 relative w-full h-[348px] lg:h-[60vh] lg:w-full !rounded-md sm:mb-4">
                 <p className={`text-2xl my-6 text-center font-semibold mb-4 lg:mb-16 capitalize`}>Meet us on workplace</p>
@@ -76,7 +76,7 @@ const ContactForm = () => {
                 ></iframe>
             </div>
             {/* Contact Form */}
-            <div className="flex flex-col bg-white shadow-lg m-4 px-8 py-10 rounded-md ">
+            <div className="flex flex-col bg-white shadow-lg m-4  px-8 py-10 rounded-md ">
                 <h2 className=" text-2xl font-semibold text-gray-800 text-center w-full mt-6 lg:mt-0 capitalize">
                     Send a message
                 </h2>

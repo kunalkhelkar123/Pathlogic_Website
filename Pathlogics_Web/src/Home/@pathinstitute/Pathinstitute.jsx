@@ -176,14 +176,14 @@ export default function Navbar() {
               </div>
             )}
           </div>
-          <a href="/StudentLogin" className="hover:underline">Student Login</a>
+          {/* <a href="/StudentLogin" className="hover:underline">Student Login</a> */}
           <button onClick={() => alert('Apply Online')} className="hover:underline">
             Apply Online
           </button>
           <button onClick={() => alert('Quick Enquiry')} className="hover:underline">
             Quick Enquiry
           </button>
-          <a href="#gallery" className="hover:underline">Gallery</a>
+          {/* <a href="#gallery" className="hover:underline">Gallery</a> */}
         </div>
       </div>
 
