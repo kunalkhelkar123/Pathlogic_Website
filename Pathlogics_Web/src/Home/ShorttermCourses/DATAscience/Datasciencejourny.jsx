@@ -1,5 +1,4 @@
 
-
 import { useState } from "react";
 import { motion } from "framer-motion";
 
@@ -18,11 +17,13 @@ export default function Datasciencejourney() {
   return (
     <div className="bg-gradient-to-br from-gray-900 to-teal-600 min-h-screen flex flex-col items-center pt-[91px] ">
       {/* Header Section */}
+
       <div className="text-center">
         <h1 className="text-4xl sm:text-5xl font-extrabold text-white p-1">
           Data Science With Python <span className="text-orange-600">Journey</span>
         </h1>
         <p className="text-white mt-2 text-lg sm:text-xl p-1">
+
           Your path to becoming a pro developer
         </p>
         <button

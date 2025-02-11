@@ -18,11 +18,11 @@ export default function DotJourney() {
   return (
     <div className="bg-gradient-to-br from-gray-900 to-teal-600 min-h-screen flex flex-col items-center pt-[91px] ">
       {/* Header Section */}
-      <div className="text-center">
+      <div className="text-center px-4 sm:px-8">
         <h1 className="text-4xl sm:text-5xl font-extrabold text-white">
           FullStack <span className="text-orange-600">Journey</span>
         </h1>
-        <p className="text-white mt-2 text-lg sm:text-xl">
+        <p className="text-white mt-2 text-lg sm:text-xl px-4">
           Your path to becoming a pro developer
         </p>
         <button
