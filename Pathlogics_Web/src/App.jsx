@@ -45,7 +45,7 @@ import More from "./Traninus/More";
 import Again from "./Corparate/Again";
 import Details from "./ABOUT/Details"
 import Data from "./ABOUT/Data"
-import Aboutus from "./ABOUT/Aboutus";
+import Aboutus from "./ABOUT/All";
 import Mission from "./ABOUT/Mission";
 import All from "./ABOUT/All";
 import Workspace from "./WORKSPACE/Workspace";
@@ -148,6 +148,7 @@ import Fullstackall from "./Home/ShorttermCourses/Full Stack Java/Fullstackall";
 
 
 
+
 function App() {
   const [loading, setLoading] = useState(false);
   const location = useLocation();
@@ -198,6 +199,8 @@ function App() {
         <Route path="/Dotnetcore" element={<Layout> <DotNetCourse /> </Layout>} />
         <Route path="/Dotnetangular" element={<Layout> <DotnetAngularCourse /> </Layout>} />
         <Route path="/fullstack" element={<Layout> <Fullstack /> </Layout>} />
+        <Route path="/AboutUs" element={<Layout> <Aboutus /> </Layout>} />
+
 
         {/* <Route path="/StudentDashboard" element={<StudentDashboard />} /> */}
 

@@ -329,7 +329,16 @@ export default function Navbar() {
                   ))}
                 </ul>
               </div>)}
+              
           </div>
+          <Link to="/AboutUs" className="text-gray-700 hover:text-orange-500 font-medium">
+         
+
+          <div>
+                About us
+                
+              </div>
+              </Link>
           <Link to="/Workspace" className="text-gray-700 hover:text-orange-500 font-medium">Workshops</Link>
           {/* <Link to="/placement" className="text-gray-700 hover:text-orange-500 font-medium">Placements</Link> */}
         </nav>

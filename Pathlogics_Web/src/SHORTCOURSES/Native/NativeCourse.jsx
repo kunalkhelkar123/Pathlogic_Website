@@ -7,6 +7,7 @@ import NativeCoreModules from './NativeCourseModules';
 import MoreCourses from '../Salesforce Developer/MoreCourses';
 import Testimonials from '../../Home/Testimonials/Testimonials';
 import Companie from '../../Fullstack/Companies/Companie';
+import Masternative from './MasterNative';
 
 function NativeCourse() {
   return (
@@ -14,6 +15,7 @@ function NativeCourse() {
     <NativeShortTerm/>
     <NativeJourney/>
     <NativeProgramO/>
+    <Masternative/>
     <NativeCurriculum/>
     <NativeCoreModules/>
     <MoreCourses/>
