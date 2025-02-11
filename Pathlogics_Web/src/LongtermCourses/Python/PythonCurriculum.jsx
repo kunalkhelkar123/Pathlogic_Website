@@ -38,9 +38,9 @@ export default function PythonCurriculum() {
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-teal-600 py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h1 className="text-4xl font-extrabold text-white sm:text-5xl md:text-6xl">
+          <h2 className="text-4xl font-extrabold text-white sm:text-5xl md:text-6xl">
             Full Stack Python Programming
-          </h1>
+          </h2>
           <p className="mt-3 max-w-md mx-auto text-base text-white sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
             Embark on a journey through our comprehensive Python-focused curriculum
           </p>
