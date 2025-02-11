@@ -82,7 +82,7 @@ export default function DigitalStack() {
           </motion.p>
           <motion.button
             whileHover={{ scale: 1.1 }}
-            className="bg-indigo-600 text-white text-lg font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-indigo-700"
+            className="bg-orange-600 text-white text-lg font-semibold py-3 px-8 rounded-[5px] shadow-lg hover:bg-orange-700"
           >
             Start Now
           </motion.button>

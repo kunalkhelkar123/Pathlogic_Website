@@ -48,7 +48,6 @@ import Data from "./ABOUT/Data"
 import Aboutus from "./ABOUT/All";
 import Mission from "./ABOUT/Mission";
 import All from "./ABOUT/All";
-import Workspace from "./WORKSPACE/Workspace";
 import Javadeveloper from "./SHORTCOURSES/Javadeveloper";
 import Courseoverveiw from "./SHORTCOURSES/Courseoverveiw";
 import Modules from "./SHORTCOURSES/Modules";
@@ -143,6 +142,9 @@ import Powerbiall from "./Home/ShorttermCourses/POWER BI/powerbiall";
 import Datascienceall from "./Home/ShorttermCourses/DATAscience/Datascienceall";
 import Manualall from "./Home/ShorttermCourses/MANUALtesting/Manualall";
 import Fullstackall from "./Home/ShorttermCourses/Full Stack Java/Fullstackall";
+import WorkshopsPage from "./Workshops/WorkshopsPage.jsx";
+import WorkshopTechnologyPage from "./Workshops/components/WorkshopTechnologyPage.jsx";
+import {HelmetProvider} from "react-helmet-async";
 
 
 
@@ -214,7 +216,11 @@ function App() {
         <Route path="/again" element={<Layout>     <Again />   </Layout>} />
         <Route path="/All" element={<Layout>  <All /></Layout>} />
         <Route path="/Aboutus" element={<Layout> <All /> </Layout>} />
-        <Route path="/Workspace" element={<Layout> <Workspace />  </Layout>} />
+
+        {/* workshop page and respective pages */}
+        <Route path="/workspace" element={<Layout><WorkshopsPage /></Layout>} />
+        <Route path='/workspace/:techUri' element={<Layout><WorkshopTechnologyPage /></Layout>} />
+
         <Route path="/Short" element={<Layout>   <Short />  </Layout>} />
         {/* <Route path="/Aws" element={<Layout> <Aws /> </Layout>} /> */}
         <Route path="/Testing" element={<Layout><Testing /></Layout>} />

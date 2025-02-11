@@ -34,7 +34,7 @@ export default function Manualstack() {
         <div className="text-center mb-16">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight">
             Master the Art of
-            <span className="block text-indigo-600">Manual Testing</span>
+            <span className="block text-orange-600">Manual Testing</span>
           </h1>
           <p className="text-xl sm:text-2xl text-gray-700 mt-4">
             Learn essential testing techniques to ensure software quality.
@@ -80,7 +80,7 @@ export default function Manualstack() {
           </motion.p>
           <motion.button
             whileHover={{ scale: 1.1 }}
-            className="bg-indigo-600 text-white text-lg font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-indigo-700"
+            className="bg-orange-600 text-white text-lg font-semibold py-3 px-8 rounded-[5px] shadow-lg hover:bg-orange-700"
           >
             Start Now
           </motion.button>

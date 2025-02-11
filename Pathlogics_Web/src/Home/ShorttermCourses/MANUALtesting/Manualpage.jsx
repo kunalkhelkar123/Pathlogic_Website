@@ -49,16 +49,19 @@ export default function Manualpage() {
   const details = [
     {
       title: "Software Testing Fundamentals",
-      description: "Learn the basics of software testing, including test cases, test plans, and defect lifecycle.",
+      description:
+        "Learn the basics of software testing, including test cases, test plans, and defect lifecycle.",
     },
     {
       title: "Manual Testing Techniques",
-      description: "Master black-box testing, white-box testing, exploratory testing, and usability testing.",
+      description:
+        "Master black-box testing, white-box testing, exploratory testing, and usability testing.",
     },
     {
       title: "Bug Tracking & Reporting",
-      description: "Understand how to track, report, and manage bugs using tools like JIRA and Bugzilla.",
-    }
+      description:
+        "Understand how to track, report, and manage bugs using tools like JIRA and Bugzilla.",
+    },
   ];
 
   return (
@@ -66,12 +69,16 @@ export default function Manualpage() {
       className="min-h-screen bg-cover bg-center text-gray-900 flex flex-col items-center py-10 px-4"
       style={{ backgroundImage: `url(${image})` }}
     >
-      <motion.div initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-        <h1 className="text-4xl text-white font-bold mb-6">
-          Manual Testing <span className="text-orange-600">Placement Guarantee</span> Program
+      <motion.div
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+         <h1 className="text-4xl text-white font-bold mb-6 text-center">
+          Short-Term  <span className="text-orange-600">Manual Testing</span> Program
         </h1>
         <p className="text-lg text-white mb-12 text-center">
-          Master Manual Testing skills and get <strong>100% Placement Support</strong> with expert-led training.
+        Master Manual Testing concepts and become a proficient Manual Testing developer with expert-led training.
         </p>
       </motion.div>
 
@@ -85,35 +92,94 @@ export default function Manualpage() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
             >
-              <h2 className="text-xl font-bold mb-4 text-orange-600">{detail.title}</h2>
+              <h2 className="text-xl font-bold mb-4 text-orange-600">
+                {detail.title}
+              </h2>
               <p className="text-white">{detail.description}</p>
             </motion.div>
           ))}
         </div>
 
-        <motion.div className="bg-gray-800 bg-opacity-60 p-6 w-full max-w-md rounded-lg shadow-lg" initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }}>
-          <h2 className="text-2xl font-bold text-orange-600 mb-4">Enquiry Form</h2>
+        <motion.div
+          className="bg-gray-800 bg-opacity-60 p-6 w-full max-w-md rounded-lg shadow-lg"
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+        >
+          <h2 className="text-2xl font-bold text-orange-600 mb-4">
+            Enquiry Form
+          </h2>
           <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
-            <input type="text" name="name" placeholder="Full Name" value={formData.name} onChange={handleChange} className="w-full p-2 border rounded-lg" required />
-            <input type="email" name="email" placeholder="Email Address" value={formData.email} onChange={handleChange} className="w-full p-2 border rounded-lg" required />
-            <input type="tel" name="phone" placeholder="Phone Number" value={formData.phone} onChange={handleChange} className="w-full p-2 border rounded-lg" required />
-            <select name="passingYear" value={formData.passingYear} onChange={handleChange} className="w-full p-2 border rounded-lg" required>
+            <input
+              type="text"
+              name="name"
+              placeholder="Full Name"
+              value={formData.name}
+              onChange={handleChange}
+              className="w-full p-2 border rounded-lg"
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email Address"
+              value={formData.email}
+              onChange={handleChange}
+              className="w-full p-2 border rounded-lg"
+              required
+            />
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Phone Number"
+              value={formData.phone}
+              onChange={handleChange}
+              className="w-full p-2 border rounded-lg"
+              required
+            />
+            <select
+              name="passingYear"
+              value={formData.passingYear}
+              onChange={handleChange}
+              className="w-full p-2 border rounded-lg"
+              required
+            >
               <option value="">Select Passing Year</option>
               <option value="Pursuing">Pursuing</option>
               <option value="Completed">Completed</option>
             </select>
-            <select name="interest" value={formData.interest} onChange={handleChange} className="w-full p-2 border rounded-lg" required>
+            <select
+              name="interest"
+              value={formData.interest}
+              onChange={handleChange}
+              className="w-full p-2 border rounded-lg"
+              required
+            >
               <option value="">Select Interest</option>
-              <option value="Software Testing Fundamentals">Software Testing Fundamentals</option>
-              <option value="Manual Testing Techniques">Manual Testing Techniques</option>
-              <option value="Bug Tracking & Reporting">Bug Tracking & Reporting</option>
+              <option value="Software Testing Fundamentals">
+                Software Testing Fundamentals
+              </option>
+              <option value="Manual Testing Techniques">
+                Manual Testing Techniques
+              </option>
+              <option value="Bug Tracking & Reporting">
+                Bug Tracking & Reporting
+              </option>
             </select>
 
             <div className="mt-6 flex gap-10 justify-center">
-              <motion.button whileHover={{ scale: 1.1 }} className="bg-orange-600 text-white py-2 px-4 rounded-lg" type="submit">
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                className="bg-orange-600 text-white py-2 px-4 rounded-[5px] hover:bg-orange-700"
+                type="submit"
+              >
                 Submit
               </motion.button>
-              <motion.button whileHover={{ scale: 1.1 }} className="bg-orange-600 text-white py-2 px-4 rounded-lg" type="button" onClick={handleDownload}>
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                className="bg-orange-600 text-white py-2 px-4 rounded-[5px] hover:bg-orange-700"
+                type="button"
+                onClick={handleDownload}
+              >
                 Download Brochure
               </motion.button>
             </div>

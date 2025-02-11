@@ -14,7 +14,9 @@ const CourseModule = ({ title, icon, index }) => {
         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
       }`}
     >
-      <div className="bg-teal-50 rounded-lg shadow-lg p-6 h-full hover:shadow-2xl  hover:bg-gradient-to-br from-gray-400 to-teal-600transition-shadow duration-300">
+
+      <div className="bg-orange-500 rounded-lg shadow-lg p-6 h-full hover:shadow-2xl  hover:bg-gradient-to-br from-gray-400 to-teal-600 transition-shadow duration-300">
+
         <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-white">
           <span className="text-orange-600 text-3xl">{icon}</span>
         </div>

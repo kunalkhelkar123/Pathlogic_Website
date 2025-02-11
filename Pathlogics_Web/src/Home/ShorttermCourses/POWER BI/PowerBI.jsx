@@ -207,11 +207,11 @@ export default function PowerBI() {
       style={{ backgroundImage: `url(${image})` }}
     >
       <motion.div initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-        <h1 className="text-4xl text-white font-bold mb-6">
-          Power BI <span className="text-orange-600">Placement Guarantee</span> Program
+      <h1 className="text-4xl text-white font-bold mb-6 text-center">
+          Short-Term  <span className="text-orange-600">Power BI</span> Program
         </h1>
         <p className="text-lg text-white mb-12 text-center">
-          Master Power BI for data analysis and get <strong>100% Placement Support</strong> with expert-led training.
+        Master Power BI concepts and become a proficient Power BI developer with expert-led training.
         </p>
       </motion.div>
 
@@ -250,13 +250,22 @@ export default function PowerBI() {
             </select>
 
             <div className="mt-6 flex gap-10 justify-center">
-              <motion.button whileHover={{ scale: 1.1 }} className="bg-orange-600 text-white py-2 px-4 rounded-lg" type="submit">
-                Submit
-              </motion.button>
-              <motion.button whileHover={{ scale: 1.1 }} className="bg-orange-600 text-white py-2 px-4 rounded-lg" type="button" onClick={handleDownload}>
-                Download Brochure
-              </motion.button>
-            </div>
+                          <motion.button
+                            whileHover={{ scale: 1.1 }}
+                            className="bg-orange-600 text-white py-2 px-4 rounded-[5px] hover:bg-orange-700"
+                            type="submit"
+                          >
+                            Submit
+                          </motion.button>
+                          <motion.button
+                            whileHover={{ scale: 1.1 }}
+                            className="bg-orange-600 text-white py-2 px-4 rounded-[5px] hover:bg-orange-700"
+                            type="button"
+                            onClick={handleDownload}
+                          >
+                            Download Brochure
+                          </motion.button>
+                        </div>
           </form>
         </motion.div>
       </div>

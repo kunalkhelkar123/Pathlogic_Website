@@ -166,7 +166,7 @@ export default function FullWebBanner() {
             <div className="mt-6 flex gap-4 justify-center">
               <motion.button
                 whileHover={{ scale: 1.1 }}
-                className="bg-orange-600 text-white py-2 px-4 rounded-[5px]"
+                className="bg-orange-600 text-white py-2 px-4 rounded-lg"
                 type="submit"
               >
                 Submit

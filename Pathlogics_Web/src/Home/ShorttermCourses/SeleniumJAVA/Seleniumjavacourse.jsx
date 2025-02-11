@@ -38,7 +38,7 @@ export default function SeleniumJavaCourse() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h1 className="text-4xl font-extrabold text-white sm:text-5xl md:text-6xl">
-            Selenium with <span className="text-yellow-400">Java</span>
+            Selenium with <span className="text-orange-600">Java</span>
           </h1>
           <p className="mt-3 max-w-md mx-auto text-base text-white sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
             Master automation testing with our comprehensive Selenium and Java curriculum.
@@ -57,7 +57,7 @@ export default function SeleniumJavaCourse() {
         </div>
 
         <div className="text-center">
-          <button className="bg-orange-600 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-teal-700 transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+          <button className="bg-orange-600 text-white px-8 py-3 rounded-[5px] font-semibold shadow-lg hover:bg-orange-700 transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
             Enroll Now
           </button>
         </div>

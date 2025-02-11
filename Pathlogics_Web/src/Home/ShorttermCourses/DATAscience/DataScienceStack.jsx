@@ -34,7 +34,7 @@ export default function DataScienceStack() {
         <div className="text-center mb-16">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight">
             Master
-            <span className="block text-indigo-600">Data Science with Python</span>
+            <span className="block text-orange-600">Data Science with Python</span>
           </h1>
           <p className="text-xl sm:text-2xl text-gray-700 mt-4">
             Learn data analysis, machine learning, and AI with Python tools and frameworks.
@@ -80,7 +80,7 @@ export default function DataScienceStack() {
           </motion.p>
           <motion.button
             whileHover={{ scale: 1.1 }}
-            className="bg-indigo-600 text-white text-lg font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-indigo-700"
+            className=" text-white text-lg font-semibold py-3 px-8 bg-orange-600 text-white py-2 px-4 rounded-[5px] hover:bg-orange-700 shadow-lg "
           >
             Start Learning
           </motion.button>

@@ -7,7 +7,11 @@ import NativeCoreModules from './NativeCourseModules';
 import MoreCourses from '../Salesforce Developer/MoreCourses';
 import Testimonials from '../../Home/Testimonials/Testimonials';
 import Companie from '../../Fullstack/Companies/Companie';
+// <<<<<<< purva_dev2
 import Masternative from './MasterNative';
+// =======
+// import NativeLogo from './NativeLogo';
+// >>>>>>> dev2
 
 function NativeCourse() {
   return (
@@ -15,7 +19,11 @@ function NativeCourse() {
     <NativeShortTerm/>
     <NativeJourney/>
     <NativeProgramO/>
+// <<<<<<< purva_dev2
     <Masternative/>
+// =======
+//     <NativeLogo/>
+// >>>>>>> dev2
     <NativeCurriculum/>
     <NativeCoreModules/>
     <MoreCourses/>
