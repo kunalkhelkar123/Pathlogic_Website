@@ -12,7 +12,8 @@ const Testimonials = () => {
       name: 'Kudumula Venkata Subba Reddy',
       photo: testimonal1,
       review:
-        "I'm Kudumula Venkata Subba Reddy, an EEE graduate from JNTUA College of Engineering, Pulivendula, Andhra Pradesh. After graduation, I joined Pathlogic Technologics  India, Bangalore, where I completed the advanced embedded systems course. The constant support from the staff and the training at Pathlogic Technologics  India significantly improved my technical skills, helping me secure a position at HL Mando.",
+
+
     },
     {
       name: 'John Doe',

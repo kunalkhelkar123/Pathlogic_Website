@@ -155,7 +155,7 @@ export default function ShortTermDotNet() {
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                className="bg-orange-600 text-white font-bold py-2 px-4  rounded-lg hover:bg-orange-700 transition duration-300"
+                className="bg-orange-600 text-white font-bold py-2 px-4  rounded-[5px] hover:bg-orange-700 transition duration-300"
               >
                 Submit
               </motion.button>

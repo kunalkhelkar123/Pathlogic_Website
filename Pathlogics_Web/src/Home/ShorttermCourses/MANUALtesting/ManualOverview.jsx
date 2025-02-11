@@ -10,7 +10,7 @@ export default function ManualOverview() {
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-8">
             Manual Testing Program Overview
           </h1>
-          <p className="text-lg md:text-xl text-white max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-white max-w-4xl mx-auto leading-relaxed text-justify">
             Manual Testing is a fundamental process in software quality assurance where test cases are executed manually without automation tools. This program covers test case design, bug reporting, SDLC, STLC, and various testing methodologies to ensure software reliability and performance.
           </p>
         </div>
@@ -46,7 +46,7 @@ export default function ManualOverview() {
                 </li>
               </ul>
             </div>
-            <div className="px-8 py-4 bg-orange-600">
+            <div className="px-8 py-4 bg-orange-600 hover:bg-orange-700 rounded-[5px]">
               <button className="text-white font-semibold text-bold hover:text-teal-900 transition duration-300">
                 Know More
               </button>
@@ -74,7 +74,7 @@ export default function ManualOverview() {
                 </li>
               </ul>
             </div>
-            <div className="px-8 py-4  bg-orange-600">
+            <div className="px-8 py-4  bg-orange-600 hover:bg-orange-700 rounded-[5px]">
               <button className="text-white font-semibold hover:text-teal-900 transition duration-300">
                 Know More
               </button>

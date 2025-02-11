@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -6,7 +7,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-const Courses= () => {
+const Courses = () => {
   const courses = [
     {
       id: 1,
@@ -40,7 +41,8 @@ const Courses= () => {
       description:
         "Master MongoDB, Express.js, React, and Node.js to build scalable applications.",
       link: "/fullstack",
-      image: "https://thereadersea.com/wp-content/uploads/2023/05/mern-stack.png",
+      image:
+        "https://thereadersea.com/wp-content/uploads/2023/05/mern-stack.png",
     },
     {
       id: 5,
@@ -48,7 +50,8 @@ const Courses= () => {
       description:
         "Learn to implement CRM solutions and customize Salesforce for business growth.",
       link: "/salesforce",
-      image: "https://in-cloud.ca/wp-content/uploads/2017/01/Salesforce-Platforme-2.png",
+      image:
+        "https://in-cloud.ca/wp-content/uploads/2017/01/Salesforce-Platforme-2.png",
     },
     {
       id: 6,
@@ -56,7 +59,8 @@ const Courses= () => {
       description:
         "Gain expertise in manual and automated testing to ensure software quality.",
       link: "/testing",
-      image: "https://fixingblog.com/wp-content/uploads/2021/06/AdobeStock_257701717-scaled.jpeg",
+      image:
+        "https://fixingblog.com/wp-content/uploads/2021/06/AdobeStock_257701717-scaled.jpeg",
     },
   ];
 
@@ -77,10 +81,13 @@ const Courses= () => {
             768: { slidesPerView: 2 }, // Tablet - 2 slides
             1024: { slidesPerView: 3 }, // Desktop - 3 slides
           }}
-          navigation
+          navigation={{
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          }}
           pagination={{ clickable: true }}
           autoplay={{ delay: 3000, disableOnInteraction: false }}
-          className="pb-8"
+          className="pb-8 relative"
         >
           {courses.map((course) => (
             <SwiperSlide key={course.id}>
@@ -88,7 +95,7 @@ const Courses= () => {
                 {/* Background Image */}
                 <div
                   className="h-32 bg-cover bg-center"
-                  style={{ backgroundImage:` url(${course.image}) `}}
+                  style={{ backgroundImage: `url(${course.image})` }}
                 ></div>
 
                 <div className="p-4 flex-grow text-center">
@@ -109,6 +116,10 @@ const Courses= () => {
               </div>
             </SwiperSlide>
           ))}
+
+          {/* Swiper Arrows - Small & Outside Content */}
+          <div className="swiper-button-prev !text-black !w-3 !h-3"></div>
+          <div className="swiper-button-next !text-black !w-3 !h-3"></div>
         </Swiper>
       </div>
     </div>

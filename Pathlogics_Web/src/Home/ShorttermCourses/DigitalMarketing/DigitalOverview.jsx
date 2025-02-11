@@ -10,7 +10,7 @@ export default function DigitalOverview() {
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-8">
             Program Overview
           </h1>
-          <p className="text-lg md:text-xl text-white max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-white max-w-4xl mx-auto leading-relaxed text-justify">
             Digital Marketing refers to the practice of promoting products or services using digital channels such as search engines, social media, email, and websites. A digital marketing professional has expertise in SEO, content marketing, social media strategies, and data analytics to drive online engagement and conversions.
           </p>
         </div>
@@ -46,7 +46,7 @@ export default function DigitalOverview() {
                 </li>
               </ul>
             </div>
-            <div className="px-8 py-4 bg-orange-600">
+            <div className="px-8 py-4 bg-orange-600 radius-[5px] hover:bg-orange-700">
               <button className="text-white font-semibold text-bold hover:text-teal-900 transition duration-300">
                 Know More
               </button>
@@ -74,7 +74,7 @@ export default function DigitalOverview() {
                 </li>
               </ul>
             </div>
-            <div className="px-8 py-4  bg-orange-600">
+            <div className="px-8 py-4  bg-orange-600 radius-[5px] hover:bg-orange-700">
               <button className="text-white font-semibold hover:text-teal-900 transition duration-300">
                 Know More
               </button>

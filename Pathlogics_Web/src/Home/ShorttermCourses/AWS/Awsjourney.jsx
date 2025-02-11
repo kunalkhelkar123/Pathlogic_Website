@@ -1,32 +1,30 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-export default function AWSDevOpsJourney() {
+export default function Awsjourney() {
   const [showJourney, setShowJourney] = useState(false);
 
   const journeySteps = [
-    { emoji: "🚀", title: "Kickstart", description: "Intro to AWS & DevOps" },
-    { emoji: "📝", title: "Registration", description: "Enroll in AWS DevOps Course" },
-    { emoji: "☁️", title: "Cloud Basics", description: "Learn AWS Core Services" },
-    // { emoji: "🛠️", title: "DevOps Tools", description: "Master Terraform, Docker & Kubernetes" },
-    // { emoji: "🔄", title: "CI/CD Pipelines", description: "Implement Jenkins & GitHub Actions" },
-    { emoji: "💡", title: "Hands-on Projects", description: "Deploy Real-World Applications" },
-    { emoji: "🎯", title: "Mock Interviews", description: "Prepare with Experts" },
-    { emoji: "🏆", title: "Job Placement", description: "Land Your Dream DevOps Role" },
+    { emoji: "🚀", title: "Kickstart", description: "Orientation & Meet Peers" },
+    { emoji: "😎", title: "Registration", description: "Complete Course Signup" },
+    { emoji: "📚", title: "Enroll Now", description: "Start Learning Modules" },
+    { emoji: "💡", title: "Master Skills", description: "Work on Real Projects" },
+    { emoji: "🎯", title: "Interviews", description: "Resume & Mock Interviews" },
+    { emoji: "🏆", title: "Placements", description: "Get Your Dream Job" },
   ];
 
   return (
-    <div className="bg-gradient-to-br from-gray-900 to-teal-700 min-h-screen flex flex-col items-center p-20">
+    <div className="bg-gradient-to-br from-gray-900 to-teal-600 min-h-screen flex flex-col items-center pt-[91px] ">
       {/* Header Section */}
       <div className="text-center">
         <h1 className="text-4xl sm:text-5xl font-extrabold text-white">
-          AWS <span className="text-yellow-400">DevOps Journey</span>
+          AWS/DevOps <span className="text-orange-600">Journey</span>
         </h1>
-        <p className="text-white mt-2 text-lg sm:text-xl">
-          Become a Certified AWS DevOps Engineer
+        <p className="text-white mt-2 text-lg sm:text-xl p-1">
+          Your path to becoming a pro developer
         </p>
         <button
-          className="mt-4 px-5 py-2 text-sm sm:text-base font-semibold text-white bg-gradient-to-br from-teal-500 to-green-500 rounded-lg shadow-lg hover:scale-105 transition"
+          className="mt-4 px-5 py-2 text-sm sm:text-base font-semibold text-white bg-gradient-to-br from-purple-500 to-indigo-500 rounded-lg shadow-lg hover:scale-105 transition"
           onClick={() => setShowJourney(!showJourney)}
         >
           {showJourney ? "Hide Journey" : "Start Now"}

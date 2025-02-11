@@ -62,11 +62,11 @@ export default function FullStackPlacement() {
       style={{ backgroundImage: `url(${image})` }}
     >
       <motion.div initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-        <h1 className="text-4xl text-white font-bold mb-6">
-          Full Stack Java <span className="text-orange-600">Placement Guarantee</span> Program
+      <h1 className="text-4xl text-white font-bold mb-6 text-center">
+          Short-Term  <span className="text-orange-600">FullStack Java Development</span> Program
         </h1>
         <p className="text-lg text-white mb-12 text-center">
-          Become a Full Stack Java Developer with <strong>100% Placement Support</strong> and expert-led training.
+        Master FullStack Java Development concepts and become a proficient Mern  developer with expert-led training.
         </p>
       </motion.div>
 
@@ -105,13 +105,13 @@ export default function FullStackPlacement() {
             </select>
 
             <div className="mt-6 flex gap-10 justify-center">
-              <motion.button whileHover={{ scale: 1.1 }} className="bg-orange-600 text-white py-2 px-4 rounded-lg" type="submit">
-                Submit
-              </motion.button>
-              <motion.button whileHover={{ scale: 1.1 }} className="bg-orange-600 text-white py-2 px-4 rounded-lg" type="button" onClick={handleDownload}>
-                Download Brochure
-              </motion.button>
-            </div>
+                          <motion.button whileHover={{ scale: 1.1 }} className="bg-orange-600 text-white py-2 px-4 rounded-[5px] hover:bg-orange-700" type="submit">
+                            Submit
+                          </motion.button>
+                          <motion.button whileHover={{ scale: 1.1 }} className="bg-orange-600 text-white py-2 px-4 rounded-[5px] hover:bg-orange-700" type="button" onClick={handleDownload}>
+                            Download Brochure
+                          </motion.button>
+                        </div>
           </form>
         </motion.div>
       </div>

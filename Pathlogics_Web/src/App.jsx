@@ -48,7 +48,6 @@ import Data from "./ABOUT/Data"
 import Aboutus from "./ABOUT/Aboutus";
 import Mission from "./ABOUT/Mission";
 import All from "./ABOUT/All";
-import Workspace from "./WORKSPACE/Workspace";
 import Javadeveloper from "./SHORTCOURSES/Javadeveloper";
 import Courseoverveiw from "./SHORTCOURSES/Courseoverveiw";
 import Modules from "./SHORTCOURSES/Modules";
@@ -76,6 +75,8 @@ import Test2 from "./ABOUT/Test";
 
 import AdminLogin from "./Login/StudentLogin/AdminLogin";
 import AdminDashboard from "./Admin/AdminDashboard";
+
+
 
 import Testing from "./SHORTCOURSES/Software/Testing";
 import QuickEnquiry from "./Quick Enquiry/QuickEnquiry";
@@ -141,6 +142,9 @@ import Powerbiall from "./Home/ShorttermCourses/POWER BI/powerbiall";
 import Datascienceall from "./Home/ShorttermCourses/DATAscience/Datascienceall";
 import Manualall from "./Home/ShorttermCourses/MANUALtesting/Manualall";
 import Fullstackall from "./Home/ShorttermCourses/Full Stack Java/Fullstackall";
+import WorkshopsPage from "./Workshops/WorkshopsPage.jsx";
+import WorkshopTechnologyPage from "./Workshops/components/WorkshopTechnologyPage.jsx";
+import {HelmetProvider} from "react-helmet-async";
 
 
 
@@ -209,7 +213,11 @@ function App() {
         <Route path="/again" element={<Layout>     <Again />   </Layout>} />
         <Route path="/All" element={<Layout>  <All /></Layout>} />
         <Route path="/Aboutus" element={<Layout> <All /> </Layout>} />
-        <Route path="/Workspace" element={<Layout> <Workspace />  </Layout>} />
+
+        {/* workshop page and respective pages */}
+        <Route path="/workspace" element={<Layout><WorkshopsPage /></Layout>} />
+        <Route path='/workspace/:techUri' element={<Layout><WorkshopTechnologyPage /></Layout>} />
+
         <Route path="/Short" element={<Layout>   <Short />  </Layout>} />
         {/* <Route path="/Aws" element={<Layout> <Aws /> </Layout>} /> */}
         <Route path="/Testing" element={<Layout><Testing /></Layout>} />
@@ -236,7 +244,7 @@ function App() {
 
         <Route path="/admin/studentinfo" element={<><AdminNavbar /> <Studentinfo /></>} />
         <Route path="/admin/courseDetails" element={<><AdminNavbar /> <CoursesList /></>} />
-        <Route path="/admin/CourseSection" element={<Courses />} />
+        <Route path="/admin/CourseSection" element={  <><AdminNavbar /> <Courses /></>} />
         <Route path="/CourseSection/Test" element={<Test />} />
         {/* <Route path="/admin/Workshop" element={<Studentinfo />} /> */}
         {/* <Route path="/admin/Staffinfo" element={<Studentinfo />} /> */}
@@ -267,6 +275,7 @@ function App() {
         <Route path="/DigitalMarketing" element={<Layout>  < AllComponent /> </Layout>} />
         <Route path="/DataScience" element={<Layout>  < Datascienceall /> </Layout>} />
         <Route path="/JavaDevelopmet" element={<Layout>  < Fullstackall /> </Layout>} />
+        
 
 
 

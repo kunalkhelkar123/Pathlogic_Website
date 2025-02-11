@@ -1,9 +1,10 @@
+
 import React from "react";
 import { FileText, Activity, Code, Layers } from "lucide-react"; // Replacing icons for Salesforce-related topics
 
 const TechLogo = ({ children, color }) => (
   <div
-    className={`w-20 h-20 md:w-24 md:h-24 rounded-full flex items-center justify-center ${color} shadow-lg transform transition-transform duration-300 hover:scale-110`}
+    className={`w-32 h-32 md:w-48 md:h-48 lg:w-56 lg:h-56 rounded-full flex items-center justify-center ${color} shadow-lg transform transition-transform duration-300 hover:scale-110`}
   >
     {children}
   </div>
@@ -23,42 +24,42 @@ export default function SalesStack() {
           </h2>
         </div>
 
-        <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8 mt-12">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-12 flex-wrap">
           {/* Apex */}
           <div className="flex flex-col items-center space-y-3">
             <TechLogo color="bg-blue-500">
-              <FileText className="w-16 h-16 text-white" /> {/* Replaced Code with FileText for Apex */}
+              <FileText className="w-16 h-16 md:w-20 md:h-20 text-white" />
             </TechLogo>
-            <span className="text-2xl font-bold text-white">Apex</span>
+            <span className="text-xl md:text-2xl font-bold text-white">Apex</span>
           </div>
 
           {/* Flow */}
           <div className="flex flex-col items-center space-y-3">
             <TechLogo color="bg-gray-800">
-              <Activity className="w-16 h-16 text-white" /> {/* Replaced Zap with Activity for Flow */}
+              <Activity className="w-16 h-16 md:w-20 md:h-20 text-white" />
             </TechLogo>
-            <span className="text-2xl font-bold text-white">Flow</span>
+            <span className="text-xl md:text-2xl font-bold text-white">Flow</span>
           </div>
 
           {/* LWC */}
           <div className="flex flex-col items-center space-y-3">
             <TechLogo color="bg-green-500">
-              <Layers className="w-16 h-16 text-white" /> {/* Replaced LayoutGrid with Layers for LWC */}
+              <Layers className="w-16 h-16 md:w-20 md:h-20 text-white" />
             </TechLogo>
-            <span className="text-2xl font-bold text-white">LWC</span>
+            <span className="text-xl md:text-2xl font-bold text-white">LWC</span>
           </div>
 
           {/* Aura */}
           <div className="flex flex-col items-center space-y-3">
             <TechLogo color="bg-blue-600">
-              <Code className="w-16 h-16 text-white" /> {/* Replaced Database with Code for Aura */}
+              <Code className="w-16 h-16 md:w-20 md:h-20 text-white" />
             </TechLogo>
-            <span className="text-2xl font-bold text-white">Aura</span>
+            <span className="text-xl md:text-2xl font-bold text-white">Aura</span>
           </div>
         </div>
 
         <div className="mt-16 text-center">
-          <p className="text-xl text-orange-400 mb-6">
+          <p className="text-lg md:text-xl text-orange-400 mb-6">
             Become a Salesforce Development Expert!
           </p>
           <button className="bg-orange-600 text-white text-lg font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-orange-700 transition duration-300 transform hover:scale-105">

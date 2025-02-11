@@ -90,7 +90,7 @@ export default function FullStackModules() {
   return (
     <div className="min-h-screen bg-gray-100 py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto">
-        <h1 className="text-5xl font-extrabold text-center text-blue-600 mb-12">Full Stack Java Development Program</h1>
+        <h1 className="text-4xl font-extrabold text-center text-orange-600 mb-12 md:pr-5">Full Stack Java Development Program</h1>
         <div className="space-y-6">
           {modules.map((module, index) => (
             <AccordionItem
