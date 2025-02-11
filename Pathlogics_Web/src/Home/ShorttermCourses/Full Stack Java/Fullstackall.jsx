@@ -5,13 +5,15 @@ import FullStackJava from './FullStackJava'
 import FullStackJavalogo from './FullStackJavalogo'
 import FullStackModules from './FullStackModules'
 import Testimonials from '../DigitalMarketing/Testimonials'
-import Company from '../DigitalMarketing/Company'
+import Company from '../DigitalMarketing/Company';
+import FullStackOverview from './FullStackOverview';
 
 function Fullstackall() {
   return (
   <>
   <FullStackPlacement/>
   <Fullstackjourny/>
+  <FullStackOverview/>
   <FullStackJava/>
   <FullStackJavalogo/>
   <FullStackModules/>
@@ -21,4 +23,4 @@ function Fullstackall() {
   )
 }
 
-export default Fullstackall
+export default Fullstackall;

@@ -74,7 +74,7 @@ function Card({ title, items }) {
           ))}
         </ul>
       </div>
-      <div className="px-8 py-4 bg-orange-500">
+      <div className="px-8 py-4 bg-orange-600 hover:bg-orange-700 rounded-[5px]">
         <button className="text-white font-semibold hover:text-orange-300 transition duration-300">
           Know More
         </button>

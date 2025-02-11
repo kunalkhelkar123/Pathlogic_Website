@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-export default function Fullstackjourny() {
+export default function DotJourney() {
   const [showJourney, setShowJourney] = useState(false);
 
   const journeySteps = [
@@ -19,13 +19,15 @@ export default function Fullstackjourny() {
       {/* Header Section */}
       <div className="text-center px-4 sm:px-8">
         <h1 className="text-4xl sm:text-5xl font-extrabold text-white">
-          FullStack <span className="text-orange-600">Journey</span>
+
+          FullStack Java Development <span className="text-orange-600">Journey</span>
         </h1>
-        <p className="text-white mt-2 text-lg sm:text-xl px-4">
+        <p className="text-white mt-2 text-lg sm:text-xl p-1">
+
           Your path to becoming a pro developer
         </p>
         <button
-          className="mt-4 px-5 py-2 text-sm sm:text-base font-semibold text-white bg-gradient-to-br from-purple-500 to-indigo-500 rounded-lg shadow-lg hover:scale-105 transition"
+          className="mt-4 px-5 py-2 text-sm sm:text-base font-semibold text-white bg-orange-600 bg:hover-orange-700 rounded-[5px] shadow-lg hover:scale-105 transition"
           onClick={() => setShowJourney(!showJourney)}
         >
           {showJourney ? "Hide Journey" : "Start Now"}

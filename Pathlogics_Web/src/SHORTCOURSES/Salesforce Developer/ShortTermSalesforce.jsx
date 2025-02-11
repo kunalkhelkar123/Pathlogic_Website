@@ -64,7 +64,7 @@ export default function ShortTermSalesforce() {
       style={{ backgroundImage: `url(${image})` }}
     >
       <motion.div initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-        <h1 className="text-4xl text-white font-bold mb-6">
+        <h1 className="text-4xl text-white font-bold mb-6 text-center">
           Full Stack <span className="text-orange-600">Salesforce</span> Program
         </h1>
         <p className="text-lg text-white mb-12 text-center">

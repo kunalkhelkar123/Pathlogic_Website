@@ -57,8 +57,8 @@ export default function SoftwareTestinglogo() {
           </div>
         </div>
 
-        <div className="text-center">
-          <button className="bg-blue-500 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-teal-600 transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+        <div className="text-center ">
+          <button className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 rounded-[5px] font-semibold shadow-lg  transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
             Enroll Now
           </button>
         </div>

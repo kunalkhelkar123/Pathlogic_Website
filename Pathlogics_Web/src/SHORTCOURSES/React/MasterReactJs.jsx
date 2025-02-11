@@ -61,7 +61,7 @@ export default function MasterReactJs() {
           <p className="text-xl text-orange-400 mb-6">
             Become a React.JS Development Expert!
           </p>
-          <button className="bg-orange-600 text-white text-lg font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-orange-700 transition duration-300 transform hover:scale-105">
+          <button className="bg-orange-600 text-white text-lg font-semibold py-3 px-6 rounded-[5px] shadow-lg hover:bg-orange-700 transition duration-300 transform hover:scale-105">
             Start Learning Now
           </button>
         </div>

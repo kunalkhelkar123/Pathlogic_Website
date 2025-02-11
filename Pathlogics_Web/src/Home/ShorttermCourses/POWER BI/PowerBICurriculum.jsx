@@ -58,7 +58,7 @@ export default function PowerBICurriculum() {
         </div>
 
         <div className="text-center">
-          <button className="bg-orange-600 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-teal-700 transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+          <button className="bg-orange-600 text-white px-8 py-3 rounded-[5px] font-semibold shadow-lg hover:bg-orange-700 transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
             Enroll Now
           </button>
         </div>
