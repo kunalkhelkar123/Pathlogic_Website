@@ -10,7 +10,7 @@ const AllViewMore = () => {
   const courses = [
     {
       id: 1,
-      name: "Full Stack Development",
+      name: "Java Full Stack Development",
       description:
         "Learn both front-end and back-end technologies to build full-fledged web applications.",
       link: "/full-stack",
