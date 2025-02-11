@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-gray-300 py-8 px-4 bg-opacity-90 relative">
+    <footer className="bg-gray-900 text-gray-300 pt-10 pb-4 px-4 bg-opacity-90 relative">
       {/* Background world map pattern */}
       {/*<div className="absolute inset-0 bg-[url('https://via.placeholder.com/1920x1080?text=World+Map+Pattern')] opacity-10 -z-0"></div>*/}
       
@@ -150,7 +150,7 @@ const Footer = () => {
       </div>
 
       <div className={`z-10`}>
-        <p className="text-sm text-center text-gray-400 mt-6">© {new Date().getFullYear()} Pathlogics Technologies. All rights reserved.</p>
+        <p className="text-sm text-center text-gray-400 mt-2 mb-0">© {new Date().getFullYear()} <Link to={`/`} className={`text-gray-300 hover:text-orange-500`} >Pathlogics Technologies</Link>. All rights reserved.</p>
       </div>
 
     </footer>
