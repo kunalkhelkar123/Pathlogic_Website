@@ -62,7 +62,7 @@ const Accordion = () => {
               </div>
               <div className="p-4 bg-white shadow-md">
                 <h4 className="font-semibold">React Js Development </h4>
-                <p>Duration: # Months</p>
+                <p>Duration: 3 Months</p>
                 <p>Direct Admission</p>
               </div>
               <div className="p-4 bg-white shadow-md">
@@ -101,7 +101,7 @@ The range is really very wide, limited only by human imagination,” B J Ram Rao
         </AccordionItem>
 
         <AccordionItem
-          question="4. Why Pathlogic Technologics Institute for Embedded Systems & VLSI Training?"
+          question="4. Why Pathlogic Technologics Institute for Embedded Systems   Training?"
           answer="Pathlogic Technologics  Institute teaches the basics and underlying concepts of Embedded Systems in detail, along with real-time practical experience. Our courses include modules like Object-Oriented Concepts with C++, RT-Linux, and ARM porting. We have a strong placement record with a dedicated placement cell."
           isOpen={openIndex === 4}
           onClick={() => toggleAccordion(4)}
