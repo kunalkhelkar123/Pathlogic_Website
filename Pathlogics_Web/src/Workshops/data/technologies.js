@@ -1,4 +1,8 @@
 // technologies.js
+
+import IOT from '../../assets/bg-iot.jpg'
+import IOTflowChartImage from '../../assets/iot-flow.png'
+
 const technologies = [
     {
         id: 1,
@@ -15,8 +19,8 @@ const technologies = [
         duration: "4-5 Hours",
         mode: "Online / Offline",
         techUri: 'iot-and-beyond',
-        backgroundImage: "/src/assets/bg-iot.jpg",
-        flowChartImage: "/src/assets/iot-flow.png",
+        backgroundImage: IOT,
+        flowChartImage: IOTflowChartImage,
         details: {
             preRequisites: [],
             courseContent: [
@@ -225,15 +229,15 @@ const technologies = [
                 "Understanding Speech recognition mechanisms",
                 "Basics of Alexa",
                 "Internals of Alexa ecosystem",
-                    // "\n\tAVS",
-                    // "\n\tAWS registration for Alexa",
+                // "\n\tAVS",
+                // "\n\tAWS registration for Alexa",
                 "Alexa Skill creation",
                 "Setup Raspberry Pi",
                 "Installing Alexa on Raspberry Pi",
-                    // "\n\tConfigure and launch AVS on Raspberry Pi",
+                // "\n\tConfigure and launch AVS on Raspberry Pi",
                 "Alexa applications",
-                    // "\n\tMusic Control",
-                    // "\n\tWeather",
+                // "\n\tMusic Control",
+                // "\n\tWeather",
                 "Home automation control using Alexa with ESP32 IoT module"
             ],
             hardwareRequirements: [
