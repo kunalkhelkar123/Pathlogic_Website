@@ -4,7 +4,7 @@ const AccordionItem = ({ title, content, isOpen, onToggle }) => {
   return (
     <div className="mb-4 border border-gray-200 rounded-lg overflow-hidden shadow-md">
       <button
-        className="w-full bg-gradient-to-r from-gray-900 to-teal-600 text-white px-6 py-4 flex justify-between items-center hover:from-gray-800 hover:to-teal-500 transition-all duration-300"
+        className="w-full bg-orange-600 hover:bg-orange-700 text-white px-6 py-4 flex justify-between items-center  transition-all duration-300"
         onClick={onToggle}
       >
         <h3 className="text-xl font-semibold">{title}</h3>

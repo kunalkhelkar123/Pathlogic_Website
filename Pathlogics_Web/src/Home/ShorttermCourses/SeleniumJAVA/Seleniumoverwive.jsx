@@ -117,7 +117,7 @@ export default function SeleniumOverview() {
           <div className="bg-white rounded-lg shadow-xl overflow-hidden transform transition duration-300 hover:scale-105 flex flex-col">
             <div className="p-8 flex-grow">
               <h2 className="text-2xl font-bold text-gray-800 mb-6">
-                Course Modules
+                Admission Process
               </h2>
               <ul className="space-y-4">
                 <li className="flex items-center text-gray-700">
@@ -140,9 +140,9 @@ export default function SeleniumOverview() {
                 </li>
               </ul>
             </div>
-            <div className="px-8 py-4 bg-orange-500 mt-auto">
+            <div className="px-8 py-4 bg-orange-600 hover:bg-orange-700 rounded-[5px] mt-auto">
               <button className="text-white font-semibold hover:text-indigo-900 transition duration-300">
-                Learn More
+                Know More
               </button>
             </div>
           </div>
@@ -151,7 +151,7 @@ export default function SeleniumOverview() {
           <div className="bg-white rounded-lg shadow-xl overflow-hidden transform transition duration-300 hover:scale-105 flex flex-col">
             <div className="p-8 flex-grow">
               <h2 className="text-2xl font-bold text-gray-800 mb-10">
-                Prerequisites
+                Eligibility Criteria
               </h2>
               <ul className="space-y-4">
                 <li className="flex items-center text-gray-700">
@@ -174,9 +174,9 @@ export default function SeleniumOverview() {
                 </li>
               </ul>
             </div>
-            <div className="px-8 py-4 bg-orange-500 mt-auto">
+            <div className="px-8 py-4 bg-orange-600 hover:bg-orange-700 rounded-[5px] mt-auto">
               <button className="text-white font-semibold hover:text-indigo-900 transition duration-300">
-                Learn More
+                Know More
               </button>
             </div>
           </div>

@@ -8,6 +8,8 @@ import ManualModules from './ManualModules'
 import Testimonials from '../DigitalMarketing/Testimonials'
 import Company from '../DigitalMarketing/Company'
 
+
+
 function Manualall() {
   return (
 <>
@@ -17,6 +19,7 @@ function Manualall() {
 <Manualstack/>
 <ManualTesting/>
 <ManualModules/>
+
 <Testimonials/>
 <Company/>
 </>

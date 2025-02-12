@@ -5,15 +5,18 @@ export default function AWSDevOpsOverview() {
   return (
     <div className="min-h-screen">
       {/* Program Overview Section */}
-      <div className="relative bg-gradient-to-br from-teal-700 to-teal-700 py-20">
+      <div className="relative bg-gradient-to-br from-teal-900 to-teal-800 py-20">
         <div className="absolute inset-0 bg-[url('/diagonal-pattern.svg')] opacity-10"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-8">
+          <h1 className="text-4xl md:text-6xl font-bold text-orange-500 mb-8">
             AWS DevOps Program Overview
           </h1>
-          <p className="text-lg md:text-xl text-white max-w-4xl mx-auto leading-relaxed">
-            AWS DevOps focuses on automating and streamlining software development and IT operations using AWS services. Professionals gain expertise in CI/CD, Infrastructure as Code (IaC), monitoring, and cloud security to enhance deployment efficiency and system reliability.
-          </p>
+          <p className="text-lg md:text-xl text-white max-w-4xl mx-auto leading-relaxed text-justify">
+  AWS DevOps focuses on automating and streamlining software development and IT operations using AWS services. 
+  Professionals gain expertise in CI/CD, Infrastructure as Code (IaC), monitoring, and cloud security to enhance 
+  deployment efficiency and system reliability.
+</p>
+
         </div>
       </div>
 
