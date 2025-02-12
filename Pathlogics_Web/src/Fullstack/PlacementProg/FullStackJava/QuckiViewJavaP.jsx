@@ -49,7 +49,7 @@ export default function QuickViewJavaP() {
                 </li>
               </ul>
             </div>
-            <div className="px-8 py-4 bg-teal-600">
+            <div className="px-8 py-4 bg-orange-600 hover:bg-orange-700">
               <button className="text-white font-semibold text-bold  hover:text-teal-900 transition duration-300">
                 Know More
               </button>
@@ -77,7 +77,7 @@ export default function QuickViewJavaP() {
                 </li>
               </ul>
             </div>
-            <div className="px-8 py-4 bg-teal-600">
+            <div className="px-8 py-4 bg-orange-600 hover:bg-orange-700">
               <button className="text-white font-semibold hover:text-teal-900 transition duration-300">
                 Know More
               </button>

@@ -25,7 +25,7 @@ export default function TestingJourney() {
           Your path to becoming a QA expert
         </p>
         <button
-          className="mt-4 px-5 py-2 text-sm sm:text-base font-semibold text-white bg-gradient-to-br from-purple-500 to-indigo-500 rounded-lg shadow-lg hover:scale-105 transition"
+          className="mt-4 px-5 py-2 text-sm sm:text-base font-semibold text-white bg-orange-600 hover:bg-orange-700 rounded-[5px] shadow-lg hover:scale-105 transition"
           onClick={() => setShowJourney(!showJourney)}
         >
           {showJourney ? "Hide Journey" : "Start Now"}
