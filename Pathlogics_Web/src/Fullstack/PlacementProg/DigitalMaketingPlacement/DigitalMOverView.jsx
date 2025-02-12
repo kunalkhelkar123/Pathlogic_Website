@@ -47,8 +47,8 @@ export default function DigitalMOverview() {
                 </li>
               </ul>
             </div>
-            <div className="px-8 py-4 bg-orange-600">
-              <button className="text-white font-semibold hover:text-teal-900 transition duration-300 w-full">
+            <div className="px-8 py-4 bg-orange-600 mt-auto">
+              <button className="text-white font-semibold hover:text-teal-900 transition duration-300">
                 Know More
               </button>
             </div>
@@ -81,8 +81,8 @@ export default function DigitalMOverview() {
                 </li>
               </ul>
             </div>
-            <div className="px-8 py-4 bg-orange-600">
-              <button className="text-white font-semibold hover:text-teal-900 transition duration-300 w-full">
+            <div className="px-8 py-4 bg-orange-600 mt-auto">
+              <button className="text-white font-semibold hover:text-teal-900 transition duration-300">
                 Know More
               </button>
             </div>
