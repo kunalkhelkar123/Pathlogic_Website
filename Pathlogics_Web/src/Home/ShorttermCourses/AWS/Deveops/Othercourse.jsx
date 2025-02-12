@@ -84,7 +84,7 @@ const Courses= () => {
         >
           {courses.map((course) => (
             <SwiperSlide key={course.id}>
-              <div className="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 cursor-pointer flex flex-col">
+              <div className="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:scale-70 cursor-pointer flex flex-col">
                 {/* Background Image */}
                 <div
                   className="h-32 bg-cover bg-center"

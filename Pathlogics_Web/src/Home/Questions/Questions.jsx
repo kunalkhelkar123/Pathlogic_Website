@@ -42,7 +42,7 @@ const Accordion = () => {
           onClick={() => toggleAccordion(1)}
         >
           <div className="p-4 bg-white shadow-md mb-4 text-gray-900">
-            <h3 className="text-xl font-bold">Course: Embedded Systems</h3>
+            <h3 className="text-xl font-bold">Course: Full Stack Java Development</h3>
             <p className="mb-2">Duration: 6 Months</p>
             <p>Admission through Online Scholarship Test</p>
           </div>
@@ -51,28 +51,28 @@ const Accordion = () => {
             <h3 className="text-lg font-bold mb-4">Short Term Courses:</h3>
             <div className="grid grid-cols-3 gap-4">
               <div className="p-4 bg-white shadow-md">
-                <h4 className="font-semibold">Automotive Embedded</h4>
-                <p>Duration: 72 Hours</p>
+                <h4 className="font-semibold">Java Development</h4>
+                <p>Duration: 3 Months</p>
                 <p>Direct Admission</p>
               </div>
               <div className="p-4 bg-white shadow-md">
-                <h4 className="font-semibold">AUTOSAR</h4>
-                <p>Duration: 72 Hours</p>
+                <h4 className="font-semibold">Web Development</h4>
+                <p>Duration: 3 Months</p>
                 <p>Direct Admission</p>
               </div>
               <div className="p-4 bg-white shadow-md">
-                <h4 className="font-semibold">Micro Python</h4>
-                <p>Duration: 2 Weeks</p>
+                <h4 className="font-semibold">React Js Development </h4>
+                <p>Duration: 3 Months</p>
                 <p>Direct Admission</p>
               </div>
               <div className="p-4 bg-white shadow-md">
-                <h4 className="font-semibold">Embedded C</h4>
-                <p>Duration: 6 Weeks</p>
+                <h4 className="font-semibold">Nodejs Development </h4>
+                <p>Duration: 3 months</p>
                 <p>Direct Admission</p>
               </div>
               <div className="p-4 bg-white shadow-md">
                 <h4 className="font-semibold">Python</h4>
-                <p>Duration: 30 Days</p>
+                <p>Duration: 3 Months </p>
                 <p>Direct Admission</p>
               </div>
             </div>
@@ -101,7 +101,7 @@ The range is really very wide, limited only by human imagination,” B J Ram Rao
         </AccordionItem>
 
         <AccordionItem
-          question="4. Why Pathlogic Technologics Institute for Embedded Systems & VLSI Training?"
+          question="4. Why Pathlogic Technologics Institute for Embedded Systems   Training?"
           answer="Pathlogic Technologics  Institute teaches the basics and underlying concepts of Embedded Systems in detail, along with real-time practical experience. Our courses include modules like Object-Oriented Concepts with C++, RT-Linux, and ARM porting. We have a strong placement record with a dedicated placement cell."
           isOpen={openIndex === 4}
           onClick={() => toggleAccordion(4)}

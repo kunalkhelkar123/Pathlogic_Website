@@ -14,17 +14,17 @@ export default function Manualjourney() {
   ];
 
   return (
-    <div className="bg-gradient-to-br from-gray-900 to-teal-600 min-h-screen flex flex-col items-center p-20">
+    <div className="bg-gradient-to-br from-gray-900 to-teal-600 min-h-screen flex flex-col items-center pt-[91px] ">
       {/* Header Section */}
       <div className="text-center">
         <h1 className="text-4xl sm:text-5xl font-extrabold text-white">
-          FullStack <span className="text-orange-600">Java Journey</span>
+         Manual Testing <span className="text-orange-600">Journey</span>
         </h1>
-        <p className="text-white mt-2 text-lg sm:text-xl">
+        <p className="text-white mt-2 text-lg sm:text-xl p-1">
           Your path to becoming a pro developer
         </p>
         <button
-          className="mt-4 px-5 py-2 text-sm sm:text-base font-semibold text-white bg-gradient-to-br from-purple-500 to-indigo-500 rounded-lg shadow-lg hover:scale-105 transition"
+          className="mt-4 px-5 py-2 text-sm sm:text-base font-semibold text-white bg-orange-600 bg:hover-orange-700 rounded-[5px] shadow-lg hover:scale-105 transition"
           onClick={() => setShowJourney(!showJourney)}
         >
           {showJourney ? "Hide Journey" : "Start Now"}

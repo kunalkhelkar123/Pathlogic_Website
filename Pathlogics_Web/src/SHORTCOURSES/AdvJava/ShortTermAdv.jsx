@@ -110,10 +110,10 @@ export default function ShortTermAdvancedJava() {
             </select>
 
             <div className="mt-6 flex gap-10 justify-center">
-              <motion.button whileHover={{ scale: 1.1 }} className="bg-orange-600 text-white py-2 px-4 rounded-lg" type="submit">
+              <motion.button whileHover={{ scale: 1.1 }} className="bg-orange-600 hover:bg-orange-700 rounded-[5px] text-white py-2 px-4 " type="submit">
                 Submit
               </motion.button>
-              <motion.button whileHover={{ scale: 1.1 }} className="bg-orange-600 text-white py-2 px-4 rounded-lg" type="button" onClick={handleDownload}>
+              <motion.button whileHover={{ scale: 1.1 }} className="bg-orange-600 hover:bg-orange-700 rounded-[5px]   text-white py-2 px-4 " type="button" onClick={handleDownload}>
                 Download Brochure
               </motion.button>
             </div>

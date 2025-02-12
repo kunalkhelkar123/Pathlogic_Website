@@ -2,6 +2,8 @@
 
 import React, { useEffect, useRef } from 'react'
 import Slider from 'react-slick' // Import the Slider component
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import 'slick-carousel/slick/slick.css' // Import slick carousel styles
 import 'slick-carousel/slick/slick-theme.css' // Import slick theme styles
 import image1 from '../../assets/embeded.jpg';
@@ -90,8 +92,9 @@ export default function OurBlogs() {
   }
 
   return (
-    <div className="w-full max-w-6xl mx-auto p-4">
-      <h1 className="text-4xl font-serif text-orange-600 text-center mb-6">Our Blogs</h1>
+    <div className="min-h-[75vh] py-10 bg-gradient-to-br from-gray-900 to-teal-600">
+       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 className="text-4xl font-bold text-center text-orange-500 mb-8">Our Blogs</h1>
 
       {/* Slider Component */}
       <Slider  {...settings}>
@@ -135,6 +138,9 @@ export default function OurBlogs() {
           </div>
         ))}
       </Slider>
+      </div>
     </div>
+
+   
   )
 }

@@ -90,7 +90,7 @@ export default function PythonModule() {
   return (
     <div className="min-h-screen bg-gray-100 py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto">
-        <h1 className="text-5xl font-extrabold text-center text-orange-600 mb-12">Full Stack Python Programming Placement Program</h1>
+        <h2 className="text-4xl font-extrabold text-center text-orange-600 mb-12">Full Stack Python Programming Placement Program</h2>
         <div className="space-y-6">
           {modules.map((module, index) => (
             <AccordionItem
