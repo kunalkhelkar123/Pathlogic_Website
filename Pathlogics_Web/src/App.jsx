@@ -146,7 +146,7 @@ import WorkshopsPage from "./Workshops/WorkshopsPage.jsx";
 import WorkshopTechnologyPage from "./Workshops/components/WorkshopTechnologyPage.jsx";
 // import {HelmetProvider} from "react-helmet-async";
 
-
+import Inter from "./Home/Longtermgoal/Inter";
 
 
 
@@ -184,6 +184,8 @@ function App() {
       <Routes>
 
         <Route path="/" element={<Layout>     <Home />   </Layout>} />
+        <Route path="/inter" element={<Layout>     <Inter />   </Layout>} />
+
         <Route path="/PlacementJava" element={<Layout> <PlacementJava /></Layout>} />
         <Route path="/PlacementWeb" element={<Layout> <FullstackWebPlacement /></Layout>} />
         <Route path="/MainDigitalMarketing" element={<Layout> <MainDigitalMarketing /></Layout>} />

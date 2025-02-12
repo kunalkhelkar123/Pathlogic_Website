@@ -58,7 +58,7 @@ export default function WebOverView() {
 
         <div className="mt-20 text-center">
           <p className="text-2xl text-white mb-8">Master the entire web development stack</p>
-          <button className="bg-orange-600 text-white text-xl font-semibold py-4 px-8 rounded-full shadow-lg hover:bg-orange-700 transition duration-300 transform hover:scale-105">
+          <button className="bg-orange-600 text-white text-xl font-semibold py-4 px-8 rounded-[5px] shadow-lg hover:bg-orange-700 transition duration-300 transform hover:scale-105">
             Start Learning Now
           </button>
         </div>

@@ -21,8 +21,7 @@ function NativeCourse() {
     <NativeProgramO/>
 {/* // <<<<<<< purva_dev2 */}
     <Masternative/>
-// =======
-//     <NativeLogo/>
+
 {/* // >>>>>>> dev2 */}
     <NativeCurriculum/>
     <NativeCoreModules/>
