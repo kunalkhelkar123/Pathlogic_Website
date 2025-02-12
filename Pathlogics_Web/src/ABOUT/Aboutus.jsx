@@ -38,7 +38,7 @@ export default function Aboutus() {
           </div>
 
           {/* Heading */}
-          <h1 className="mb-8 text-4xl font-bold tracking-tight text-orange-900 sm:text-5xl lg:text-6xl">
+          <h1 className="mb-8 font-bold tracking-tight text-orange-900 sm:text-5xl lg:text-6xl">
             We Believe That Every Individual Has The Power To Transform Their IT Aspirations Into Reality.
           </h1>
 

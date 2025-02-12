@@ -6,7 +6,7 @@ export default function Details({ backgroundImage = "" }) {
     <section
       className="relative min-h-[400px] overflow-hidden"
       style={{
-        backgroundImage: backgroundImage ? `url(${backgroundImage})` : "linear-gradient(to bottom right, #00b5d6, #0361c8)", // Default gradient if no backgroundImage
+        backgroundImage: backgroundImage ? `url(${backgroundImage})` : "linear-gradient(to right,rgb(245, 183, 122),rgb(244, 139, 35))", // Default gradient if no backgroundImage
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
@@ -37,12 +37,12 @@ export default function Details({ backgroundImage = "" }) {
           {/* Additional content */}
           <div className="mt-8 flex gap-4">
             <div className="rounded-lg bg-white/10 px-6 py-4 backdrop-blur-sm">
-              <p className="text-3xl font-bold text-white">2000+</p>
-              <p className="text-sm text-white/80">Students Trained</p>
+              <p className="text-3xl font-bold text-orange-500">2000+</p>
+              <p className="text-sm text-black-200/80">Students Trained</p>
             </div>
             <div className="rounded-lg bg-white/10 px-6 py-4 backdrop-blur-sm">
-              <p className="text-3xl font-bold text-white">50+</p>
-              <p className="text-sm text-white/80">Courses Offered</p>
+              <p className="text-3xl font-bold text-orange-500">50+</p>
+              <p className="text-sm text-black-200/80">Courses Offered</p>
             </div>
           </div>
         </div>
