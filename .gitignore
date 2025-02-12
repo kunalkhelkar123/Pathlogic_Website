@@ -4,6 +4,7 @@
 =======
 >>>>>>> d9095cd75616c81ccc34044c5ade90112cf46467
 # Node.js
+**/node_modules/
 node_modules/
 npm-debug.log*
 yarn-debug.log*
