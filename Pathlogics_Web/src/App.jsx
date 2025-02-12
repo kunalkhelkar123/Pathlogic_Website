@@ -144,7 +144,7 @@ import Manualall from "./Home/ShorttermCourses/MANUALtesting/Manualall";
 import Fullstackall from "./Home/ShorttermCourses/Full Stack Java/Fullstackall";
 import WorkshopsPage from "./Workshops/WorkshopsPage.jsx";
 import WorkshopTechnologyPage from "./Workshops/components/WorkshopTechnologyPage.jsx";
-import {HelmetProvider} from "react-helmet-async";
+// import {HelmetProvider} from "react-helmet-async";
 
 import Inter from "./Home/Longtermgoal/Inter";
 
