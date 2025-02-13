@@ -7,7 +7,7 @@ import ManualTesting from './ManualTesting'
 import ManualModules from './ManualModules'
 import Testimonials from '../DigitalMarketing/Testimonials'
 import Company from '../DigitalMarketing/Company'
-//import MoreCourses from './Salesforce Developer/MoreCourses'
+
 
 
 function Manualall() {

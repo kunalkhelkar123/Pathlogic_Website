@@ -10,7 +10,7 @@ export default function Navbar() {
   const [isDropdownOpen1, setIsDropdownOpen1] = useState(false);
   const [isDropdownOpen2, setIsDropdownOpen2] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isplacementProgram , setPlacementProgram] = useState(false);
+  const [isplacementProgram, setPlacementProgram] = useState(false);
   const [isOpenAuthMenu, setIsOpenAuthMenu] = useState(false);
   const [isLoginDropdown, setisLoginDropdown] = useState(false);
   const [isDropdownOpen3, setIsDropdownOpen3] = useState(false);
@@ -156,7 +156,7 @@ export default function Navbar() {
             >
               Login
             </button>
-            {isDropdownOpen1 && (
+            {isDropdownOpen3 && (
               <div
                 className="absolute left-0 mt-2 w-48 bg-white border border-gray-300 rounded-md shadow-lg"
                 style={{ zIndex: 222 }}
@@ -176,36 +176,71 @@ export default function Navbar() {
               </div>
             )}
           </div>
-          <a href="/StudentLogin" className="hover:underline">Student Login</a>
-          <button onClick={() => alert('Apply Online')} className="hover:underline">
+  
+          <Link to={`/studentregistration`} className="hover:underline">
+
             Apply Online
-          </button>
-          <button onClick={() => alert('Quick Enquiry')} className="hover:underline">
+          </Link>
+          <Link to={`/QuickEnquiry`} className="hover:underline">
             Quick Enquiry
-          </button>
-          <a href="#gallery" className="hover:underline">Gallery</a>
+
+          </Link>
+      
         </div>
-      </div>
+
+          {/* <a href="#gallery" className="hover:underline">Gallery</a> */}
+        </div>
 
       {/* Mobile Menu */}
       {isOpenAuthMenu && (
         <div className="md:hidden flex flex-col items-end justify-center bg-black text-white space-y-4 py-4 px-6">
-          <div className="relative">
-            <button
-              onClick={() => setIsDropdownOpen3((prevState) => !prevState)}
-              className="text-white-700 hover:underline"
-            >
-              Login
-            </button>
-            
-          </div>
+
+       <div className="relative-dropdown algin-right text-right">
+          <button
+            onClick={() => setIsDropdownOpen3((prev) => !prev)}
+            className="text-white-700 "
+          >
+            Login
+          </button>
+
+          {/* Login Dropdown */}
+          {isDropdownOpen3 && (
+            <ul className="mt-2 w-auto  shadow-md rounded-md z-10 space-y-2 px-4 py-2">
+              <li className="cursor-pointer">
+                <Link
+                  to="/studentlogin"
+                  className="block text-white hover:text-blue-500 py-2"
+                >
+                  Student Login
+                </Link>
+              </li>
+              <li className="cursor-pointer">
+                <Link
+                  to="/adminlogin"
+                  className="block text-white hover:text-blue-500 py-2"
+                >
+                  Admin Login
+                </Link>
+              </li>
+              <li className="cursor-pointer">
+                <Link
+                  to="/trainerlogin"
+                  className="block text-white hover:text-blue-500 py-2"
+                >
+                  Trainer Login
+                </Link>
+              </li>
+            </ul>
+      )}
+    </div>
+
           <Link to={`/studentregistration`} className="hover:underline">
             Apply Online
           </Link>
           <Link to={`/QuickEnquiry`} className="hover:underline">
             Quick Enquiry
           </Link>
-      
+
         </div>
       )}
 
@@ -234,7 +269,7 @@ export default function Navbar() {
         </button>
         }
 
-        <nav className="hidden md:flex justify-center items-center space-x-2 sm:space-x-4 md:space-x-1 lg:space-x-[10px] xl:space-x-4 ml-auto">
+        <nav className="hidden md:flex justify-center items-center space-x-3 sm:space-x-2 md:space-x-1 lg:space-x-[20px] xl:space-x-5 ml-auto">
           <Link
             to="/"
             className="text-gray-700 hover:text-orange-500 font-medium"
@@ -260,6 +295,7 @@ export default function Navbar() {
             //onMouseEnter={() => setIsShortTermOpen(true)}
             // onClick={handleShortTermClick}
             onMouseEnter={handleShortTermHover}
+            onMouseLeave={() => setIsShortTermOpen(false)}
             onClick={() => setIsShortTermOpen(true)}
           >
             <button className="text-gray-700 hover:text-orange-500 font-medium">
@@ -336,7 +372,7 @@ export default function Navbar() {
           <div
             className="relative dropdown "
             //onMouseEnter={() => setIsLongTermOpen(true)}
-            onMouseEnter={handleLongTermHover}
+            onMouseEnter={()=>{handleLongTermHover ,  setIsDropdownOpen2(false)}}
             onClick={() => setIsLongTermOpen(true)}
           >
             <button className="text-gray-700 hover:text-orange-500 font-medium">
@@ -428,6 +464,10 @@ export default function Navbar() {
             onClick={(e) => e.stopPropagation()}
           >
             <button
+              onMouseEnter={() => { setIsLongTermOpen(false), setIsDropdownOpen2(true) }}
+              // onMouseEnter={() => isDropdownOpen2(true)}
+
+              // onMouseLeave={() =>}
               onClick={() => {
                 setIsDropdownOpen2(!isDropdownOpen2);
                 setIsDropdownOpen(false);
@@ -438,10 +478,11 @@ export default function Navbar() {
               Placement Program
             </button>
             {isDropdownOpen2 && (
-              <div className="absolute left-0 mt-2 w-48 bg-white border border-gray-300 rounded-md shadow-lg z-20">
-                <ul className="space-y-2 p-2">
+              // onMouseLeave={() => setIsDropdownOpen2(false)}
+              <div onMouseLeave={() => setIsDropdownOpen2(false)} className="absolute   left-0 mt-2  w-[350px] bg-white border border-gray-300 rounded-md shadow-lg z-20">
+                <ul className="grid grid-cols-2 gap-0 p-0 font-bold">
                   {placementProgram.map((course, index) => (
-                    <li key={index}>
+                    <li key={index} className="px-1">
                       <Link
                         to={course.path}
                         className="block text-gray-700 hover:text-orange-500 px-4 py-2 text-sm"
@@ -451,25 +492,27 @@ export default function Navbar() {
                     </li>
                   ))}
                 </ul>
+              </div>
+            )}
 
-              </div>)}
-              
+
           </div>
           <Link to="/AboutUs" className="text-gray-700 hover:text-orange-500 font-medium">
-         
 
-          <div>
-                About us
-                
-              </div>
-              </Link>
+
+            
+            <div onMouseEnter={()=>{setIsDropdownOpen2(false)}} >
+              About us
+
+            </div>
+          </Link>
           <Link to="/Workspace" className="text-gray-700 hover:text-orange-500 font-medium">Workshops</Link>
 
           {/* <Link to="/placement" className="text-gray-700 hover:text-orange-500 font-medium">Placements</Link> */}
         </nav>
       </div>
 
-        {/* Dropdown Menu for Mobile */}
+      {/* Dropdown Menu for Mobile */}
       {isMenuOpen && (
         <div className="md:hidden bg-white p-4 space-y-6 z-50 shadow-md">
           <div className="space-y-4">

@@ -19,6 +19,7 @@ import mongodb from "../../assets/mongodb.svg";
 function Banner() {
   return (
     <>
+
       {/* Banner Section */}
       <div className="w-full">
         <Swiper
@@ -42,7 +43,7 @@ function Banner() {
               style={{
                 backgroundImage: `url(${image})`,
               }}
-              className="relative z-[1] flex items-center justify-center bg-cover bg-center h-screen gap-[17px] flex flex-col sm:flex-row text-white text-center px-4 lg:px-12"
+              className="relative z-[1] flex items-center justify-center bg-cover bg-center sm:mt-[-120px] h-[800px] gap-[17px] flex flex-col sm:flex-row text-white text-center px-4 lg:px-12"
             >
               <div className="w-full sm:w-1/2 text-start">
                 {/* Title Section */}
@@ -106,7 +107,7 @@ function Banner() {
                 </div>
 
                 {/* Salary Info Section */}
-                <div className="p-4 sm:p-6 flex flex-col bg-opacity-80 bg-teal-800 rounded-lg mt-6 sm:mr-[100px] lg:mr-[307px] w-[80vw] sm:w-[40vw] lg:w-[22vw]">
+                <div className="p-4 sm:p-6 flex flex-col bg-opacity-80 bg-teal-800 rounded-lg mt-6 sm:mr-[30px] lg:mr-[145px] w-[80vw] sm:w-[40vw] lg:w-[22vw]">
                   <div className="flex gap-1.5 items-center">
                     <div className="text-orange-500 font-bold text-xl sm:text-2xl">
                       ₹16
@@ -132,57 +133,57 @@ function Banner() {
           </SwiperSlide>
 
           <SwiperSlide loop={true}>
-      <div
-        style={{
-          backgroundImage: `url(${image2})`,
-        }}
-        className="relative z-[1] flex flex-col sm:flex-row items-center justify-center bg-cover bg-center h-screen text-white text-center px-4 lg:px-12"
-      >
-        {/* Left Section - Text Content */}
-        <div className="w-full sm:w-1/2 text-start">
-          <div className="max-w-3xl mb-4">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
-              Join Full Stack Development <span className="text-teal-900">BOOTCAMP</span>
-            </h1>
-          </div><br />
-          <ul className="text-lg md:text-xl font-light max-w-3xl leading-relaxed list-disc pl-5">
-            <li>
-              <span className="text-white font-bold">100%</span> Job Guarantee Program
-            </li>
-            <li>
-              <span className="text-white font-bold">Experience</span> Mentors
-            </li>
-            <li>
-              <span className="text-white font-bold">Mock Interview</span> Preparation
-            </li>
-            <li>
-              <span className="text-white font-bold">Live</span> Project-Based Training
-            </li>
-          </ul>
-          <button className="mt-6 px-6 py-3 bg-teal-800 text-white rounded-full hover:bg-teal-900 transition">
-            Enroll Today!
-          </button>
-        </div>
+            <div
+              style={{
+                backgroundImage: `url(${image2})`,
+              }}
+              className="relative z-[1] flex flex-col sm:flex-row items-center justify-center bg-cover bg-center sm:mt-[-120px] h-[800px] text-white text-center px-4 lg:px-12"
+            >
+              {/* Left Section - Text Content */}
+              <div className="w-full sm:w-1/2 text-start">
+                <div className="max-w-3xl mb-4">
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
+                    Join Full Stack Development <span className="text-teal-900">BOOTCAMP</span>
+                  </h1>
+                </div><br />
+                <ul className="text-lg md:text-xl pl-[40px] font-light max-w-3xl leading-relaxed list-disc pl-5">
+                  <li>
+                    <span className="text-white font-bold">100%</span> Job Guarantee Program
+                  </li>
+                  <li>
+                    <span className="text-white font-bold">Experience</span> Mentors
+                  </li>
+                  <li>
+                    <span className="text-white font-bold">Mock Interview</span> Preparation
+                  </li>
+                  <li>
+                    <span className="text-white font-bold">Live</span> Project-Based Training
+                  </li>
+                </ul>
+                <button className="mt-6 px-6 py-3 bg-teal-800 text-white rounded-full hover:bg-teal-900 transition">
+                  Enroll Today!
+                </button>
+              </div>
 
-        {/* Right Section - Tech Stack Icons */}
-        <div className="w-full sm:w-1/2 flex flex-wrap grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 justify-center gap-4 mt-1 sm:mt-0">
-          {[
-            { name: "HTML5", img: HTMl },
-            { name: "CSS3", img: CSS },
-            { name: "JavaScript", img: JavaScript },
-            { name: "React", img: homeReact },
-            { name: "Node.js", img: nodejs },
-            { name: "Java", img: java },
-            { name: "SQL", img: sqldatabase },
-            { name: "MongoDB", img: mongodb },
-          ].map((tech, index) => (
-            <div key={index} className="p-4 bg-white flex items-center justify-center bg-opacity-80 rounded-lg">
-              <img src={tech.img} alt={tech.name} className="w-12 h-12 sm:w-16 sm:h-16" />
+              {/* Right Section - Tech Stack Icons */}
+              <div className="w-full sm:w-1/2 flex flex-wrap grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 justify-center gap-4 mt-1 sm:mt-0">
+                {[
+                  { name: "HTML5", img: HTMl },
+                  { name: "CSS3", img: CSS },
+                  { name: "JavaScript", img: JavaScript },
+                  { name: "React", img: homeReact },
+                  { name: "Node.js", img: nodejs },
+                  { name: "Java", img: java },
+                  { name: "SQL", img: sqldatabase },
+                  { name: "MongoDB", img: mongodb },
+                ].map((tech, index) => (
+                  <div key={index} className="p-4 bg-white flex items-center justify-center bg-opacity-80 rounded-lg">
+                    <img src={tech.img} alt={tech.name} className="w-12 h-12 sm:w-16 sm:h-16" />
+                  </div>
+                ))}
+              </div>
             </div>
-          ))}
-        </div>
-      </div>
-    </SwiperSlide>
+          </SwiperSlide>
 
         </Swiper>
       </div>
@@ -207,6 +208,23 @@ function Banner() {
           </button>
         </div>
       </div>
+
+
+{/* css style for swiper navigation size */}
+      <style jsx>{`
+  /* Adjust arrow button size */
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  /* Adjust icon size */
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    font-size: 18px !important;
+  }
+`}</style>
     </>
   );
 }
