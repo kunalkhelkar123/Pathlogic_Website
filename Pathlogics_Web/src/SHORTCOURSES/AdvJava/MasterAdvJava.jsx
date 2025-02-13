@@ -1,6 +1,8 @@
 import React from "react";
 import { FileCode, Boxes, Activity, Database } from "lucide-react";
-
+import { SiSpring } from "react-icons/si";
+import { SiHibernate } from "react-icons/si";
+import { GrServices } from "react-icons/gr";
 const TechLogo = ({ children, color }) => (
   <div
     className={`w-20 h-20 md:w-24 md:h-24 rounded-full flex items-center justify-center ${color} shadow-lg transform transition-transform duration-300 hover:scale-110`}
@@ -35,7 +37,7 @@ export default function Master() {
           {/* Spring Framework */}
           <div className="flex flex-col items-center space-y-3">
             <TechLogo color="bg-gray-800">
-              <Boxes className="w-12 h-12 text-white" />
+              <SiSpring  className="w-12 h-12 text-white" />
             </TechLogo>
             <span className="text-2xl font-bold text-white">Spring Framework</span>
           </div>
@@ -43,7 +45,7 @@ export default function Master() {
           {/* Hibernate */}
           <div className="flex flex-col items-center space-y-3">
             <TechLogo color="bg-green-500">
-              <Activity className="w-12 h-12 text-white" />
+              <SiHibernate className="w-12 h-12 text-white" />
             </TechLogo>
             <span className="text-2xl font-bold text-white">Hibernate</span>
           </div>
@@ -51,7 +53,8 @@ export default function Master() {
           {/* Microservices */}
           <div className="flex flex-col items-center space-y-3">
             <TechLogo color="bg-blue-600">
-              <Database className="w-12 h-12 text-white" />
+              {/* <Database className="w-12 h-12 text-white" /> */}
+              <GrServices className="w-12 h-12 text-white" />
             </TechLogo>
             <span className="text-2xl font-bold text-white">Microservices</span>
           </div>

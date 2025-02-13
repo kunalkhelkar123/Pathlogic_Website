@@ -72,6 +72,9 @@
 
 import React from "react";
 import { FileCode, Boxes, Activity, Database } from "lucide-react";
+import { FaJava } from "react-icons/fa6";
+import { BiObjectsHorizontalLeft } from "react-icons/bi";
+import { IoSettingsSharp } from "react-icons/io5";
 
 const TechLogo = ({ children, color }) => (
   <div
@@ -99,7 +102,8 @@ export default function MasterJava() {
           {/* Java Basics */}
           <div className="flex flex-col items-center space-y-3 text-center w-36 md:w-40 lg:w-48">
             <TechLogo color="bg-blue-500">
-              <FileCode className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 text-white" />
+              {/* <FileCode className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 text-white" /> */}
+              <FaJava className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 text-white" />
             </TechLogo>
             <span className="text-xl md:text-2xl font-bold text-white">Java Basics</span>
           </div>
@@ -107,7 +111,8 @@ export default function MasterJava() {
           {/* OOP Concepts */}
           <div className="flex flex-col items-center space-y-3 text-center w-36 md:w-40 lg:w-48">
             <TechLogo color="bg-gray-800">
-              <Boxes className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 text-white" />
+              {/* <Boxes className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 text-white" /> */}
+              <BiObjectsHorizontalLeft  className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 text-white"/>
             </TechLogo>
             <span className="text-xl md:text-2xl font-bold text-white">OOP'S Concepts</span>
           </div>
@@ -115,7 +120,8 @@ export default function MasterJava() {
           {/* Multithreading */}
           <div className="flex flex-col items-center space-y-3 text-center w-36 md:w-40 lg:w-48">
             <TechLogo color="bg-green-500">
-              <Activity className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 text-white" />
+              {/* <Activity className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 text-white" /> */}
+              <IoSettingsSharp className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 text-white" />
             </TechLogo>
             <span className="text-xl md:text-2xl font-bold text-white">Multithreading</span>
           </div>
@@ -133,7 +139,7 @@ export default function MasterJava() {
           <p className="text-lg sm:text-xl md:text-2xl text-orange-400 mb-6">
             Become a Core Java Development Expert!
           </p>
-          <button className="bg-orange-600 text-white text-lg sm:text-xl md:text-2xl font-semibold py-3 px-6 sm:py-4 sm:px-8 rounded-[5px] shadow-lg hover:bg-orange-700 transition duration-300 transform hover:scale-105">
+          <button className="bg-orange-600 text-white text-lg sm:text-xl md:text-2xl font-semibold py-2 px-4 rounded-[5px] shadow-lg hover:bg-orange-700 transition duration-300 transform hover:scale-105">
             Start Learning Now
           </button>
         </div>

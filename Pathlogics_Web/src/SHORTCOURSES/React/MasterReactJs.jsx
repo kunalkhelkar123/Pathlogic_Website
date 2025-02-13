@@ -1,6 +1,9 @@
 import React from "react";
 import { FileCode, Anchor, Database, MapPin } from "lucide-react"; // Updated icons
-
+import { PiWebhooksLogo } from "react-icons/pi";
+import { LuRouter } from "react-icons/lu";
+import { SiXstate } from "react-icons/si";
+import { PiFileJsxBold } from "react-icons/pi";
 const TechLogo = ({ children, color }) => (
   <div
     className={`w-20 h-20 md:w-24 md:h-24 rounded-full flex items-center justify-center ${color} shadow-lg transform transition-transform duration-300 hover:scale-110`}
@@ -27,7 +30,7 @@ export default function MasterReactJs() {
           {/* Components & JSX */}
           <div className="flex flex-col items-center space-y-3">
             <TechLogo color="bg-blue-500">
-              <FileCode className="w-12 h-12 text-white" /> {/* FileCode icon for Components & JSX */}
+            <PiFileJsxBold className="w-12 h-12 text-white" /> {/* FileCode icon for Components & JSX */}
             </TechLogo>
             <span className="text-2xl font-bold text-white">Components & JSX</span>
           </div>
@@ -35,7 +38,7 @@ export default function MasterReactJs() {
           {/* React Hooks */}
           <div className="flex flex-col items-center space-y-3">
             <TechLogo color="bg-gray-800">
-              <Anchor className="w-12 h-12 text-white" /> {/* Anchor icon for React Hooks */}
+              <PiWebhooksLogo className="w-12 h-12 text-white" /> {/* Anchor icon for React Hooks */}
             </TechLogo>
             <span className="text-2xl font-bold text-white">React Hooks</span>
           </div>
@@ -43,7 +46,7 @@ export default function MasterReactJs() {
           {/* State Management */}
           <div className="flex flex-col items-center space-y-3">
             <TechLogo color="bg-green-500">
-              <Database className="w-12 h-12 text-white" /> {/* Database icon for State Management */}
+            <SiXstate  className="w-12 h-12 text-white" /> {/* Database icon for State Management */}
             </TechLogo>
             <span className="text-2xl font-bold text-white">State Management</span>
           </div>
@@ -51,7 +54,7 @@ export default function MasterReactJs() {
           {/* React Router */}
           <div className="flex flex-col items-center space-y-3">
             <TechLogo color="bg-blue-600">
-              <MapPin className="w-12 h-12 text-white" /> {/* MapPin icon for React Router */}
+              <LuRouter className="w-12 h-12 text-white" /> {/* MapPin icon for React Router */}
             </TechLogo>
             <span className="text-2xl font-bold text-white">React Router</span>
           </div>

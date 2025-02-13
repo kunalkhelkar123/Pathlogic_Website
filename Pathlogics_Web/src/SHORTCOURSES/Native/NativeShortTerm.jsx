@@ -107,10 +107,10 @@ export default function ShortTermReactNative() {
             </select>
 
             <div className="mt-6 flex gap-10 justify-center">
-              <motion.button whileHover={{ scale: 1.1 }} className="bg-orange-600 text-white py-2 px-4 rounded-lg" type="submit">
+              <motion.button whileHover={{ scale: 1.1 }} className="bg-orange-600 text-white py-2 px-4 rounded-[5px]" type="submit">
                 Submit
               </motion.button>
-              <motion.button whileHover={{ scale: 1.1 }} className="bg-orange-600 text-white py-2 px-4 rounded-lg" type="button" onClick={handleDownload}>
+              <motion.button whileHover={{ scale: 1.1 }} className="bg-orange-600 text-white py-2 px-4 rounded-[5px]" type="button" onClick={handleDownload}>
                 Download Brochure
               </motion.button>
             </div>
