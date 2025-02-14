@@ -11,7 +11,11 @@ const Testimonials = () => {
     {
       name: 'Kudumula Venkata Subba Reddy',
       photo: testimonal1,
-      review: "I'm John Doe, an IT graduate from XYZ University. After completing my studies, I joined Pathlogic Technologics  India, where I improved my coding and development skills. The supportive staff helped me grow professionally and secure a job at ABC Corp.",
+
+      review:"I'm Kudumula Venkata Subba Reddy, an IT graduate from XYZ University. After completing my studies, I joined Pathlogic Technologics  India, where I improved my coding and development skills. The supportive staff helped me grow professionally and secure a job at ABC Corp.",
+
+
+
 
     },
     {

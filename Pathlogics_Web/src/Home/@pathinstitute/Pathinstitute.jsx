@@ -156,7 +156,7 @@ export default function Navbar() {
             >
               Login
             </button>
-            {isDropdownOpen1 && (
+            {isDropdownOpen3 && (
               <div
                 className="absolute left-0 mt-2 w-48 bg-white border border-gray-300 rounded-md shadow-lg"
                 style={{ zIndex: 222 }}
@@ -176,29 +176,64 @@ export default function Navbar() {
               </div>
             )}
           </div>
-          {/* <a href="/StudentLogin" className="hover:underline">Student Login</a> */}
-          <button onClick={() => alert('Apply Online')} className="hover:underline">
+  
+          <Link to={`/studentregistration`} className="hover:underline">
+
             Apply Online
-          </button>
-          <button onClick={() => alert('Quick Enquiry')} className="hover:underline">
+          </Link>
+          <Link to={`/QuickEnquiry`} className="hover:underline">
             Quick Enquiry
-          </button>
+
+          </Link>
+      
+        </div>
+
           {/* <a href="#gallery" className="hover:underline">Gallery</a> */}
         </div>
-      </div>
 
       {/* Mobile Menu */}
       {isOpenAuthMenu && (
         <div className="md:hidden flex flex-col items-end justify-center bg-black text-white space-y-4 py-4 px-6">
-          <div className="relative">
-            <button
-              onClick={() => setIsDropdownOpen3((prevState) => !prevState)}
-              className="text-white-700 hover:underline"
-            >
-              Login
-            </button>
 
-          </div>
+       <div className="relative-dropdown algin-right text-right">
+          <button
+            onClick={() => setIsDropdownOpen3((prev) => !prev)}
+            className="text-white-700 "
+          >
+            Login
+          </button>
+
+          {/* Login Dropdown */}
+          {isDropdownOpen3 && (
+            <ul className="mt-2 w-auto  shadow-md rounded-md z-10 space-y-2 px-4 py-2">
+              <li className="cursor-pointer">
+                <Link
+                  to="/studentlogin"
+                  className="block text-white hover:text-blue-500 py-2"
+                >
+                  Student Login
+                </Link>
+              </li>
+              <li className="cursor-pointer">
+                <Link
+                  to="/adminlogin"
+                  className="block text-white hover:text-blue-500 py-2"
+                >
+                  Admin Login
+                </Link>
+              </li>
+              <li className="cursor-pointer">
+                <Link
+                  to="/trainerlogin"
+                  className="block text-white hover:text-blue-500 py-2"
+                >
+                  Trainer Login
+                </Link>
+              </li>
+            </ul>
+      )}
+    </div>
+
           <Link to={`/studentregistration`} className="hover:underline">
             Apply Online
           </Link>

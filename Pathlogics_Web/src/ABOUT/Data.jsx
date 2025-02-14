@@ -111,7 +111,7 @@ export default function Data() {
         </div>
 
         {/* What Sets Us Apart */}
-        <div className="mx-auto mt-16 max-w-2xl lg:max-w-4xl">
+        <div className=" min-w-screen mx-auto mt-16 max-w-2xl lg:max-w-4xl">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             What Pathlogics is All About?
           </h2>
@@ -129,8 +129,8 @@ export default function Data() {
         </div>
 
         {/* Call to Action */}
-        <div className="mx-auto mt-16 max-w-2xl text-center lg:max-w-4xl">
-          <p className="text-lg font-semibold leading-8 text-orange-500">
+        <div className="mx-auto mt-16 max-w-2xl text-center lg:max-w-4xl pb-[15px]">
+          <p className="text-2xl font-semibold leading-8 text-orange-500">
             Join us on this transformative journey, and let&apos;s shape a brighter future together.
           </p>
         </div>
