@@ -89,9 +89,9 @@ export default function Navbar() {
     { name: "Full Stack Testing", path: "/MainTesting" },
     { name: "DevOps", path: "/MainDevops" },
     { name: "Digital Marketing", path: "/MainDigitalMarketing" },
-    { name: "Internship", path: "/Certification" },
-    { name: "Certification", path: "/Certification" },
-    { name: "Stipend", path: "/Certification" },
+    { name: "Internship", path: "/inter" },
+    { name: "Certification", path: "/" },
+    { name: "Stipend", path: "/" },
   ];
 
   const StudentRegistration = () => {
