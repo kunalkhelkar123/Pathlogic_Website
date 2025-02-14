@@ -74,7 +74,11 @@
 
 
 import React from "react";
-import { FileCode, Anchor, Database, MapPin } from "lucide-react"; // Updated icons
+import { FileCode, Anchor, Database, MapPin } from "lucide-react";
+ // Updated icons
+ import { LuComponent } from "react-icons/lu";
+ import { FcServices } from "react-icons/fc";
+ import { GiMatterStates } from "react-icons/gi";
 
 const TechLogo = ({ children, color }) => (
   <div
@@ -102,7 +106,8 @@ export default function MasterAngular() {
           {/* Components & Templates */}
           <div className="flex flex-col items-center space-y-3 text-center w-36 md:w-40 lg:w-48">
             <TechLogo color="bg-red-500">
-              <FileCode className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 text-white" />
+              {/* <FileCode className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 text-white" /> */}
+              <LuComponent className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 text-white"/>
             </TechLogo>
             <span className="text-xl md:text-2xl font-bold text-white">Components & Templates</span>
           </div>
@@ -118,7 +123,7 @@ export default function MasterAngular() {
           {/* State Management */}
           <div className="flex flex-col items-center space-y-3 text-center w-36 md:w-40 lg:w-48">
             <TechLogo color="bg-green-500">
-              <Database className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 text-white" />
+              <GiMatterStates className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 text-white" />
             </TechLogo>
             <span className="text-xl md:text-2xl font-bold text-white">State Management</span>
           </div>
@@ -136,7 +141,7 @@ export default function MasterAngular() {
           <p className="text-lg sm:text-xl md:text-2xl text-orange-400 mb-6">
             Become an Angular Development Expert!
           </p>
-          <button className="bg-orange-600 text-white text-lg sm:text-xl md:text-2xl font-semibold py-3 px-6 sm:py-4 sm:px-8 rounded-[5px] shadow-lg hover:bg-orange-700 transition duration-300 transform hover:scale-105">
+          <button className="bg-orange-600 text-white text-lg sm:text-xl md:text-2xl font-semibold py-2 px-4 rounded-[5px] shadow-lg hover:bg-orange-700 transition duration-300 transform hover:scale-105">
             Start Learning Now
           </button>
         </div>

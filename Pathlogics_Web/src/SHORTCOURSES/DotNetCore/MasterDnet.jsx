@@ -1,6 +1,9 @@
 import React from "react";
 import { FileCode, Anchor, Database, MapPin } from "lucide-react"; // Updated icons
-
+import { SiFramework7 } from "react-icons/si";
+import { AiOutlineDotNet } from "react-icons/ai";
+import { SiWebtrees } from "react-icons/si";
+import { SiDependencycheck } from "react-icons/si";
 const TechLogo = ({ children, color }) => (
   <div
     className={`w-20 h-20 md:w-24 md:h-24 rounded-full flex items-center justify-center ${color} shadow-lg transform transition-transform duration-300 hover:scale-110`}
@@ -27,7 +30,8 @@ export default function MasterDnet() {
           {/* .NET Core MVC */}
           <div className="flex flex-col items-center space-y-3">
             <TechLogo color="bg-blue-500">
-              <FileCode className="w-12 h-12 text-white" /> {/* FileCode icon for .NET Core MVC */}
+              {/* <FileCode className="w-12 h-12 text-white" /> FileCode icon for .NET Core MVC */}
+              <AiOutlineDotNet className="w-12 h-12 text-white" />
             </TechLogo>
             <span className="text-2xl font-bold text-white">.NET Core MVC</span>
           </div>
@@ -35,7 +39,8 @@ export default function MasterDnet() {
           {/* Entity Framework Core */}
           <div className="flex flex-col items-center space-y-3">
             <TechLogo color="bg-gray-800">
-              <Anchor className="w-12 h-12 text-white" /> {/* Anchor icon for Entity Framework Core */}
+              {/* <Anchor className="w-12 h-12 text-white" /> Anchor icon for Entity Framework Core */}
+              <SiFramework7 className="w-12 h-12 text-white" />
             </TechLogo>
             <span className="text-2xl font-bold text-white">Entity Framework Core</span>
           </div>
@@ -43,7 +48,8 @@ export default function MasterDnet() {
           {/* Web API Development */}
           <div className="flex flex-col items-center space-y-3">
             <TechLogo color="bg-green-500">
-              <Database className="w-12 h-12 text-white" /> {/* Database icon for Web API Development */}
+              {/* <Database className="w-12 h-12 text-white" /> Database icon for Web API Development */}
+              <SiWebtrees  className="w-12 h-12 text-white" />
             </TechLogo>
             <span className="text-2xl font-bold text-white">Web API Development</span>
           </div>
@@ -51,7 +57,8 @@ export default function MasterDnet() {
           {/* Dependency Injection */}
           <div className="flex flex-col items-center space-y-3">
             <TechLogo color="bg-blue-600">
-              <MapPin className="w-12 h-12 text-white" /> {/* MapPin icon for Dependency Injection */}
+              {/* <MapPin className="w-12 h-12 text-white" /> MapPin icon for Dependency Injection */}
+              <SiDependencycheck className="w-12 h-12 text-white"/>
             </TechLogo>
             <span className="text-2xl font-bold text-white">Dependency Injection</span>
           </div>

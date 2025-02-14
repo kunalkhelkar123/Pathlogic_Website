@@ -73,6 +73,8 @@
 
 import React from "react";
 import { FileCode, Anchor, Database, MapPin } from "lucide-react"; // Updated icons
+import { RiSoundModuleFill } from "react-icons/ri";
+
 
 const TechLogo = ({ children, color }) => (
   <div
@@ -100,9 +102,9 @@ export default function MasterNode() {
           {/* Modules & npm */}
           <div className="flex flex-col items-center space-y-3 text-center w-36 md:w-40 lg:w-48">
             <TechLogo color="bg-red-500">
-              <FileCode className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 text-white" />
+            <RiSoundModuleFill className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 text-white" />
             </TechLogo>
-            <span className="text-2xl md:text-3xl font-bold text-white">Modules & npm</span>
+            <span className="text-2xl md:text-2xl font-bold text-white">Modules & npm</span>
           </div>
 
           {/* Asynchronous Programming */}
@@ -110,7 +112,7 @@ export default function MasterNode() {
             <TechLogo color="bg-gray-800">
               <Anchor className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 text-white" />
             </TechLogo>
-            <span className="text-2xl md:text-3xl font-bold text-white">Asynchronous Programming</span>
+            <span className="text-2xl md:text-2xl font-bold text-white">Asynchronous Programming</span>
           </div>
 
           {/* Express.js */}
@@ -118,7 +120,7 @@ export default function MasterNode() {
             <TechLogo color="bg-green-500">
               <Database className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 text-white" />
             </TechLogo>
-            <span className="text-2xl md:text-3xl font-bold text-white">Express.js</span>
+            <span className="text-2xl md:text-2xl font-bold text-white">Express.js</span>
           </div>
 
           {/* Database Integration */}
@@ -126,7 +128,7 @@ export default function MasterNode() {
             <TechLogo color="bg-blue-600">
               <MapPin className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 text-white" />
             </TechLogo>
-            <span className="text-2xl md:text-3xl font-bold text-white">Database Integration</span>
+            <span className="text-2xl md:text-2xl font-bold text-white">Database Integration</span>
           </div>
         </div>
 
@@ -134,7 +136,7 @@ export default function MasterNode() {
           <p className="text-xl md:text-2xl lg:text-3xl text-orange-400 mb-6">
             Become a Node.js Development Expert!
           </p>
-          <button className="bg-orange-600 text-white text-lg md:text-xl lg:text-2xl font-semibold py-3 px-6 md:py-4 md:px-8 lg:py-5 lg:px-10 rounded-[5px] shadow-lg hover:bg-orange-700 transition duration-300 transform hover:scale-105">
+          <button className="bg-orange-600 text-white text-lg md:text-xl lg:text-2xl font-semibold py-2 px-4 rounded-[5px] shadow-lg hover:bg-orange-700 transition duration-300 transform hover:scale-105">
             Start Learning Now
           </button>
         </div>
