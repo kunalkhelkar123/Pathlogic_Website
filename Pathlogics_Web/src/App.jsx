@@ -144,9 +144,15 @@ import Manualall from "./Home/ShorttermCourses/MANUALtesting/Manualall";
 import Fullstackall from "./Home/ShorttermCourses/Full Stack Java/Fullstackall";
 import WorkshopsPage from "./Workshops/WorkshopsPage.jsx";
 import WorkshopTechnologyPage from "./Workshops/components/WorkshopTechnologyPage.jsx";
-// import {HelmetProvider} from "react-helmet-async";
 
-import Inter from "./Home/Longtermgoal/Inter";
+import Inter from "./Home/Intership/Inter.jsx";
+// <<<<<<< rohini_dev4
+// //import {HelmetProvider} from "react-helmet-async";
+// =======
+// // import {HelmetProvider} from "react-helmet-async";
+// >>>>>>> dev2
+
+
 
 
 
@@ -184,7 +190,7 @@ function App() {
       <Routes>
 
         <Route path="/" element={<Layout>     <Home />   </Layout>} />
-        <Route path="/inter" element={<Layout>     <Inter />   </Layout>} />
+        <Route path="/Internship" element={<Layout>     <Inter />   </Layout>} />
 
         <Route path="/PlacementJava" element={<Layout> <PlacementJava /></Layout>} />
         <Route path="/PlacementWeb" element={<Layout> <FullstackWebPlacement /></Layout>} />
