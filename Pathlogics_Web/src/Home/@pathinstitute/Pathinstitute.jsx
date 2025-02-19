@@ -89,7 +89,7 @@ export default function Navbar() {
     { name: "Full Stack Testing", path: "/MainTesting" },
     { name: "DevOps", path: "/MainDevops" },
     { name: "Digital Marketing", path: "/MainDigitalMarketing" },
-    { name: "Internship", path: "/inter" },
+    { name: "Internship", path: "/Internship" },
     { name: "Certification", path: "/" },
     { name: "Stipend", path: "/" },
   ];

@@ -110,7 +110,7 @@ const StudentDashboard = () => {
                     icon: <FaChalkboardTeacher className="text-4xl mb-4" />,
                     title: "Take test",
                     description: "View and schedule workshops",
-                    path: "/StudentDashboard"
+                    path: "/Student/test"
                   },
                 
                   // {

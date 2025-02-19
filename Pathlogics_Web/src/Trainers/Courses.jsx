@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import Trainernav from "./Trainernav"
 const Courses = () => {
   const courses = [
     { title: "Core Java", id: "1", name: "corejava" },
@@ -33,6 +33,7 @@ const Courses = () => {
   ];
 
   return (
+    <><Trainernav/>
     <div className="bg-gray-100 min-h-screen py-5">
       <div className="max-w-7xl mx-auto px-4">
         <h1 className="text-4xl font-bold text-center text-gray-800 mb-4">
@@ -79,7 +80,7 @@ const Courses = () => {
           ))}
         </div>
       </div>
-    </div>
+    </div></>
   );
 };
 

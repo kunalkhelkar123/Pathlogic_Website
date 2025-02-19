@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 // import Icon from '@material-ui/core/Icon';
 import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
+import Trainernav from "./Trainernav"
 const StudentInfo = () => {
   const [users, setUsers] = useState([]); // State to store user data
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -165,6 +166,7 @@ const StudentInfo = () => {
 
   return (
     <>
+    <Trainernav/>
       <div className="p-6 bg-gray-50 min-h-screen">
         <h2 className="text-center text-3xl font-semibold mb-6">Student Information</h2>
         <div className="overflow-x-auto">

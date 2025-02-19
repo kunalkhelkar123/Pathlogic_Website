@@ -113,6 +113,8 @@ import Studentinfo from "./Admin/Studentinfo";
 import StudentProfileForm from "./Admin/StudentProfileForm"
 import AdminNavbar from "./Admin/Adminnav";
 import StudentCourseDetails from "./StudentDashboard/StudentCourseDetails";
+import StudentTest from "./StudentDashboard/Test.jsx";
+
 import CoursesList from "./Admin/Courses/CoursesList";
 import Trainerinfo from "./Admin/TrainerDashboard";
 import TrainerLogin from "./Login/StudentLogin/TrainerLogin";
@@ -261,6 +263,8 @@ function App() {
         {/* <Route path="/admin/Staffinfo" element={<Studentinfo />} /> */}
         <Route path="/StudentProfileForm" element={<StudentProfileForm />} />
         <Route path="/StudentDashboard" element={<> <StudentNav /> <StudentDashboard /></>} />
+        <Route path="/Student/test" element={<> <StudentNav /> <StudentTest /></>} />
+      
         <Route path="/StudentCourseDetails" element={<> <StudentNav /> <StudentCourseDetails /></>} />
         <Route path="/admin/studentdetails" element={<><AdminNavbar /> <Studentdetails /></>} />
         <Route path="/admin/CoursesStudentinfo" element={<><AdminNavbar /> <CoursesStudentinfo /></>} />
