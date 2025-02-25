@@ -21,7 +21,7 @@ import React from 'react';
 
 function Areas() {
   return (
-    <div className="bg-gradient-to-r from-orange-200 to-orange-500 py-16 px-4">
+    <div className="bg-gradient-to-r from-blue-200 to-blue-500 py-16 px-4">
       <div className="max-w-3xl mx-auto text-center space-y-6">
         <h1 className="text-3xl font-extrabold text-gray-800">
           ARE YOU LOCATED IN ANY OF THESE AREAS IN PUNE?

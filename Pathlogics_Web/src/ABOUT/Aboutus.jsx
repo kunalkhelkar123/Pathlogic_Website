@@ -5,7 +5,7 @@ import { ArrowRight, Sparkles } from 'lucide-react'
 
 export default function Aboutus() {
   return (
-    <section className="relative min-h-[600px] overflow-hidden bg-gradient-to-br from-orange-400 via-orange-300 to-yellow-200">
+    <section className="relative min-h-[600px] overflow-hidden ">
       {/* Animated background elements */}
       <motion.div 
         className="absolute inset-0 opacity-20"

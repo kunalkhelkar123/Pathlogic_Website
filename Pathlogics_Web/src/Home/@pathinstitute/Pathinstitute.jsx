@@ -90,8 +90,8 @@ export default function Navbar() {
     { name: "DevOps", path: "/MainDevops" },
     { name: "Digital Marketing", path: "/MainDigitalMarketing" },
     { name: "Internship", path: "/Internship" },
-    { name: "Certification", path: "/" },
-    { name: "Stipend", path: "/" },
+    // { name: "Certification", path: "/" },
+    // { name: "Stipend", path: "/" },
   ];
 
   const StudentRegistration = () => {
@@ -276,12 +276,12 @@ export default function Navbar() {
           >
             Home
           </Link>
-          <Link
+          {/* <Link
             to="/All"
             className="text-gray-700 hover:text-orange-500 font-medium"
           >
             Institute
-          </Link>
+          </Link> */}
           <Link
             to="/fullstack"
             className="text-gray-700 hover:text-orange-500 font-medium"
@@ -372,7 +372,7 @@ export default function Navbar() {
           <div
             className="relative dropdown "
             //onMouseEnter={() => setIsLongTermOpen(true)}
-            onMouseEnter={()=>{handleLongTermHover ,  setIsDropdownOpen2(false)}}
+            onMouseEnter={()=>{handleLongTermHover , setIsLongTermOpen(true), setIsDropdownOpen2(false)}}
             onClick={() => setIsLongTermOpen(true)}
           >
             <button className="text-gray-700 hover:text-orange-500 font-medium">
@@ -479,13 +479,13 @@ export default function Navbar() {
             </button>
             {isDropdownOpen2 && (
               // onMouseLeave={() => setIsDropdownOpen2(false)}
-              <div onMouseLeave={() => setIsDropdownOpen2(false)} className="absolute   left-0 mt-2  w-[350px] bg-white border border-gray-300 rounded-md shadow-lg z-20">
+              <div onMouseLeave={() => setIsDropdownOpen2(false)} className="absolute   left-0 mt-2  w-[250px] bg-white border border-gray-300 rounded-md shadow-lg z-20">
                 <ul className="grid grid-cols-2 gap-0 p-0 font-bold">
                   {placementProgram.map((course, index) => (
                     <li key={index} className="px-1">
                       <Link
                         to={course.path}
-                        className="block text-gray-700 hover:text-orange-500 px-4 py-2 text-sm"
+                        className="block text-gray-700 hover:text-orange-500 px-2 py-2 text-sm"
                       >
                         {course.name}
                       </Link>
@@ -517,7 +517,7 @@ export default function Navbar() {
         <div className="md:hidden bg-white p-4 space-y-6 z-50 shadow-md">
           <div className="space-y-4">
             <Link to="/" className="block text-gray-700 hover:text-orange-500">Home</Link>
-            <Link to="/All" className="block text-gray-700 hover:text-orange-500">Institute</Link>
+            {/* <Link to="/All" className="block text-gray-700 hover:text-orange-500">Institute</Link> */}
             <Link to="/fullstack" className="block text-gray-700 hover:text-orange-500">Full Stack Development</Link>
 
             {/* Short Term Courses */}
@@ -604,7 +604,7 @@ export default function Navbar() {
               </svg>
             </button>
             {isplacementProgram && (
-              <div className="space-y-2 pl-4">
+              <div className="space-y-1 pl-4">
                 {placementProgram.map((course, index) => (
                   <div key={index}>
                     <Link to={course.path} className="block text-gray-700 hover:text-orange-500">

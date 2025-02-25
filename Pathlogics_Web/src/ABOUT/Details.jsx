@@ -6,7 +6,7 @@ export default function Details({ backgroundImage = "" }) {
     <section
       className="relative min-h-[400px] overflow-hidden"
       style={{
-        backgroundImage: backgroundImage ? `url(${backgroundImage})` : "linear-gradient(to right,rgb(245, 183, 122),rgb(244, 139, 35))", // Default gradient if no backgroundImage
+        backgroundImage: backgroundImage ? `url(${backgroundImage})` : "linear-gradient(to right,rgb(19, 171, 241),rgb(19, 171, 241))", // Default gradient if no backgroundImage
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
