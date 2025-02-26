@@ -8,15 +8,44 @@ import company3 from '../../assets/company3.jpg';
 import company4 from '../../assets/company4.jpg';
 import company5 from '../../assets/company5.jpg';
 import company6 from '../../assets/company6.jpg';
+import company7 from '../../assets/companies/1.png';
+import company8 from '../../assets/companies/2.png';
+import company9 from '../../assets/companies/3.png';
+import company10 from '../../assets/companies/4.png';
+import company11 from '../../assets/companies/5.png';
+import company12 from '../../assets/companies/6.png';
+import company13 from '../../assets/companies/9.png';
+import company14 from '../../assets/companies/8.png';
+import company15 from '../../assets/companies/10.png';
+import company16 from '../../assets/companies/11.png';
+import company17 from '../../assets/companies/12.png';
+import company18 from '../../assets/companies/13.png';
+import company19 from '../../assets/companies/14.png';
+import company20 from '../../assets/companies/15.png';
+import company21 from '../../assets/companies/16.png';
+
 
 // Array of companies with logos
 const companies = [
   { id: 1, name: "Wipro", logo: company1 },
   { id: 2, name: "Mercedes-Benz", logo: company2 },
   { id: 3, name: "Tech Mahindra", logo: company3 },
-  { id: 4, name: "Tata Elxsi", logo: company4 },
+  // { id: 4, name: "Tata Elxsi", logo: company4 },
   { id: 5, name: "Pathlogic", logo: company5 },
   { id: 6, name: "Pathlogic", logo: company6 },
+  { id: 6, name: "Pathlogic", logo: company7 },
+  { id: 6, name: "Pathlogic", logo: company8 },
+  { id: 6, name: "Pathlogic", logo: company9 },
+  { id: 6, name: "Pathlogic", logo: company10 },
+  { id: 6, name: "Pathlogic", logo: company11 },
+  { id: 6, name: "Pathlogic", logo: company12 },
+  { id: 6, name: "Pathlogic", logo: company13 },
+  { id: 6, name: "Pathlogic", logo: company13 },
+  { id: 6, name: "Pathlogic", logo: company14},
+  { id: 6, name: "Pathlogic", logo: company15 },
+  { id: 6, name: "Pathlogic", logo: company16 },
+  { id: 6, name: "Pathlogic", logo: company17 },
+  { id: 6, name: "Pathlogic", logo: company18 },
 ];
 
 

@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 import './Loginform.css';
+import img from "/src/assets/join_team_img.png"
 
 const Loginform = () => {
     const [formData, setFormData] = useState({
@@ -62,7 +63,7 @@ const Loginform = () => {
 
             {/*</div>*/}
             <div className="join-team-card">
-                <img src={`/src/assets/join_team_img.png`} alt="Join Pathlogic Technologics" className="join-team-img"/>
+                <img src={img} alt="Join Pathlogic Technologics" className="join-team-img"/>
                 <h2 className="why-join-heading">Why Join Pathlogics Technologies?</h2>
 
                 <div className="why-join-sub-heading">
