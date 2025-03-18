@@ -248,7 +248,7 @@ export default function Navbar() {
       <div className="w-full bg-white py-1 px-4 md:px-8 flex justify-between items-center border-b-2 border-orange-500">
         <div className="flex items-center">
           <button onClick={() => navigate('/')} className="text-black focus:outline-none w-[124px]">
-            <img src={image} alt="Pathlogics" />
+            {/* <img src={image} alt="Pathlogics" /> */}<br/><br/><br/>
           </button>
         </div>
 

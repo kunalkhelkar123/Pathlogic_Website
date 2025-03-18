@@ -13,11 +13,14 @@ export default function AdminNavbar() {
         {/* Logo Section */}
         <div className="flex items-center ">
           <button className="text-black focus:outline-none">
-            <img
+            {/* <img
               src={logo} // Replace with the correct logo path
               alt="Logo"
               className="h-20 w-auto" // Adjust the height and width as needed
-            />
+            /> */}
+            <br/>
+            <br/>
+            <br/>
           </button>
         </div>
 
