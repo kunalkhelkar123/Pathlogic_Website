@@ -71,22 +71,22 @@ const Companies = () => {
       </div> */}
 
       {/* Button */}
-      <div className="flex items-center justify-center mt-8">
+      {/* <div className="flex items-center justify-center mt-8">
         <div className="mb-4">
           <button className="px-6 sm:px-8 py-3 sm:py-4 bg-orange-600 hover:bg-orange-700 rounded-[5px] text-white   relative after:-z-20 after:absolute after:h-1 after:w-1 after:bg-rose-800 after:left-5 overflow-hidden after:bottom-0 after:translate-y-full after:rounded-md after:hover:scale-[300] after:hover:transition-all after:hover:duration-700 after:transition-all after:duration-700 transition-all duration-700 text-lg sm:text-lg">
             <Link  to={'/Aboutus'} >More about Pathlogics Technologies</Link>
           </button>
         </div>
-      </div>
+      </div> */}
 
       {/* Courses Section */}
       <div className="bg-white py-8 sm:py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-700 mb-4">
-            Courses we offer
+          Courses Offered at Pathlogics
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600">
-            Access to long & short term courses we offer to enhance your technical knowledge.
+          <p className="text-lg sm:text-xl text-justify text-gray-800">
+          As the <strong>Best IT training institute in Pune</strong>, we offer specialized courses that cater to various aspects of software development and testing. Our courses are curated with a focus on the latest trends and In demand technologies:
           </p>
         </div>
       </div>

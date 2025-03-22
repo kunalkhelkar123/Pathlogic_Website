@@ -20,7 +20,7 @@ export default function Sticky() {
       <div className="fixed right-2 bottom-16 flex flex-col items-end z-20 space-y-2">
 
         {/* Social Media Buttons (hidden on mobile, shown on sm and above) */}
-        
+
 
         {/* Action Buttons */}
         <div className="flex flex-col space-y-1">
@@ -31,6 +31,14 @@ export default function Sticky() {
           >
             <FaArrowUp className="w-4 h-4 sm:w-5 sm:h-5" />
           </button>
+
+
+          {/* Quick Enquiry Button */}
+          <button className="bg-orange-500 text-white py-1 px-4 sm:py-2 sm:px-4 rounded-l-full flex items-center hover:bg-orange-600 transition-colors" onClick={() => navigate('/quickenquiry')}>
+            <span className="text-xs sm:text-base mr-1 sm:mr-2">Quick Enquiry</span>
+            <FaEnvelope className="w-3 h-3 sm:w-4 sm:h-4" />
+          </button>
+
 
           {/* Chat Button */}
           <button
@@ -47,11 +55,7 @@ export default function Sticky() {
             <FaEnvelope className="w-3 h-3 sm:w-4 sm:h-4" />
           </button> */}
 
-          {/* Quick Enquiry Button */}
-          <button className="bg-orange-500 text-white py-1 px-4 sm:py-2 sm:px-4 rounded-l-full flex items-center hover:bg-orange-600 transition-colors" onClick={()=>navigate('/quickenquiry')}>
-            <span className="text-xs sm:text-base mr-1 sm:mr-2">Quick Enquiry</span>
-            <FaEnvelope className="w-3 h-3 sm:w-4 sm:h-4" />
-          </button>
+
         </div>
       </div>
     </>

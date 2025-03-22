@@ -86,27 +86,30 @@ function Header() {
   return (
     <>
       {/* Background and Content Section */}
-      <div className="relative flex justify-center items-center w-full h-full p-10 bg-gray-900">
+      <div className="relative flex justify-center items-center w-full h-full p-2  bg-gray-900">
         {/* Content Section */}
         <div className="relative z-10 flex flex-col items-center text-center">
           {/* h4 Tag */}
-          <h4 className="text-gray-300 text-xl sm:text-2xl mb-4 italic">
+          {/* <h4 className="text-gray-300 text-xl sm:text-2xl mb-4 italic">
             Development Tips & Best Practices
-          </h4>
+          </h4> */}
 
           {/* h1 Tag */}
-          <h1 className="text-white text-3xl sm:text-5xl font-light italic">
-            "Clean Code is the Key to Scalable and Maintainable Software"
-          </h1>
+          <p className="text-white text-[32px] sm:text-[32px] pt-5 font-light italic">
+            "Clean Code is the key to Scalable & Maintainable Software"
+          </p>
+          <p className="text-white text-[22px] mt-5 sm:text-[22px] font-light">
+          Learn to write efficient, clean code that scales effortlessly with Pathlogics’ clean coding techniques
+          </p>
         </div>
       </div>
 
       {/* Slider Section */}
-      <div className="bg-gray-900 py-8 sm:py-12">
+      <div className="bg-gray-900 py-8 mt-[-30px] ">
         {/* Heading */}
-        <h2 className="text-center text-3xl sm:text-4xl text-white font-semibold mb-8">
+        <h4 className="text-center text-[30px] sm:text-[30px] text-white font-semibold mb-8">
           Other Prestigious Companies
-        </h2>
+        </h4>
 
         {/* Slider for Company Logos */}
         <div className="w-full">
@@ -125,20 +128,20 @@ function Header() {
           </Slider>
         </div>
       </div>
-      <section className="min-h-[400px] w-full bg-gradient-to-br from-orange-600 to-orange-400 flex flex-col items-center justify-center px-4 py-16 text-white">
+      <section className="min-h-[400px] w-full bg-gray-900 flex flex-col items-center justify-center px-4 py-2 mt-[-100px] text-white">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8">
             Contact us for more details
           </h2>
           <div
-            className="inline-block bg-white rounded-full px-8 py-4 shadow-lg hover:shadow-xl transition-shadow"
+            className="inline-block bg-white hover:bg-gray-200 hover:text-white  rounded-3xl px-6 py-2 shadow-lg hover:shadow-xl transition-shadow"
           >
             <a
-              href="mailto:hr@pathlogicstech.in"
-              className="text-orange-600 text-xl md:text-2xl font-medium hover:text-orange-700 transition-colors"
+              href="/QuickEnquiry"
+              className="text-orange-600 text-[22px] md:text-[22px] font-medium     transition-colors"
               aria-label="Email us at hr@pathlogicstech.in"
             >
-              hr@pathlogicstech.in
+              Enroll Today!
             </a>
           </div>
         </div>

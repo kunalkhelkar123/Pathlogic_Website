@@ -1,6 +1,7 @@
 import React from 'react';
 import fullstockimage from '../../assets/fullstockimage.jpg';
 import { Link } from 'react-router-dom';
+import { Users, Briefcase, DollarSign, Clock } from "lucide-react";
 
 const courses = [
   {
@@ -23,12 +24,12 @@ const courses = [
   },
   {
     id: 3,
-    title: 'Full Stack MERN Development',
-    description: 'A deep dive into the MERN stack standard for automotive software developer with real-time systems.',
+    title: 'Full Stack .DotNet Development',
+    description: 'A deep dive into the DotNet standard for automotive software developer with real-time systems.',
     duration: '6 Months',
     mode: 'Offline',
     image: fullstockimage,
-    link: '/fullstack'
+    link: '/DotNet'
   },
   {
     id: 4,
@@ -40,6 +41,14 @@ const courses = [
     link: "/Devops"
   },
 ];
+
+const statsData = [
+  { icon: Users, value: "1200+", label: "Students Trained" },
+  { icon: Briefcase, value: "1400+", label: "MNC’s & Mid Scale Companies" },
+  { icon: DollarSign, value: "16 LPA", label: "Highest Salary Package" },
+  { icon: Users , value: "120+", label: "Student Internships Done" },
+];
+
 
 // Main Component
 export default function Component() {
@@ -101,6 +110,19 @@ export default function Component() {
 
         </div>
       </div>
+
+      <div className="bg-white grid  grid-cols-2 md:grid-cols-4 gap-6 p-6 md:p-10 lg:p-14 xl:p-16 text-center">
+      {statsData.map((stat, index) => (
+        <div
+          key={index}
+          className="flex flex-col items-center space-y-3 bg-white  border-[1px] border-gray-300  p-6 rounded-xl transition-transform transform hover:scale-105"
+        >
+          <stat.icon className="w-12 h-12 text-blue-500" />
+          <h1 className="text-3xl font-bold text-gray-900">{stat.value}</h1>
+          <p className="text-lg font-medium text-gray-600">{stat.label}</p>
+        </div>
+      ))}
+    </div>
     </>
   );
 }

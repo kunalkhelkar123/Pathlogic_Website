@@ -12,6 +12,7 @@ import Questions from './Questions/Questions'
 import Loginform from './Loginform/Loginform'
 import Footer from './Footer/Footer'
 import Pop from './pop/Pop'
+import PlacementAssistance from "./PlacementAssistance/PlacementAssistance"
 //import Intership from './Longtermgoal/Internship'
 function Home() {
   useEffect(() => {
@@ -27,12 +28,14 @@ function Home() {
       <Sticky />
       <Companies />
       <Courses_offer />
-      <Header />
+     
       {/* <Workweoffers/> */}
-      <Testimonials />
+      <Testimonials />   <PlacementAssistance/> <Header />
+     
       <Questions />
-      {/* <OurBLogs/> */}
       <Loginform />
+      {/* <OurBLogs/> */}
+    
       {/* <Footer/> */}
 
     </div>

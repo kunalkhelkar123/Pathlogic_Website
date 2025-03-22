@@ -1,19 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { ChevronDown, ChevronUp } from "lucide-react";
+import img from "../.././assets/FAQ.jpg";
 
 const AccordionItem = ({ question, answer, children, isOpen, onClick }) => {
   return (
-    <div className="border-b border-gray-300 mb-4">
+    <div className="border border-gray-300 rounded-lg mb-4 overflow-hidden shadow-sm">
       <button
-        className={`w-full text-left p-4 font-semibold text-lg focus:outline-none ${isOpen ? 'bg-white text-orange-500' : 'bg-white text-gray-900'}`}
+        className={`w-full flex justify-between items-center p-4 text-sm font-semibold transition-all duration-300 ${
+          isOpen ? "text-orange-500 bg-orange-100" : "text-gray-900 bg-white"
+        }`}
         onClick={onClick}
-        style={{ fontFamily: "'Open Sans', sans-serif" }}  // Use a similar font to the one in the screenshot
+        style={{ fontFamily: "'Open Sans', sans-serif" }}
       >
-        {question}
-        <span className="float-right">{isOpen ? '-' : '+'}</span>
+        <span>{question}</span>
+        {isOpen ? <ChevronUp className="text-orange-500" /> : <ChevronDown />}
       </button>
       {isOpen && (
-        <div className="p-4 bg-gray-100 text-gray-900" style={{ fontFamily: "'Open Sans', sans-serif" }}>
-          <p>{answer}</p>
+        <div className="p-4 bg-gray-100 text-gray-900 transition-all duration-300">
+          <p className="leading-relaxed">{answer}</p>
           {children}
         </div>
       )}
@@ -29,90 +33,92 @@ const Accordion = () => {
   };
 
   return (
-    <section className="py-10">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl font-bold mb-6 text-center  text-orange-600" style={{ fontFamily: "'Open Sans', sans-serif" }}>
-          Have Any Questions?
-        </h2>
+    <section className="py-12 px-6">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        {/* Left Side Image */}
+        <div className="flex justify-center">
+          <img
+            src={img} 
+            alt="FAQ"
+            className="w-full max-w-md md:max-w-lg rounded-lg shadow-lg"
+          />
+        </div>
 
-        <AccordionItem
-          question="1. What are the courses offered at Pathlogics Technologies?"
-          answer="Pathlogic Technologics offers both long term and short-term courses."
-          isOpen={openIndex === 1}
-          onClick={() => toggleAccordion(1)}
-        >
-          <div className="p-4 bg-white shadow-md mb-4 text-gray-900">
-            <h3 className="text-xl font-bold">Course: Full Stack Java Development</h3>
-            <p className="mb-2">Duration: 6 Months</p>
-            <p>Admission through Online Scholarship Test</p>
-          </div>
+        {/* Right Side FAQ */}
+        <div className="w-full">
+          <h2
+            className="text-3xl font-bold mb-6 text-orange-600 text-center md:text-left"
+            style={{ fontFamily: "'Open Sans', sans-serif" }}
+          >
+            Have Any Questions?
+          </h2>
 
-          <div className="p-4 bg-gray-100">
-            <h3 className="text-lg font-bold mb-4">Short Term Courses:</h3>
-            <div className="grid grid-cols-3 gap-4">
-              <div className="p-4 bg-white shadow-md">
-                <h4 className="font-semibold">Java Development</h4>
-                <p>Duration: 3 Months</p>
-                <p>Direct Admission</p>
-              </div>
-              <div className="p-4 bg-white shadow-md">
-                <h4 className="font-semibold">Web Development</h4>
-                <p>Duration: 3 Months</p>
-                <p>Direct Admission</p>
-              </div>
-              <div className="p-4 bg-white shadow-md">
-                <h4 className="font-semibold">React Js Development </h4>
-                <p>Duration: 3 Months</p>
-                <p>Direct Admission</p>
-              </div>
-              <div className="p-4 bg-white shadow-md">
-                <h4 className="font-semibold">Nodejs Development </h4>
-                <p>Duration: 3 months</p>
-                <p>Direct Admission</p>
-              </div>
-              <div className="p-4 bg-white shadow-md">
-                <h4 className="font-semibold">Python</h4>
-                <p>Duration: 3 Months </p>
-                <p>Direct Admission</p>
+          <AccordionItem
+            question="1. How do I Arrange a Visit to the Center?"
+            answer="Our Center Addresses."
+            isOpen={openIndex === 1}
+            onClick={() => toggleAccordion(1)}
+          >
+            <div className="p-4 bg-white rounded-lg shadow-md mt-2">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="p-4 bg-gray-50 shadow-sm rounded-lg">
+                  <h2 className="font-semibold text-orange-600">Baner</h2>
+                  <p className="text-sm text-gray-700">
+                    Office Number 203, Mont Vert Spectra, Baner, Pune.
+                  </p>
+                </div>
+                <div className="p-4 bg-gray-50 shadow-sm rounded-lg">
+                  <h2 className="font-semibold text-orange-600">Katraj</h2>
+                  <p className="text-sm text-gray-700">
+                    Sr. No. 30/2/31, 3rd Floor, Vyankatesh Developer, Pune.
+                  </p>
+                </div>
+                <div className="p-4 bg-gray-50 shadow-sm rounded-lg">
+                  <h2 className="font-semibold text-orange-600">JM Road</h2>
+                  <p className="text-sm text-gray-700">
+                    5th floor, Dangat Patil Empire, Vadgaon Budruk, Pune.
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-        </AccordionItem>
 
-        <AccordionItem
-          question="2. What is Embedded Systems? Where is it Used?"
-          answer="Embedded systems are self-contained programs that are embedded within a piece of hardware. We can say it’s a specialized computer system that is part of a larger system or machine. Typically, an embedded system is housed on a single microprocessor board with the programs stored in ROM. Embedded system can also be defined as a computer system that is created with optimal efficiency, thereby allowing it to complete specific functions as quickly as possible. Embedded systems microprocessors are programmed to automate certain tasks. Cell phones, computers, copiers, medical equipment, programmable logic controllers, and numerous other products rely on embedded systems. Real time embedded systems can be used to replace traditional software applications.
+            <div className="p-4 bg-white rounded-lg shadow-md mt-4">
+              <p className="text-gray-700">
+                Once you inquire about our IT courses, our career guides will
+                contact you and provide counseling for courses like Full Stack
+                Web Development, Java Development, .NET Development, and more.
+              </p>
+            </div>
+          </AccordionItem>
 
-Embedded systems are used in any application or which requires certain level of automation or intelligence. As more and more intelligent devices make their way into our lives, the demand for embedded telecom will increase. In addition, even in areas where telecom companies are in the grips of a slowdown, companies are not making cuts in introducing new features.
+          <AccordionItem
+            question="2. Do Pathlogics Provide Online & Offline Programs?"
+            answer="Yes, Pathlogics offers both online and offline programs, giving students flexibility."
+            isOpen={openIndex === 2}
+            onClick={() => toggleAccordion(2)}
+          />
 
-The range is really very wide, limited only by human imagination,” B J Ram Rao, CEO, eSmartNet (a division of Zicom Electronic Security Systems) admitted in a recent interview with Zee India. “I would think that, broadly, the embedded system application areas would be wireless, Internet and mobile communications, industrial control, test and measurement, networking, aerospace and automotive control, consumer electronics, digital imaging and defence.”"
-          isOpen={openIndex === 2}
-          onClick={() => toggleAccordion(2)}
-        />
+          <AccordionItem
+            question="3. How Pathlogics’ Placement Procedure Works?"
+            answer="After completing the course, we conduct mock interviews and tests. You'll receive unlimited job calls until placement."
+            isOpen={openIndex === 3}
+            onClick={() => toggleAccordion(3)}
+          />
 
-        <AccordionItem
-          question="3. What is the Scope of Embedded Systems?"
-          answer="Embedded System is the future. Every industry needs some artificial intelligence into it, and that intelligence can be provided by embedded systems. No electronic product in the market exists without embedded systems."
-          isOpen={openIndex === 3}
-          onClick={() => toggleAccordion(3)}
-        >
-          <p>The embedded system market is estimated to grow from $86.5 billion in 2020 to $116.2 billion by 2025, at a CAGR of 6.1%.</p>
-          <p>The increase in R&D activities related to embedded systems, demand for ADAS, electromobility solutions, and rise in use of multicore processors in military applications make this field highly sought after.</p>
-        </AccordionItem>
+          <AccordionItem
+            question="4. Why Pathlogic Institute for Embedded Systems Training?"
+            answer="We teach the basics and advanced Embedded Systems concepts with hands-on training and strong placement support."
+            isOpen={openIndex === 4}
+            onClick={() => toggleAccordion(4)}
+          />
 
-        <AccordionItem
-          question="4. Why Pathlogic Technologics Institute for Embedded Systems   Training?"
-          answer="Pathlogic Technologics  Institute teaches the basics and underlying concepts of Embedded Systems in detail, along with real-time practical experience. Our courses include modules like Object-Oriented Concepts with C++, RT-Linux, and ARM porting. We have a strong placement record with a dedicated placement cell."
-          isOpen={openIndex === 4}
-          onClick={() => toggleAccordion(4)}
-        />
-
-        <AccordionItem
-          question="5. Admission process followed at Pathlogic Technologics  INSTITUTE for training into long-term courses?"
-          answer="The admission into Embedded Systems course is based on the Pathlogic Technologics  Online Entrance examination. Working professionals with relevant experience are eligible for direct admission."
-          isOpen={openIndex === 5}
-          onClick={() => toggleAccordion(5)}
-        />
+          <AccordionItem
+            question="5. What Happens If I Miss a Session?"
+            answer="We provide guidance and ensure you stay on track with learning."
+            isOpen={openIndex === 5}
+            onClick={() => toggleAccordion(5)}
+          />
+        </div>
       </div>
     </section>
   );

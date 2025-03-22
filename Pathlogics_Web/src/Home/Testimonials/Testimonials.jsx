@@ -80,10 +80,15 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="py-10 bg-gray-100">
+    <section className="py-10 ">
 
       <div className="max-w-7xl mx-auto text-center ">
-        <h2 className="text-3xl font-bold mb-8 text-orange-600">Our Placed Students</h2>
+        <h3 className="text-3xl font-bold  mb-8 text-orange-600">What Our Students Say</h3>
+       
+
+        <p className="text-lg sm:text-xl text-gray-800 mb-10">
+        Our students speak highly of their experience at <strong>Pathlogics</strong>. <br/> Here’s why they recommend us as the best IT training institute in Pune
+        </p>
 
         <Slider {...settings}>
           {testimonials.map((testimonial, index) => {
@@ -94,11 +99,11 @@ const Testimonials = () => {
             return (
               <div
                 key={index}
-                className="bg-white p-6 rounded-lg shadow-md flex flex-col justify-between items-center text-center mx-4"
+                className="bg-white p-6 rounded-lg shadow-md border-[1px] flex flex-col justify-between items-center text-center "
                 style={{
                   width: '331px', // Set fixed width
                   height: '340px', // Set fixed height
-                  margin: '0 10px', // Gap between cards
+                  margin: '0 0px', // Gap between cards
                   overflow: 'hidden', // Prevent overflowing content
                   display: 'flex', // Use flexbox for consistent layout
                   flexDirection: 'column', // Stack elements vertically

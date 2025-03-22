@@ -38,7 +38,10 @@ function Banner() {
           className="mySwiper"
         >
           {/* First Slide */}
-          <SwiperSlide loop={true}>
+      {/* ///// */}
+
+
+      <SwiperSlide loop={true}>
             <div
               style={{
                 backgroundImage: `url(${image})`,
@@ -48,12 +51,12 @@ function Banner() {
               <div className="w-full sm:w-1/2 text-start">
                 {/* Title Section */}
                 <div className="max-w-3xl mb-4">
-                  <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
+                  <h1 className="text-[40px] sm:text-[40px] md:text-[40px] font-bold leading-tight">
                     Recognized for Excellence
                   </h1>
-                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mt-4 flex gap-2">
+                  <p className="text-[32px] sm:text-[32px] md:text-[32px] font-bold mt-4 flex gap-2">
                     in <div style={{ color: "#FF6B00" }}>IT Training</div>
-                  </h2>
+                  </p>
                 </div>
 
                 {/* Buttons Section */}
@@ -132,6 +135,9 @@ function Banner() {
             </div>
           </SwiperSlide>
 
+
+      {/* /////// */}
+
           <SwiperSlide loop={true}>
             <div
               style={{
@@ -142,27 +148,29 @@ function Banner() {
               {/* Left Section - Text Content */}
               <div className="w-full sm:w-1/2 text-start">
                 <div className="max-w-3xl mb-4">
-                  <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
-                    Join Full Stack Development <span className="text-teal-900">BOOTCAMP</span>
+                  <h1 className="text-[40px] mt-40 sm:text-[40px] md:text-[40px] font-bold leading-tight">
+                  <span className="text-[32px]  sm:text-[32px] md:text-[32px]">Join Exlusive Internship with Stipend Based</span>    <br /> <span className="text-teal-900"> Full Stack Development Program
+
+                  </span>
                   </h1>
                 </div><br />
                 <ul className="text-lg md:text-xl pl-[40px] font-light max-w-3xl leading-relaxed list-disc pl-5">
                   <li>
-                    <span className="text-white font-bold">100%</span> Job Guarantee Program
+                    <span className="text-white ">Course Duration  - 4 Months</span> 
                   </li>
                   <li>
-                    <span className="text-white font-bold">Experience</span> Mentors
+                    <span className="text-white ">Stipend Just after Course Completion - 7K-10K (T&C Apply)</span> 
                   </li>
                   <li>
-                    <span className="text-white font-bold">Mock Interview</span> Preparation
+                    <span className="text-white "> 100% Guaranteed Placement</span>
                   </li>
                   <li>
-                    <span className="text-white font-bold">Live</span> Project-Based Training
+                    <span className="text-white ">Live Project-Based Training</span> 
                   </li>
                 </ul>
-                <button className="mt-6 px-6 py-3 bg-teal-800 text-white rounded-full hover:bg-teal-900 transition">
-                  Enroll Today!
-                </button>
+                <Link to="/fullstack"><button className="mt-6 px-6 py-3 bg-teal-800 text-white rounded-full hover:bg-teal-900 transition">
+                View Course Details
+                </button></Link>
               </div>
 
               {/* Right Section - Tech Stack Icons */}
@@ -189,7 +197,7 @@ function Banner() {
       </div>
 
       {/* CTA Section */}
-      <div className="relative w-full h-[300px] md:h-[200px] bg-gradient-to-r from-gray-800 to-orange-600 overflow-hidden">
+      {/* <div className="relative w-full h-[300px] md:h-[200px] bg-gradient-to-r from-gray-800 to-orange-600 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-20"
           style={{ backgroundImage: "url('/placeholder.svg')" }}
@@ -207,7 +215,7 @@ function Banner() {
             <span className="absolute top-0 left-0 h-full w-0 bg-gray-300 rounded-full transition-all duration-250 group-hover:w-full"></span>
           </button>
         </div>
-      </div>
+      </div> */}
 
 
 {/* css style for swiper navigation size */}
