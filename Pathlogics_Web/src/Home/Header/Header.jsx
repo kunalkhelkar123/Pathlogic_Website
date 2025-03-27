@@ -41,7 +41,7 @@ const companies = [
   { id: 6, name: "Pathlogic", logo: company12 },
   { id: 6, name: "Pathlogic", logo: company13 },
   { id: 6, name: "Pathlogic", logo: company13 },
-  { id: 6, name: "Pathlogic", logo: company14},
+  { id: 6, name: "Pathlogic", logo: company14 },
   { id: 6, name: "Pathlogic", logo: company15 },
   { id: 6, name: "Pathlogic", logo: company16 },
   { id: 6, name: "Pathlogic", logo: company17 },
@@ -86,36 +86,20 @@ function Header() {
   return (
     <>
       {/* Background and Content Section */}
-      <div className="relative flex justify-center items-center w-full h-full p-2  bg-gray-900">
-        {/* Content Section */}
-        <div className="relative z-10 flex flex-col items-center text-center">
-          {/* h4 Tag */}
-          {/* <h4 className="text-gray-300 text-xl sm:text-2xl mb-4 italic">
-            Development Tips & Best Practices
-          </h4> */}
 
-          {/* h1 Tag */}
-          <p className="text-white text-[32px] sm:text-[32px] pt-5 font-light italic">
-            "Clean Code is the key to Scalable & Maintainable Software"
-          </p>
-          <p className="text-white text-[22px] mt-5 sm:text-[22px] font-light">
-          Learn to write efficient, clean code that scales effortlessly with Pathlogics’ clean coding techniques
-          </p>
-        </div>
-      </div>
 
       {/* Slider Section */}
-      <div className="bg-gray-900 py-8 mt-[-30px] ">
+      <div className="bg-gray-900 py-8 mt-[-0px] ">
         {/* Heading */}
         <h4 className="text-center text-[30px] sm:text-[30px] text-white font-semibold mb-8">
-          Other Prestigious Companies
+          Our Prestigious Companies
         </h4>
 
         {/* Slider for Company Logos */}
         <div className="w-full">
           <Slider {...settings}>
             {companies.map((company) => (
-              <div key={company.id} className="flex justify-center items-center p-4">
+              <div key={company.id} className="flex justify-center items-center p-2">
                 <div className="bg-white rounded-md shadow-md p-4 w-full max-w-xs">
                   <img
                     src={company.logo}
@@ -127,25 +111,32 @@ function Header() {
             ))}
           </Slider>
         </div>
-      </div>
-      <section className="min-h-[400px] w-full bg-gray-900 flex flex-col items-center justify-center px-4 py-2 mt-[-100px] text-white">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8">
-            Contact us for more details
-          </h2>
-          <div
-            className="inline-block bg-white hover:bg-gray-200 hover:text-white  rounded-3xl px-6 py-2 shadow-lg hover:shadow-xl transition-shadow"
-          >
+        <section className="min-h-[100px]  w-full bg-gradient-to-r from-gray-900 to-gray-900 flex items-center justify-center px-2  sm:m-[-20px]  text-white">
+          <div className="max-w-4xl w-full flex flex-col sm:flex-row items-center sm:justify-between text-center sm:text-left gap-6">
+
+            {/* Contact Text */}
+            <p className="text-[28px] sm:text-[32px] font-bold bg-orange-400 text-transparent bg-clip-text">
+              Contact us for more details
+            </p>
+
+            {/* Email Button */}
             <a
-              href="/QuickEnquiry"
-              className="text-orange-600 text-[22px] md:text-[22px] font-medium     transition-colors"
+              href="mailto:hr@pathlogics.in"
+              className="px-4 sm:px-6 py-2 sm:py-3 border border-teal-600 bg-teal-600 text-white rounded-md hover:bg-teal-700 transition"
               aria-label="Email us at hr@pathlogicstech.in"
             >
-              Enroll Today!
+              📩 hr@pathlogics.in
             </a>
+
           </div>
-        </div>
-      </section>
+        </section>
+    
+
+       
+
+
+
+      </div>
     </>
   );
 }

@@ -65,7 +65,7 @@ const Footer = () => {
 
         {/* Chennai Column */}
         <div className={`flex flex-col items-stretch justify-between gap-2`}>
-          <h3 className="text-white text-xl font-semibold mb-4 pb-2 border-b-2 border-orange-500">JM Road </h3>
+          <h3 className="text-white text-xl font-semibold mb-4 pb-2 border-b-2 border-orange-500">Narhe </h3>
           <p className="text-justify mb-2">5th floor Dangat Patil Empire Near, Landmark Navale Bridge, above Hotel Shivsagar, Vadagaon Budruk Pune 411041.</p>
           <div className="flex items-center">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-orange-500" viewBox="0 0 20 20" fill="currentColor">

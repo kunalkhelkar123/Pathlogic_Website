@@ -14,7 +14,7 @@ import homeReact from "../../assets/homeReact.svg";
 import nodejs from "../../assets/node-js.svg";
 import java from "../../assets/java.svg";
 import sqldatabase from "../../assets/sql-database.svg";
-import mongodb from "../../assets/mongodb.svg";
+import mongodb from "../../assets/mongodb2.svg";
 
 function Banner() {
   return (
@@ -27,7 +27,7 @@ function Banner() {
           centeredSlides={false}
           loop={true} // Enables infinite scrolling
           autoplay={{
-            delay: 2500,
+            delay: 2400,
             disableOnInteraction: false,
           }}
           pagination={{
@@ -41,12 +41,13 @@ function Banner() {
       {/* ///// */}
 
 
+
       <SwiperSlide loop={true}>
             <div
               style={{
                 backgroundImage: `url(${image})`,
               }}
-              className="relative z-[1] flex items-center justify-center bg-cover bg-center sm:mt-[-120px] h-[800px] gap-[17px] flex flex-col sm:flex-row text-white text-center px-4 lg:px-12"
+              className="relative z-[1] flex items-center justify-center bg-cover bg-center sm:mt-[-120px] h-[800px] sm:h-[660px] gap-[17px] flex flex-col sm:flex-row text-white text-center px-4 lg:px-12"
             >
               <div className="w-full sm:w-1/2 text-start">
                 {/* Title Section */}
@@ -61,13 +62,14 @@ function Banner() {
 
                 {/* Buttons Section */}
                 <div className="flex gap-2 sm:gap-4 mb-6 justify-start flex-wrap">
-                  <button className="px-4 sm:px-6 py-2 sm:py-3 border border-teal-600 text-white rounded-full hover:bg-teal-600 transition">
-                    Get Trained
+                  <button className="px-4 sm:px-6 py-2 sm:py-3 border border-teal-600 bg-teal-800 text-white rounded-md hover:bg-teal-600 transition">
+                    Get Trained                 
+                    {/* bg-orange-500 text-white font-semibold py-2 rounded-md hover:bg-orange-600 */}
                   </button>
-                  <button className="px-4 sm:px-6 py-2 sm:py-3 border border-teal-600 text-white rounded-full hover:bg-teal-600 transition">
+                  <button className="px-4 sm:px-6 py-2 sm:py-3 border border-teal-600 bg-teal-800 text-white rounded-md hover:bg-teal-600 transition">
                     Get Hired
                   </button>
-                  <button className="px-4 sm:px-6 py-2 sm:py-3 border border-teal-600 text-white rounded-full hover:bg-teal-600 transition">
+                  <button className="px-4 sm:px-6 py-2 sm:py-3 border border-teal-600 bg-teal-800 text-white rounded-md hover:bg-teal-600 transition">
                     Get Ahead
                   </button>
                 </div>
@@ -136,6 +138,12 @@ function Banner() {
           </SwiperSlide>
 
 
+
+
+
+
+      
+
       {/* /////// */}
 
           <SwiperSlide loop={true}>
@@ -143,18 +151,18 @@ function Banner() {
               style={{
                 backgroundImage: `url(${image2})`,
               }}
-              className="relative z-[1] flex flex-col sm:flex-row items-center justify-center bg-cover bg-center sm:mt-[-120px] h-[800px] text-white text-center px-4 lg:px-12"
+              className="relative z-[1] flex flex-col sm:flex-row items-center justify-center bg-cover bg-center sm:mt-[-120px] mt-[0px] h-[800px] sm:h-[660px] text-white text-center px-4 lg:px-12"
             >
               {/* Left Section - Text Content */}
               <div className="w-full sm:w-1/2 text-start">
                 <div className="max-w-3xl mb-4">
-                  <h1 className="text-[40px] mt-40 sm:text-[40px] md:text-[40px] font-bold leading-tight">
+                  <h1 className="text-[40px] sm:mt-40  sm:text-[40px] md:text-[40px] font-bold leading-tight">
                   <span className="text-[32px]  sm:text-[32px] md:text-[32px]">Join Exlusive Internship with Stipend Based</span>    <br /> <span className="text-teal-900"> Full Stack Development Program
 
                   </span>
                   </h1>
-                </div><br />
-                <ul className="text-lg md:text-xl pl-[40px] font-light max-w-3xl leading-relaxed list-disc pl-5">
+                </div>
+                <ul className="text-[15px] md:text-xl pl-[40px] font-light max-w-3xl leading-relaxed list-disc pl-5">
                   <li>
                     <span className="text-white ">Course Duration  - 4 Months</span> 
                   </li>
@@ -168,13 +176,14 @@ function Banner() {
                     <span className="text-white ">Live Project-Based Training</span> 
                   </li>
                 </ul>
-                <Link to="/fullstack"><button className="mt-6 px-6 py-3 bg-teal-800 text-white rounded-full hover:bg-teal-900 transition">
+                <Link  to="/fullstack">
+                <button className="mt-6 px-6 mb-2 py-2 px-4 sm:px-6  sm:py-3 border border-teal-600 bg-teal-800 text-white rounded-md hover:bg-teal-600 transition">
                 View Course Details
                 </button></Link>
               </div>
 
               {/* Right Section - Tech Stack Icons */}
-              <div className="w-full sm:w-1/2 flex flex-wrap grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 justify-center gap-4 mt-1 sm:mt-0">
+              <div className="w-full sm:w-1/2 flex flex-wrap grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 justify-center gap-4 mt-1 sm:mt-0">
                 {[
                   { name: "HTML5", img: HTMl },
                   { name: "CSS3", img: CSS },
@@ -185,7 +194,7 @@ function Banner() {
                   { name: "SQL", img: sqldatabase },
                   { name: "MongoDB", img: mongodb },
                 ].map((tech, index) => (
-                  <div key={index} className="p-4 bg-white flex items-center justify-center bg-opacity-80 rounded-lg">
+                  <div key={index} className="p-2 bg-white flex items-center justify-center bg-opacity-90 rounded-lg">
                     <img src={tech.img} alt={tech.name} className="w-12 h-12 sm:w-16 sm:h-16" />
                   </div>
                 ))}

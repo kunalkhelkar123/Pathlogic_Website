@@ -8,7 +8,7 @@ const courses = [
     id: 1,
     title: 'Full Stack Java Development',
     description: 'Learn the  with hands-on experience in harfull stack java development with hands-on projects and prctice',
-    duration: '6 Months',
+    duration: '4 Months',
     mode: 'Offline',
     image: fullstockimage,
     link: '/FullJavaDev'
@@ -17,7 +17,7 @@ const courses = [
     id: 2,
     title: 'Full Stack Web Development',
     description: 'Master the principles and practices of full stack web development in the IT industry.',
-    duration: '6 Months',
+    duration: '4 Months',
     mode: 'Offline',
     image: fullstockimage,
     link: '/FullMERN1'
@@ -26,7 +26,7 @@ const courses = [
     id: 3,
     title: 'Full Stack .DotNet Development',
     description: 'A deep dive into the DotNet standard for automotive software developer with real-time systems.',
-    duration: '6 Months',
+    duration: '4 Months',
     mode: 'Offline',
     image: fullstockimage,
     link: '/DotNet'
@@ -123,6 +123,38 @@ export default function Component() {
         </div>
       ))}
     </div>
+
+    <div className="relative flex justify-center py-10  items-center w-full h-full p-2  bg-gray-900">
+        {/* Content Section */}
+        <div className="relative z-10 flex flex-col items-center text-center">
+          {/* h4 Tag */}
+          {/* <h4 className="text-gray-300 text-xl sm:text-2xl mb-4 italic">
+            Development Tips & Best Practices
+          </h4> */}
+
+          {/* h1 Tag */}
+          <p className="text-white text-[32px] sm:text-[32px] pt-2 font-light italic">
+            "Clean Code is the key to Scalable & Maintainable Software"
+          </p>
+          <p className="text-white text-[22px] mt-5 sm:text-[22px] font-light">
+          Learn to write efficient, clean code that scales effortlessly with Pathlogics’ clean coding techniques
+          </p>
+          <div
+              className="inline-block bg-white mt-4"
+            >
+              <a
+                href="/QuickEnquiry"
+                className="px-4 sm:px-6 py-2 sm:py-3 border border-teal-600 bg-teal-600 text-white rounded-md hover:bg-teal-800 transition"
+                aria-label="Email us at hr@pathlogicstech.in"
+              >
+               Enroll Today!
+              </a>
+            </div>
+
+         
+        </div>
+      </div>
+   
     </>
   );
 }

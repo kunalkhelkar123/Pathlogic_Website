@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import placeholder from '../../assets/preview.png'; // Replace with your actual transparent image path
+import bgimg from "../../assets/person.jpeg"
+import { motion } from "framer-motion";
 
+import brochurePDF from "../.././assets/Brochure.pdf";
 // Loader Component
 function Loader() {
   return (
@@ -19,9 +22,44 @@ function Loader() {
 }
 
 // Main Promotion Component
-export default function Promotion() {   
+export default function Promotion() {
   const [loading, setLoading] = useState(true);
+  const [showPopup, setShowPopup] = useState(false);
+  const [formPopup, setFormPopup] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    passingYear: "",
+    interest: "",
+  });
 
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Enquiry Form Data:", formData);
+    setFormPopup(true);
+    setTimeout(() => setFormPopup(false), 3000);
+  };
+
+  const handleDownload = () => {
+    setShowPopup(true);
+    setTimeout(() => setShowPopup(false), 3000);
+
+    // Open in new tab
+    window.open(brochurePDF, "_blank");
+
+    // Create an invisible download link
+    const link = document.createElement("a");
+    link.href = brochurePDF;
+    link.download = "Brochure.pdf"; // Set the file name
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link); // Clean up the DOM
+  };
   // Simulate loading behavior (e.g., waiting for data or content to load)
   useEffect(() => {
     const loadingTimer = setTimeout(() => {
@@ -36,56 +74,75 @@ export default function Promotion() {
   }
 
   return (
-    <div className="relative min-h-[600px] w-full bg-gradient-to-br from-black via-gray-900 to-gray-800 ">
-      <div id='codetyping' className="absolute inset-0 bg-[url('https://img.freepik.com/free-photo/person-front-computer-working-html_23-2150038835.jpg?t=st=1731492180~exp=1731495780~hmac=a2ec4a94cbb20f46e884936d229ec7c6403f727e98a35dd7c38857f1cc455df1&w=826')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
-      
-      <div className="relative mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
-        <div className="flex flex-col items-start gap-8">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
-              Full Stack Development
-              <span className="block text-gray-400">(MERN Stack)</span>
-            </h1>
-            <p className="mt-6 text-lg leading-8 text-gray-300">
-              Boost your career with hands-on experience in all facets of development
-            </p>
+    <div className="relative flex flex-col   md:flex-row items-center justify-center min-h-[500px] w-full bg-gradient-to-br from-black via-gray-900 to-gray-800 px-4 py-8  md:px-6">
+
+
+      <div
+        id="codetyping"
+        style={{ backgroundImage: `url(${bgimg})` }}  // Use backticks (``) for template literals
+        className="absolute inset-0 bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"
+      >
+      </div>
+
+
+
+      {/* Left Side - Course Content */}
+      <div className="w-full md:w-1/2  text-left  justify-start flex flex-col z-10 items-left text-white space-y-6 md:pr-10">
+        <h1 className="text-3xl md:text-4xl font-bold">Full Stack Developer Course in Pune with 100% Placement Assistance.</h1>
+        <p className="text-3xl  md:text-3xl text-gray-300"> Internship with stipend</p>
+        <div className="  bg-opacity-50 py-2 rounded-lg backdrop-blur-md">
+          <h2 className="text-xl font-semibold">Do you want to advance your web development career?</h2>
+          <p className="text-gray-400 mt-2">
+            As one of the top IT hubs in India, Pune is an excellent option for young tech professionals to
+            advance their careers. To start their IT careers, many candidates search for a career-driven <strong>Full Stack Developer Course in Pune with Placement.</strong>
+          </p>
+          <div className=" text-left  justify-start  mt-4 md:text-left">
+         
+            <a
+              href="/AboutUs"
+              className="inline-block text-left  justify-start py-2 px-2 sm:px-3  sm:py-2 border border-teal-600 bg-teal-600 text-white rounded-md hover:bg-teal-800 transition"
+            >
+              Explore More
+            </a>
           </div>
 
-          {/* <div className="flex flex-wrap gap-4">
-            <button className="px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors duration-300 flex items-center">
-              Apply Online
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-              </svg>
-            </button>
-            
-            <button className="px-6 py-3 bg-orange-600 text-white rounded-md hover:bg-orange-700 transition-colors duration-300 flex items-center">
-              Quick Enquiry
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
-              </svg>
-            </button>
-
-            <button className="px-6 py-3 border border-green-500 bg-green-500 bg-opacity-10 text-green-500 rounded-md hover:bg-opacity-20 transition-colors duration-300 flex items-center">
-              Chat with us
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                <path fillRule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clipRule="evenodd" />
-              </svg>
-            </button>
-          </div> */}
-
-          <div className="mt-8 w-full max-w-2xl border border-gray-800 bg-black bg-opacity-50 p-6 rounded-lg backdrop-blur">
-            <div className="space-y-4">
-              <div className="h-2 w-20 rounded bg-blue-500 opacity-50"></div>
-              <h2 className="text-xl font-semibold text-white">Why Choose MERN Stack?</h2>
-              <p className="text-gray-400">
-                Master MongoDB, Express.js, React, and Node.js - the powerful combination of technologies 
-                that enables you to build modern, scalable web applications from start to finish.
-              </p>
-            </div>
-          </div>
         </div>
       </div>
+
+      {/* Right Side - Enquiry Form */}
+      <motion.div
+        className="w-full md:w-1/3 mt-10 md:mt-0 z-10 bg-gray-800 bg-opacity-60 p-6 rounded-lg shadow-lg"
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
+      >
+        <h2 className="text-2xl font-bold text-orange-600 mb-4">Enquiry Form</h2>
+        <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+          <input type="text" name="name" placeholder="Full Name" value={formData.name} onChange={handleChange} className="w-full p-2 border rounded-lg" required />
+          <input type="email" name="email" placeholder="Email Address" value={formData.email} onChange={handleChange} className="w-full p-2 border rounded-lg" required />
+          <input type="tel" name="phone" placeholder="Phone Number" value={formData.phone} onChange={handleChange} className="w-full p-2 border rounded-lg" required />
+          <select name="passingYear" value={formData.passingYear} onChange={handleChange} className="w-full p-2 border rounded-lg" required>
+            <option value="">Select Passing Year</option>
+            <option value="Pursuing">Pursuing</option>
+            <option value="Completed">Completed</option>
+          </select>
+          <select name="interest" value={formData.interest} onChange={handleChange} className="w-full p-2 border rounded-lg" required>
+            <option value="">Select Interest</option>
+            <option value="JavaCoreConcepts">Java Core Concepts</option>
+            <option value="JavaFrameworks">Java Frameworks & Libraries</option>
+            <option value="DesignPatterns">Design Patterns & Best Practices</option>
+            <option value="JavaWebDevelopment">Java Web Development</option>
+            <option value="DatabaseConnectivity">Database Connectivity in Java</option>
+          </select>
+          <div className="mt-6 flex flex-col md:flex-row gap-4">
+            <motion.button whileHover={{ scale: 1.1 }} className="inline-block py-2 px-2 sm:px-3  sm:py-2 border border-teal-600 bg-teal-600 text-white rounded-md hover:bg-teal-800 transition" type="submit">
+              Submit
+            </motion.button>
+            <motion.button whileHover={{ scale: 1.1 }} className="inline-block py-2 px-2 sm:px-3  sm:py-2 border border-teal-600 bg-teal-600 text-white rounded-md hover:bg-teal-800 transition" type="button" onClick={handleDownload}>
+              Download Brochure
+            </motion.button>
+          </div>
+        </form>
+      </motion.div>
     </div>
   );
 }

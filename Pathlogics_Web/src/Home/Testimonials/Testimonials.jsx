@@ -2,50 +2,54 @@ import React, { useState } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import testimonal1 from '../../assets/testimonal1.png';
-import testimonal2 from '../../assets/testimonal2.png';
-import testimonal3 from '../../assets/testimonal3.png';
-import testimonal4 from '../../assets/ruchitha.png';
+import testimonal1 from '../../assets/testiminiols/somnath.jpg';
+import testimonal2 from '../../assets/testiminiols/amit.jpg';
+import testimonal3 from '../../assets/testiminiols/mansi.jpg';
+import testimonal4 from '../../assets/testiminiols/pritipatil.jpg';
+import testimonal5 from '../../assets/testiminiols/aditya.jpg';
+import testimonal6 from '../../assets/testiminiols/neha.jpg';
+// import testimonal7 from '../../assets/testiminiols/mansi.jpg';
 
 const Testimonials = () => {
+
   const testimonials = [
     {
-      name: 'Kudumula Venkata Subba Reddy',
+      name: 'Somnath Habre',
       photo: testimonal1,
       review:
 
-        "I'm Kudumula Venkata Subba Reddy, an EEE graduate from JNTUA College of Engineering, Pulivendula, Andhra Pradesh. After graduation, I joined Pathlogic Technologics India, Bangalore, where I completed the advanced embedded systems course. The constant support from the staff.",
-
+        "The Full Stack Developer course at Pathlogics helped me build a strong foundation and secure a role as a Software Engineer in a top IT MNC."
     },
     {
-      name: 'John Doe',
+      name: 'Amit Dahake',
       photo: testimonal2,
       review:
-        "I'm John Doe, an IT graduate from XYZ University. After completing my studies, I joined Pathlogic Technologics India, where I improved my coding and development skills.",
+        "Thanks to Pathlogics' comprehensive training, I was able to land a Program Analyst position in a leading IT MNC. Great learning experience!"
     },
     {
-      name: 'Jane Smith',
+      name: 'Manasi Kulkarni ',
       photo: testimonal3,
       review:
-        "I’m Jane Smith, an electronics engineer who joined Pathlogic Technologics India to further develop my embedded systems skills. With the excellent training and mentorship provided, I was able to land a job at a prestigious tech firm.",
-    },
+   "Pathlogics provided me the skills I needed to excel as a QA Engineer. their dedicated placement support helped me achieve my dream job."
+      },
     {
-      name: 'David Lee',
+      name: 'Priti Patil',
       photo: testimonal4,
       review:
-        "I'm David Lee, a software engineer who com`pleted a course at Pathlogic Technologics India. The advanced training helped me land a job at a top tech company.",
+   "With Pathlogics' guidance, I secured a Software Engineer role in a renowned IT MNC with a 16 LPA package! I highly recommend this course."
+      },
+    {
+      name: 'Aditya Chavale',
+      photo: testimonal5,
+      review:
+        "The practical approach at Pathlogics enabled me to successfully land an Assistant System Engineer role in a top IT MNC. A game-changer for my career!"
     },
     {
-      name: 'Anna Johnson',
-      photo: testimonal1,
+      name: 'Neha Chavan:',
+      photo: testimonal6,
       review:
-        "Anna here, a recent electronics graduate. Pathlogic Technologics India's embedded systems course gave me the skills and confidence to excel in my job at a multinational firm.",
-    },
-    {
-      name: 'Michael Williams',
-      photo: testimonal2,
-      review:
-        "I'm Michael Williams, and the training I received at Pathlogic Technologics India was invaluable in helping me grow my technical skills and succeed in the industry.",
+ " Pathlogics' Full Stack Developer course played a crucial role in helping me secure a DevOps Engineer position. Truly valuable training."
+ 
     },
   ];
 
@@ -80,14 +84,15 @@ const Testimonials = () => {
   };
 
   return (
+
     <section className="py-10 ">
 
       <div className="max-w-7xl mx-auto text-center ">
         <h3 className="text-3xl font-bold  mb-8 text-orange-600">What Our Students Say</h3>
-       
+
 
         <p className="text-lg sm:text-xl text-gray-800 mb-10">
-        Our students speak highly of their experience at <strong>Pathlogics</strong>. <br/> Here’s why they recommend us as the best IT training institute in Pune
+          Our students speak highly of their experience at <strong>Pathlogics</strong>. <br /> Here’s why they recommend us as the best IT training institute in Pune
         </p>
 
         <Slider {...settings}>
@@ -149,7 +154,9 @@ const Testimonials = () => {
         </Slider>
       </div>
     </section>
+
+
+
   );
 };
-
 export default Testimonials;

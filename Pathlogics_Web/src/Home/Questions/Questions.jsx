@@ -74,7 +74,7 @@ const Accordion = () => {
                   </p>
                 </div>
                 <div className="p-4 bg-gray-50 shadow-sm rounded-lg">
-                  <h2 className="font-semibold text-orange-600">JM Road</h2>
+                  <h2 className="font-semibold text-orange-600">Narhe</h2>
                   <p className="text-sm text-gray-700">
                     5th floor, Dangat Patil Empire, Vadgaon Budruk, Pune.
                   </p>
@@ -105,15 +105,15 @@ const Accordion = () => {
             onClick={() => toggleAccordion(3)}
           />
 
-          <AccordionItem
+          {/* <AccordionItem
             question="4. Why Pathlogic Institute for Embedded Systems Training?"
             answer="We teach the basics and advanced Embedded Systems concepts with hands-on training and strong placement support."
             isOpen={openIndex === 4}
             onClick={() => toggleAccordion(4)}
-          />
+          /> */}
 
           <AccordionItem
-            question="5. What Happens If I Miss a Session?"
+            question="4. What Happens If I Miss a Session?"
             answer="We provide guidance and ensure you stay on track with learning."
             isOpen={openIndex === 5}
             onClick={() => toggleAccordion(5)}

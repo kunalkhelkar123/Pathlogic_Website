@@ -80,12 +80,12 @@ const Companies = () => {
       </div> */}
 
       {/* Courses Section */}
-      <div className="bg-white py-8 sm:py-16 px-4 sm:px-6 lg:px-8">
+      <div className="bg-white py-2 sm:py-4 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-700 mb-4">
           Courses Offered at Pathlogics
           </h2>
-          <p className="text-lg sm:text-xl text-justify text-gray-800">
+          <p className="text-lg sm:text-xl  text-gray-800">
           As the <strong>Best IT training institute in Pune</strong>, we offer specialized courses that cater to various aspects of software development and testing. Our courses are curated with a focus on the latest trends and In demand technologies:
           </p>
         </div>

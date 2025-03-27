@@ -210,7 +210,7 @@ function App() {
         <Route path="/Nodejs" element={<Layout> <NodeCourse /> </Layout>} />
         <Route path="/Dotnetcore" element={<Layout> <DotNetCourse /> </Layout>} />
         <Route path="/Dotnetangular" element={<Layout> <DotnetAngularCourse /> </Layout>} />
-        <Route path="/fullstack" element={<Layout> <Fullstack /> </Layout>} />
+        <Route path="/full-stack-developer-course-in-pune-with-placement" element={<Layout> <Fullstack /> </Layout>} />
         <Route path="/AboutUs" element={<Layout> <Aboutus /> </Layout>} />
 
 

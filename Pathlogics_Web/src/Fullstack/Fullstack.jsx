@@ -6,22 +6,26 @@ import Program from './programveiw/Program'
 import Roadmap from './roadmap/Roadmap'
 import Accordian from './Accordian/Accordian'
 import Companie from './Companies/Companie'
-//import OurBlogs from './ourblogs bro/OurBlogs'
-import JavaDevelopment from './javadevelopment/JavaDevelopment'
-// import Javacarts from 
+import KeyHighlights from './Key Highlights/index'
+import FAQ from './Questions/Questions'
+import Scope from './Scope/Scope'
+
 
 function Fullstack() {
   return (
     <div>
-      <Promotion/>
-      <Mernstack/>
-      <Program/>
-      <Roadmap/>
-      <Accordian/>
-      <Companie/>
-      {/* <OurBlogs/> */}
-      <JavaDevelopment/>
-      {/* <Javacarts/> */}
+      <Promotion />
+      <Mernstack />
+      <Program />
+      <KeyHighlights />
+      <Roadmap />
+  
+      {/* <Accordian /> */}
+      <Scope />
+      <Companie />
+      <FAQ />
+      {/* <JavaDevelopment/> */}
+
     </div>
   )
 }

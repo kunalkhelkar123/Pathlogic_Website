@@ -2,13 +2,13 @@ import { FaFileAlt, FaMicrophone, FaBuilding } from "react-icons/fa";
 
 const PlacementAssistance = () => {
     return (
-      <div className="bg-white p-8 rounded-lg ">
+      <div className="bg-white sm:p-8 mt-[-20px]  rounded-lg ">
         <h2 className="text-3xl font-bold text-gray-900 text-center mb-5">
           Placement Assistance You Can Trust
         </h2>
-        <p className="text-lg text-gray-700 text-center mb-6">
+        <p className="text-lg text-gray-700  sm:px-60 px-2 text-center mb-6">
           We understand that securing a job after completing your course is a priority. 
-          As one of the top IT training institutes in Pune with placement, we go the extra mile by offering:
+          As one of the top <strong>IT training institutes</strong> in Pune with placement, we go the extra mile by offering:
         </p>
       {/* ////////////////////// */}
 

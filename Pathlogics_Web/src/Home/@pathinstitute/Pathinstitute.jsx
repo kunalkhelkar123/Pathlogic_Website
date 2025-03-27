@@ -114,20 +114,20 @@ export default function Navbar() {
 
   return (
     <header className="w-full">
-      <div className="bg-black text-white py-2 px-4 md:px-8 flex flex-row md:flex-row justify-between items-center">
-        <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">
-          <span className="flex items-center space-x-2">
-            <span>📧</span>
-            <span>info@pathlogicstech.in</span>
+      <div className="bg-black text-white py-2 px-2 md:px-8 flex flex-row md:flex-row justify-between items-center">
+        <div className="flex     space-x-4 sm:space-y-0 sm:space-x-4">
+          <span className=" items-center ">
+            {/* <span></span> */}
+            <span  className=" text-sm">📧info@pathlogicstech.in</span>
           </span>
-          <span className="flex items-center space-x-2">
-            <span>📞</span>
-            <span>+91 7364036464</span>
+          <span className="flex items-center space-x-0 text-sm">
+            {/* <span></span> */}
+            <span className=" text-sm">📞+917364036464</span>
           </span>
         </div>
 
         {/* Hamburger Menu Icon */}
-        <button
+        {/* <button
           className="md:hidden text-white ml-auto"
           onClick={() => { setIsOpenAuthMenu(!isOpenAuthMenu) }}
         >
@@ -145,7 +145,7 @@ export default function Navbar() {
               d="M4 6h16M4 12h16M4 18h16"
             />
           </svg>
-        </button>
+        </button> */}
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-4 sm:space-x-6 mt-2 sm:mt-0 ml-auto">
@@ -192,63 +192,13 @@ export default function Navbar() {
         </div>
 
       {/* Mobile Menu */}
-      {isOpenAuthMenu && (
-        <div className="md:hidden flex flex-col items-end justify-center bg-black text-white space-y-4 py-4 px-6">
-
-       <div className="relative-dropdown algin-right text-right">
-          <button
-            onClick={() => setIsDropdownOpen3((prev) => !prev)}
-            className="text-white-700 "
-          >
-            Login
-          </button>
-
-          {/* Login Dropdown */}
-          {isDropdownOpen3 && (
-            <ul className="mt-2 w-auto  shadow-md rounded-md z-10 space-y-2 px-4 py-2">
-              <li className="cursor-pointer">
-                <Link
-                  to="/studentlogin"
-                  className="block text-white hover:text-blue-500 py-2"
-                >
-                  Student Login
-                </Link>
-              </li>
-              <li className="cursor-pointer">
-                <Link
-                  to="/adminlogin"
-                  className="block text-white hover:text-blue-500 py-2"
-                >
-                  Admin Login
-                </Link>
-              </li>
-              <li className="cursor-pointer">
-                <Link
-                  to="/trainerlogin"
-                  className="block text-white hover:text-blue-500 py-2"
-                >
-                  Trainer Login
-                </Link>
-              </li>
-            </ul>
-      )}
-    </div>
-
-          <Link to={`/studentregistration`} className="hover:underline">
-            Apply Online
-          </Link>
-          <Link to={`/QuickEnquiry`} className="hover:underline">
-            Quick Enquiry
-          </Link>
-
-        </div>
-      )}
+    
 
       {/* Logo and Navbar */}
       <div className="w-full bg-white py-1 px-4 md:px-8 flex justify-between items-center border-b-2 border-orange-500">
         <div className="flex items-center">
           <button onClick={() => navigate('/')} className="text-black focus:outline-none w-[124px]">
-            {/* <img src={image} alt="Pathlogics" /> */}<br/><br/><br/>
+            <img className="h-16 w-38" src={image} alt="Pathlogics" />
           </button>
         </div>
 
@@ -283,7 +233,7 @@ export default function Navbar() {
             Institute
           </Link> */}
           <Link
-            to="/fullstack"
+            to="/full-stack-developer-course-in-pune-with-placement"
             className="text-gray-700 hover:text-orange-500 font-medium"
           >
             Full Stack Development
@@ -518,7 +468,7 @@ export default function Navbar() {
           <div className="space-y-4">
             <Link to="/" className="block text-gray-700 hover:text-orange-500">Home</Link>
             {/* <Link to="/All" className="block text-gray-700 hover:text-orange-500">Institute</Link> */}
-            <Link to="/fullstack" className="block text-gray-700 hover:text-orange-500">Full Stack Development</Link>
+            <Link to="/full-stack-developer-course-in-pune-with-placement" className="block text-gray-700 hover:text-orange-500">Full Stack Development</Link>
 
             {/* Short Term Courses */}
             <button

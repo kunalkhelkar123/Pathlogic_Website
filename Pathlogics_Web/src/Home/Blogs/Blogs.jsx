@@ -17,31 +17,31 @@ export default function Blogs() {
   return (
     <>
     {/* Main content with image and text */}
-      <div className=" pt-12  bg-gray-50">
-        <h2 className="text-3xl md:text-5xl font-extrabold text-black text-center ">
+      <div className=" pt-12  mb-[-60px]  bg-gray-50">
+        <h1 className="text-3xl  sm:mb-[-60px] md:text-5xl font-extrabold text-black text-center ">
           Pathlogics: The Best IT Training Institute in Pune
-        </h2>
+        </h1>
 
-        <div className="flex flex-col md:flex-row items-center justify-center bg-gray-50 min-h-screen p-6 md:p-12 lg:p-16 space-y-6 md:space-y-0 rounded-lg shadow-lg">
+        <div className="flex flex-col md:flex-row items-center justify-center bg-gray-50 min-h-screen p-6 md:p-12 lg:p- space-y-2 md:space-y-0 rounded-lg shadow-lg">
           {/* Text Section */}
           <div className="md:w-1/2 text-center md:text-left">
-            <p className="text-lg sm:text-xl  md:text-2xl text-black  leading-relaxed mb-6">
+            <p className="text-lg sm:mt-[-60px] sm:text-xl  md:text-2xl text-black  leading-relaxed mb-6">
               At Pathlogics, we pride ourselves on being recognized as the <strong>Best IT training institute in Pune</strong>. With a strong focus on delivering top-notch software courses and 100% placement assistance, we ensure our students receive industry-relevant education. Our commitment to quality and real-world learning sets us apart from other <strong>Software training institutes</strong>. Whether you're aspiring to become a software developer, tester, or data scientist, we offer comprehensive courses that meet the demands of the ever-evolving IT landscape.
             </p>
             <a
-              href="/quickenquiry"
-              className="inline-block px-8 py-3 text-lg font-semibold text-white bg-indigo-600 rounded-full hover:bg-indigo-700 transition duration-300"
+              href="/AboutUs"
+              className="inline-block px-8 py-3 px-4 sm:px-6 py-2 sm:py-3 border border-teal-600 bg-teal-600 text-white rounded-md hover:bg-teal-800 transition"
             >
-              Apply Now
+             Explore More
             </a>
           </div>
 
           {/* Image Section */}
-          <div className="md:w-1/2 flex justify-center">
+          <div className="md:w-1/2 flex p-12 justify-center">
             <img
               src={abc} // Replace with your actual image path later
               alt="Pathlogic Scholarship"
-              className="w-full h-auto sm:w-auto sm:h-auto max-w-xs sm:max-w-md md:max-w-full rounded-lg shadow-xl transform hover:scale-105 transition duration-300"
+              className="w-78 h-60 sm:w-auto sm:h-auto max-w-xs sm:max-w-md md:max-w-full rounded-lg shadow-xl transform hover:scale-105 transition duration-300"
               style={{ objectFit: 'cover' }}
             />
           </div>
@@ -52,7 +52,7 @@ export default function Blogs() {
 
 
       {/* Padding to ensure separation between sections */}
-      <div className=""></div>
+   
 
       {/* Placement statistics */}
 
