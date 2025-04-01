@@ -14,12 +14,18 @@ import Footer from './Footer/Footer'
 import Pop from './pop/Pop'
 import PlacementAssistance from "./PlacementAssistance/PlacementAssistance"
 //import Intership from './Longtermgoal/Internship'
+
+import { Helmet } from "react-helmet";
 function Home() {
   useEffect(() => {
     <Pop />
   }, [])
   return (
     <div>
+      <Helmet>
+        <title>  Best IT Training Institute in Pune | Software Courses with Placement.</title>
+        <meta name="description" content=" Join the best IT training institute in Pune. Enroll in software courses with 100% placement assistance. Kickstart your IT career– Apply Today!" />
+      </Helmet>
       {/* <Pathinstitute/> */}
       {/* <Pop/> */}
       <Banner />
@@ -28,14 +34,14 @@ function Home() {
       <Sticky />
       <Companies />
       <Courses_offer />
-     
+
       {/* <Workweoffers/> */}
-      <Testimonials />   <PlacementAssistance/> <Header />
-     
+      <Testimonials />   <PlacementAssistance /> <Header />
+
       <Questions />
       <Loginform />
       {/* <OurBLogs/> */}
-    
+
       {/* <Footer/> */}
 
     </div>

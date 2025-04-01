@@ -66,12 +66,12 @@ export default function Navbar() {
 
   const longTermCourses = {
     programming: [
-      { name: "FullStack Web Development", path: "/FullMERN1" },
-      { name: "FullStack Java Development", path: "/FullJavaDev" },
-      { name: "FullStack DevOps Engineer", path: "/Devops" },
+      { name: "FullStack Web Development", path: "/full-stack-web-development-course-in-pune" },
+      { name: "FullStack Java Development", path: "/java-full-stack-developer-course-in-pune" },
+      { name: "FullStack DevOps Engineer", path: "/devops-training-in-pune" },
     ],
     testing: [
-      { name: "FullStack .NET Developer", path: "/DotNet" },
+      { name: "FullStack .NET Developer", path: "/dot-net-full-stack-developer-course-in-pune" },
       { name: "FullStack Testing", path: "/FullstackTesting" },
       { name: "Manual Testing", path: "/ManualComp" },
     ],

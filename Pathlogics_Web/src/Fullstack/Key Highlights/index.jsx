@@ -6,51 +6,51 @@ const FullStackHighlights = () => {
       icon: <FaClipboardList className="text-white text-6xl" />,
       title: "Full Stack Developer Course with Certification",
       bgColor: "bg-blue-500",
-      description:" Learn from industry experts with real project experience."
+      description: " Learn from industry experts with real project experience."
     },
     {
       icon: <FaChalkboardTeacher className="text-white text-6xl" />,
       title: "Internship with Stipend ",
       bgColor: "bg-red-500",
-      description:" Gain skills and earn a stipend with our practical internship program!."
-      
+      description: " Gain skills and earn a stipend with our practical internship program!."
+
     },
     {
       icon: <FaLaptopCode className="text-white text-6xl" />,
       title: "Flexible Learning Options",
       bgColor: "bg-green-500",
-      description:" We offer both offline classes or online training formats to suit your schedule."
+      description: " We offer both offline classes or online training formats to suit your schedule."
     },
     {
       icon: <FaUsers className="text-white text-6xl" />,
       title: "Complete Placement Assistance ",
       bgColor: "bg-purple-500",
-      description:"Our placement team works with you to secure interviews and get your first job."
+      description: "Our placement team works with you to secure interviews and get your first job."
     },
     {
       icon: <FaUserTie className="text-white text-6xl" />,
       title: "Resume Building ",
       bgColor: "bg-blue-400",
-      description:"Create a professional resume that highlights your skills, experience, and projects."
+      description: "Create a professional resume that highlights your skills, experience, and projects."
     },
     {
       icon: <FaHandshake className="text-white text-6xl" />,
       title: "Soft Skill Development ",
       bgColor: "bg-yellow-500",
-      description:"Improve your communication and professional skills to excel in corporate environments."
+      description: "Improve your communication and professional skills to excel in corporate environments."
     },
   ];
 
   return (
-    <div className="container mx-auto sm:px-6 px-2 py-6">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 sm:-mt-20 lg:-mt-10 md:-mt-10  sm:py-2 lg:py-4  py-2">
       <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">
         Key Highlights of Full-Stack Developer Program
       </h2>
       <p className="text-center text-lg md:text-xl text-gray-600 max-w-4xl mx-auto mb-8">
-      In order to satisfy the changing demands of the industry, our <strong>Full Stack Developer 
-      Course in Pune</strong> makes sure that you have practical experience with the newest technologies. 
-      Our curriculum offers a perfect path to success, no matter whether you are a recent graduate 
-      or an experienced professional aiming to improve your abilities.
+        In order to satisfy the changing demands of the industry, our <strong>Full Stack Developer
+          Course in Pune</strong> makes sure that you have practical experience with the newest technologies.
+        Our curriculum offers a perfect path to success, no matter whether you are a recent graduate
+        or an experienced professional aiming to improve your abilities.
       </p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">

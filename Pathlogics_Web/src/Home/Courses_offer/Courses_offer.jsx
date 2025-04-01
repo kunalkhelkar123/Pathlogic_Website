@@ -11,7 +11,7 @@ const courses = [
     duration: '4 Months',
     mode: 'Offline',
     image: fullstockimage,
-    link: '/FullJavaDev'
+    link: '/java-full-stack-developer-course-in-pune'
   },
   {
     id: 2,
@@ -20,7 +20,7 @@ const courses = [
     duration: '4 Months',
     mode: 'Offline',
     image: fullstockimage,
-    link: '/FullMERN1'
+    link: '/full-stack-web-development-course-in-pune'
   },
   {
     id: 3,

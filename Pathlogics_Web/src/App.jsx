@@ -22,7 +22,7 @@ import Program from "./Fullstack/programveiw/Program";
 import Roadmap from "./Fullstack/roadmap/Roadmap";
 import Accordian from "./Fullstack/Accordian/Accordian";
 import Companie from "./Fullstack/Companies/Companie";
-import Home from "./Home/Home";
+
 import Fullstack from "./Fullstack/Fullstack";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Loader from "./Loader";
@@ -123,18 +123,18 @@ import StudentInfo from "./Trainers/Studentinfo";
 import TrainerCoursesList from "./Trainers/Courses/CoursesList";
 import TrainerCourses from "./Trainers/Courses";
 import ManualComp from "./LongtermCourses/ManualTesting/ManualComp";
-import DevComp from "./LongtermCourses/Devops/DevComp";
+
 import DigitalComp from "./LongtermCourses/DigitalMarketing/DigitalComp";
 //import DevComp from "./LongtermCourses/Devops/DevComp";
 
 // import { useEffect } from "react";
-import DotNetComponent from "./LongtermCourses/DotNet/DotNetComponent";
+
 import TestingComp from "./LongtermCourses/Testing/TestingComp";
 import SalesComp from "./LongtermCourses/SalesForce/SalesComp";
 import PythonComp from "./LongtermCourses/Python/PythonComp";
 import AiComp from "./LongtermCourses/FullStackAI/AiComp";
 import JavaComponent from "./LongtermCourses/JavaDev/JavaComponent";
-import WebCourses from "./LongtermCourses/FullstackWebCourses/WebCourses";
+
 
 import AllComponent from "./Home/ShorttermCourses/DigitalMarketing/AllComponent";
 import AwsComponent from "./Home/ShorttermCourses/AWS/Deveops/AwsComponent";
@@ -148,6 +148,21 @@ import WorkshopsPage from "./Workshops/WorkshopsPage.jsx";
 import WorkshopTechnologyPage from "./Workshops/components/WorkshopTechnologyPage.jsx";
 
 import Inter from "./Home/Intership/Inter.jsx";
+
+
+
+import Home from "./Home/Home";
+import FullStackWebDevelopement from "./LongtermCourses/FullStackWebDevelopement/index.jsx";
+import FullStackJavaDevelopement from "./LongtermCourses/FullStackJavaDevelopement/index.jsx"
+import FullStackDevopsEngineer from "./LongtermCourses/FullStackDevopsEngineer/index.jsx";
+import FullStackDotNetDeveloper from "./LongtermCourses/FullStackDotNetDeveloper/index.jsx";
+
+
+
+
+
+
+
 // <<<<<<< rohini_dev4
 // //import {HelmetProvider} from "react-helmet-async";
 // =======
@@ -162,18 +177,6 @@ import Inter from "./Home/Intership/Inter.jsx";
 function App() {
   const [loading, setLoading] = useState(false);
   const location = useLocation();
-
-  // useEffect(() => {
-  //   setLoading(true); // Show loader on route change
-  //   const timer = setTimeout(() => {
-  //     setLoading(false); // Hide loader after a delay
-  //   }, 1000); // Simulate loading time (adjust as necessary)
-
-  //   // Clean up the timer when the component unmounts
-  //   return () => clearTimeout(timer);
-  // }, [location]);
-  //  // This will run every time the route changes
-  // { loading && <Loader /> } {/* Show loader if loading state is true */ }
 
   const Layout = ({ children }) => (
     <>
@@ -192,15 +195,36 @@ function App() {
       <Routes>
 
         <Route path="/" element={<Layout>     <Home />   </Layout>} />
+        <Route path="/full-stack-developer-course-in-pune-with-placement" element={<Layout> <Fullstack /> </Layout>} />
+        <Route path="/full-stack-web-development-course-in-pune" element={<Layout>     <FullStackWebDevelopement />   </Layout>} />
+        <Route path="/java-full-stack-developer-course-in-pune" element={<Layout>     <FullStackJavaDevelopement />   </Layout>} />
+        <Route path="/devops-training-in-pune" element={<Layout>     < FullStackDevopsEngineer />   </Layout>} />
+        <Route path="/dot-net-full-stack-developer-course-in-pune" element={<Layout>     < FullStackDotNetDeveloper />   </Layout>} />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <Route path="/Internship" element={<Layout>     <Inter />   </Layout>} />
 
         <Route path="/PlacementJava" element={<Layout> <PlacementJava /></Layout>} />
         <Route path="/PlacementWeb" element={<Layout> <FullstackWebPlacement /></Layout>} />
         <Route path="/MainDigitalMarketing" element={<Layout> <MainDigitalMarketing /></Layout>} />
-        <Route path="/MainDevops" element={<Layout> <MainDevops /></Layout>} />
         <Route path="/MainTesting" element={<Layout> <MainTesting /></Layout>} />
         {/* <Routes> */}
-        {/* <Route path="/AdminNavbar" element={<Layout> <Home />  </Layout>} /> */}
+        <Route path="/MainDevops" element={<Layout> <MainDevops />  </Layout>} />
         <Route path="/salesforce" element={<Layout> <SaForce /> </Layout>} />
         <Route path="/Corejava" element={<Layout> <Java />  </Layout>} />
         <Route path="/Advancedjava" element={<Layout> <Advanced /> </Layout>} />
@@ -210,7 +234,6 @@ function App() {
         <Route path="/Nodejs" element={<Layout> <NodeCourse /> </Layout>} />
         <Route path="/Dotnetcore" element={<Layout> <DotNetCourse /> </Layout>} />
         <Route path="/Dotnetangular" element={<Layout> <DotnetAngularCourse /> </Layout>} />
-        <Route path="/full-stack-developer-course-in-pune-with-placement" element={<Layout> <Fullstack /> </Layout>} />
         <Route path="/AboutUs" element={<Layout> <Aboutus /> </Layout>} />
 
 
@@ -243,15 +266,14 @@ function App() {
 
 
         <Route path="/ManualComp" element={<Layout>     < ManualComp />   </Layout>} />
-        <Route path="/Devops" element={<Layout>     < DevComp />   </Layout>} />
+     
         <Route path="/Diploma" element={<Layout>     < DigitalComp />   </Layout>} />
-        <Route path="/DotNet" element={<Layout>     < DotNetComponent />   </Layout>} />
+     
         <Route path="/FullstackTesting" element={<Layout>     < TestingComp />   </Layout>} />
         <Route path="/Salesforce1" element={<Layout>     < SalesComp />   </Layout>} />
         <Route path="/PythonDev" element={<Layout>     < PythonComp />   </Layout>} />
         <Route path="/Development" element={<Layout>     < AiComp />   </Layout>} />
-        <Route path="/FullJavaDev" element={<Layout>     <JavaComponent />   </Layout>} />
-        <Route path="/FullMERN1" element={<Layout>     <WebCourses />   </Layout>} />
+        <Route path="/java-full-stack-developer-course-in-pune" element={<Layout>     <JavaComponent />   </Layout>} />
 
         {/* <Route path="/admin/studentinfo" element={<Studentinfo />} /> */}
 
