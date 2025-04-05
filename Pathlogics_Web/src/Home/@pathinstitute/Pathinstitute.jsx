@@ -72,7 +72,7 @@ export default function Navbar() {
     ],
     testing: [
       { name: "FullStack .NET Developer", path: "/dot-net-full-stack-developer-course-in-pune" },
-      { name: "FullStack Testing", path: "/FullstackTesting" },
+      { name: "FullStack Testing", path: "/software-testing-course-in-pune" },
       { name: "Manual Testing", path: "/ManualComp" },
     ],
     advanced: [

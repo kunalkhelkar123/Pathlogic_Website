@@ -129,7 +129,6 @@ import DigitalComp from "./LongtermCourses/DigitalMarketing/DigitalComp";
 
 // import { useEffect } from "react";
 
-import TestingComp from "./LongtermCourses/Testing/TestingComp";
 import SalesComp from "./LongtermCourses/SalesForce/SalesComp";
 import PythonComp from "./LongtermCourses/Python/PythonComp";
 import AiComp from "./LongtermCourses/FullStackAI/AiComp";
@@ -156,7 +155,7 @@ import FullStackWebDevelopement from "./LongtermCourses/FullStackWebDevelopement
 import FullStackJavaDevelopement from "./LongtermCourses/FullStackJavaDevelopement/index.jsx"
 import FullStackDevopsEngineer from "./LongtermCourses/FullStackDevopsEngineer/index.jsx";
 import FullStackDotNetDeveloper from "./LongtermCourses/FullStackDotNetDeveloper/index.jsx";
-
+import FullStackSoftwareTesting from "./LongtermCourses/FullStackSoftwareTesting/index.jsx";
 
 
 
@@ -200,6 +199,7 @@ function App() {
         <Route path="/java-full-stack-developer-course-in-pune" element={<Layout>     <FullStackJavaDevelopement />   </Layout>} />
         <Route path="/devops-training-in-pune" element={<Layout>     < FullStackDevopsEngineer />   </Layout>} />
         <Route path="/dot-net-full-stack-developer-course-in-pune" element={<Layout>     < FullStackDotNetDeveloper />   </Layout>} />
+        <Route path="/software-testing-course-in-pune" element={<Layout>     < FullStackSoftwareTesting />   </Layout>} />
 
 
 
@@ -236,7 +236,6 @@ function App() {
         <Route path="/Dotnetangular" element={<Layout> <DotnetAngularCourse /> </Layout>} />
         <Route path="/AboutUs" element={<Layout> <Aboutus /> </Layout>} />
 
-
         {/* <Route path="/StudentDashboard" element={<StudentDashboard />} /> */}
 
 
@@ -266,10 +265,10 @@ function App() {
 
 
         <Route path="/ManualComp" element={<Layout>     < ManualComp />   </Layout>} />
-     
+
         <Route path="/Diploma" element={<Layout>     < DigitalComp />   </Layout>} />
-     
-        <Route path="/FullstackTesting" element={<Layout>     < TestingComp />   </Layout>} />
+
+
         <Route path="/Salesforce1" element={<Layout>     < SalesComp />   </Layout>} />
         <Route path="/PythonDev" element={<Layout>     < PythonComp />   </Layout>} />
         <Route path="/Development" element={<Layout>     < AiComp />   </Layout>} />
@@ -279,14 +278,14 @@ function App() {
 
         <Route path="/admin/studentinfo" element={<><AdminNavbar /> <Studentinfo /></>} />
         <Route path="/admin/courseDetails" element={<><AdminNavbar /> <CoursesList /></>} />
-        <Route path="/admin/CourseSection" element={  <><AdminNavbar /> <Courses /></>} />
+        <Route path="/admin/CourseSection" element={<><AdminNavbar /> <Courses /></>} />
         <Route path="/CourseSection/Test" element={<Test />} />
         {/* <Route path="/admin/Workshop" element={<Studentinfo />} /> */}
         {/* <Route path="/admin/Staffinfo" element={<Studentinfo />} /> */}
         <Route path="/StudentProfileForm" element={<StudentProfileForm />} />
         <Route path="/StudentDashboard" element={<> <StudentNav /> <StudentDashboard /></>} />
         <Route path="/Student/test" element={<> <StudentNav /> <StudentTest /></>} />
-      
+
         <Route path="/StudentCourseDetails" element={<> <StudentNav /> <StudentCourseDetails /></>} />
         <Route path="/admin/studentdetails" element={<><AdminNavbar /> <Studentdetails /></>} />
         <Route path="/admin/CoursesStudentinfo" element={<><AdminNavbar /> <CoursesStudentinfo /></>} />
@@ -312,7 +311,7 @@ function App() {
         <Route path="/DigitalMarketing" element={<Layout>  < AllComponent /> </Layout>} />
         <Route path="/DataScience" element={<Layout>  < Datascienceall /> </Layout>} />
         <Route path="/JavaDevelopmet" element={<Layout>  < Fullstackall /> </Layout>} />
-        
+
 
 
 
