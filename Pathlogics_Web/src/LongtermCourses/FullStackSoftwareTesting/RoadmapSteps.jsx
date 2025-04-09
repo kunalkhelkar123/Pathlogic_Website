@@ -4,7 +4,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 const RoadmapCard = ({ number, title, offer, get }) => {
     return (
         <div className="min-w-[280px] sm:min-w-[390px]  bg-gradient-to-br from-gray-900 to-teal-600 text-white shadow-lg p-6 rounded-lg flex flex-col items-center text-center transition-transform duration-500">
-            <div className="w-16 h-16 rounded-full bg-green-400 text-black flex items-center justify-center mb-4 text-xl font-bold">
+            <div className="w-16 h-16 rounded-full bg-orange-500 text-white flex items-center justify-center mb-4 text-xl font-bold">
                 {number}
             </div>
             <h3 className="text-lg font-semibold">{title}</h3>
@@ -126,7 +126,7 @@ export default function Roadmap() {
     ];
 
     return (
-        <div className="max-w-8xl mx-auto sm:px-7 py-6">
+        <div className="max-w-8xl mx-auto sm:px-7 py-6 mb-6">
             <div className="text-center mb-8">
                 <h3 className="text-3xl font-extrabold px-4 text-black">
                     What is Automation Testing? A Complete Overview

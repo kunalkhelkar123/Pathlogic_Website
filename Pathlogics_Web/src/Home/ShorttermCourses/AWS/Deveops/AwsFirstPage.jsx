@@ -26,7 +26,7 @@ export default function DigitalPlacement() {
   };
 
   const handleDownload = () => {
-    setShowPopup(true);
+        // setShowPopup(true);
     setTimeout(() => setShowPopup(false), 3000);
 
     // Open in new tab

@@ -26,7 +26,7 @@ export default function DigitalMBanner() {
   };
 
   const handleDownload = () => {
-    setShowPopup(true);
+        // setShowPopup(true);
     setTimeout(() => setShowPopup(false), 3000);
     window.open(brochurePDF, "_blank");
     const link = document.createElement("a");

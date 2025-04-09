@@ -32,10 +32,11 @@ function WebCourses() {
 
             <Banner />
             <FullStackTraining />
+            <Courses_offer />
             <Programveiw />
             <QualityAssurance/>
             <RoadmapSteps />
-            <Courses_offer />
+           
             <TestingCourses/>
             <PaidInternship />
             <CICDPipelineMatter/>

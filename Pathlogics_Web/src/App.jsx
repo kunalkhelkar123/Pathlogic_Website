@@ -156,6 +156,11 @@ import FullStackJavaDevelopement from "./LongtermCourses/FullStackJavaDevelopeme
 import FullStackDevopsEngineer from "./LongtermCourses/FullStackDevopsEngineer/index.jsx";
 import FullStackDotNetDeveloper from "./LongtermCourses/FullStackDotNetDeveloper/index.jsx";
 import FullStackSoftwareTesting from "./LongtermCourses/FullStackSoftwareTesting/index.jsx";
+import FullStackManualTesting from "./LongtermCourses/FullStackManualTesting/index.jsx";
+import FullStackSalesforceDevelopment from "./LongtermCourses/FullStackSalesforceDevelopment/index.jsx";
+
+
+
 
 
 
@@ -200,6 +205,9 @@ function App() {
         <Route path="/devops-training-in-pune" element={<Layout>     < FullStackDevopsEngineer />   </Layout>} />
         <Route path="/dot-net-full-stack-developer-course-in-pune" element={<Layout>     < FullStackDotNetDeveloper />   </Layout>} />
         <Route path="/software-testing-course-in-pune" element={<Layout>     < FullStackSoftwareTesting />   </Layout>} />
+        <Route path="/manual-testing-course-in-pune" element={<Layout>     < FullStackManualTesting />   </Layout>} />
+        <Route path="/salesforce-classes-in-pune" element={<Layout>     < FullStackSalesforceDevelopment />   </Layout>} />
+
 
 
 

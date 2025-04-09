@@ -27,14 +27,14 @@ export default function ShortTermCoreJava() {
   };
 
   const handleDownload = () => {
-    setShowPopup(true);
+        // setShowPopup(true);
     setTimeout(() => setShowPopup(false), 3000);
 
     // Open in new tab
-    window.open(brochurePDF, "_blank");
+    // window.open(brochurePDF, "_blank");
 
-    // Create an invisible download link
-    const link = document.createElement("a");
+    // // Create an invisible download link
+    // const link = document.createElement("a");
     link.href = brochurePDF;
     link.download = "Brochure.pdf"; // Set the file name
     document.body.appendChild(link);

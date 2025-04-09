@@ -11,7 +11,7 @@ const services = [
 
 export default function InterviewSupportCards() {
     return (
-        <div className="max-w-6xl mx-auto px-4 py-10">
+        <div className="max-w-6xl mx-auto px-4  mb-10">
             <h1 className="text-3xl md:text-3xl font-bold text-center  mb-6">
                 Manual Testing: The Foundation of Software Quality Assurance
             </h1>
@@ -37,7 +37,7 @@ export default function InterviewSupportCards() {
                         <h3 className="text-sm font-semibold text-gray-800">
                             {service.title}
                         </h3>
-                        <p className="text-sm text-gray-500">{service.subtitle}</p>
+                        {/* <p className="text-sm text-gray-500">{service.subtitle}</p> */}
                         {service.typo && (
                             <p className="text-xs text-red-500 mt-2">
                                 * Typo corrected: "Calls" should be "Interview"
