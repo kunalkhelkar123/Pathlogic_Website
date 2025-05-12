@@ -25,10 +25,12 @@ const ContactForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const serviceId = "service_db5sgob";
-        const templateId = "template_326m16e";
-        const publicKey = "k05tTTCLechKDk94r";
-
+        // const serviceId = "service_db5sgob";
+        // const templateId = "template_326m16e";
+        // const publicKey = "k05tTTCLechKDk94r";
+        const serviceId = "";
+        const templateId = "";
+        const publicKey = "";
         try {
             await emailjs.send(
                 serviceId,
