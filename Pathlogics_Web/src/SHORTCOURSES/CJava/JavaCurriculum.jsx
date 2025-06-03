@@ -1,84 +1,135 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
+import curriculam from "../../assets/curriculam.jpg";
 
-const CourseModule = ({ title, icon }) => {
-  const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
-    };
-  }, []);
-
-  return (
-    <div
-      ref={ref}
-      className={`transform transition-all duration-500 ${
-        isVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-10 opacity-0 scale-95'
-      }`}
+const AccordionItem = ({ title, content, isOpen, onToggle }) => (
+  <div className="mb-4 border border-gray-200 rounded-lg overflow-hidden shadow-md">
+    <button
+      className="w-full bg-gradient-to-br from-gray-900 to-teal-600 text-white px-6 py-4 flex justify-between items-center hover:from-gray-800 hover:to-teal-500 transition-all duration-300"
+      onClick={onToggle}
     >
-      <div className="bg-orange-500 rounded-lg shadow-lg p-6 h-full hover:shadow-2xl hover:bg-gradient-to-br from-gray-900 to-teal-600 hover:shadow-2xl transition-shadow duration-300 hover:scale-105">
-        <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-blue-100">
-          <span className="text-blue-600 text-3xl">{icon}</span>
-        </div>
-        <h3 className="text-xl font-semibold text-white text-center">{title}</h3>
-      </div>
+      <h3 className="text-sm font-semibold">{title}</h3>
+      <svg
+        className={`w-6 h-6 transform transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+      </svg>
+    </button>
+    <div className={`overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'}`}>
+      <div className="bg-white px-6 py-4 text-gray-700 leading-relaxed">{content}</div>
     </div>
-  );
-};
+  </div>
+);
 
-export default function Java4() {
-  const courseModules = [
-    { title: "Introduction to Java", icon: "☕" },
-    { title: "Object-Oriented Programming", icon: "🔷" },
-    { title: "Data Structures & Algorithms", icon: "📚" },
-    { title: "Exception Handling", icon: "⚠️" },
-    { title: "Multithreading & Concurrency", icon: "🔀" },
-    { title: "File Handling & I/O", icon: "📂" },
-    { title: "JDBC & Database Connectivity", icon: "🔗" },
-    { title: "Advanced Java & Frameworks", icon: "🚀" }
+export default function Accordian() {
+  const [openSection, setOpenSection] = useState(null);
+
+  const modules = [
+    {
+      title: "Introduction to Java",
+      content: (
+        <ul className="list-disc pl-5 space-y-2">
+          <li>Java Overview & History</li>
+          <li>JVM, JRE, and JDK</li>
+          <li>Setting Up Java Development Environment</li>
+          <li>Basic Syntax and Data Types</li>
+        </ul>
+      )
+    },
+    {
+      title: "Object-Oriented Programming in Java",
+      content: (
+        <ul className="list-disc pl-5 space-y-2">
+          <li>Classes & Objects</li>
+          <li>Inheritance & Polymorphism</li>
+          <li>Encapsulation & Abstraction</li>
+          <li>Interfaces and Abstract Classes</li>
+        </ul>
+      )
+    },
+    {
+      title: "Exception Handling & Multithreading",
+      content: (
+        <ul className="list-disc pl-5 space-y-2">
+          <li>Try-Catch Blocks & Throwing Exceptions</li>
+          <li>Custom Exceptions</li>
+          <li>Multithreading Basics</li>
+          <li>Thread Synchronization</li>
+        </ul>
+      )
+    },
+    {
+      title: "Collections Framework & Data Structures",
+      content: (
+        <ul className="list-disc pl-5 space-y-2">
+          <li>List, Set, and Map Interfaces</li>
+          <li>ArrayList vs LinkedList</li>
+          <li>HashMap & HashSet</li>
+          <li>Sorting and Searching Algorithms</li>
+        </ul>
+      )
+    },
+    {
+      title: "File Handling & Java I/O",
+      content: (
+        <ul className="list-disc pl-5 space-y-2">
+          <li>Reading and Writing Files</li>
+          <li>Serialization & Deserialization</li>
+          <li>Buffered Reader & Writer</li>
+          <li>Working with Streams</li>
+        </ul>
+      )
+    },
+    {
+      title: "JDBC & Database Connectivity",
+      content: (
+        <ul className="list-disc pl-5 space-y-2">
+          <li>Introduction to JDBC</li>
+          <li>Connecting Java with MySQL</li>
+          <li>Executing Queries & Transactions</li>
+          <li>Connection Pooling</li>
+        </ul>
+      )
+    },
+    {
+      title: "Java Project Implementation",
+      content: (
+        <ul className="list-disc pl-5 space-y-2">
+          <li>End-to-End Application Development</li>
+          <li>Agile & Scrum Methodologies</li>
+          <li>Debugging & Code Optimization</li>
+          <li>Real-World Use Cases & Case Studies</li>
+        </ul>
+      )
+    }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-gray-900 to-teal-600 py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl font-extrabold text-white sm:text-5xl md:text-6xl">
-            Core Java Development
-          </h1>
-          <p className="mt-3 max-w-md mx-auto text-base text-white sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-            Master the fundamentals of Java with our comprehensive curriculum.
-          </p>
+    <div className="min-h-screen bg-gray-100 py-12 px-4 sm:px-8 lg:px-16">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        {/* Image */}
+        <div className="w-full">
+          <img src={curriculam} alt="Java Curriculum" className="rounded-xl shadow-lg w-full object-cover pt-14" />
         </div>
 
-        <div className="bg-white rounded-xl shadow-2xl overflow-hidden mb-16 p-6">
-          <h2 className="text-3xl font-bold text-orange-600 mb-8 text-center">Curriculum</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {courseModules.map((module, index) => (
-              <CourseModule key={index} {...module} />
+        {/* Accordion */}
+        <div>
+          <h1 className="text-3xl font-extrabold text-orange-600 mb-8 text-center md:text-left">
+            Pathlogics Core Java Syllabus
+          </h1>
+          <div className="space-y-4">
+            {modules.map((module, index) => (
+              <AccordionItem
+                key={index}
+                title={module.title}
+                content={module.content}
+                isOpen={openSection === index}
+                onToggle={() => setOpenSection(openSection === index ? null : index)}
+              />
             ))}
           </div>
-        </div>
-
-        <div className="text-center">
-          <button className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 rounded-[5px] font-semibold shadow-lg hover:bg-orange-300 transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
-            Enroll Now
-          </button>
         </div>
       </div>
     </div>

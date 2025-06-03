@@ -70,76 +70,53 @@ export default function Roadmap() {
   const roadmapSteps = [
     {
       number: "01",
-      title: "Frontend Developer",
+      title: "Java Developer",
       offer:
-        "Build dynamic UIs using HTML, CSS, JavaScript, and modern frameworks like React or Vue.",
+        "Develop applications and software using Core Java for various industries.",
     },
     {
       number: "02",
-      title: "Backend Developer",
+      title: "Software Engineer",
       offer:
-        "Develop RESTful APIs using Python frameworks such as Django or Flask.",
+        "Work on building, testing, and maintaining complex systems and applications.",
     },
     {
       number: "03",
-      title: "Full Stack Developer",
+      title: "Backend Developer",
       offer:
-        "Master both frontend and backend development, including deployment and DevOps skills.",
+        "Master both frontend and backend development, including deployment and DevOps skills."
     },
     {
       number: "04",
-      title: "Database Engineer",
-      offer: "Design and manage databases using PostgreSQL, MySQL, or MongoDB.",
+      title: "Full Stack Developer",
+      offer: "Work on both front-end and back-end technologies, mastering end-to-end software development.",
     },
+    
     {
       number: "05",
-      title: "DevOps Engineer",
+      title: "Android Developer",
       offer:
-        "Automate deployment, CI/CD pipelines, and manage servers using tools like Docker and AWS.",
+        "Create and maintain Android apps using Java as the primary language for mobile development.",
     },
     {
       number: "06",
-      title: "API Developer",
+      title: "Web Developer",
       offer:
-        "Specialize in designing and managing REST and GraphQL APIs for scalable applications.",
+        "Build dynamic and scalable web applications using Core Java technologies.",
     },
-    {
-      number: "07",
-      title: "Software Engineer",
-      offer:
-        "Build end-to-end software systems using Python and modern engineering practices.",
-    },
-    {
-      number: "08",
-      title: "Technical Consultant",
-      offer:
-        "Provide end-to-end development and architecture consulting to clients.",
-    },
-    {
-        number: "09",
-        title: "Junior/Mid-Level Software Developer ",
-        offer:"A great starting point for freshers entering the IT industry with full stack training."
-    },
-    {
-        number: "10",
-        title: "Application Support Engineer",
-        offer:"Provide tech support for Python-based software and troubleshoot issues."
-    },
+ 
   ];
 
   return (
     <div className="max-w-8xl mx-auto sm:px-7 py-6 mb-6">
       <div className="text-center mb-8">
         <h3 className="text-3xl font-extrabold px-4 text-black">
-          High-Demand Job Roles After Full Stack Python Developer Course in Pune
+          Top Career Options After Core Java Course in Pune
         </h3>
 
         <p className="text-center mt-6 sm:px-40 px-4">
-          Completing a Full Stack Python Developer course opens doors to a wide
-          range of lucrative job roles in the tech industry. With the rise of
-          web and app-based businesses, companies are actively hiring skilled
-          developers who can handle both front-end and back-end development
-          efficiently. Here are some of the high-demand roles you can pursue:
+          Completing a Core Java course opens up a world of exciting career opportunities in the tech industry. With the skills you gain, you’ll be ready to take on various roles that offer growth, stability, and competitive pay.
+
         </p>
       </div>
 

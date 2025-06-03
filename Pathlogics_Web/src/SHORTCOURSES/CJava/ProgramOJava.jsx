@@ -1,84 +1,55 @@
 import React from 'react';
+import { Code, Briefcase, Users, ClipboardCheck } from 'lucide-react';
 
-export default function Java5() {
+const features = [
+  {
+    title: 'Hands-on Coding & Real-world Examples',
+    icon: <Code className="h-10 w-10 text-white group-hover:scale-110 transition duration-300" />,
+    description: 'Practice Java with real-life examples and regular hands-on coding sessions.',
+  },
+  {
+    title: 'Weekly Mock Interviews',
+    icon: <Briefcase className="h-10 w-10 text-white group-hover:scale-110 transition duration-300" />,
+    description: 'Simulate real interview scenarios to boost your confidence and job-readiness.',
+  },
+  {
+    title: 'Placement Assistance',
+    icon: <ClipboardCheck className="h-10 w-10 text-white group-hover:scale-110 transition duration-300" />,
+    description: 'Get help with resume building, interview preparation, and job referrals.',
+  },
+  {
+    title: '1-on-1 Mentorship & Doubt Solving',
+    icon: <Users className="h-10 w-10 text-white group-hover:scale-110 transition duration-300" />,
+    description: 'Receive personal guidance through one-on-one mentorship and doubt-solving sessions.',
+  },
+];
+
+const CoreJavaFeatures = () => {
   return (
-    <div className="min-h-screen">
-      {/* Program Overview Section */}
-      <div className="relative bg-gradient-to-br from-gray-900 to-teal-600 py-20">
-        <div className="absolute inset-0 bg-[url('/diagonal-pattern.svg')] opacity-10"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-8">
-            Program Overview
-          </h1>
-          <p className="text-lg md:text-xl text-white max-w-4xl mx-auto leading-relaxed">
-            Java is one of the most widely used programming languages, known for its 
-            platform independence, object-oriented approach, and scalability. 
-            Our program provides hands-on training in Core Java concepts, 
-            data structures, multithreading, and advanced Java frameworks, 
-            equipping students with the skills necessary to excel in software development.
-          </p>
-        </div>
-      </div>
+    <div className="bg-gradient-to-br from-sky-100 via-sky-50 to-white py-16 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-3xl font-extrabold text-center text-gray-800 mb-4">
+          Key Features of Core Java Course in Pune
+        </h2>
+        <p className="text-center text-gray-600 max-w-2xl mx-auto mb-12">
+          From basic syntax to OOPs, master everything with structured modules, live coding sessions, and personal guidance.
+        </p>
 
-      {/* Cards Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-16">
-        <div className="grid md:grid-cols-2 gap-10">
-          {/* Admission Process Card */}
-          <Card
-            title="Admission Process"
-            items={[
-              'Basic Understanding of Programming',
-              'Technical Aptitude Test',
-              'Online/Offline Training Options',
-            ]}
-          />
-
-          {/* Eligibility Criteria Card */}
-          <Card
-            title="Eligibility Criteria"
-            items={[
-              'Graduates in Any Discipline with an Interest in Software Development',
-              'Professionals Working in IT or Development Roles',
-              'Aptitude for Problem Solving and Programming',
-            ]}
-          />
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function Card({ title, items }) {
-  return (
-    <div className="bg-white rounded-lg shadow-xl overflow-hidden transform transition duration-300 hover:scale-105">
-      <div className="p-8">
-        <h2 className="text-2xl font-bold text-gray-800 mb-6">{title}</h2>
-        <ul className="space-y-4">
-          {items.map((item, index) => (
-            <li key={index} className="flex items-center text-gray-700">
-              <svg
-                className="w-5 h-5 mr-3 text-orange-500"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-              {item}
-            </li>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {features.map((feature, index) => (
+            <div
+              key={index}
+              className="group bg-gradient-to-br from-sky-800 to-cyan-400 text-white rounded-2xl shadow-lg p-6 text-center transform transition-all duration-500 hover:scale-105 hover:shadow-2xl"
+            >
+              <div className="flex justify-center mb-4">{feature.icon}</div>
+              <h4 className="text-lg font-semibold mb-2">{feature.title}</h4>
+              <p className="text-sm">{feature.description}</p>
+            </div>
           ))}
-        </ul>
-      </div>
-      <div className="px-8 py-4 bg-orange-600 hover:bg-orange-700 rounded-[5px]">
-        <button className="text-white font-semibold hover:text-orange-300 transition duration-300">
-          Know More
-        </button>
+        </div>
       </div>
     </div>
   );
-}
+};
+
+export default CoreJavaFeatures;

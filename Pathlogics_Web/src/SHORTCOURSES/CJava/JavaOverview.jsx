@@ -9,13 +9,11 @@ export default function Program() {
         {/* <div className="absolute inset-0 bg-[url('/diagonal-pattern.svg')] opacity-10"></div> */}
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h3 className="text-2xl md:text-3xl font-bold text-white mb-8">
-            python full stack development Training Program Overview
+          Core Java Training Program Overview
+
           </h3>
           <p className="text-lg md:text-xl text-white max-w-4xl mx-auto leading-relaxed">
-           Want to become a full-stack developer?(Internal linking- redirect to main page- full stack development )
- Our Python course is the perfect place to begin! Master everything from core Python to front-end tools and back-end frameworks like Django and Flask. Build real-world applications, strengthen your portfolio, and get job-ready. Curious about how to start? Check out our simple admission process and see if you're eligible to begin your journey today.
-          
-
+          Thinking about starting your journey in programming? Our Core Java Course in Pune is a great place to begin! Whether you're new to coding or just want to brush up on the basics, this course has got you covered,  from easy-to-understand concepts to object-oriented programming. It’s hands-on, beginner-friendly, and built to help you grow your skills with confidence. Curious about how to get started? Just take a look at our simple admission process and see if you’re ready to take the first step!
 
 
           </p>
@@ -90,13 +88,13 @@ export default function Program() {
 
                     {/* <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /> */}
                   </svg>
-                  Professionals working on software testing.
+                  Professionals working on core java.
                 </li>
                 <li className="flex items-center text-gray-700">
                   <svg className="w-5 h-5 mr-3 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  Interest in full stack development.
+                  Interest in full stack java development.
                 </li>
                 <li className="flex items-center text-gray-700">
                   <svg className="w-5 h-5 mr-3 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -1,87 +1,118 @@
-import React from 'react';
-import company1 from '../../assets/company1.jpg';
-import company2 from '../../assets/company2.jpg';
-import company3 from '../../assets/company3.jpg';
-import company4 from '../../assets/company4.jpg';
-import company5 from  '../../assets/company5.jpg';
-import company6 from  '../../assets/company6.jpg';
-import company7 from  '../../assets/companies/1.png';
-import company8 from  '../../assets/companies/2.png';
-import company9 from  '../../assets/companies/3.png';
-import company10 from '../../assets/companies/4.png';
-import company11 from '../../assets/companies/5.png';
-import company12 from '../../assets/companies/6.png';
-import company13 from '../../assets/companies/9.png';
-import company14 from '../../assets/companies/8.png';
-import company15 from '../../assets/companies/10.png';
-import company16 from '../../assets/companies/11.png';
-import company17 from '../../assets/companies/12.png';
-import company18 from '../../assets/companies/13.png';
-import company19 from '../../assets/companies/14.png';
-import company20 from '../../assets/companies/15.png';
-import company21 from '../../assets/companies/16.png';
+import React, { useState } from 'react';
+import curriculam from "../../assets/curriculam.jpg";
 
-
-
-
-
-
-const Companie = () => {
-  const companies = [
-    { name: 'Whirlpool', logo: company1 },
-    { name: 'Wipro', logo: company2 },
-    { name: 'LG Soft India', logo: company3 },
-    // { name: 'Tech Mahindra', logo: company4 },
-    { name: 'Tata ELXSI', logo: company5 },
-    
-    { name: 'Siemens', logo: company7 },
-    { name: 'Siemens', logo: company8 },
-    { name: 'Siemens', logo: company9 },
-    { name: 'Siemens', logo: company10 },
-    { name: 'Siemens', logo: company11 },
-    { name: 'Siemens', logo: company12 },
-    { name: 'Siemens', logo: company13 },
-    { name: 'Siemens', logo: company14 },
-    { name: 'Siemens', logo: company15 },
-    { name: 'Siemens', logo: company16 },
-    { name: 'Siemens', logo: company17 },
-    { name: 'Siemens', logo: company18 },
-    { name: 'Siemens', logo: company19 },
-    { name: 'TISMO', logo: company6 },
-    { name: 'Siemens', logo: company20 },
-    { name: 'Siemens', logo: company21 },
-
-
-
-
-  ];
-
+const AccordionItem = ({ title, content, isOpen, onToggle }) => {
   return (
-    <div className="w-full bg-gray-50 py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-orange-500 text-center mb-12">
-          Renowned companies that recruited from us
-        </h2>
-
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-          {companies.map((company, index) => (
-            <div
-              key={index}
-              className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex items-center justify-center"
-            >
-              <div className="relative w-full aspect-[3/1]">
-                <img
-                  src={company.logo}
-                  alt={`${company.name} logo`}
-                  className="object-contain w-full h-full filter  hover:grayscale-0 transition-all duration-300"
-                />
-              </div>
-            </div>
-          ))}
-        </div>
+    <div className="mb-4 border border-gray-200 rounded-lg overflow-hidden shadow-md">
+      <button
+        className="w-full bg-gradient-to-br from-gray-900 to-teal-600 text-white px-6 py-4 flex justify-between items-center hover:from-gray-800 hover:to-teal-500 transition-all duration-300"
+        onClick={onToggle}
+      >
+        <h3 className="text-sm font-semibold">{title}</h3>
+        <svg
+          className={`w-6 h-6 transform transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      <div
+        className={`overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'}`}
+      >
+        <div className="bg-white px-6 py-4 text-gray-700 leading-relaxed">{content}</div>
       </div>
     </div>
   );
 };
 
-export default Companie;
+export default function Accordian() {
+  const [openSection, setOpenSection] = useState(null);
+
+  const modules = [
+    {
+      title: "Python Basics & Object-Oriented Programming",
+      content: (
+        <ul className="list-disc pl-5 space-y-2">
+          <li>Introduction to Python</li>
+          <li>Data Types, Variables, and Operators</li>
+          <li>Control Flow & Loops</li>
+          <li>Functions and Modules</li>
+          <li>Object-Oriented Concepts in Python</li>
+        </ul>
+      )
+    },
+    {
+      title: "Frontend Development (HTML, CSS, JavaScript)",
+      content: (
+        <ul className="list-disc pl-5 space-y-2">
+          <li>HTML5 Structure & Semantic Tags</li>
+          <li>CSS Styling, Flexbox & Grid</li>
+          <li>JavaScript Basics & DOM Manipulation</li>
+          <li>Responsive Web Design</li>
+        </ul>
+      )
+    },
+    {
+      title: "React.js for Frontend Applications",
+      content: (
+        <ul className="list-disc pl-5 space-y-2">
+          <li>JSX & Component Structure</li>
+          <li>Props, State & Lifecycle</li>
+          <li>React Hooks & Routing</li>
+          <li>Working with APIs in React</li>
+        </ul>
+      )
+    },
+    {
+      title: "Backend Development with Django",
+      content: (
+        <ul className="list-disc pl-5 space-y-2">
+          <li>Introduction to Django Framework</li>
+          <li>Models, Views, and Templates</li>
+          <li>Django REST Framework</li>
+          <li>Authentication & Permissions</li>
+        </ul>
+      )
+    },
+    {
+      title: "Databases, API Integration & Deployment",
+      content: (
+        <ul className="list-disc pl-5 space-y-2">
+          <li>Working with SQL and MongoDB</li>
+          <li>Building & Testing REST APIs</li>
+          <li>Version Control with Git & GitHub</li>
+          <li>Deployment on Heroku/Vercel & AWS Basics</li>
+        </ul>
+      )
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-gray-100 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-20 py-10 px-4 sm:px-6 lg:px-8">
+      {/* image section */}
+      <div>
+        <img className="rounded-md" src={curriculam} alt="Course Curriculum" />
+      </div>
+
+      {/* Course Curriculum section */}
+      <div className="max-w-5xl mx-auto sm:mt-[0px] mt-[-50px] md:mt-[0px] lg:mt-[0px]">
+        <h1 className="text-3xl font-extrabold text-center text-orange-600 mb-12">
+          Full Stack Python Development Curriculum
+        </h1>
+        <div className="space-y-6">
+          {modules.map((module, index) => (
+            <AccordionItem
+              key={index}
+              title={module.title}
+              content={module.content}
+              isOpen={openSection === index}
+              onToggle={() => setOpenSection(openSection === index ? null : index)}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}

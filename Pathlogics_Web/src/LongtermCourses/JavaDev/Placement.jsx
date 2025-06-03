@@ -1,104 +1,68 @@
-import React from 'react';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import testimonal1 from '../../assets/testimonal1.png';
-import testimonal2 from '../../assets/testimonal2.png';
-import testimonal3 from '../../assets/testimonal3.png';
-import testimonal4 from '../../assets/ruchitha.png';
-const Placement = () => {
-  const testimonials = [
-    {
-      name: 'Kudumula Venkata Subba Reddy',
-      photo: testimonal1,
-      review:
-        "I'm Kudumula Venkata Subba Reddy, an EEE graduate from JNTUA College of Engineering, Pulivendula, Andhra Pradesh. After graduation, I joined Pathlogic Technologics in Bangalore, where I completed the advanced embedded systems course. with the training at Pathlogic Technologics .",
-    },
-    {
-      name: 'John Doe',
-      photo: testimonal2,
-      review:
-        "I'm John Doe, an IT graduate from XYZ University. After completing my studies, I joined Pathlogic Technologics  India, where I improved my coding and development skills. The supportive staff helped me grow professionally and secure a job at ABC Corp.",
-    },
-    {
-      name: 'Jane Smith',
-      photo: testimonal3,
-      review:
-        "I’m Jane Smith, an electronics engineer who joined Pathlogic Technologics  India to further develop my embedded systems skills. With the excellent training and mentorship provided, I was able to land a job at a prestigious tech firm.",
-    },
-    {
-      name: 'David Lee',
-      photo: testimonal4,
-      review:
-        "I'm David Lee, a software engineer who completed a course at Pathlogic Technologics  India. The advanced training helped me land a job at a top tech company.",
-    },
-    {
-      name: 'Anna Johnson',
-      photo: testimonal1,
-      review:
-        "Anna here, a recent electronics graduate. Pathlogic Technologics  India's embedded systems course gave me the skills and confidence to excel in my job at a multinational firm.",
-    },
-    {
-      name: 'Michael Williams',
-      photo: testimonal2,
-      review:
-        "I'm Michael Williams, and the training I received at Pathlogic Technologics  India was invaluable in helping me grow my technical skills and succeed in the industry.",
-    },
-  ];
+import React, { useState, useEffect } from "react";
+import curriculam from "../../assets/curriculam.jpg";
+import { Link } from "react-router-dom";
 
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
+const CourseModule = ({ title, icon, index }) => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsVisible(true), index * 150);
+    return () => clearTimeout(timer);
+  }, [index]);
 
   return (
-    <section className="py-10 bg-gray-100">
-      <div className="max-w-7xl mx-auto text-center ">
-        <h2 className="text-3xl font-bold mb-8 text-orange-600">Our Placed Student</h2>
-        <Slider {...settings}>
-          {testimonials.map((testimonial, index) => (
-            <div
-              key={index}
-              className="bg-white p-6 rounded-lg shadow-md flex gap-[30px] justify-between items-center text-center h-96 w-80 mx-4 my-4" // Increased horizontal and vertical margins
-            >
-              <div className="w-full flex justify-center">
-                <div className="w-20 h-20 mb-4 rounded-full overflow-hidden border-2 border-gray-300 flex justify-center items-center">
-                  <img
-                    className="w-20 h-20 object-cover" // Adjusted image size for better appearance
-                    src={testimonial.photo}
-                    alt={testimonial.name}
-                  />
-                </div>
-              </div>
-              <p className="text-gray-700 mb-4 px-2">{testimonial.review}</p>
-              <h3 className="text-orange-500 font-semibold">{testimonial.name}</h3>
-            </div>
-          ))}
-        </Slider>
+    <div
+      className={`transform transition-all duration-500 ${
+        isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+      }`}
+    >
+      <div className="bg-orange-500 rounded-lg shadow-lg p-2 py-4 h-full flex flex-col items-center justify-center hover:shadow-2xl hover:bg-gradient-to-br from-gray-400 to-teal-600 transition-all duration-300">
+        <div className="flex items-center justify-center w-14 h-14 rounded-full bg-white mb-4">
+          <span className="text-orange-600 text-2xl">{icon}</span>
+        </div>
+        <h3 className="text-sm font-semibold text-white text-center">{title}</h3>
       </div>
-    </section>
+    </div>
   );
 };
 
-export default  Placement;
+export default function EnhancedCourseOverview() {
+  const courseModules = [
+    { title: "Python Basics & OOP", icon: "🐍" },
+    { title: "Frontend (HTML, CSS, JS)", icon: "🎨" },
+    { title: "React.js", icon: "⚛️" },
+    { title: "Backend with Django", icon: "🧩" },
+    { title: "REST APIs & Postman", icon: "🔗" },
+    { title: "Database (SQL, MongoDB)", icon: "💾" },
+  ];
+
+  return (
+    <div className="min-h-[100px] bg-gradient-to-br from-gray-900 to-teal-600 py-8 px-4 sm:px-2 lg:px-2 flex flex-col items-center">
+      <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+        {/* Left Section - Curriculum Modules */}
+        <div className="rounded-xl shadow-lg">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
+            {courseModules.map((module, index) => (
+              <CourseModule key={index} {...module} index={index} />
+            ))}
+          </div>
+        </div>
+
+        {/* Right Section - Course Overview */}
+        <div className="text-center sm:py-6 text-right justify-end rounded-xl">
+          <h3 className="text-2xl sm:mt-0 -mt-10 font-extrabold text-white sm:text-3xl">
+            Full Stack Python Development Course Overview
+          </h3>
+          <p className="mt-4 text-white text-[16px] text-right flex justify-end leading-relaxed">
+            In our Full Stack Python Development Course, you'll master frontend technologies like HTML, CSS, JavaScript, and React, along with backend development using Python and Django. You'll also learn API development, database management, and deployment strategies. With hands-on projects and mentorship from industry experts, you’ll build the skills to launch a career as a proficient Full Stack Python Developer.
+          </p>
+          <Link to="/QuickEnquiry">
+            <button className="mt-6 bg-orange-600 text-white px-8 py-3 rounded-md font-semibold shadow-lg hover:bg-orange-700 transition-all duration-300 hover:scale-105">
+              Enroll Now
+            </button>
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}
