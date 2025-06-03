@@ -1,55 +1,71 @@
 import React from 'react';
-import { Code, Briefcase, Users, ClipboardCheck } from 'lucide-react';
+// import { Users, Briefcase, DollarSign, GraduationCap } from 'lucide-react';
+
+import { Users, Briefcase, DollarSign, GraduationCap, HelpCircle } from 'lucide-react';
 
 const features = [
   {
-    title: 'Hands-on Coding & Real-world Examples',
-    icon: <Code className="h-10 w-10 text-white group-hover:scale-110 transition duration-300" />,
-    description: 'Practice Java with real-life examples and regular hands-on coding sessions.',
+    icon: <Users className="text-blue-600 w-10 h-10 mb-3" />,
+    count: 'Beginner-friendly',
+    label: 'and industry-aligned curriculum',
   },
   {
-    title: 'Weekly Mock Interviews',
-    icon: <Briefcase className="h-10 w-10 text-white group-hover:scale-110 transition duration-300" />,
-    description: 'Simulate real interview scenarios to boost your confidence and job-readiness.',
+    icon: <Briefcase className="text-blue-600 w-10 h-10 mb-3" />,
+    count: 'Hands-on',
+    label: 'coding sessions & real-world examples',
   },
   {
-    title: 'Placement Assistance',
-    icon: <ClipboardCheck className="h-10 w-10 text-white group-hover:scale-110 transition duration-300" />,
-    description: 'Get help with resume building, interview preparation, and job referrals.',
+    icon: <DollarSign className="text-blue-600 w-10 h-10 mb-3" />,
+    count: 'Weekly',
+    label: 'mock interviews for job readiness',
   },
   {
-    title: '1-on-1 Mentorship & Doubt Solving',
-    icon: <Users className="h-10 w-10 text-white group-hover:scale-110 transition duration-300" />,
-    description: 'Receive personal guidance through one-on-one mentorship and doubt-solving sessions.',
+    icon: <GraduationCap className="text-blue-600 w-10 h-10 mb-3" />,
+    count: 'Placement',
+    label: 'assistance & resume prep',
   },
+  // {
+  //   icon: <HelpCircle className="text-blue-600 w-10 h-10 mb-3" />,
+  //   count: '1-on-1 Mentorship',
+  //   label: 'and doubt-solving sessions',
+  // },
 ];
 
-const CoreJavaFeatures = () => {
-  return (
-    <div className="bg-gradient-to-br from-sky-100 via-sky-50 to-white py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl font-extrabold text-center text-gray-800 mb-4">
-          Key Features of Core Java Course in Pune
-        </h2>
-        <p className="text-center text-gray-600 max-w-2xl mx-auto mb-12">
-          From basic syntax to OOPs, master everything with structured modules, live coding sessions, and personal guidance.
-        </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {features.map((feature, index) => (
+const ReactFeatures = () => {
+  return (
+    <section className="w-full py-12 px-4 bg-gray-100">
+      {/* Content wrapper to limit max width and center */}
+      <div className="max-w-7xl mx-auto">
+        {/* Heading */}
+        <div className="text-center space-y-4 max-w-3xl mx-auto mb-10">
+          <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
+           Key Feature Of Core Java Course in Pune
+          </h3>
+          <p className="text-gray-700 text-lg">
+          From basic syntax to OOPs, master everything with structured modules, live coding sessions, and personal guidance in our Core Java course in Pune.
+
+          </p>
+        </div>
+
+        {/* Feature Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          {features.map((feature, idx) => (
             <div
-              key={index}
-              className="group bg-gradient-to-br from-sky-800 to-cyan-400 text-white rounded-2xl shadow-lg p-6 text-center transform transition-all duration-500 hover:scale-105 hover:shadow-2xl"
+              key={idx}
+              className="bg-white border rounded-xl p-6 shadow-sm hover:shadow-md transition-all"
             >
-              <div className="flex justify-center mb-4">{feature.icon}</div>
-              <h4 className="text-lg font-semibold mb-2">{feature.title}</h4>
-              <p className="text-sm">{feature.description}</p>
+              <div className="flex flex-col items-center">
+                {feature.icon}
+                <h4 className="text-xl font-semibold text-gray-900">{feature.count}</h4>
+                <p className="text-gray-600 mt-1">{feature.label}</p>
+              </div>
             </div>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
-export default CoreJavaFeatures;
+export default ReactFeatures;
