@@ -4,7 +4,7 @@ import image from "../../assets/Banner1.jpeg";
 // import brochurePDF from "../../../assets/";
 import brochurePDF from "../../../src/assets/Brochure.pdf";
 
-export default function CoreWeb() {
+export default function AdvanceJavaBanner() {
   const [showPopup, setShowPopup] = useState(false);
   const [formPopup, setFormPopup] = useState(false);
   const [formData, setFormData] = useState({
@@ -48,16 +48,16 @@ export default function CoreWeb() {
       description: "Dedicated placement team helps you land the right job with personalized placement assistance.",
     },
     {
-      title: "Weekly Mock interviews",
-      description: "Practice and polish your interview skills with our weekly mock sessions for confidence-building.",
-    },
-    {
-      title: "Free Resume Building & Guidance",
-      description: "Get expert help in creating a professional resume to stand out in today’s competitive job market..",
+      title: "100% Practical Training",
+      description: "Every concept is taught with practical implementation, not just theory.",
     },
     {
       title: "Online/ Offline Programs",
       description: "Choose from flexible learning options, available both online and offline, to suit your needs.",
+    },
+    {
+      title: "Course Duration",
+      description: "Master concepts step-by-step with structured training over 4 months.",
     },
 
   ];
@@ -70,7 +70,7 @@ export default function CoreWeb() {
       >
         <motion.div initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
           <h1 className="text-4xl ml-[10px]  text-center font-bold  text-orange-600">
-          Best Salesforce Classes in Pune with 100% Placement Assistance 
+            Advanced Java Course in Pune With Certification. {" "}
 
           </h1>
           {/* <p className="text-lg text-white mb-12 p-20">
@@ -78,8 +78,7 @@ export default function CoreWeb() {
         </p> */}
         </motion.div>
         <div className="text-center max-w-3xl mx-auto px-4 text-lg text-white py-4 ">
-        Master Salesforce with a practical, career-focused program designed by experts at Pathlogics. Get certified, build your portfolio, and land your dream job with dedicated placement guidance.
-
+          Already know the basics? Level up with our Advanced Java course in Pune and get certified with real-world projects and expert mentorship to shine in tech interviews.
 
         </div>
 

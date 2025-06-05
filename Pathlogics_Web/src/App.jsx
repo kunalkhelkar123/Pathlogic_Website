@@ -99,7 +99,7 @@ import MainTesting from "./Fullstack/PlacementProg/FullStackTesting/MainTesting"
 
 
 import Java from "./SHORTCOURSES/CJava/Java";
-import Advanced from "./SHORTCOURSES/AdvJava/Advanced";
+
 import React from "./SHORTCOURSES/React/ReactCourse";
 import ReactCourse from "./SHORTCOURSES/React/ReactCourse";
 import AngularCourse from "./SHORTCOURSES/Angular/AngularCourse";
@@ -158,6 +158,7 @@ import FullStackDotNetDeveloper from "./LongtermCourses/FullStackDotNetDeveloper
 import FullStackSoftwareTesting from "./LongtermCourses/FullStackSoftwareTesting/index.jsx";
 import FullStackManualTesting from "./LongtermCourses/FullStackManualTesting/index.jsx";
 import FullStackSalesforceDevelopment from "./LongtermCourses/FullStackSalesforceDevelopment/index.jsx";
+import AdvancedComponent from "./SHORTCOURSES/AdvJava/AdvancedComponent.jsx";
 
 
 
@@ -235,7 +236,7 @@ function App() {
         <Route path="/MainDevops" element={<Layout> <MainDevops />  </Layout>} />
         <Route path="/salesforce" element={<Layout> <SaForce /> </Layout>} />
         <Route path="/Corejava" element={<Layout> <Java />  </Layout>} />
-        <Route path="/Advancedjava" element={<Layout> <Advanced /> </Layout>} />
+        <Route path="/Advancedjava" element={<Layout> <AdvancedComponent /> </Layout>} />
         <Route path="/Reactjs" element={<Layout> <ReactCourse /> </Layout>} />
         <Route path="/Angularjs" element={<Layout> <AngularCourse /> </Layout>} />
         <Route path="/Native" element={<Layout> <NativeCourse /> </Layout>} />

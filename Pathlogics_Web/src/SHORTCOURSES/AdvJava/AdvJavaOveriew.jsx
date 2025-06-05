@@ -1,7 +1,7 @@
 import React from "react";
 import bgimg from "../../assets/admission.jpg";
 
-export default function DigitalOverview() {
+export default function AdvJavaOverview() {
   return (
     <div className="min-h-screen sm:pb-0 md-pb-0 pb-10">
       {/* Program Overview Section */}
@@ -9,12 +9,12 @@ export default function DigitalOverview() {
         {/* <div className="absolute inset-0 bg-[url('/diagonal-pattern.svg')] opacity-10"></div> */}
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h3 className="text-2xl md:text-3xl font-bold text-white mb-8">
-            Digital Marketing Program Overview
+           Advanced Java Training Program Overview
           </h3>
           <p className="text-lg md:text-xl text-white max-w-4xl mx-auto leading-relaxed">
-           Ready to start your digital marketing journey?
+           Ready to take your Java skills to the next level? Our Advanced Java Course in Pune is designed for learners who already know the basics and are eager to build real-world, professional applications. it’s project-driven, job-focused, and perfect for those looking to boost their career in software development.
+Want to know if you’re eligible? Just check out our simple admission process and see how easily you can get started on this exciting journey!
 
-Whether you’re a student, job-seeker, or just looking for a career switch, our <strong>Digital Marketing Course</strong> is built for you. Learn everything from SEO and Google Ads to social media strategy, all through 100% practical training and real-time projects. Skip the boring theory — we focus on what matters: hands-on skills that employers actually want. Check out our easy admission process and see how you can become a job-ready digital marketer in just a few weeks!
 
           </p>
         </div>
@@ -148,7 +148,7 @@ Whether you’re a student, job-seeker, or just looking for a career switch, our
 
                     {/* <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /> */}
                   </svg>
-                  Professionals working on Digital Platforms.
+                  Basic Understanding of Programming.
                 </li>
                 <li className="flex items-center text-gray-700">
                   <svg
@@ -164,7 +164,7 @@ Whether you’re a student, job-seeker, or just looking for a career switch, our
                       d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                     />
                   </svg>
-                  Interest in Digital Marketing.
+                  Interest in Advanced Java.
                 </li>
                 <li className="flex items-center text-gray-700">
                   <svg
@@ -180,7 +180,7 @@ Whether you’re a student, job-seeker, or just looking for a career switch, our
                       d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                     />
                   </svg>
-                  Anyone interested in starting a digital marketing career.
+                  Anyone interested in starting an Advanced Java career.
                 </li>
               </ul>
             </div>

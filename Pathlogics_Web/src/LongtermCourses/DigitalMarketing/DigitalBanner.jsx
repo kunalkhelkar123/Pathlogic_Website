@@ -4,7 +4,7 @@ import image from "../../assets/Banner1.jpeg";
 // import brochurePDF from "../../../assets/";
 import brochurePDF from "../../../src/assets/Brochure.pdf";
 
-export default function CoreWeb() {
+export default function DigitalBanner() {
   const [showPopup, setShowPopup] = useState(false);
   const [formPopup, setFormPopup] = useState(false);
   const [formData, setFormData] = useState({
@@ -44,16 +44,16 @@ export default function CoreWeb() {
 
   const details = [
     {
+      title: "100% Practical Training ",
+      description: "Learn by doing, not just by watching, Practically Work on Projects & Case Studies.",
+    },
+    {
       title: "Placement support",
       description: "Dedicated placement team helps you land the right job with personalized placement assistance.",
     },
     {
-      title: "Weekly Mock interviews",
+      title: " Weekly Mock interviews",
       description: "Practice and polish your interview skills with our weekly mock sessions for confidence-building.",
-    },
-    {
-      title: "Free Resume Building & Guidance",
-      description: "Get expert help in creating a professional resume to stand out in today’s competitive job market..",
     },
     {
       title: "Online/ Offline Programs",
@@ -70,7 +70,7 @@ export default function CoreWeb() {
       >
         <motion.div initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
           <h1 className="text-4xl ml-[10px]  text-center font-bold  text-orange-600">
-          Best Salesforce Classes in Pune with 100% Placement Assistance 
+           Digital Marketing Course In Pune With Placement Support. {" "}
 
           </h1>
           {/* <p className="text-lg text-white mb-12 p-20">
@@ -78,8 +78,7 @@ export default function CoreWeb() {
         </p> */}
         </motion.div>
         <div className="text-center max-w-3xl mx-auto px-4 text-lg text-white py-4 ">
-        Master Salesforce with a practical, career-focused program designed by experts at Pathlogics. Get certified, build your portfolio, and land your dream job with dedicated placement guidance.
-
+          Boost your career with Pathlogics’ Advanced Digital Marketing Course in Pune with Placement Support. 100% practical, AI-powered training at affordable fees!
 
         </div>
 

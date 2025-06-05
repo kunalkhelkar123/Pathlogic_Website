@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function AdmissionBanner() {
+export default function PaidInternship() {
   return (
     <div className="bg-gradient-to-r from-yellow-400 mb-4 sm:mx-10  sm:mt-0 lg:mt-0 md:mt-0 to-yellow-400 text-black py-6 px-6 md:px-10 flex flex-col md:flex-row items-center justify-between shadow-lg  gap-6">
       <div className="text-left md:w-2/3">
@@ -21,5 +21,3 @@ export default function AdmissionBanner() {
     </div>
   );
 }
-
-
