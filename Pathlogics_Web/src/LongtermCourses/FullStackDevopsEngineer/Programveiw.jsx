@@ -9,14 +9,10 @@ export default function Program() {
         {/* <div className="absolute inset-0 bg-[url('/diagonal-pattern.svg')] opacity-10"></div> */}
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h3 className="text-2xl md:text-3xl font-bold text-white mb-8">
-            Devops Course Program Overview
+            Full Stack AI Development Program Overview
           </h3>
           <p className="text-lg md:text-xl text-white max-w-4xl mx-auto leading-relaxed">
-            Elevate your career with our <strong>DevOps Certification Course</strong>, designed to teach you
-            automation, cloud management, and seamless deployment strategies. Ready to join?
-            Explore all the details about our admission process and eligibility criteria
-
-
+            Boost your tech career with our <strong>Full Stack AI Developer course</strong>, designed to teach everything from AI fundamentals to advanced machine learning techniques. You’ll develop the skills to build intelligent, real-world applications that drive innovation. Ready to get started? Explore our easy admission process and eligibility criteria to begin your journey toward becoming a certified AI professional.
           </p>
         </div>
       </div>
@@ -57,18 +53,12 @@ export default function Program() {
                 </li>
               </ul>
             </div>
-
           </div>
-
 
           {/* image section */}
-
           <div className="sm:mt-10">
-            <img className='sm:ml-10 ' height={300} width={300} src={bgimg}></img>
-
+            <img className='sm:ml-10 ' height={300} width={300} src={bgimg} alt="Admission" />
           </div>
-
-
 
           {/* Eligibility Criteria Card */}
           <div className="bg-white rounded-lg shadow-xl overflow-hidden transform transition duration-300 hover:scale-105">
@@ -86,8 +76,6 @@ export default function Program() {
                 <li className="flex items-center text-gray-700">
                   <svg className="w-5 h-5 mr-3 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-
-                    {/* <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /> */}
                   </svg>
                   Professionals working on software testing.
                 </li>
@@ -105,7 +93,6 @@ export default function Program() {
                 </li>
               </ul>
             </div>
-
           </div>
         </div>
       </div>

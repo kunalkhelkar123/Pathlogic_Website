@@ -151,7 +151,7 @@ export default function Secondpage() {
         transition={{ duration: 1 }}
         className="text-5xl font-extrabold text-center text-orange-600 mb-12"
       >
-        Elevate Your Career with Us 🚀
+        Elevate Your Career with Us 🚀 
       </motion.h1>
 
       <div className="max-w-5xl w-full text-center space-y-16 relative z-10">

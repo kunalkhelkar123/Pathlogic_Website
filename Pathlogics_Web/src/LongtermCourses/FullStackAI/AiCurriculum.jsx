@@ -1,68 +1,88 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { motion } from "framer-motion";
+import { Link } from 'react-router-dom';
 
-const CourseModule = ({ title, icon, index }) => {
-  const [isVisible, setIsVisible] = useState(false);
+// Main Component
+export default function Component() {
 
-  useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), index * 150);
-    return () => clearTimeout(timer);
-  }, [index]);
-
-  return (
-    <div 
-      className={`transform transition-all duration-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
+  const TechCard = ({ logo, label, color }) => (
+    <motion.div
+      whileHover={{ scale: 1.1 }}
+      className="flex flex-col items-center space-y-4"
     >
-      <div className="bg-orange-500 rounded-lg shadow-lg p-6 h-full hover:shadow-2xl hover:bg-gradient-to-br from-gray-400 to-teal-600 transition-shadow duration-300">
-        <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-white">
-          <span className="text-orange-600 text-3xl">{icon}</span>
-        </div>
-        <h3 className="text-xl font-semibold text-gray-800 text-center">{title}</h3>
+      <div
+        className={`w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full flex items-center justify-center ${color} shadow-lg`}
+      >
+        {logo}
       </div>
-    </div>
+      <motion.span
+        whileHover={{ color: "#4A90E2" }}
+        className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800"
+      >
+        {label}
+      </motion.span>
+    </motion.div>
   );
-};
-
-export default function AiCurriculum() {
-  const courseModules = [
-    { title: "Problem Solving", icon: "🧠" },
-    { title: "Machine Learning (TensorFlow, Scikit-Learn)", icon: "📊" },  // Updated for ML
-    { title: "Data Science (Pandas, NumPy)", icon: "💾" },  // Updated for Data Science
-    { title: "Deep Learning (Neural Networks)", icon: "🧬" },  // Updated for Deep Learning
-    { title: "Version Control (Git)", icon: "🔀" }, // Updated for Git
-    { title: "AI Frameworks (PyTorch, Keras)", icon: "🔧" },  // Updated for AI frameworks
-    { title: "Cloud Computing (AWS, Azure)", icon: "☁️" },  // Updated for Cloud
-    { title: "APIs and Microservices", icon: "📡" }, 
-  ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-teal-600 py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl font-extrabold text-white sm:text-5xl md:text-6xl">
-            AI Development
-          </h1>
-          <p className="mt-3 max-w-md mx-auto text-base text-white sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-            Embark on a journey through our comprehensive AI-focused curriculum
-          </p>
+    <>
+      {/* Main Section */}
+      <div className="flex flex-col justify-center items-center sm:mb-0 -mb-20 py-6 px-4 sm:px-8 bg-cover bg-center">
+        <div className="text-center mb-6">
+          <h3 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-black">
+             Essential Tools You’ll Master in Our Full Stack AI Course
+          </h3>
         </div>
+        <div>   <motion.p
+          className="text-sm sm:text-lg md:text-xl text-gray-700 text-center mb-6 sm:mx-[220px] md:mx-[220px] lg:mx-[220px]"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.2 }}
+        >
+          In our Full Stack AI Development course, you'll gain hands-on experience with cutting-edge tools and frameworks used by AI professionals. From data preprocessing to model deployment, you’ll work with real-world tech stacks that power intelligent systems. These skills will enable you to design, build, and launch end-to-end AI applications with confidence.
+        </motion.p></div>
 
-        <div className="bg-white rounded-xl shadow-2xl overflow-hidden mb-16">
-          <div className="p-6">
-            <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Curriculum</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {courseModules.map((module, index) => (
-                <CourseModule key={index} {...module} index={index} />
-              ))}
-            </div>
+        <div className="max-w-6xl mx-auto">
+
+          <motion.div
+            className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 sm:gap-20 gap-12 justify-center"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+          >
+            <TechCard
+              logo={<img src="https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg" alt="Java Logo" className="w-12 h-12" />}
+              label="Java"
+              color="bg-gray-200"
+            />
+            <TechCard
+              logo={<img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Spring_Framework_Logo_2018.svg" alt="Spring Logo" className="w-14 h-14" />}
+              label="Spring"
+              color="bg-red-200"
+            />
+            <TechCard
+              logo={<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Hibernate_logo.svg/1920px-Hibernate_logo.svg.png" alt="Hibernate Logo" className="w-17 h-3" />}
+              label="Hibernate"
+              color="bg-yellow-200"
+            />
+            <TechCard
+              logo={<img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/MySQL_textlogo.svg" alt="MySQL Logo" className="w-12 h-12" />}
+              label="MySQL"
+              color="bg-blue-200"
+            />
+          </motion.div>
+
+          <div className="mt-12 text-center">
+
+            <Link to="/Advancedjava"> <motion.button
+              whileHover={{ scale: 1.1 }}
+              className="bg-orange-600 text-white text-sm sm:text-lg font-semibold py-2 px-6 sm:py-3 sm:px-8 rounded-lg shadow-lg hover:bg-orange-800"
+            >
+              Start Now
+            </motion.button></Link>
           </div>
         </div>
-
-        <div className="text-center">
-          <button className="bg-orange-500 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-orange-600 transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
-            Enroll Now
-          </button>
-        </div>
       </div>
-    </div>
+    </>
   );
 }

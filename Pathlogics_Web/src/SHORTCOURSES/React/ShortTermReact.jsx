@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import image from "../../assets/Bannerrr.jpeg";
+import image from "../../assets/Banner1.jpeg";
+import brochurePDF from "../../assets/Brochure.pdf";
 
-// import brochurePDF from "../../../assets/Brochure.pdf";
-import brochurePDF from "../.././assets/Brochure.pdf";
-
-export default function ShortTermReactJS() {
+export default function ReactJsCoursePage() {
   const [showPopup, setShowPopup] = useState(false);
   const [formPopup, setFormPopup] = useState(false);
   const [formData, setFormData] = useState({
@@ -28,89 +26,169 @@ export default function ShortTermReactJS() {
   };
 
   const handleDownload = () => {
-        // setShowPopup(true);
-    setTimeout(() => setShowPopup(false), 3000);
-
-    // Open in new tab
-    // window.open(brochurePDF, "_blank");
-
-    // // Create an invisible download link
-    // const link = document.createElement("a");
+    const link = document.createElement("a");
     link.href = brochurePDF;
-    link.download = "Brochure.pdf"; // Set the file name
+    link.download = "Brochure.pdf";
     document.body.appendChild(link);
     link.click();
-    document.body.removeChild(link); // Clean up the DOM
+    document.body.removeChild(link);
+    setShowPopup(true);
+    setTimeout(() => setShowPopup(false), 3000);
   };
 
   const details = [
     {
-      title: "React.js Fundamentals",
-      description: "Learn the core concepts of React.js, including components, state, and props, to build interactive UIs.",
+      title: "Placement Support",
+      description:
+        "Dedicated placement team helps you land the right job with placement assistance and weekly mock interviews.",
     },
     {
-      title: "React Router & Navigation",
-      description: "Understand routing in React with React Router and how to create single-page applications with dynamic navigation.",
+      title: "100% Practical Training",
+      description:
+        "Every concept is taught with practical implementation, not just theory.",
     },
     {
-      title: "State Management with Redux",
-      description: "Master state management in React using Redux to handle global state and make your apps more scalable.",
+      title: "Online/ Offline Programs",
+      description:
+        "Choose from flexible learning options, available both online and offline, to suit your needs.",
+    },
+    {
+      title: "Course Duration",
+      description:
+        "Master concepts step-by-step with structured training over 4 months.",
     },
   ];
 
   return (
     <div
-      className="min-h-screen bg-cover bg-center text-gray-900 flex flex-col items-center py-10 px-4"
+      className="min-h-screen bg-cover bg-center text-white flex flex-col items-center py-10 px-4"
       style={{ backgroundImage: `url(${image})` }}
     >
-      <motion.div initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-        <h1 className="text-4xl text-white font-bold mb-6 text-center">
-          Short-Term <span className="text-orange-600">React.JS</span> Program
-        </h1>
-        <p className="text-lg text-white mb-12 text-center">
-          Master React.js and build powerful web applications with expert-led training.
+      {/* Main Title & Description */}
+      <motion.div
+        initial={{ opacity: 0, y: -30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="max-w-4xl"
+      >
+        <div className="w-full flex justify-center">
+          <h1 className="text-[40px] font-bold mb-4 text-orange-600 text-center whitespace-nowrap">
+  React JS Course in Pune with Certification & Placement Support
+</h1>
+
+        </div>
+        <p className="text-lg text-white text-center leading-relaxed">
+          Master React JS with hands-on projects, expert mentorship, and industry-ready skills. Get certified and land your dream job with Pathlogics' dedicated placement support in Pune!
         </p>
       </motion.div>
 
-      <div className="flex flex-col md:flex-row gap-10 w-full max-w-6xl">
-        <div className="grid gap-8 flex-grow">
+      <div className="flex flex-col md:flex-row gap-10 w-full max-w-6xl mt-10">
+        {/* Left Side - Features */}
+        <div className="flex flex-col space-y-[6px] flex-grow items-center">
           {details.map((detail, index) => (
             <motion.div
               key={index}
-              className="bg-teal-800 bg-opacity-60 text-gray-800 rounded-lg shadow-lg p-6 transition duration-300 transform hover:scale-105 hover:bg-opacity-80"
-              initial={{ opacity: 0, x: -50 }}
+              className="bg-[#004d40] bg-opacity-90 rounded-md shadow-lg px-6 py-4 h-24 w-full flex flex-col justify-center max-w-3xl"
+              initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
             >
-              <h2 className="text-xl font-bold mb-4 text-orange-600">{detail.title}</h2>
-              <p className="text-white">{detail.description}</p>
+              <h3 className="text-sm font-bold text-orange-600">{detail.title}</h3>
+              <p className="text-sm mt-1 text-white">{detail.description}</p>
             </motion.div>
           ))}
+
+          {/* Batch Info Below the Cards */}
+          <div className="mt-6 text-center">
+            <p className="text-lg font-semibold text-white">
+              We are conducting a new batch starting every Monday!
+            </p>
+            <div className="flex justify-center gap-4 mt-4">
+              <button className="bg-white text-blue-900 font-semibold px-6 py-2 rounded-md shadow-md">
+                📅 Date: 7 April 2025
+              </button>
+              <button className="bg-white text-blue-900 font-semibold px-6 py-2 rounded-md shadow-md">
+                📆 Day: Monday
+              </button>
+            </div>
+          </div>
         </div>
 
-        <motion.div className="bg-gray-800 bg-opacity-60 p-6 w-full max-w-md rounded-lg shadow-lg" initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }}>
+        {/* Right Side - Form */}
+        <motion.div
+          className="bg-[#1a1a2e] bg-opacity-90 p-6 w-full max-w-md rounded-lg shadow-lg"
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+        >
           <h2 className="text-2xl font-bold text-orange-600 mb-4">Enquiry Form</h2>
           <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
-            <input type="text" name="name" placeholder="Full Name" value={formData.name} onChange={handleChange} className="w-full p-2 border rounded-lg" required />
-            <input type="email" name="email" placeholder="Email Address" value={formData.email} onChange={handleChange} className="w-full p-2 border rounded-lg" required />
-            <input type="tel" name="phone" placeholder="Phone Number" value={formData.phone} onChange={handleChange} className="w-full p-2 border rounded-lg" required />
-            <select name="passingYear" value={formData.passingYear} onChange={handleChange} className="w-full p-2 border rounded-lg" required>
+            <input
+              type="text"
+              name="name"
+              placeholder="Full Name"
+              value={formData.name}
+              onChange={handleChange}
+              className="w-full p-2 rounded-md"
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email Address"
+              value={formData.email}
+              onChange={handleChange}
+              className="w-full p-2 rounded-md"
+              required
+            />
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Phone Number"
+              value={formData.phone}
+              onChange={handleChange}
+              className="w-full p-2 rounded-md"
+              required
+            />
+            <select
+              name="passingYear"
+              value={formData.passingYear}
+              onChange={handleChange}
+              className="w-full p-2 rounded-md"
+              required
+            >
               <option value="">Select Passing Year</option>
               <option value="Pursuing">Pursuing</option>
               <option value="Completed">Completed</option>
             </select>
-            <select name="interest" value={formData.interest} onChange={handleChange} className="w-full p-2 border rounded-lg" required>
+            <select
+              name="interest"
+              value={formData.interest}
+              onChange={handleChange}
+              className="w-full p-2 rounded-md"
+              required
+            >
               <option value="">Select Interest</option>
-              <option value="ReactJSFundamentals">React.js Fundamentals</option>
-              <option value="ReactRouter">React Router & Navigation</option>
-              <option value="StateManagement">State Management with Redux</option>
+              <option value="React JS">React JS</option>
+              <option value="Frontend Development">Frontend Development</option>
+              <option value="Full Stack Development">Full Stack Development</option>
+              <option value="Placement Training">Placement Training</option>
             </select>
 
-            <div className="mt-6 flex gap-10 justify-center">
-              <motion.button whileHover={{ scale: 1.1 }} className="bg-orange-600 hover:bg-orange-700 rounded-[5px] text-white py-2 px-4 " type="submit">
+            <div className="mt-6 flex gap-6 justify-center">
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                className="bg-orange-600 text-white py-2 px-4 rounded-md hover:bg-orange-700"
+                type="submit"
+              >
                 Submit
               </motion.button>
-              <motion.button whileHover={{ scale: 1.1 }} className="bg-orange-600 hover:bg-orange-700 rounded-[5px] text-white py-2 px-4 " type="button" onClick={handleDownload}>
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                className="bg-orange-600 text-white py-2 px-4 rounded-md hover:bg-orange-700"
+                type="button"
+                onClick={handleDownload}
+              >
                 Download Brochure
               </motion.button>
             </div>
@@ -118,14 +196,25 @@ export default function ShortTermReactJS() {
         </motion.div>
       </div>
 
+      {/* Success Popups */}
       {showPopup && (
-        <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} className="fixed top-5 right-5 bg-gradient-to-br from-gray-900 to-teal-600 text-white px-6 py-3 rounded-lg shadow-lg">
+        <motion.div
+          className="fixed top-5 right-5 bg-green-700 text-white px-6 py-3 rounded-lg shadow-lg"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+        >
           ✅ Brochure Download Started!
         </motion.div>
       )}
 
       {formPopup && (
-        <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} className="fixed bottom-10 right-10 bg-gradient-to-br from-gray-900 to-teal-900 text-white px-6 py-3 rounded-lg shadow-lg">
+        <motion.div
+          className="fixed bottom-10 right-10 bg-green-800 text-white px-6 py-3 rounded-lg shadow-lg"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+        >
           ✅ Form Submitted Successfully!
         </motion.div>
       )}

@@ -1,56 +1,58 @@
+import React, { useRef, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import fullstackImg from "../../assets/fullstack.jpg"; // replace with your actual image path
 
+export default function AiBlogs() {
+  const descRef = useRef(null);
+  const [descHeight, setDescHeight] = useState("auto");
 
-import { useState } from "react";
-import { motion } from "framer-motion";
-
-export default function DotJourney() {
-  const [showJourney, setShowJourney] = useState(false);
-
-  const journeySteps = [
-    { emoji: "🚀", title: "Kickstart", description: "Orientation & Meet Peers" },
-    { emoji: "😎", title: "Registration", description: "Complete Course Signup" },
-    { emoji: "📚", title: "Enroll Now", description: "Start Learning Modules" },
-    { emoji: "💡", title: "Master Skills", description: "Work on Real Projects" },
-    { emoji: "🎯", title: "Interviews", description: "Resume & Mock Interviews" },
-    { emoji: "🏆", title: "Placements", description: "Get Your Dream Job" },
-  ];
+  // Sync image height with the height of description
+  useEffect(() => {
+    if (descRef.current) {
+      setDescHeight(`${descRef.current.offsetHeight}px`);
+    }
+  }, []);
 
   return (
-    <div className="bg-gradient-to-br from-gray-900 to-teal-600 min-h-screen flex flex-col items-center pt-[91px] ">
-      {/* Header Section */}
-      <div className="text-center px-4 sm:px-8">
-        <h1 className="text-4xl sm:text-5xl font-extrabold text-white">
-          FullStack <span className="text-orange-600">Journey</span>
-        </h1>
-        <p className="text-white mt-2 text-lg sm:text-xl px-4">
-          Your path to becoming a pro developer
-        </p>
-        <button
-          className="mt-4 px-5 py-2 text-sm sm:text-base font-semibold text-white bg-gradient-to-br from-purple-500 to-indigo-500 rounded-lg shadow-lg hover:scale-105 transition"
-          onClick={() => setShowJourney(!showJourney)}
-        >
-          {showJourney ? "Hide Journey" : "Start Now"}
-        </button>
-      </div>
+    <div className="bg-white py-12 px-6 md:px-16 lg:px-24">
+      {/* Centered Title */}
+      <h2 className="text-3xl md:text-4xl font-bold text-black text-center mx-auto mb-10">
+        Full Stack AI Course with 100% Placement Assistance
+      </h2>
 
-      {/* Journey Steps - Responsive Grid */}
-      {showJourney && (
-        <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-3 gap-4 p-4 w-full max-w-3xl">
-          {journeySteps.map((step, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.2, duration: 0.4 }}
-              className="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-md min-w-[120px] sm:min-w-[150px] w-full"
-            >
-              <span className="text-3xl">{step.emoji}</span>
-              <h3 className="text-white font-semibold text-base mt-2">{step.title}</h3>
-              <p className="text-gray-400 text-xs sm:text-sm mt-1 text-center">{step.description}</p>
-            </motion.div>
-          ))}
+      {/* Main Content Section */}
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start gap-12">
+        {/* Left Description */}
+        <div ref={descRef} className="md:w-1/2">
+          <p className="text-lg text-gray-800 leading-relaxed mb-6">
+            Join <strong>Pathlogics</strong> and dive into the world of artificial intelligence with a
+            career-focused program designed for real-world impact. This comprehensive{" "}
+            <Link to="/full-stack-development" className="text-blue-600 underline hover:text-blue-800">
+              Full Stack AI Development course in Pune
+            </Link>{" "}
+            is tailored to equip learners with the expertise needed to build end-to-end AI solutions.
+            The curriculum integrates foundational theory with real-world applications, ensuring a balanced
+            learning experience. Students will gain hands-on skills in data handling, model building,
+            training, and deployment. From data preprocessing to AI system integration, this course prepares
+            you to manage the complete AI development lifecycle.
+          </p>
+          <Link to="/QuickEnquiry">
+            <button className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-md font-semibold shadow-md transition duration-300">
+              Enroll Today!
+            </button>
+          </Link>
         </div>
-      )}
+
+        {/* Right Image with matched height */}
+        <div className="md:w-1/2 flex justify-center md:justify-end">
+          <img
+            src={fullstackImg}
+            alt="Full Stack AI Course"
+            className="rounded-xl shadow-lg object-cover"
+            style={{ width: "420px", height: descHeight }}
+          />
+        </div>
+      </div>
     </div>
   );
 }

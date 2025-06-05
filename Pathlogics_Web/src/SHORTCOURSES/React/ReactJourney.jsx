@@ -1,54 +1,63 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
+import React, { useRef, useEffect, useState } from 'react';
+import foldimg from "../../assets/foldimg.jpg";
+import { Link } from 'react-router-dom';
 
 export default function ReactJourney() {
-  const [showJourney, setShowJourney] = useState(false);
+  const descRef = useRef(null);
+  const [descHeight, setDescHeight] = useState("auto");
 
-  const journeySteps = [
-    { emoji: "🚀", title: "Kickstart", description: "Orientation & Meet Peers" },
-    { emoji: "😎", title: "Registration", description: "Complete Course Signup" },
-    { emoji: "📚", title: "Enroll Now", description: "Start Learning Modules" },
-    { emoji: "💡", title: "Master Skills", description: "Work on Real Projects" },
-    { emoji: "🎯", title: "Interviews", description: "Resume & Mock Interviews" },
-    { emoji: "🏆", title: "Placements", description: "Get Your Dream Job" },
-  ];
+  // Match image height to the height of the description section
+  useEffect(() => {
+    if (descRef.current) {
+      setDescHeight(`${descRef.current.offsetHeight}px`);
+    }
+  }, []);
 
   return (
-    <div className="bg-gradient-to-br from-gray-900 to-teal-600 min-h-screen flex flex-col items-center p-6">
-      {/* Header Section */}
-      <div className="text-center">
-        <h1 className="text-4xl sm:text-5xl font-extrabold text-white">
-           <span className="text-orange-600">React.JS Journey</span>
-        </h1>
-        <p className="text-white mt-2 text-lg sm:text-xl">
-          Your path to becoming a pro developer
-        </p>
-        <button
-          className="mt-4 px-5 py-2 text-sm sm:text-base font-semibold text-white bg-orange-600 hover:bg-orange-700 rounded-[5px] shadow-lg hover:scale-105 transition"
-          onClick={() => setShowJourney(!showJourney)}
-        >
-          {showJourney ? "Hide Journey" : "Start Now"}
-        </button>
-      </div>
+    <div className="bg-white py-12 px-4 sm:px-6 md:px-12 lg:px-24 xl:px-32 2xl:px-48">
+      {/* Title */}
+      <h2 className="text-[34px] font-bold text-center text-black mb-10">
+        Pathologics React JS Training In Pune - From Basics to Advanced
+      </h2>
 
-      {/* Journey Steps - Responsive Grid */}
-      {showJourney && (
-        <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-3 gap-4 p-4 w-full max-w-3xl">
-          {journeySteps.map((step, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.2, duration: 0.4 }}
-              className="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-md min-w-[120px] sm:min-w-[150px] w-full"
-            >
-              <span className="text-3xl">{step.emoji}</span>
-              <h3 className="text-white font-semibold text-base mt-2">{step.title}</h3>
-              <p className="text-gray-400 text-xs sm:text-sm mt-1 text-center">{step.description}</p>
-            </motion.div>
-          ))}
+      {/* Content Row */}
+      <div className="flex flex-col md:flex-row items-start justify-between gap-10">
+        {/* Text Section */}
+        <div ref={descRef} className="md:w-1/2 text-center md:text-left">
+          <p className="text-base sm:text-lg md:text-xl text-gray-800 leading-relaxed mb-6">
+            <strong>Pathlogics</strong> offers a comprehensive React JS course in Pune, designed for both beginners
+            and those looking to level up their web development skills. The course covers everything
+            from the basics to advanced topics, with hands-on coding, real-world projects, and personalized
+            mentorship from industry professionals.
+          </p>
+          <p className="text-base sm:text-lg md:text-xl text-gray-800 leading-relaxed mb-6">
+            Students will gain expertise in components, hooks, state management, and routing, and will
+            build live projects that prepare them for a career in front-end development. The course also
+            provides job placement assistance, resume building, and mock interviews to ensure students are
+            ready for the job market.
+          </p>
+          <p className="text-base sm:text-lg md:text-xl text-gray-800 leading-relaxed mb-6">
+            With a certification of completion, Pathlogics prepares you with the skills to become a desired
+            React developer in today's tech industry.
+          </p>
+
+          <Link to="/contact">
+            <button className="bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded-md font-semibold shadow-md transition duration-300">
+              Know More
+            </button>
+          </Link>
         </div>
-      )}
+
+        {/* Image Section with matched height */}
+        <div className="md:w-1/2 flex justify-center md:justify-end">
+          <img
+            src={foldimg}
+            alt="React JS Course"
+            className="rounded-xl shadow-lg object-cover"
+            style={{ height: descHeight, width: "100%", maxWidth: "480px" }}
+          />
+        </div>
+      </div>
     </div>
   );
 }

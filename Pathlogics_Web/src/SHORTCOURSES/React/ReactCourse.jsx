@@ -8,6 +8,16 @@ import MoreCourses from '../Salesforce Developer/MoreCourses';
 import Testimonials from '../../Home/Testimonials/Testimonials';
 import Companie from '../../Fullstack/Companies/Companie';
 import ReactCourseModules from './ReactCourseModules';
+import Reactfaq from './ReactFaq';
+import Radvisor from './Radvisor';
+import CareerOptionsPage from './CareerOptionsPage';
+import Reacteight from './Reacteight';
+import ReactDrop from './ReactDrop';
+import ReactIpt from '../../LongtermCourses/FullStackAI/ReactIpt';
+import ReactIntro from './ReactIntro';
+import ReactTools from './ReactTools';
+import ReactFeatures from './ReactFeatures';
+import ReactCerticate from './ReactCerticate';
 
 function ReactCourse() {
   return (
@@ -15,13 +25,19 @@ function ReactCourse() {
     
         <ShortTermReact/>
         <ReactJourney/>
-        <ReactProgramO/>
-        <MasterReactJs/>
-        <ReactCurriculum/>
-        <ReactCourseModules/> 
-        <MoreCourses/>
+        <ReactFeatures/>
+        <ReactIntro/>
+           <ReactTools/>
+          <ReactIpt/>
+         <ReactDrop/>
+        <Reacteight/>
+         <CareerOptionsPage/>
+       <ReactCerticate/>
+         <MoreCourses/>
         <Testimonials/>
         <Companie/>
+         <Reactfaq/>
+         <Radvisor/>
         </div>
   )
 }
