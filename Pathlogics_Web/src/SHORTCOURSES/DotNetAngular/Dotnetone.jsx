@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import image from "../../../assets/Banner1.jpeg";
-import brochurePDF from "../../../assets/brochure.pdf";
+import image from "../../assets/Banner1.jpeg";
+import brochurePDF from "../../assets/Brochure.pdf";
 
-
-export default function Manualpage() {
+export default function Dotnetone() {
   const [showPopup, setShowPopup] = useState(false);
   const [formPopup, setFormPopup] = useState(false);
   const [formData, setFormData] = useState({
@@ -39,24 +38,24 @@ export default function Manualpage() {
 
   const details = [
     {
-      title: "Core Manual Testing Concepts",
+      title: "ASP.NET Core Fundamentals",
       description:
-        "Understand software testing fundamentals, SDLC, STLC, test cases, bug life cycle, and more.",
+        "Master backend development with ASP.NET Core, focusing on REST APIs, authentication, and database integration.",
     },
     {
-      title: "Hands-on Practical Sessions",
+      title: "Angular for Frontend",
       description:
-        "Work on real-time projects and scenarios to build confidence and testing experience.",
+        "Build powerful, single-page applications using Angular with routing, services, and component-driven architecture.",
     },
     {
-      title: "Interview Preparation & Resume Building",
+      title: "Real-World Projects",
       description:
-        "Get expert support on creating impactful resumes and practicing for QA interviews.",
+        "Work on industry-relevant projects combining .NET and Angular to create full-stack web applications.",
     },
     {
-      title: "Certification & Job Assistance",
+      title: "Placement Support & Mock Interviews",
       description:
-        "Receive a recognized certificate and placement support to kick-start your QA career.",
+        "Get dedicated placement training, resume building, and regular mock interviews to crack job opportunities.",
     },
   ];
 
@@ -65,49 +64,46 @@ export default function Manualpage() {
       className="min-h-screen bg-cover bg-center text-white flex flex-col items-center py-10 px-4"
       style={{ backgroundImage: `url(${image})` }}
     >
-      {/* Title and Description */}
+      {/* Main Title & Description */}
       <motion.div
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="max-w-4xl text-center"
+        className="max-w-4xl"
       >
-        {/* <h1 className="text-[36px] md:text-[42px] font-bold mb-4 text-orange-600">
-          Manual Testing Training in Pune with Certification
-        </h1> */}
-<h1 className="text-[36px] md:text-[42px] font-bold mb-4 text-orange-600 whitespace-nowrap">Manual Testing Training in Pune with Certification</h1>
-
-        <p className="text-lg leading-relaxed">
-          Start your QA career with our Manual Testing Training in Pune with Certification. Learn testing concepts, gain hands-on experience, and get certified to boost your job prospects.
+        <div className="w-full flex justify-center">
+          <h1 className="text-[40px] font-bold mb-4 text-orange-600 text-center whitespace-nowrap">
+            Dot Net with Angular Course in Pune with Placement Support
+          </h1>
+        </div>
+        <p className="text-lg text-white text-center leading-relaxed">
+          Enroll in our Dot Net with Angular course in Pune with placement support. Gain in-depth knowledge of ASP.NET Core and Angular to build modern, responsive web applications. Learn from industry experts and boost your career in software development.
         </p>
       </motion.div>
 
-      {/* Main Content Layout */}
       <div className="flex flex-col md:flex-row gap-10 w-full max-w-6xl mt-10">
-        {/* Features Section */}
-        <div className="flex flex-col space-y-4 flex-1">
+        {/* Left Side - Features */}
+        <div className="flex flex-col space-y-[6px] flex-grow items-center">
           {details.map((detail, index) => (
             <motion.div
               key={index}
-              className="bg-[#004d40] bg-opacity-90 rounded-lg shadow-md px-6 py-5"
+              className="bg-[#004d40] bg-opacity-90 rounded-md shadow-lg px-6 py-4 h-24 w-full flex flex-col justify-center max-w-3xl"
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
             >
-              <h3 className="text-md font-bold text-orange-500">
-                {detail.title}
-              </h3>
-              <p className="text-sm mt-2">{detail.description}</p>
+              <h3 className="text-sm font-bold text-orange-600">{detail.title}</h3>
+              <p className="text-sm mt-1 text-white">{detail.description}</p>
             </motion.div>
           ))}
 
           {/* Batch Info */}
           <div className="mt-6 text-center">
-            <p className="text-lg font-semibold">
-              New Manual Testing batch starts every Monday!
+            <p className="text-lg font-semibold text-white">
+              We are conducting a new batch starting every Monday!
             </p>
-            <div className="flex justify-center gap-4 mt-4 flex-wrap">
+            <div className="flex justify-center gap-4 mt-4">
               <button className="bg-white text-blue-900 font-semibold px-6 py-2 rounded-md shadow-md">
                 📅 Date: 7 April 2025
               </button>
@@ -118,15 +114,13 @@ export default function Manualpage() {
           </div>
         </div>
 
-        {/* Enquiry Form */}
+        {/* Right Side - Enquiry Form */}
         <motion.div
           className="bg-[#1a1a2e] bg-opacity-90 p-6 w-full max-w-md rounded-lg shadow-lg"
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
         >
-          <h2 className="text-2xl font-bold text-orange-600 mb-4 text-center">
-            Enquiry Form
-          </h2>
+          <h2 className="text-2xl font-bold text-orange-600 mb-4">Enquiry Form</h2>
           <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
             <input
               type="text"
@@ -134,7 +128,7 @@ export default function Manualpage() {
               placeholder="Full Name"
               value={formData.name}
               onChange={handleChange}
-              className="w-full p-2 rounded-md text-black"
+              className="w-full p-2 rounded-md"
               required
             />
             <input
@@ -143,7 +137,7 @@ export default function Manualpage() {
               placeholder="Email Address"
               value={formData.email}
               onChange={handleChange}
-              className="w-full p-2 rounded-md text-black"
+              className="w-full p-2 rounded-md"
               required
             />
             <input
@@ -152,14 +146,14 @@ export default function Manualpage() {
               placeholder="Phone Number"
               value={formData.phone}
               onChange={handleChange}
-              className="w-full p-2 rounded-md text-black"
+              className="w-full p-2 rounded-md"
               required
             />
             <select
               name="passingYear"
               value={formData.passingYear}
               onChange={handleChange}
-              className="w-full p-2 rounded-md text-black"
+              className="w-full p-2 rounded-md"
               required
             >
               <option value="">Select Passing Year</option>
@@ -170,25 +164,26 @@ export default function Manualpage() {
               name="interest"
               value={formData.interest}
               onChange={handleChange}
-              className="w-full p-2 rounded-md text-black"
+              className="w-full p-2 rounded-md"
               required
             >
               <option value="">Select Interest</option>
-              <option value="Manual Testing">Manual Testing</option>
-              <option value="Automation Testing">Automation Testing</option>
-              <option value="QA + Placement">QA + Placement</option>
+              <option value=".NET Development">.NET Development</option>
+              <option value="Angular Development">Angular Development</option>
+              <option value="Full Stack (.NET + Angular)">Full Stack (.NET + Angular)</option>
+              <option value="Placement Training">Placement Training</option>
             </select>
 
-            <div className="mt-6 flex gap-4 justify-center">
+            <div className="mt-6 flex gap-6 justify-center">
               <motion.button
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.1 }}
                 className="bg-orange-600 text-white py-2 px-4 rounded-md hover:bg-orange-700"
                 type="submit"
               >
                 Submit
               </motion.button>
               <motion.button
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.1 }}
                 className="bg-orange-600 text-white py-2 px-4 rounded-md hover:bg-orange-700"
                 type="button"
                 onClick={handleDownload}
@@ -203,9 +198,10 @@ export default function Manualpage() {
       {/* Popups */}
       {showPopup && (
         <motion.div
-          className="fixed top-5 right-5 bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg z-50"
+          className="fixed top-5 right-5 bg-green-700 text-white px-6 py-3 rounded-lg shadow-lg"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
         >
           ✅ Brochure Download Started!
         </motion.div>
@@ -213,9 +209,10 @@ export default function Manualpage() {
 
       {formPopup && (
         <motion.div
-          className="fixed bottom-10 right-10 bg-green-700 text-white px-6 py-3 rounded-lg shadow-lg z-50"
+          className="fixed bottom-10 right-10 bg-green-800 text-white px-6 py-3 rounded-lg shadow-lg"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
         >
           ✅ Form Submitted Successfully!
         </motion.div>
