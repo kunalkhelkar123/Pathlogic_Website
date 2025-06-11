@@ -9,6 +9,12 @@ import Testimonials from '../../Home/Testimonials/Testimonials';
 import Companie from '../../Fullstack/Companies/Companie';
 import Masternative from './MasterNative';
 import MasterNative from './MasterNative';
+import NativeInfo from './NativeInfo';
+import NativeOverview from './NativeOverview';
+import Nativecareer from './Nativecareer';
+import NativeCertificate from './NativeCertificate';
+import NativeFAQ from './NativeFAQ';
+import Talk_to_Our_Advisor from "../../../src/LongtermCourses/FullStackWebDevelopement/Talk_to_Our_Advisor"
 
 function NativeCourse() {
   return (
@@ -19,9 +25,16 @@ function NativeCourse() {
     <MasterNative/>
     <NativeCurriculum/>
     <NativeCoreModules/>
+    <NativeOverview/>
+    <NativeInfo/>
+    <Nativecareer/>
+    <NativeCertificate/>
     <MoreCourses/>
     <Testimonials/>
     <Companie/>
+    <NativeFAQ/>
+     <Talk_to_Our_Advisor />
+     
     </div>
   )
 }

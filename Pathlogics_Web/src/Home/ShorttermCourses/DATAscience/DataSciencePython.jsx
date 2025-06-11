@@ -1,68 +1,113 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 
-const CourseModule = ({ title, icon, index }) => {
-  const [isVisible, setIsVisible] = useState(false);
+const toolsData = [
+  {
+    title: 'Python Programming Language',
+    description:
+      'Python is the core language for data science, known for its simplicity, versatility, and vast community support. It’s easy to learn and comes with a wide range of libraries and frameworks that are essential for data analysis and machine learning tasks.',
+    points: [
+      'Easy-to-read syntax',
+      'Open-source and free',
+      'Extensive libraries and frameworks (e.g., NumPy, Pandas, Matplotlib)',
+    ],
+  },
+  {
+    title: 'Pandas',
+    description:
+      'The go-to library for data manipulation and analysis. Pandas provides two essential data structures, DataFrame and Series to store and manipulate data in a tabular format.',
+    points: [
+      'Data cleaning and preprocessing',
+      'Handling missing data',
+      'Merging, grouping, and aggregating data',
+      'Fast and efficient data manipulation',
+    ],
+  },
+  {
+    title: 'Matplotlib & Seaborn (Data Visualization)',
+    description:
+      'These libraries are used for visualizing data and drawing insights. Matplotlib is the most widely used library for creating static plots, while Seaborn builds on Matplotlib, providing an easier interface for creating more complex and informative visualizations.',
+    points: [
+      'Line, bar, scatter plots, histograms, and pie charts',
+      'Customization of plots for better clarity and aesthetics',
+      'Heatmaps and correlation matrices (Seaborn)',
+      'Statistical visualizations',
+    ],
+  },
+  {
+    title: 'Scikit-learn (Machine Learning Library)',
+    description:
+      'Scikit-learn is a powerful machine learning library that provides simple and efficient tools for data mining and data analysis. It supports various supervised and unsupervised learning algorithms.',
+    points: [
+      'Regression, classification, and clustering algorithms',
+      'Model evaluation and validation tools (cross-validation, metrics)',
+      'Data preprocessing and feature selection',
+      'Pipelines for automating machine learning workflows',
+    ],
+  },
+  {
+    title: 'TensorFlow & Keras (Deep Learning)',
+    description:
+      'TensorFlow is an open-source framework for deep learning developed by Google. Keras is a high-level neural networks API that runs on top of TensorFlow. These libraries are used for building and training deep learning models.',
+    points: [
+      'Building neural networks for complex data (images, text, etc.)',
+      'Support for GPU acceleration to speed up training',
+      'Easy-to-use API for model creation and training (Keras)',
+    ],
+  },
+  {
+    title: 'Power BI & Tableau (Data Visualization & Business Intelligence)',
+    description:
+      'These are business intelligence tools used for creating interactive dashboards and reports. While not core Python tools, they are widely used in data science to communicate insights effectively.',
+    points: [
+      'Interactive visualizations and reports',
+      'Data integration from multiple sources',
+      'Real-time data updates and dashboard customization',
+    ],
+  },
+];
 
-  useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), index * 150);
-    return () => clearTimeout(timer);
-  }, [index]);
+const DotNetTools = () => {
+  const [showMore, setShowMore] = useState(false);
+  const visibleTools = showMore ? toolsData : toolsData.slice(0, 2);
 
   return (
-    <div 
-      className={`transform transition-all duration-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
-    >
-      <div className="bg-orange-500 rounded-lg shadow-lg p-6 h-full hover:shadow-2xl hover:bg-gradient-to-br from-gray-900 to-teal-500 transition-shadow duration-300">
-        <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-blue-100">
-          <span className="text-orange-600 text-3xl">{icon}</span>
-        </div>
-        <h3 className="text-xl font-semibold text-white text-center">{title}</h3>
-      </div>
-    </div>
-  );
-};
-
-export default function DataSciencePython() {
-  const courseModules = [
-    { title: "Introduction to Data Science", icon: "📊" },
-    { title: "Python for Data Analysis", icon: "🐍" },
-    { title: "Data Visualization", icon: "📈" },
-    { title: "Machine Learning Basics", icon: "🤖" },
-    { title: "Deep Learning Essentials", icon: "🧠" },
-    { title: "Statistical Analysis", icon: "📉" },
-    { title: "Big Data Technologies", icon: "💾" },
-    { title: "Real-world Projects", icon: "🚀" },
-  ];
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-teal-600 py-16 px-4 sm:px-6 lg:px-8">
+    <section className="w-full bg-gray-100 py-12 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl font-extrabold text-white sm:text-5xl md:text-6xl">
-            Data Science with Python
-          </h1>
-          <p className="mt-3 max-w-md mx-auto text-base text-white sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-            Explore the world of Data Science using Python and industry-relevant tools.
-          </p>
-        </div>
+        <motion.h3
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-3xl font-bold text-center text-gray-900 mb-10"
+        >
+          Essentials Tools Used in the Data Science With Python Course
+        </motion.h3>
 
-        <div className="bg-white rounded-xl shadow-2xl overflow-hidden mb-16">
-          <div className="p-6">
-            <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Curriculum</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {courseModules.map((module, index) => (
-                <CourseModule key={index} {...module} index={index} />
-              ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12 max-w-5xl mx-auto">
+          {visibleTools.map((tool, idx) => (
+            <div key={idx}>
+              <h4 className="text-blue-600 text-2xl font-semibold mb-2">{tool.title}</h4>
+              <p className="text-black mb-3">{tool.description}</p>
+              <ul className="list-disc list-inside text-black space-y-1">
+                {tool.points.map((point, i) => (
+                  <li key={i}>{point}</li>
+                ))}
+              </ul>
             </div>
-          </div>
+          ))}
         </div>
 
-        <div className="text-center">
-          <button className="bg-orange-500 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-teal-600 transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
-            Enroll Now
+        <div className="text-center mt-10">
+          <button
+            onClick={() => setShowMore(!showMore)}
+            className="bg-teal-600 text-white px-4 py-2 rounded-md shadow-md hover:bg-teal-700 transition"
+          >
+            {showMore ? 'View Less' : 'View More Tools'}
           </button>
         </div>
       </div>
-    </div>
+    </section>
   );
-}
+};
+
+export default DotNetTools;

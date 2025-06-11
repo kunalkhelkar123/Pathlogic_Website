@@ -1,54 +1,47 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
+import React from 'react';
+import abc from '../../../src/assets/salesforcetraingng.jpg';
 
-export default function NativeJourney() {
-  const [showJourney, setShowJourney] = useState(false);
-
-  const journeySteps = [
-    { emoji: "🚀", title: "Kickstart", description: "Orientation & Meet Peers" },
-    { emoji: "😎", title: "Registration", description: "Complete Course Signup" },
-    { emoji: "📚", title: "Enroll Now", description: "Start Learning Modules" },
-    { emoji: "💡", title: "Master Skills", description: "Work on Real Projects" },
-    { emoji: "🎯", title: "Interviews", description: "Resume & Mock Interviews" },
-    { emoji: "🏆", title: "Placements", description: "Get Your Dream Job" },
-  ];
-
+export default function Blogs() {
   return (
-    <div className="bg-gradient-to-br from-gray-900 to-teal-600 min-h-screen flex flex-col items-center p-6">
-      {/* Header Section */}
-      <div className="text-center">
-        <h1 className="text-4xl sm:text-5xl font-extrabold text-white">
-         <span className="text-orange-600">React Native Journey</span>
-        </h1>
-        <p className="text-white mt-2 text-lg sm:text-xl">
-          Your path to becoming a pro developer
-        </p>
-        <button
-          className="mt-4 px-5 py-2 text-sm sm:text-base font-semibold text-white bg-orange-600  hover:bg-orange-700 rounded-[5px] shadow-lg hover:scale-105 transition"
-          onClick={() => setShowJourney(!showJourney)}
-        >
-          {showJourney ? "Hide Journey" : "Start Now"}
-        </button>
-      </div>
+    <div className="bg-gradient-to-br from-sky-50 via-white to-cyan-50 py-16 px-4 md:px-8 lg:px-16 xl:px-24 2xl:px-32">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-center text-gray-800 mb-10 leading-tight">
+          Get Certified with Pathlogics React Native Course in Pune
+          <br className="hidden sm:block" />
+          {/* <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-cyan-600">
+            Syllabus, Features & Highlights
+          </span> */}
+        </h2>
 
-      {/* Journey Steps - Responsive Grid */}
-      {showJourney && (
-        <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-3 gap-4 p-4 w-full max-w-3xl">
-          {journeySteps.map((step, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.2, duration: 0.4 }}
-              className="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-md min-w-[120px] sm:min-w-[150px] w-full"
+        <div className="flex flex-col md:flex-row items-center justify-between gap-12">
+          {/* Text Section */}
+          <div className="md:w-1/2">
+            <p className="text-gray-700 text-base md:text-lg lg:text-xl leading-relaxed mb-6">
+             Pathlogics offers the best React Native course in Pune, providing an in-depth curriculum designed to teach you how to build high-performing Android and iOS apps using a single codebase.The course is beginner-friendly yet aligned with industry demands, covering essential tools like React Navigation, Redux, Firebase, and Expo. You'll gain hands-on experience through live projects, real-world problem-solving, and practical coding sessions. 
+Pathlogics provides job placement assistance, including resume building, mock interviews, and expert guidance to help you transition into a full-time developer role. Your career prospects in the highly desired field of mobile app development will be enhanced by the industry-recognized certification you will receive upon completion. 
+This course offers you the skills and confidence to be successful whether your goal is to work as a Full Stack Developer, Mobile App Developer, or React Native Developer.starts now!
+</p>
+
+            <a
+              href="/QuickEnquiry"
+              className="inline-block px-8 py-3 bg-gradient-to-r from-teal-600 to-cyan-600 text-white font-semibold rounded-xl shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300"
             >
-              <span className="text-3xl">{step.emoji}</span>
-              <h3 className="text-white font-semibold text-base mt-2">{step.title}</h3>
-              <p className="text-gray-400 text-xs sm:text-sm mt-1 text-center">{step.description}</p>
-            </motion.div>
-          ))}
+              Know More
+            </a>
+          </div>
+
+          {/* Image Section */}
+          <div className="md:w-1/2 flex justify-center">
+            <div className="rounded-3xl shadow-xl overflow-hidden transform hover:scale-105 transition duration-500">
+              <img
+                src={abc}
+                alt="Pathlogics Core Java Training"
+                className="w-[450px] h-auto object-cover"
+              />
+            </div>
+          </div>
         </div>
-      )}
+      </div>
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import curriculam from "../../../assets/curriculam.jpg";
+import curriculam from "../../assets/curriculam.jpg";
 
 const AccordionItem = ({ title, content, isOpen, onToggle }) => (
   <div className="mb-4 border border-gray-200 rounded-lg overflow-hidden shadow-md">
@@ -23,62 +23,84 @@ const AccordionItem = ({ title, content, isOpen, onToggle }) => (
   </div>
 );
 
-export default function SoftwareTestingAccordion() {
+export default function Accordian() {
   const [openSection, setOpenSection] = useState(null);
 
   const modules = [
     {
-      title: "Introduction to Software Testing",
+      title: "Introduction to React Native",
       content: (
         <ul className="list-disc pl-5 space-y-2">
-          <li>Fundamentals of Software Testing</li>
-          <li>Software Development Life Cycle (SDLC)</li>
-          <li>Role of Testing in SDLC</li>
-          <li>Types of Software Testing</li>
+          <li>Understanding React Native Ecosystem</li>
+          <li>Setting Up Development Environment</li>
+          <li>React Native vs React.js</li>
+          <li>Building Your First App</li>
         </ul>
       )
     },
     {
-      title: "Manual Testing",
+      title: "React Native Components",
       content: (
         <ul className="list-disc pl-5 space-y-2">
-          <li>Test Planning, Design, and Execution</li>
-          <li>Defect Life Cycle and Reporting</li>
-          <li>Test Case Development and Management</li>
-          <li>Exploratory and Ad-hoc Testing</li>
+          <li>Core Components & APIs</li>
+          <li>Handling User Inputs</li>
+          <li>Styling with Flexbox</li>
+          <li>Navigation & Routing</li>
         </ul>
       )
     },
     {
-      title: "Automation Testing",
+      title: "State Management in React Native",
       content: (
         <ul className="list-disc pl-5 space-y-2">
-          <li>Introduction to Automation Tools</li>
-          <li>Selenium WebDriver Basics</li>
-          <li>Automation Framework Design</li>
-          <li>Continuous Integration with Jenkins</li>
+          <li>Using useState and useEffect</li>
+          <li>Context API & Redux</li>
+          <li>Handling Async Storage</li>
+          <li>Optimizing Performance</li>
         </ul>
       )
     },
     {
-      title: "Performance Testing",
+      title: "React Native Navigation",
       content: (
         <ul className="list-disc pl-5 space-y-2">
-          <li>Performance Testing Concepts</li>
-          <li>Using JMeter for Load Testing</li>
-          <li>Analyzing Performance Metrics</li>
-          <li>Optimizing System Performance</li>
+          <li>React Navigation Basics</li>
+          <li>Stack, Tab, and Drawer Navigation</li>
+          <li>Passing Data Between Screens</li>
+          <li>Deep Linking & Dynamic Routing</li>
         </ul>
       )
     },
     {
-      title: "Career Support & Placements",
+      title: "Networking & APIs",
       content: (
         <ul className="list-disc pl-5 space-y-2">
-          <li>Live Projects & Hands-on Experience</li>
-          <li>Resume Building & Interview Preparation</li>
-          <li>Mock Interviews & Technical Assessments</li>
-          <li>Job Placement Assistance</li>
+          <li>Fetching Data with Fetch & Axios</li>
+          <li>Handling Authentication</li>
+          <li>Working with GraphQL</li>
+          <li>Real-time Data with WebSockets</li>
+        </ul>
+      )
+    },
+    {
+      title: "Debugging & Performance Optimization",
+      content: (
+        <ul className="list-disc pl-5 space-y-2">
+          <li>Using React Native Debugger</li>
+          <li>Profiling & Improving Performance</li>
+          <li>Memory Management</li>
+          <li>Reducing App Size</li>
+        </ul>
+      )
+    },
+    {
+      title: "Deploying React Native Apps",
+      content: (
+        <ul className="list-disc pl-5 space-y-2">
+          <li>Building for iOS & Android</li>
+          <li>Code Signing & App Store Deployment</li>
+          <li>Using Expo for Fast Deployment</li>
+          <li>Continuous Integration & Deployment</li>
         </ul>
       )
     }
@@ -89,17 +111,13 @@ export default function SoftwareTestingAccordion() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Image */}
         <div className="w-full">
-          <img
-            src={curriculam}
-            alt="Software Testing Curriculum"
-            className="rounded-xl shadow-lg w-full object-cover pt-14"
-          />
+          <img src={curriculam} alt="Java Curriculum" className="rounded-xl shadow-lg w-full object-cover pt-14" />
         </div>
 
         {/* Accordion */}
         <div>
           <h1 className="text-3xl font-extrabold text-orange-600 mb-8 text-center md:text-left">
-            Pathlogics Software Testing Syllabus
+            Pathlogics Core Java Syllabus
           </h1>
           <div className="space-y-4">
             {modules.map((module, index) => (

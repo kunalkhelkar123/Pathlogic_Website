@@ -1,83 +1,70 @@
 import React from 'react';
+// import { Users, Briefcase, DollarSign, GraduationCap } from 'lucide-react';
 
-export default function ReactNativeProgram() {
+import { Users, Briefcase, DollarSign, GraduationCap, HelpCircle } from 'lucide-react';
+
+const features = [
+  {
+    icon: <Users className="text-blue-600 w-10 h-10 mb-3" />,
+    count: 'Beginner-friendly',
+    label: 'and industry-aligned curriculum',
+  },
+  {
+    icon: <Briefcase className="text-blue-600 w-10 h-10 mb-3" />,
+    count: 'Hands-on',
+    label: 'coding sessions & real-world examples',
+  },
+  {
+    icon: <DollarSign className="text-blue-600 w-10 h-10 mb-3" />,
+    count: 'Weekly',
+    label: 'mock interviews for job readiness',
+  },
+  {
+    icon: <GraduationCap className="text-blue-600 w-10 h-10 mb-3" />,
+    count: 'Placement',
+    label: 'assistance & resume prep',
+  },
+  // {
+  //   icon: <HelpCircle className="text-blue-600 w-10 h-10 mb-3" />,
+  //   count: '1-on-1 Mentorship',
+  //   label: 'and doubt-solving sessions',
+  // },
+];
+
+
+const ReactFeatures = () => {
   return (
-    <div className="min-h-screen">
-      {/* Program Overview Section */}
-      <div className="relative bg-gradient-to-br from-gray-900 to-teal-600 py-20">
-        <div className="absolute inset-0 bg-[url('/diagonal-pattern.svg')] opacity-10"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-8">
-            Program Overview
-          </h1>
-          <p className="text-lg md:text-xl text-white max-w-4xl mx-auto leading-relaxed">
-            React Native is a popular framework for building mobile applications using JavaScript. 
-            Our program provides hands-on training in React Native fundamentals, component-based 
-            architecture, state management, navigation, and real-world app development to help 
-            students become proficient mobile developers.
+    <section className="w-full py-12 px-4 bg-gray-100">
+      {/* Content wrapper to limit max width and center */}
+      <div className="max-w-7xl mx-auto">
+        {/* Heading */}
+        <div className="text-center space-y-4 max-w-3xl mx-auto mb-10">
+          <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
+          Key Feature of React Native Course in Pune
+          </h3>
+          <p className="text-gray-700 text-lg">
+         With our React Native Course in Pune, you’ll gain hands-on experience building mobile apps that run smoothly on both Android and iOS. From designing user-friendly interfaces to integrating APIs, using Redux for state management, and connecting with real-time databases like Firebase, you’ll cover it all step by step. By the end, you won’t just know React Native, you’ll be ready to build and launch your own fully functional apps with confidence.
           </p>
         </div>
-      </div>
 
-      {/* Cards Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-16">
-        <div className="grid md:grid-cols-2 gap-10">
-          {/* Admission Process Card */}
-          <Card
-            title="Admission Process"
-            items={[
-              "Basic Knowledge of JavaScript",
-              "Technical Aptitude Test",
-              "Online/Offline Training Options",
-            ]}
-          />
-
-          {/* Eligibility Criteria Card */}
-          <Card
-            title="Eligibility Criteria"
-            items={[
-              "Graduates in Any Discipline with an Interest in Mobile Development",
-              "Professionals Working in IT or Software Engineering",
-              "Aptitude for UI/UX and Cross-Platform Development",
-            ]}
-          />
+        {/* Feature Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          {features.map((feature, idx) => (
+            <div
+              key={idx}
+              className="bg-white border rounded-xl p-6 shadow-sm hover:shadow-md transition-all"
+            >
+              <div className="flex flex-col items-center">
+                {feature.icon}
+                <h4 className="text-xl font-semibold text-gray-900">{feature.count}</h4>
+                <p className="text-gray-600 mt-1">{feature.label}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
-}
+};
 
-function Card({ title, items }) {
-  return (
-    <div className="bg-white rounded-lg shadow-xl overflow-hidden transform transition duration-300 hover:scale-105">
-      <div className="p-8">
-        <h2 className="text-2xl font-bold text-gray-800 mb-6">{title}</h2>
-        <ul className="space-y-4">
-          {items.map((item, index) => (
-            <li key={index} className="flex items-center text-gray-700">
-              <svg
-                className="w-5 h-5 mr-3 text-orange-500"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-              {item}
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div className="px-8 py-4 bg-orange-600 hover:bg-orange-700 rounded-[5px]">
-        <button className="text-white font-semibold hover:text-orange-300 transition duration-300">
-          Know More
-        </button>
-      </div>
-    </div>
-  );
-}
+export default ReactFeatures;

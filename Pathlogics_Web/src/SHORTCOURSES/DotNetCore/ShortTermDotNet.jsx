@@ -1,43 +1,64 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-import image from "../../assets/Bannerrr.jpeg";
-// import brochurePDF from "../.././assets/Brochure.pdf";
-import brochurePDF from "../.././assets/Brochure.pdf";
+import image from "../../assets/Banner1.jpeg";
+import brochurePDF from "../../../src/assets/Brochure.pdf";
 
-export default function ShortTermDotNet() {
-  const handleDownload = () => {
-    //     // setShowPopup(true);
-    // setTimeout(() => setShowPopup(false), 3000);
+export default function CoreWeb() {
+  const [showPopup, setShowPopup] = useState(false);
+  const [formPopup, setFormPopup] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    passingYear: "",
+    interest: "",
+  });
 
-    // Open in new tab
-    // window.open(brochurePDF, "_blank");
+  const handleChange = (e) => {
 
-    // // Create an invisible download link
-    // const link = document.createElement("a");
-    link.href = brochurePDF;
-    link.download = "Brochure.pdf"; // Set the file name
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link); // Clean up the DOM
+    
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Enquiry Form Data:", formData);
+    setFormPopup(true);
+    setTimeout(() => setFormPopup(false), 3000);
+  };
+
+  const handleDownload = () => {
+    setTimeout(() => setShowPopup(false), 3000);
+    const link = document.createElement("a");
+    link.href = brochurePDF;
+    link.download = "Full-Stack-Python-Brochure.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   const details = [
-    {
-      title: "DotNet Core Fundamentals",
-      description:
-        "Learn the basics of DotNet Core, including framework architecture and project setup.",
+{
+      title: "Placement support",
+      description: "Dedicated placement team helps you land the right job with personalized placement assistance.",
     },
     {
-      title: "Entity Framework Core & Data Handling",
-      description:
-        "Understand how to manage databases using Entity Framework Core and LINQ queries.",
+      title: "Weekly Mock interviews",
+      description: "Practice and polish your interview skills with our weekly mock sessions for confidence-building.",
     },
     {
-      title: "Building REST APIs with .NET Core",
-      description:
-        "Explore API development with ASP.NET Core, middleware, and authentication.",
+      title: "Free Resume Building & Guidance",
+      description: "Get expert help in creating a professional resume to stand out in today’s competitive job market..",
     },
+    {
+      title: "Online/ Offline Programs",
+      description: "Choose from flexible learning options, available both online and offline, to suit your needs.",
+    },
+    {
+      title: "Course Duration",
+      description: "Master concepts step-by-step with structured training over 4 months.",
+    },
+
   ];
 
   return (
@@ -50,118 +71,124 @@ export default function ShortTermDotNet() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <h1 className="text-4xl text-white font-bold mb-6 text-center">
-          Short-Term <span className="text-orange-600">DotNet Core</span> Course
+        <h1 className="text-4xl ml-[10px] text-center font-bold text-orange-600">
+     Pathlogics Dot Net Core Course in Pune 
         </h1>
-        <p className="text-lg text-white mb-12">
-          Master essential DotNet Core programming skills in a short duration with expert guidance.
-        </p>
       </motion.div>
 
-      <div className="flex flex-col md:flex-row gap-10 w-full max-w-6xl">
-        {/* Course Details */}
-        <div className="grid gap-8 flex-grow">
+      <div className="text-center max-w-3xl mx-auto px-4 text-lg text-white py-4">
+ 
+Join the most in-demand Dot Net Core Course in Pune. Practical learning, industry exposure & placement support included.
+
+
+      </div>
+
+      <div className="flex flex-col md:flex-row gap-16 w-full max-w-6xl">
+        <div className="grid gap-2 flex-grow">
           {details.map((detail, index) => (
             <motion.div
               key={index}
-              className="bg-teal-800 bg-opacity-60 text-gray-800 rounded-lg shadow-lg p-6 transition duration-300 transform hover:scale-105 hover:bg-opacity-80"
+              className="bg-teal-800 bg-opacity-60 text-gray-800 rounded-lg shadow-lg p-4 transition duration-300 transform hover:scale-105 hover:bg-opacity-80"
               initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
+              whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
             >
-              <h2 className="text-xl font-bold mb-4 text-orange-600">
+              <h2 className="text-lg font-bold mb-1 text-orange-600">
                 {detail.title}
               </h2>
-              <p className="text-white">{detail.description}</p>
+              <p className="text-white text-sm">{detail.description}</p>
             </motion.div>
           ))}
+
+          <div className="items-center justify-center text-white p-2 mt-4">
+            {/* <p className="text-lg font-semibold text-center mb-4">
+              Core Java Course in Pune with Placement Assistance .Boost your programming skills with our Core Java Course in Pune with Placement Support. Learn from experts and step confidently into the IT industry.
+
+            </p> */}
+            <div className="text-center gap-4">
+              <button className="bg-white text-blue-900 font-semibold sm:mr-8 mt-4 py-2 px-4 rounded-lg shadow-md hover:bg-gray-200">
+                📅 Date: 7 April 2025
+              </button>
+              <button className="bg-white text-blue-900 font-semibold py-2 mt-4 px-4 rounded-lg shadow-md hover:bg-gray-200">
+                🗓️ Day: Monday
+              </button>
+            </div>
+          </div>
         </div>
 
-        {/* Enquiry Form */}
         <motion.div
-          className="bg-gray-800 bg-opacity-60 text-gray-800 rounded-lg shadow-lg p-6 w-full max-w-md transition duration-300 transform hover:scale-105 hover:bg-opacity-80"
+          className="bg-gray-800 bg-opacity-60 p-6 w-full max-w-md rounded-lg shadow-lg"
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
         >
-          <h2 className="text-2xl font-bold text-orange-600 mb-4">
+          <h2 className="text-2xl font-bold text-orange-600 mb-8">
             Enquiry Form
           </h2>
-          <form className="flex flex-col gap-4">
-            <div>
-              <label
-                htmlFor="name"
-                className="block text-sm font-medium text-white mb-1"
-              >
-                Full Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-600"
-                placeholder="Enter your name"
-              />
-            </div>
+          <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
+            <input
+              type="text"
+              name="name"
+              placeholder="Full Name"
+              value={formData.name}
+              onChange={handleChange}
+              className="w-full p-2 border rounded-lg"
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email Address"
+              value={formData.email}
+              onChange={handleChange}
+              className="w-full p-2 border rounded-lg"
+              required
+            />
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Phone Number"
+              value={formData.phone}
+              onChange={handleChange}
+              className="w-full p-2 border rounded-lg"
+              required
+            />
+            <select
+              name="passingYear"
+              value={formData.passingYear}
+              onChange={handleChange}
+              className="w-full p-2 border rounded-lg"
+              required
+            >
+              <option value="">Select Passing Year</option>
+              <option value="Pursuing">Pursuing</option>
+              <option value="Completed">Completed</option>
+            </select>
+            <select
+              name="interest"
+              value={formData.interest}
+              onChange={handleChange}
+              className="w-full p-2 border rounded-lg"
+              required
+            >
+              <option value="">Select Interest</option>
+              <option value="Python Basics">Python Basics</option>
+              <option value="Django Backend">Django Backend</option>
+              <option value="Full Stack Development">Full Stack Development</option>
+              <option value="REST API Integration">REST API Integration</option>
+              <option value="Placement Training">Placement Training</option>
+            </select>
 
-            <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-white mb-1"
-              >
-                Email Address
-              </label>
-              <input
-                type="email"
-                id="email"
-                className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-600"
-                placeholder="Enter your email"
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="phone"
-                className="block text-sm font-medium text-white mb-1"
-              >
-                Phone Number
-              </label>
-              <input
-                type="tel"
-                id="phone"
-                className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-600"
-                placeholder="Enter your phone number"
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="interest"
-                className="block text-sm font-medium text-white mb-1"
-              >
-                Interest
-              </label>
-              <select
-                id="interest"
-                className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
-              >
-                <option value="">Select your interest</option>
-                <option value="dotnet-fundamentals">.NET Core Fundamentals</option>
-                <option value="entity-framework">Entity Framework Core</option>
-                <option value="dotnet-api">Building REST APIs</option>
-              </select>
-            </div>
-
-            <div className="mt-6 text-center flex justify-center gap-10">
+            <div className="mt-6 flex gap-10 justify-center">
               <motion.button
                 whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                className="bg-orange-600 text-white font-bold py-2 px-4  rounded-[5px] hover:bg-orange-700 transition duration-300"
+                className="bg-orange-600 text-white py-2 px-4 rounded-[5px] hover:bg-orange-700"
+                type="submit"
               >
                 Submit
               </motion.button>
               <motion.button
                 whileHover={{ scale: 1.1 }}
-                className="bg-orange-600 hover:bg-orange-700 text-white py-2 px-4 rounded-[5px]"
+                className="bg-orange-600 text-white py-2 px-4 rounded-[5px] hover:bg-orange-700"
                 type="button"
                 onClick={handleDownload}
               >
@@ -170,9 +197,29 @@ export default function ShortTermDotNet() {
             </div>
           </form>
         </motion.div>
-
       </div>
 
+      {showPopup && (
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          className="fixed top-5 right-5 bg-gradient-to-br from-gray-900 to-teal-600 text-white px-6 py-3 rounded-lg shadow-lg"
+        >
+          ✅ Brochure Download Started!
+        </motion.div>
+      )}
+
+      {formPopup && (
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          className="fixed bottom-10 right-10 bg-gradient-to-br from-gray-900 to-teal-900 text-white px-6 py-3 rounded-lg shadow-lg"
+        >
+          ✅ Form Submitted Successfully!
+        </motion.div>
+      )}
     </div>
-  )
+  );
 }

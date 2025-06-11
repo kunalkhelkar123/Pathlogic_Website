@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import curriculam from "../../../assets/curriculam.jpg";
+import curriculam from "../../assets/curriculam.jpg";
 
 const AccordionItem = ({ title, content, isOpen, onToggle }) => (
   <div className="mb-4 border border-gray-200 rounded-lg overflow-hidden shadow-md">
@@ -23,62 +23,84 @@ const AccordionItem = ({ title, content, isOpen, onToggle }) => (
   </div>
 );
 
-export default function SoftwareTestingAccordion() {
+export default function DotNetAccordion() {
   const [openSection, setOpenSection] = useState(null);
 
   const modules = [
     {
-      title: "Introduction to Software Testing",
+      title: "Introduction to .NET Core",
       content: (
         <ul className="list-disc pl-5 space-y-2">
-          <li>Fundamentals of Software Testing</li>
-          <li>Software Development Life Cycle (SDLC)</li>
-          <li>Role of Testing in SDLC</li>
-          <li>Types of Software Testing</li>
+          <li>Understanding the .NET Ecosystem</li>
+          <li>.NET Framework vs .NET Core vs .NET 5/6</li>
+          <li>Installing SDK & CLI</li>
+          <li>Creating Your First Console Application</li>
         </ul>
       )
     },
     {
-      title: "Manual Testing",
+      title: "C# Programming Fundamentals",
       content: (
         <ul className="list-disc pl-5 space-y-2">
-          <li>Test Planning, Design, and Execution</li>
-          <li>Defect Life Cycle and Reporting</li>
-          <li>Test Case Development and Management</li>
-          <li>Exploratory and Ad-hoc Testing</li>
+          <li>Data Types, Variables, and Operators</li>
+          <li>Control Structures & Loops</li>
+          <li>Object-Oriented Concepts</li>
+          <li>Exception Handling</li>
         </ul>
       )
     },
     {
-      title: "Automation Testing",
+      title: "Working with ASP.NET Core",
       content: (
         <ul className="list-disc pl-5 space-y-2">
-          <li>Introduction to Automation Tools</li>
-          <li>Selenium WebDriver Basics</li>
-          <li>Automation Framework Design</li>
-          <li>Continuous Integration with Jenkins</li>
+          <li>Understanding MVC Architecture</li>
+          <li>Controllers, Views, and Models</li>
+          <li>Routing and Middleware</li>
+          <li>Dependency Injection</li>
         </ul>
       )
     },
     {
-      title: "Performance Testing",
+      title: "Entity Framework Core",
       content: (
         <ul className="list-disc pl-5 space-y-2">
-          <li>Performance Testing Concepts</li>
-          <li>Using JMeter for Load Testing</li>
-          <li>Analyzing Performance Metrics</li>
-          <li>Optimizing System Performance</li>
+          <li>Code-First vs Database-First</li>
+          <li>CRUD Operations with EF Core</li>
+          <li>LINQ Queries</li>
+          <li>Data Migrations</li>
         </ul>
       )
     },
     {
-      title: "Career Support & Placements",
+      title: "RESTful APIs with ASP.NET Core",
       content: (
         <ul className="list-disc pl-5 space-y-2">
-          <li>Live Projects & Hands-on Experience</li>
-          <li>Resume Building & Interview Preparation</li>
-          <li>Mock Interviews & Technical Assessments</li>
-          <li>Job Placement Assistance</li>
+          <li>Creating Web APIs</li>
+          <li>Routing and API Endpoints</li>
+          <li>JWT Authentication & Authorization</li>
+          <li>Postman Testing & Swagger</li>
+        </ul>
+      )
+    },
+    {
+      title: "Frontend Integration & Deployment",
+      content: (
+        <ul className="list-disc pl-5 space-y-2">
+          <li>Calling APIs from React/Angular</li>
+          <li>Consuming JSON Data</li>
+          <li>Deploying to IIS, Azure, or Linux Server</li>
+          <li>Dockerizing .NET Core Apps</li>
+        </ul>
+      )
+    },
+    {
+      title: "Advanced Topics & Best Practices",
+      content: (
+        <ul className="list-disc pl-5 space-y-2">
+          <li>Logging & Error Handling</li>
+          <li>Unit Testing with xUnit</li>
+          <li>Clean Architecture Principles</li>
+          <li>Performance Tuning</li>
         </ul>
       )
     }
@@ -89,17 +111,13 @@ export default function SoftwareTestingAccordion() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Image */}
         <div className="w-full">
-          <img
-            src={curriculam}
-            alt="Software Testing Curriculum"
-            className="rounded-xl shadow-lg w-full object-cover pt-14"
-          />
+          <img src={curriculam} alt="Dot Net Core Curriculum" className="rounded-xl shadow-lg w-full object-cover pt-14" />
         </div>
 
         {/* Accordion */}
         <div>
           <h1 className="text-3xl font-extrabold text-orange-600 mb-8 text-center md:text-left">
-            Pathlogics Software Testing Syllabus
+            Pathlogics .NET Core Syllabus
           </h1>
           <div className="space-y-4">
             {modules.map((module, index) => (

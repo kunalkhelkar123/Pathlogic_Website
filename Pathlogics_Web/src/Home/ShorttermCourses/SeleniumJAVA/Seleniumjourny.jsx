@@ -1,54 +1,50 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
+import React from 'react';
+import abc from '../../../../src/assets/salesforcetraingng.jpg';
 
-export default function Seleniumjourny() {
-  const [showJourney, setShowJourney] = useState(false);
-
-  const journeySteps = [
-    { emoji: "🚀", title: "Kickstart", description: "Orientation & Meet Peers" },
-    { emoji: "😎", title: "Registration", description: "Complete Course Signup" },
-    { emoji: "📚", title: "Enroll Now", description: "Start Learning Modules" },
-    { emoji: "💡", title: "Master Skills", description: "Work on Real Projects" },
-    { emoji: "🎯", title: "Interviews", description: "Resume & Mock Interviews" },
-    { emoji: "🏆", title: "Placements", description: "Get Your Dream Job" },
-  ];
-
+export default function Blogs() {
   return (
-    <div className="bg-gradient-to-br from-gray-900 to-teal-600 min-h-screen flex flex-col items-center pt-[91px] ">
-      {/* Header Section */}
-      <div className="text-center">
-        <h1 className="text-4xl sm:text-5xl font-extrabold text-white">
-         Selenium with Java <span className="text-orange-600">Journey</span>
-        </h1>
-        <p className="text-white mt-2 text-lg sm:text-xl p-1">
-          Your path to becoming a pro developer
-        </p>
-        <button
-          className="mt-4 px-5 py-2 text-sm sm:text-base font-semibold text-white bg-orange-600 bg:hover-orange-700 rounded-[5px] shadow-lg hover:scale-105 transition"
-          onClick={() => setShowJourney(!showJourney)}
-        >
-          {showJourney ? "Hide Journey" : "Start Now"}
-        </button>
-      </div>
+    <div className="bg-gradient-to-br from-sky-50 via-white to-cyan-50 py-16 px-4 md:px-8 lg:px-16 xl:px-24 2xl:px-32">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-center text-gray-800 mb-10 leading-tight">
+        Pathlogics Selenium Using Java Course In Pune - Your Automation Journey.
+          <br className="hidden sm:block" />
+          {/* <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-cyan-600">
+            Syllabus, Features & Highlights
+          </span> */}
+        </h2>
 
-      {/* Journey Steps - Responsive Grid */}
-      {showJourney && (
-        <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-3 gap-4 p-4 w-full max-w-3xl">
-          {journeySteps.map((step, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.2, duration: 0.4 }}
-              className="flex flex-col items-center bg-gray-800 p-4 rounded-lg shadow-md min-w-[120px] sm:min-w-[150px] w-full"
+        <div className="flex flex-col md:flex-row items-center justify-between gap-12">
+          {/* Text Section */}
+          <div className="md:w-1/2">
+            <p className="text-gray-700 text-base md:text-lg lg:text-xl leading-relaxed mb-6">
+           
+Master Selenium Automation testing with Pathlogics’ Selenium with Java Course in Pune. Designed for beginners and professionals, this course offers hands-on training, real-world projects, and expert guidance to help you build a strong foundation in QA automation. Learn key Selenium components like WebDriver, IDE, Grid, and more, while writing scripts in Java, the most widely used language for automation. 
+
+With mock interviews, personalized resume guidance, and dedicated placement support, our program is built to help you step confidently into the automation testing world. Gain practical experience, industry-relevant knowledge, and a recognized certification that sets you apart. At Pathlogics, we don’t just teach; we empower your entire career journey.
+ 
+
+</p>
+
+            <a
+              href="/QuickEnquiry"
+              className="inline-block px-8 py-3 bg-gradient-to-r from-teal-600 to-cyan-600 text-white font-semibold rounded-xl shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300"
             >
-              <span className="text-3xl">{step.emoji}</span>
-              <h3 className="text-white font-semibold text-base mt-2">{step.title}</h3>
-              <p className="text-gray-400 text-xs sm:text-sm mt-1 text-center">{step.description}</p>
-            </motion.div>
-          ))}
+              Know More
+            </a>
+          </div>
+
+          {/* Image Section */}
+          <div className="md:w-1/2 flex justify-center">
+            <div className="rounded-3xl shadow-xl overflow-hidden transform hover:scale-105 transition duration-500">
+              <img
+                src={abc}
+                alt="Pathlogics Core Java Training"
+                className="w-[450px] h-auto object-cover"
+              />
+            </div>
+          </div>
         </div>
-      )}
+      </div>
     </div>
   );
 }

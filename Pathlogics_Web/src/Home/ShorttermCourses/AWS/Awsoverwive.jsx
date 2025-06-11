@@ -1,91 +1,76 @@
-
 import React from 'react';
+// import { Users, Briefcase, DollarSign, GraduationCap } from 'lucide-react';
 
-export default function AWSDevOpsOverview() {
+import { Users, Briefcase, DollarSign, GraduationCap, HelpCircle } from 'lucide-react';
+
+const features = [
+  {
+    icon: <Users className="text-blue-600 w-10 h-10 mb-3" />,
+    count: 'Beginner-Friendly',
+    label: 'and professional-level learning paths',
+  },
+  {
+    icon: <Briefcase className="text-blue-600 w-10 h-10 mb-3" />,
+    count: 'Real-World Projects',
+    label: 'and hands-on practical training',
+  },
+  {
+    icon: <GraduationCap className="text-blue-600 w-10 h-10 mb-3" />,
+    count: 'Mock Interviews',
+    label: 'soft skills, aptitude, and resume prep',
+  },
+  {
+    icon: <DollarSign className="text-blue-600 w-10 h-10 mb-3" />,
+    count: 'Placement Support',
+    label: 'with interview preparation and referrals',
+  },
+  
+];
+
+
+const ReactFeatures = () => {
   return (
-    <div className="min-h-screen">
-      {/* Program Overview Section */}
-      <div className="relative bg-gradient-to-br from-teal-900 to-teal-800 py-20">
-        <div className="absolute inset-0 bg-[url('/diagonal-pattern.svg')] opacity-10"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-orange-500 mb-8">
-            AWS DevOps Program Overview
-          </h1>
-          <p className="text-lg md:text-xl text-white max-w-4xl mx-auto leading-relaxed text-justify">
-  AWS DevOps focuses on automating and streamlining software development and IT operations using AWS services. 
-  Professionals gain expertise in CI/CD, Infrastructure as Code (IaC), monitoring, and cloud security to enhance 
-  deployment efficiency and system reliability.
-</p>
+    <section className="w-full py-12 px-4 bg-gray-100">
+      {/* Content wrapper to limit max width and center */}
+      <div className="max-w-7xl mx-auto">
+        {/* Heading */}
 
+
+
+        
+        <div className="text-center space-y-4 max-w-3xl mx-auto mb-10">
+          <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
+         
+Key Features of Pathologic AWS Devops Certification Course in Pune
+
+
+          </h3>
+          <p className="text-gray-700 text-lg">
+     Our AWS DevOps Training Course in Pune is ideal for aspiring cloud engineers, freshers, and working professionals aiming to build a strong foundation in AWS and DevOps. The course offers hands-on cloud infrastructure setup, CI/CD pipeline automation, and personalized guidance to prepare you for high-demand roles in cloud and DevOps engineering.
+
+
+
+          </p>
+        </div>
+
+        {/* Feature Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          {features.map((feature, idx) => (
+            <div
+              key={idx}
+              className="bg-white border rounded-xl p-6 shadow-sm hover:shadow-md transition-all"
+            >
+              <div className="flex flex-col items-center">
+                {feature.icon}
+                <h4 className="text-xl font-semibold text-gray-900">{feature.count}</h4>
+                <p className="text-gray-600 mt-1">{feature.label}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
-
-      {/* Cards Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-16">
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* Admission Process Card */}
-          <div className="bg-white rounded-lg shadow-xl overflow-hidden transform transition duration-300 hover:scale-105 flex flex-col">
-            <div className="p-8 flex-grow">
-              <h2 className="text-2xl font-bold text-gray-800 mb-6">
-                Admission Process
-              </h2>
-              <ul className="space-y-4">
-                <li className="flex items-center text-gray-700">
-                  <svg className="w-5 h-5 mr-3 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  AWS DevOps Aptitude Test.
-                </li>
-                <li className="flex items-center text-gray-700">
-                  <svg className="w-5 h-5 mr-3 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  Technical Interview.
-                </li>
-                <li className="flex items-center text-gray-700">
-                  <svg className="w-5 h-5 mr-3 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  Enrollment Confirmation.
-                </li>
-              </ul>
-            </div>
-            <div className="px-8 py-4 bg-orange-600 mt-auto">
-              <button className="text-white font-semibold hover:text-teal-900 transition duration-300">
-                Know More
-              </button>
-            </div>
-          </div>
-
-          {/* Eligibility Criteria Card */}
-          <div className="bg-white rounded-lg shadow-xl overflow-hidden transform transition duration-300 hover:scale-105 flex flex-col">
-            <div className="p-8 flex-grow">
-              <h2 className="text-2xl font-bold text-gray-800 mb-10">
-                Eligibility Criteria
-              </h2>
-              <ul className="space-y-4">
-                <li className="flex items-center text-gray-700">
-                  <svg className="w-5 h-5 mr-3 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  Bachelor's in CS/IT, Engineering, or related fields.
-                </li>
-                <li className="flex items-center text-gray-700">
-                  <svg className="w-5 h-5 mr-3 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  Professionals in IT seeking cloud and DevOps skills.
-                </li>
-              </ul>
-            </div>
-            <div className="px-8 py-4 bg-orange-600 mt-auto">
-              <button className="text-white font-semibold hover:text-teal-900 transition duration-300">
-                Know More
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    </section>
   );
-}
+};
+
+export default ReactFeatures;

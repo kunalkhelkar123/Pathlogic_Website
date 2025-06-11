@@ -7,7 +7,12 @@ import DataScienceModules from './DataScienceModules'
 import Testimonials from '../../Testimonials/Testimonials'
 import Company from '../DigitalMarketing/Company'
 import DataOverview from './DataOverview'
-
+import DatascienceInternship from './DatascienceInternship'
+import Dataover from './Dataover'
+import Datacareer from './Datacareer'
+import Datasciencecertificate from './Datasciencecertificate'
+import DataFAQ from './DataFAQ'
+import Talk_to_Our_Advisor from "../../../../src/LongtermCourses/FullStackWebDevelopement/Talk_to_Our_Advisor"
 function Datascienceall() {
   return (
     <>
@@ -16,9 +21,15 @@ function Datascienceall() {
     <DataOverview/>
     <DataScienceStack/>
     <DataSciencePython/>
+    <DatascienceInternship/>
     <DataScienceModules/>
+    <Dataover/>
+    <Datacareer/>
+    <Datasciencecertificate/>
     <Testimonials/>
     <Company/>
+    <DataFAQ/>
+    <Talk_to_Our_Advisor/>
 
     </>
   )

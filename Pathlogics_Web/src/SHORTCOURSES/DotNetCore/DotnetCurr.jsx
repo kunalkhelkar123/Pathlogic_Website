@@ -1,86 +1,105 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 
-const CourseModule = ({ title, icon }) => {
-  const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef(null);
+const toolsData = [
+  {
+    title: 'Visual Studio',
+    description:
+      'Visual Studio is the primary IDE used in Dot Net Core development. It offers a robust, user-friendly environment for writing, debugging, and testing code efficiently.',
+    points: [
+      'Feature-rich code editor',
+      'Integrated debugger and diagnostics',
+      'Built-in support for .NET Core projects',
+    ],
+  },
+  {
+    title: 'Entity Framework Core',
+    description:
+      'Entity Framework Core is an ORM (Object-Relational Mapper) that simplifies database interactions. It allows developers to work with data using C# objects instead of SQL queries.',
+    points: [
+      'Simplifies data access',
+      'Reduces boilerplate code',
+      'Supports code-first and database-first approaches',
+    ],
+  },
+  {
+    title: 'ASP.NET Core',
+    description:
+      'ASP.NET Core is the backbone of modern web development using .NET. It’s a fast, modular, and cross-platform framework for building dynamic websites, REST APIs, and services.',
+    points: [
+      'Lightweight and high-performance',
+      'Cross-platform support',
+      'Ideal for scalable web applications',
+    ],
+  },
+  {
+    title: 'LINQ (Language Integrated Query)',
+    description:
+      'LINQ allows you to write structured queries directly in C# for managing collections and interacting with databases. It improves code readability and reduces the need for raw SQL.',
+    points: [
+      'Simplified data manipulation',
+      'Query collections with minimal code',
+      'Works with in-memory and database data',
+    ],
+  },
+  {
+    title: 'Dependency Injection',
+    description:
+      'Dependency Injection (DI) is a key feature in ASP.NET Core that helps manage object dependencies, making your code more modular, testable, and maintainable.',
+    points: [
+      'Promotes clean architecture',
+      'Improves code reusability and testing',
+      'Built-in support in ASP.NET Core',
+    ],
+  },
+];
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
-    };
-  }, []);
+const DotNetTools = () => {
+  const [showMore, setShowMore] = useState(false);
+  const visibleTools = showMore ? toolsData : toolsData.slice(0, 2);
 
   return (
-    <div
-      ref={ref}
-      className={`transform transition-all duration-500 ${
-        isVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-10 opacity-0 scale-95'
-      }`}
-    >
-      <div className="bg-orange-500 rounded-lg shadow-lg p-6 h-full hover:bg-gradient-to-br from-gray-900 to-teal-600 hover:shadow-2xl transition-shadow duration-300 hover:scale-105">
-        <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-blue-100">
-          <span className="text-orange-600 text-3xl">{icon}</span>
-        </div>
-        <h3 className="text-xl font-semibold text-orange text-center">{title}</h3>
-      </div>
-    </div>
-  );
-};
-
-export default function DotNetCurr() {
-  const courseModules = [
-    { title: "DotNet Core MVC", icon: "⚙️" },
-    { title: "Entity Framework Core", icon: "📚" },
-    { title: "Web API Development", icon: "🌐" },
-    { title: "Authentication & Authorization", icon: "🔑" },
-    { title: "Dependency Injection", icon: "🧳" },
-    { title: "Unit Testing in .NET Core", icon: "🧪" },
-    { title: "Performance Optimization", icon: "⚡" },
-    { title: "Deploying .NET Core Apps", icon: "🚀" }
-  ];
-
-  return (
-    <div className="min-h-screen bg-gradient-to-r from-gray-900 to-teal-600 py-16 px-4 sm:px-6 lg:px-8">
+    <section className="w-full bg-gray-100 py-12 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl font-extrabold text-white sm:text-5xl md:text-6xl">
-            Advanced DotNet Core Development
-          </h1>
-          <p className="mt-3 max-w-md mx-auto text-base text-white sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-            Master the advanced concepts of DotNet Core with our comprehensive curriculum.
-          </p>
+        <motion.h3
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-3xl font-bold text-center text-gray-900 mb-10"
+        >
+          Essential Tools Covered in the DotNet Core Course in Pune
+        </motion.h3>
+        <p className="text-lg text-center text-gray-700 max-w-3xl mx-auto mb-12">
+          Building powerful web applications with Dot Net Core isn’t just about writing C# code or understanding MVC architecture.
+          It’s about learning how to turn real ideas into functional, scalable applications using the right tools and industry practices.
+          At Pathlogics, by the end of the course, you’ll be confident in developing and deploying professional-grade applications from scratch.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12 max-w-5xl mx-auto">
+          {visibleTools.map((tool, idx) => (
+            <div key={idx}>
+              <h4 className="text-blue-600 text-2xl font-semibold mb-2">{tool.title}</h4>
+              <p className="text-black mb-3">{tool.description}</p>
+              <ul className="list-disc list-inside text-black space-y-1">
+                {tool.points.map((point, i) => (
+                  <li key={i}>{point}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
 
-        <div className="bg-white rounded-xl shadow-2xl overflow-hidden mb-16 p-6">
-          <h2 className="text-3xl font-bold text-orange-600 mb-8 text-center">Curriculum</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {courseModules.map((module, index) => (
-              <CourseModule key={index} {...module} />
-            ))}
-          </div>
-        </div>
-
-        <div className="text-center">
-          <button className="bg-orange-600 text-white px-8 py-3 rounded-[5px] font-semibold shadow-lg hover:bg-orange-700 transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
-            Enroll Now
+        <div className="text-center mt-10">
+          <button
+            onClick={() => setShowMore(!showMore)}
+            className="bg-teal-600 text-white px-4 py-2 rounded-md shadow-md hover:bg-teal-700 transition"
+          >
+            {showMore ? 'View Less' : 'View More Tools'}
           </button>
         </div>
       </div>
-    </div>
+    </section>
   );
-}
+};
+
+export default DotNetTools;

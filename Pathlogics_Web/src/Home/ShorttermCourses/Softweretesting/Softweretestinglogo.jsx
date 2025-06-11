@@ -1,68 +1,98 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 
-const CourseModule = ({ title, icon, index }) => {
-  const [isVisible, setIsVisible] = useState(false);
+const toolsData = [
+  {
+    title: 'Selenium',
+    description:
+      'Selenium is one of the most popular tools for automating web applications. It lets you test websites across different browsers without doing everything manually. If you\'re aiming for a career in automation testing, learning Selenium is a must.',
+    points: [
+      'Automates browser-based tasks',
+      'Supports multiple programming languages',
+      'Open-source and widely used in the industry',
+      'Great for testing web apps efficiently',
+    ],
+  },
+  {
+    title: 'Appium',
+    description:
+      'Appium is like Selenium for mobile apps. It helps testers automate testing for Android and iOS apps without needing to change the app itself. If you’re interested in mobile testing, Appium makes your job much easier.',
+    points: [
+      'Automates both Android & iOS apps',
+      'Works for native, hybrid, and web apps',
+      'No need to modify the app code',
+      'Open-source and easy to integrate',
+    ],
+  },
+  {
+    title: 'TestComplete',
+    description:
+      'TestComplete is a powerful tool that lets you automate desktop, mobile, and web app testing, no coding required! It’s great for beginners and teams that want to build quick and reliable test cases with less effort.',
+    points: [
+      'User-friendly interface with record-and-playback',
+      'Supports multiple platforms (web, mobile, desktop)',
+      'Works with scripting languages like Python, VBScript',
+      'Ideal for teams who prefer low-code automation',
+    ],
+  },
+  {
+    title: 'Jenkins',
+    description:
+      'Jenkins is like your testing assistant. It runs your tests automatically every time you make a code change. It’s widely used in DevOps to speed up testing and catch bugs early. If you\'re into continuous testing, Jenkins is your best friend.',
+    points: [
+      'Automates testing and deployment tasks',
+      'Supports plugins for integration with other tools',
+      'Great for Continuous Integration (CI) pipelines',
+      'Saves time and reduces human error',
+    ],
+  },
+];
 
-  useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), index * 150);
-    return () => clearTimeout(timer);
-  }, [index]);
+const DotNetTools = () => {
+  const [showMore, setShowMore] = useState(false);
+  const visibleTools = showMore ? toolsData : toolsData.slice(0, 2);
 
   return (
-    <div 
-      className={`transform transition-all duration-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
-    >
-      <div className="bg-orange-500 rounded-lg shadow-lg p-6 h-full hover:shadow-2xl hover:bg-gradient-to-br from-gray-900 to-teal-500 transition-shadow duration-300">
-        <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-blue-100">
-          <span className="text-orange-600 text-3xl">{icon}</span>
-        </div>
-        <h3 className="text-xl font-semibold text-white text-center">{title}</h3>
-      </div>
-    </div>
-  );
-};
-
-export default function SoftwareTestinglogo() {
-  const courseModules = [
-    { title: "Introduction to Software Testing", icon: "🧪" },
-    { title: "Manual Testing Basics", icon: "📋" },
-    { title: "Automation Testing", icon: "🤖" },
-    { title: "Performance Testing", icon: "🚀" },
-    { title: "Security Testing", icon: "🔒" },
-    { title: "Test Management Tools", icon: "🗂️" },
-    { title: "Agile Testing", icon: "⚡" },
-    { title: "Advanced Testing Strategies", icon: "🎯" },
-  ];
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-teal-600 py-16 px-4 sm:px-6 lg:px-8">
+    <section className="w-full bg-gray-100 py-12 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl font-extrabold text-white sm:text-5xl md:text-6xl">
-            Software Testing
-          </h1>
-          <p className="mt-3 max-w-md mx-auto text-base text-white sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-            Master the skills required for effective software testing with our comprehensive curriculum.
-          </p>
-        </div>
+        <motion.h3
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-3xl font-bold text-center text-gray-900 mb-10"
+        >
+          Essential Tools You’ll Master in Our Software Testing Course
+        </motion.h3>
+        <p className="text-lg text-center text-gray-700 max-w-3xl mx-auto mb-12">
+          Master the art of software testing tools to enhance the speed and accuracy of your testing process.
+          Gain the skills to efficiently automate complex test scenarios and ensure consistent software performance.
+        </p>
 
-        <div className="bg-white rounded-xl shadow-2xl overflow-hidden mb-16">
-          <div className="p-6">
-            <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Curriculum</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {courseModules.map((module, index) => (
-                <CourseModule key={index} {...module} index={index} />
-              ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12 max-w-5xl mx-auto">
+          {visibleTools.map((tool, idx) => (
+            <div key={idx}>
+              <h4 className="text-blue-600 text-2xl font-semibold mb-2">{tool.title}</h4>
+              <p className="text-black mb-3">{tool.description}</p>
+              <ul className="list-disc list-inside text-black space-y-1">
+                {tool.points.map((point, i) => (
+                  <li key={i}>{point}</li>
+                ))}
+              </ul>
             </div>
-          </div>
+          ))}
         </div>
 
-        <div className="text-center ">
-          <button className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 rounded-[5px] font-semibold shadow-lg  transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
-            Enroll Now
+        <div className="text-center mt-10">
+          <button
+            onClick={() => setShowMore(!showMore)}
+            className="bg-teal-600 text-white px-4 py-2 rounded-md shadow-md hover:bg-teal-700 transition"
+          >
+            {showMore ? 'View Less' : 'View More Tools'}
           </button>
         </div>
       </div>
-    </div>
+    </section>
   );
-}
+};
+
+export default DotNetTools;
