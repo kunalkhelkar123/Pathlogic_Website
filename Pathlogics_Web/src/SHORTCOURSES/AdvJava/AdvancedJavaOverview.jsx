@@ -35,9 +35,10 @@ const AdvancedJavaOverview = () => {
         {/* CTA */}
         <div className="flex justify-center mt-12">
           <Link
-            to="/java-full-stack-developer-course-in-pune" // Replace with your actual route or <a href="">
+            to="/java-full-stack-developer-course-in-pune" 
             className="inline-flex items-center bg-blue-600 hover:bg-blue-700 dark:bg-orange-500 dark:hover:bg-orange-600 text-white px-6 py-3 rounded-full text-sm font-semibold transition duration-300"
           >
+            
             Know More
             <ArrowRight className="ml-2 w-4 h-4" />
           </Link>
