@@ -4,7 +4,7 @@ import ReactJourney from './ReactJourney';
 import ReactProgramO from './ReactProgramO';
 import MasterReactJs from './MasterReactJs';
 import ReactCurriculum from './ReactCurriculum';
-import MoreCourses from '../Salesforce Developer/MoreCourses';
+// import MoreCourses from '../SalesforceDeveloper/MoreCourses';
 import Testimonials from '../../Home/Testimonials/Testimonials';
 import Companie from '../../Fullstack/Companies/Companie';
 import ReactCourseModules from './ReactCourseModules';
@@ -18,6 +18,7 @@ import ReactIntro from './ReactIntro';
 import ReactTools from './ReactTools';
 import ReactFeatures from './ReactFeatures';
 import ReactCerticate from './ReactCerticate';
+import ReactMenu from './ReactMenu';
 
 function ReactCourse() {
   return (
@@ -33,7 +34,8 @@ function ReactCourse() {
         <Reacteight/>
          <CareerOptionsPage/>
        <ReactCerticate/>
-         <MoreCourses/>
+         {/* <MoreCourses/> */}
+         <ReactMenu/>
         <Testimonials/>
         <Companie/>
          <Reactfaq/>

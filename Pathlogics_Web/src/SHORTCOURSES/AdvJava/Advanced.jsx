@@ -5,7 +5,7 @@ import ProgramO from './AdvJavaProgramO'
 import Master from './MasterAdvJava'
 import Curriculum from './AdvJavaCurriculum'
 import AdvModules from './AdvModules'
-import MoreCourses from '../Salesforce Developer/MoreCourses'
+// import MoreCourses from '../Salesforce Developer/MoreCourses'
 import Testimonials from '../../Home/Testimonials/Testimonials'
 import Companie from '../../Fullstack/Companies/Companie'
 

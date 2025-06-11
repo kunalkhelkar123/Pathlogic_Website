@@ -5,7 +5,7 @@ import Java3 from './MasterJava'
 import Java4 from './JavaCurriculum'
 import Java5 from './ProgramOJava'
 import Java6 from './JavaModules'
-import MoreCourses from '../Salesforce Developer/MoreCourses'
+// import MoreCourses from '../Salesforce Developer/MoreCourses'
 import Testimonials from '../../Home/Testimonials/Testimonials'
 import Companie from '../../Fullstack/Companies/Companie'
 

@@ -82,9 +82,9 @@ import Testing from "./SHORTCOURSES/Software/Testing";
 import QuickEnquiry from "./Quick Enquiry/QuickEnquiry";
 
 // import Salesforce from "../src/SHORTCOURSES/Salesforce Developer/Salesforce";
-import SaForce from "./SHORTCOURSES/Salesforce Developer/SaForce";
+// import SaForce from "./SHORTCOURSES/Salesforce Developer/SaForce";
 
-
+import SaForce from "./SHORTCOURSES/SalesforceDeveloper/SaForce.jsx";
 
 import Quick from "./Quick Enquiry/Quick";
 import PlacementJava from "./Fullstack/PlacementProg/FullStackJava/Java";

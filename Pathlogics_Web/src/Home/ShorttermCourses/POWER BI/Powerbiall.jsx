@@ -1,7 +1,5 @@
 import React from 'react'
 // import PowerBIFirstPage from './PowerBI'
-import PowerBI from'./PowerBIone';
-import Powerbijourny from './Powerbijourny';
 
 import Power from './Power';
 import Testimonials from '../../Testimonials/Testimonials';

@@ -7,7 +7,7 @@ import DotnetProgramo from './DotnetProgramo';
 import DotNetCurr from './DotnetCurr';
 import MasterDnet from './MasterDnet';
 import Dotnetcoursem from './Dotnetcoursem';
-import MoreCourses from '../Salesforce Developer/MoreCourses';
+// import MoreCourses from '../Salesforce Developer/MoreCourses';
 import Testimonials from '../../Home/Testimonials/Testimonials';
 import Companie from '../../Fullstack/Companies/Companie';
 
@@ -20,7 +20,7 @@ function DotNetCourse() {
         <MasterDnet/>
         <DotNetCurr/>
         <Dotnetcoursem/>
-        <MoreCourses/>
+        {/* <MoreCourses/> */}
         <Testimonials/>
        <Companie/>
     </div>

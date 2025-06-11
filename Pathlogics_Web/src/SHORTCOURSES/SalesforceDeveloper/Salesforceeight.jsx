@@ -1,21 +1,19 @@
-
-
 import React from 'react';
 import bgimg from "../../assets/admission.jpg";
 
-export default function Nodeeight() {
+export default function Salesforceeight() {
   return (
-    <div className="pb-0">
+    <div className="pb-[5%]">
       {/* Program Overview Section */}
       <div className="relative bg-gradient-to-br from-gray-900 to-teal-600 py-10">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h3 className="text-2xl md:text-3xl font-bold text-white mb-8">
-            Node JS Training Program Overview
+            Salesforce Developer Training Program Overview
           </h3>
           <p className="text-lg md:text-xl text-white max-w-4xl mx-auto leading-relaxed">
-            Our <strong>Node.js Training in Pune</strong> is perfect for anyone with a basic understanding of JavaScript who’s ready to dive into backend development. Whether you want to build scalable web apps or real-time chat applications, this course gives you practical experience with real-world projects that employers actually care about.
+            Our <strong>Salesforce Developer course in Pune</strong> is the ideal starting point for anyone looking to build a career in the fast-growing world of CRM development and cloud technology. Whether you're new to Salesforce or want to sharpen your Apex and Lightning skills, we’ve got you covered.
             <br /><br />
-            Not sure if this course is for you? Just check out our <strong>simple admission process</strong> and take your first step toward becoming a confident backend developer with Node.js.
+            Ready to launch your career? Discover our simple <strong>admission process</strong> and take your first step toward becoming a certified Salesforce Developer.
           </p>
         </div>
       </div>
@@ -32,9 +30,9 @@ export default function Nodeeight() {
               <ul className="space-y-4">
                 {[
                   "Fill out the application form",
-                  "Clear a basic web development screening",
-                  "Get confirmation and join orientation",
-                  "Begin your Node.js training journey"
+                  "Attend a counseling session with our career expert",
+                  "Take a short assessment to evaluate your basics",
+                  "Receive confirmation and join the onboarding session"
                 ].map((step, index) => (
                   <li key={index} className="flex items-center text-gray-700">
                     <svg className="w-5 h-5 mr-3 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -60,10 +58,10 @@ export default function Nodeeight() {
               </h2>
               <ul className="space-y-4">
                 {[
-                  "Basic knowledge of JavaScript",
+                  "Basic understanding of programming or databases",
                   "Students from Computer/IT background (BCA, B.E, B.Tech)",
-                  "Working professionals in frontend or backend roles",
-                  "Motivated learners aiming for a Node.js backend career"
+                  "Working professionals aiming to transition into Salesforce",
+                  "Anyone interested in CRM development and cloud platforms"
                 ].map((item, index) => (
                   <li key={index} className="flex items-center text-gray-700">
                     <svg className="w-5 h-5 mr-3 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">

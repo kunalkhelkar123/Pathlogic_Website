@@ -4,7 +4,7 @@ import AngularJourney from './AngularJourney'
 import MasterAngular from './MasterAngular';
 import AngularCurriculum from './AngularCurriculum';
 import AngularModules from './AngularModules';
-import MoreCourses from '../Salesforce Developer/MoreCourses';
+
 import Testimonials from '../../Home/Testimonials/Testimonials';
 import Companie from '../../Fullstack/Companies/Companie';
 import AngularFeature from './AngularFeature';
@@ -17,6 +17,7 @@ import AngularCareerOptions from './AngularCareerOptions';
 import AngularCertificat from './AngularCertificat';
 import AngularFAQ from './AngularFAQ';
 import AngularAdvisor from './AngularAdvisor';
+import AngluarCourses from './AngluarCourses';
 
 function AngularCourse() {
   return (
@@ -32,7 +33,7 @@ function AngularCourse() {
          <Angulareight/>
          <AngularCareerOptions/>
          <AngularCertificat/>
-        <MoreCourses/>
+      <AngluarCourses/>
         <Testimonials/>
         <Companie/>
            <AngularFAQ/>

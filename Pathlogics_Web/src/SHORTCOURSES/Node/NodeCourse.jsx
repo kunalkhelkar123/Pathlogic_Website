@@ -5,7 +5,7 @@ import NodeJourney from './NodeJourney'
 import MasterNode from './NodeJsCoursePage'
 import NodeCurriculum from './NodeCurriculum'
 import ModulesNode from './ModulesNode'
-import MoreCourses from '../Salesforce Developer/MoreCourses'
+// import MoreCourses from '../Salesforce Developer/MoreCourses'
 import Testimonials from '../../Home/Testimonials/Testimonials'
 import Companie from '../../Fullstack/Companies/Companie'
 import NodeProgramO from './NodeProgramO'
@@ -20,6 +20,7 @@ import NodeOptionsPage from './NodeOptionsPage'
 import NodeCertificate from './NodeCertificate'
 import NodeFaq from './NodeFaq'
 import Nodeadvisor from './Nodeadvisor'
+import NodeFinal from './NodeFinal'
 
 
 function NodeCourse() {
@@ -35,7 +36,7 @@ function NodeCourse() {
    <Nodeeight/>
    <NodeOptionsPage/>
    <NodeCertificate/>  
-        <MoreCourses/>
+    <NodeFinal/>
         <Testimonials/>
         <Companie/>
         <NodeFaq/>
