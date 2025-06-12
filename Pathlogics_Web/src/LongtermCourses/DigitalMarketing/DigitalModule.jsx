@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
+import curriculam from "../../assets/javacurriculam.jpg";
 
 const AccordionItem = ({ title, content, isOpen, onToggle }) => {
   return (
     <div className="mb-4 border border-gray-200 rounded-lg overflow-hidden shadow-md">
       <button
-        className="w-full bg-gradient-to-r from-gray-900 to-teal-600 text-white px-6 py-4 flex justify-between items-center hover:from-gray-800 hover:to-teal-500 transition-all duration-300"
+        className="w-full bg-gradient-to-br from-gray-900 to-teal-600 text-white px-6 py-4 flex justify-between items-center hover:from-gray-800 hover:to-teal-500 transition-all duration-300"
         onClick={onToggle}
       >
-        <h3 className="text-xl font-semibold">{title}</h3>
+        <h3 className="text-sm font-semibold">{title}</h3>
         <svg
           className={`w-6 h-6 transform transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
           fill="none"
@@ -26,7 +27,7 @@ const AccordionItem = ({ title, content, isOpen, onToggle }) => {
   );
 };
 
-export default function DigitalModule() {
+export default function DigitalModules() {
   const [openSection, setOpenSection] = useState(null);
 
   const modules = [
@@ -88,9 +89,15 @@ export default function DigitalModule() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-100 py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-5xl mx-auto">
-        <h1 className="text-5xl font-extrabold text-center text-orange-600 mb-12">Digital Marketing Mastery Program</h1>
+    <div className="min-h-screen bg-gray-100 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-20 py-10 px-4 sm:px-6 lg:px-8">
+      {/* image section */}
+      <div>
+        <img className="rounded-md" src={curriculam} alt="Curriculum" />
+      </div>
+
+      {/* Digital Marketing Course Section */}
+      <div className="max-w-5xl mx-auto mt-[-50px] sm:mt-[0px]">
+        <h1 className="text-3xl font-extrabold text-center text-orange-600 mb-12">Digital Marketing Course In Pune Curriculum</h1>
         <div className="space-y-6">
           {modules.map((module, index) => (
             <AccordionItem
