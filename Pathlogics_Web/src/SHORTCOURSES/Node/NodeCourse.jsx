@@ -11,7 +11,7 @@ import Companie from '../../Fullstack/Companies/Companie'
 import NodeProgramO from './NodeProgramO'
 import NodeJsCoursePage from "./NodeJsCoursePage";
 import NodeFeatures from './NodeFeature'
-import NodeIntro from './NodeIntro'
+import NodeJsCourseInfo from './NodeJsCourseInfo'
 import NodeTools from './NodeTools'
 import NodetIpt from './NodetIpt'
 import NodeDrop from './NodeDrop'
@@ -29,7 +29,7 @@ function NodeCourse() {
    <NodeJsCoursePage/>
    <NodeJourney/>
    <NodeFeatures/>
-   <NodeIntro/>
+<NodeJsCourseInfo/>
    <NodeTools/>
    <NodetIpt/>
    <NodeDrop/>

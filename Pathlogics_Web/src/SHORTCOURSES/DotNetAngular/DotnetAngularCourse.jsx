@@ -4,7 +4,7 @@ import Testimonials from '../../Home/Testimonials/Testimonials'
 import Companie from '../../Fullstack/Companies/Companie'
 import Dotnetone from './Dotnetone.jsx'
 import DotnetFeatures from './DotnetFeature.jsx'
-import DotNetIntro from './DotNetIntro.jsx'
+import DotNetAngularInfo from './DotNetAngularInfo.jsx'
 import DotNetJourney from './DotNetJourney.jsx'
 import DotnetTools from './DotnetTools.jsx'
 import Dotnetipt from './Dotnetipt.jsx'
@@ -22,7 +22,7 @@ function DotnetAngularCourse() {
       <Dotnetone/>
       <DotNetJourney/>
       <DotnetFeatures/>
-      <DotNetIntro/>
+    <DotNetAngularInfo/>
       <DotnetTools/>
       <Dotnetipt/>
       <DotnetDrop/>

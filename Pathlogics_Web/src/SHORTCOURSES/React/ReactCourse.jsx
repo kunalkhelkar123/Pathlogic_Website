@@ -14,7 +14,7 @@ import CareerOptionsPage from './CareerOptionsPage';
 import Reacteight from './Reacteight';
 import ReactDrop from './ReactDrop';
 import ReactIpt from '../../LongtermCourses/FullStackAI/ReactIpt';
-import ReactIntro from './ReactIntro';
+import ReactCourseInfo from './ReactCourseInfo';
 import ReactTools from './ReactTools';
 import ReactFeatures from './ReactFeatures';
 import ReactCerticate from './ReactCerticate';
@@ -27,7 +27,7 @@ function ReactCourse() {
         <ShortTermReact/>
         <ReactJourney/>
         <ReactFeatures/>
-        <ReactIntro/>
+        <ReactCourseInfo/>
            <ReactTools/>
           <ReactIpt/>
          <ReactDrop/>

@@ -7,7 +7,6 @@ import ManualModules from './ManualModules'
 import Testimonials from '../DigitalMarketing/Testimonials'
 import Company from '../DigitalMarketing/Company'
 import ManualFeatures from './ManualFeatures'
-import ManualIntro from './ManualIntro'
 import ManIpt from './ManIpt'
 import ManualDrop from './ManualDrop'
 import Manualtest from './Manualtest'
@@ -17,6 +16,7 @@ import ManualCertificate from './ManualCertificate'
 import ManualCourses from './ManualCourses'
 import ManualFaq from './ManualFaq'
 import Manualadvisor from './Manualadvisor'
+import ManualTestingInfo from './ManualTestingInfo'
 
 
 function Manualall() {
@@ -25,7 +25,7 @@ function Manualall() {
 <Manualpage/>
 <Manualtest/>
 <ManualFeatures/>
-<ManualIntro/>
+<ManualTestingInfo/>
 <ManIpt/>
 <ManualDrop/>
 <ManualOver/>
@@ -34,8 +34,6 @@ function Manualall() {
 {/* 
 <ManualOverview/>
 <Manualstack/> */}
-{/* <ManualTesting/> */}
-{/* <ManualModules/> */}
 <ManualCourses/>
 <Testimonials/>
 <Company/>

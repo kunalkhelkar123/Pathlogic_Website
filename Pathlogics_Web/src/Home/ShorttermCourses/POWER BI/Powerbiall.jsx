@@ -6,7 +6,7 @@ import Testimonials from '../../Testimonials/Testimonials';
 import Company from '../DigitalMarketing/Company';
 import PowerBIone from './PowerBIone';
 import PowerBIFeatures from './PowerBIFeatures';
-import PowerBIIntro from './PowerBIIntro';
+import PowerBIInfo from './PowerBIInfo';
 import PowerBITools from './PowerBITools';
 import PowerBiIpt from './PowerBiIpt';
 import PowerbiDrop from './PowerbiDrop';
@@ -26,7 +26,7 @@ function powerbiall() {
     <PowerBIone/>
     <Powerbiltest/>
     <PowerBIFeatures/>
-    <PowerBIIntro/>
+  <PowerBIInfo/>
     <PowerBITools/>
     <PowerBiIpt/>
     <PowerbiDrop/>

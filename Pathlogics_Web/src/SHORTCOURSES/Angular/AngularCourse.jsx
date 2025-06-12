@@ -8,7 +8,7 @@ import AngularModules from './AngularModules';
 import Testimonials from '../../Home/Testimonials/Testimonials';
 import Companie from '../../Fullstack/Companies/Companie';
 import AngularFeature from './AngularFeature';
-import AngularFile from './AngularFile';
+import AngularCourseInfo from './AngularCourseInfo';
 import AngularTools from './AngularTools';
 import Angulaript from './Angulaript';
 import Angulareight from './Angulareight';
@@ -26,7 +26,7 @@ function AngularCourse() {
         <ShortTermAngular/>
         <AngularJourney/>
         <AngularFeature/>
-         <AngularFile/>
+   <AngularCourseInfo/>
          <AngularTools/>
          <Angulaript/>
          <AngularDrop/>
