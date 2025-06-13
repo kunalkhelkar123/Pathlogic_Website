@@ -70,9 +70,9 @@
 
 
 import React from "react";
-import googleadslogo from "../../assets/DigitalTools/googleadslogo.jpg";
-import hubspot from "../../assets/DigitalTools/hubspot.jpg";
-import Pathlogicslogo from "../../assets/DigitalTools/pathlogicslogo.png";
+import hubspot from "../../assets/DigitalMarketing/hubspot.png"
+import googleads from "../../assets/DigitalMarketing/googleads.png"
+import pathlogics from "../../assets/DigitalMarketing/pathlogics.png"
 
 export default function CertificationSection() {
   return (
@@ -97,7 +97,7 @@ export default function CertificationSection() {
           <div className="bg-slate-800 text-white rounded-lg shadow-lg p-8 text-center">
             <div className="w-24 h-24 bg-white rounded-full mx-auto mb-6 flex items-center justify-center">
               <img
-                src={googleadslogo}
+                src={googleads}
                 alt="Google Ads"
                 className="w-16 h-16 object-contain"
               />
@@ -121,7 +121,7 @@ export default function CertificationSection() {
           <div className="bg-slate-800 text-white rounded-lg shadow-lg p-8 text-center">
             <div className="w-24 h-24 border-2 border-white rounded-full mx-auto mb-6 flex items-center justify-center bg-white">
               <img
-                src={Pathlogicslogo}
+                src={pathlogics}
                 alt="Pathlogics Technology"
                 className="w-20 h-20 object-contain"
               />

@@ -1,5 +1,5 @@
 import React from 'react';
-import DigitalMarketing from "../../assets/DigitalMarketing.jpg";
+import digitalMarketing from "../../assets/DigitalMarketing/digitalMarketing.jpg"
 import { Link } from 'react-router-dom';
 
 export default function DigitalTraining() {
@@ -32,7 +32,7 @@ export default function DigitalTraining() {
                 {/* Image Section */}
                 <div className="md:w-1/2 flex justify-center">
                     <img
-                        src={DigitalMarketing}
+                        src={digitalMarketing }
                         alt="Pathlogics Digital Marketing"
                         className="w-full max-w-md rounded-lg shadow-lg object-cover"
                     />

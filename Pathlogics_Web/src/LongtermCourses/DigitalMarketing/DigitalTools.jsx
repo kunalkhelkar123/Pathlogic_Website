@@ -85,7 +85,9 @@
 
 
 import React from "react";
-import tools from "../../assets/DigitalTools/tools.png";
+
+
+import MarketingTools from "../../assets/DigitalMarketing/MarketingTools.png"
 
 export default function DigitalTools() {
   return (
@@ -105,9 +107,9 @@ export default function DigitalTools() {
         {/* Image */}
         <div className="mt-10 mb-12 flex justify-center">
           <img
-            src={tools}
+            src={MarketingTools}
             alt="Digital Marketing Tools"
-            className="w-full max-w-4xl h-auto object-contain rounded-xl shadow-md"
+            className="w-full MarketingToolsmax-w-4xl h-auto object-contain rounded-xl shadow-md"
             loading="lazy"
           />
         </div>
