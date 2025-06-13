@@ -72,12 +72,12 @@ export default function Navbar() {
     ],
     testing: [
       { name: "FullStack .NET Developer", path: "/dot-net-full-stack-developer-course-in-pune" },
-      { name: "FullStack Testing", path: "/software-testing-course-in-pune" },
+      { name: "FullStack software Testing", path: "/software-testing-course-in-pune" },
       { name: "Manual Testing", path: "/manual-testing-course-in-pune" },
     ],
     advanced: [
       { name: "FullStack Salesforce Developer", path: "/salesforce-classes-in-pune" },
-      { name: "FullStack Python Developer", path: "/PythonDev" },
+      { name: "FullStack Python Develcd oper", path: "/PythonDev" },
       { name: "FullStack Development with AI", path: "/Development" },
       { name: "Diploma in Digital Marketing", path: "/Diploma" },
     ],

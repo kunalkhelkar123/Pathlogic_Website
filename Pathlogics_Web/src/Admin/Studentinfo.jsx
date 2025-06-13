@@ -60,7 +60,7 @@ const StudentInfo = () => {
     { title: "FullStack .Net Developer", id: "17", name: "fullstacknetdeveloper" },
     { title: "FullStack Devops Engineer", id: "18", name: "fullstackdevops" },
     { title: "FullStack Salesforce Developer", id: "19", name: "fullstacksalesforce" },
-    { title: "FullStack Testing", id: "20", name: "fullstacktesting" },
+    { title: "FullStack Software  Testing", id: "20", name: "fullstacksoftwaretesting" },
     { title: "FullStack Python Developer", id: "21", name: "fullstackpython" },
     { title: "FullStack Development with AI", id: "22", name: "fullstackai" },
     { title: "Diploma in Digital Marketing", id: "23", name: "diplomadigitalmarketing" },

@@ -1,5 +1,5 @@
 // import React from "react";
-// import certificate from "../../../assets/certificate.jpg";
+// import certificate from "../../../../assets/certificate.jpg";
 // import { Link } from "react-router-dom";
 
 // export default function CertificateBanner() {
@@ -11,15 +11,16 @@
 //           Pathlogics Certificate
 //         </p>
 //         <h3 className="text-2xl font-extrabold text-black mt-2">
-//         Industry Recognized Selenium With Java Certification
+//       Industry Recognized  AWS DevOps Certification 
+
+
 
 //         </h3>
-//         <p>
-//    Upon successful completion of the Selenium with Java Course at Pathlogics, you’ll receive an industry-recognized certification that validates your skills and sets you apart as a job-ready Selenium Automation Tester. This isn’t just a certificate, it’s proof that you’ve mastered automation testing, designed real-world test scripts, and are ready to contribute to quality assurance teams.
-// We celebrate every batch with a special certification ceremony, This certification not only boosts your resume but also shows employers that you're fully prepared to enter the world of automation testing and make an immediate impact.
+//         <p className="text-gray-700 mt-4 sm:text-lg leading-relaxed">
+   
+// Upon completing the AWS DevOps course at Pathlogics, you'll receive the AWS DevOps Certification, a clear recognition of your skills in cloud automation, CI/CD pipelines, and AWS services. This certification reflects the practical experience you've gained while working on real-world projects, making you ready to take on exciting roles in the cloud computing world.
 
-//         </p>
-        
+// At Pathlogics, we celebrate each milestone of your journey. Our certification ceremony is a moment to acknowledge your growth, hard work, and readiness to step confidently into the world of AWS DevOps. with the AWS DevOps Professional Certification, you’ll have even more opportunities to advance your career in the thriving cloud space. We're with you every step of the way, helping you unlock your potential in the world of AWS DevOps! </p>
 //         <Link to="/QuickEnquiry">
 //           <button className="mt-6 bg-orange-500 text-white font-semibold px-6 py-2 rounded-md flex items-center gap-2 hover:bg-lime-600 transition">
 //             Inquire Now →
@@ -42,7 +43,7 @@
 
 
 import React from "react";
-import certificate from "../../../assets/certificate.jpg";
+import certificate from "../../../../assets/certificate.jpg";
 import { Link } from "react-router-dom";
 
 export default function AdvJavaCertifications() {
@@ -55,12 +56,12 @@ export default function AdvJavaCertifications() {
             Pathlogics Certificate
           </p>
           <h3 className="text-2xl font-extrabold text-black mt-2">
-           Industry Recognized Selenium With Java Certification
-
+            Industry Recognized  AWS DevOps Certification 
           </h3>
           <p className="text-gray-700 mt-4 text-base sm:text-lg leading-relaxed">
-           Upon successful completion of the Selenium with Java Course at Pathlogics, you’ll receive an industry-recognized certification that validates your skills and sets you apart as a job-ready Selenium Automation Tester. This isn’t just a certificate, it’s proof that you’ve mastered automation testing, designed real-world test scripts, and are ready to contribute to quality assurance teams.
- We celebrate every batch with a special certification ceremony, This certification not only boosts your resume but also shows employers that you're fully prepared to enter the world of automation testing and make an immediate impact.
+            Upon completing the AWS DevOps course at Pathlogics, you'll receive the AWS DevOps Certification, a clear recognition of your skills in cloud automation, CI/CD pipelines, and AWS services. This certification reflects the practical experience you've gained while working on real-world projects, making you ready to take on exciting roles in the cloud computing world.
+
+ At Pathlogics, we celebrate each milestone of your journey. Our certification ceremony is a moment to acknowledge your growth, hard work, and readiness to step confidently into the world of AWS DevOps. with the AWS DevOps Professional Certification, you’ll have even more opportunities to advance your career in the thriving cloud space. We're with you every step of the way, helping you unlock your potential in the world of AWS DevOps!
          </p>
           <Link to="/QuickEnquiry">
             <button className="mt-6 bg-orange-500 text-white font-semibold px-6 py-2 rounded-md flex items-center gap-2 hover:bg-lime-600 transition">
@@ -81,6 +82,4 @@ export default function AdvJavaCertifications() {
     </div>
   );
 }
-
-
 

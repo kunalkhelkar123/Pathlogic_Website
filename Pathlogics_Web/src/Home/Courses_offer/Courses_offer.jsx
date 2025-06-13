@@ -150,6 +150,7 @@ export default function Component() {
                Enroll Today!
               </a>
             </div>
+            
 
          
         </div>

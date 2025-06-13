@@ -1,68 +1,94 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 
-const CourseModule = ({ title, icon, index }) => {
-  const [isVisible, setIsVisible] = useState(false);
+const practicesData = [
+  {
+    title: 'Infrastructure as Code (IaC)',
+    description:
+      'Infrastructure as Code (IaC) allows you to automate and manage your cloud infrastructure through code, eliminating the need for manual configurations. This practice ensures consistency, reduces errors, and speeds up deployment.',
+    points: [
+      'Automates infrastructure provisioning',
+      'Reduces manual setup errors',
+      'Ensures consistent and repeatable deployments',
+      'Tools: AWS CloudFormation, Terraform, Ansible',
+    ],
+  },
+  {
+    title: 'Monitoring and Logging',
+    description:
+      'Monitoring and Logging are essential for tracking the health and performance of your cloud-based applications. Monitoring tools provide real-time insights, while logging helps diagnose issues by storing detailed event data.',
+    points: [
+      'Monitors system health in real-time',
+      'Provides insights for troubleshooting and optimization',
+      'Logs application activities and errors',
+      'Tools: AWS CloudWatch, AWS CloudTrail, ELK Stack',
+    ],
+  },
+  {
+    title: 'CI/CD Pipeline',
+    description:
+      'A CI/CD pipeline automates the process of integrating, testing, and deploying code changes, ensuring faster and more reliable software delivery. It streamlines development by automating workflows from code commit to deployment.',
+    points: [
+      'Automates testing and deployment',
+      'Speeds up development cycles',
+      'Reduces human error in code integration',
+      'Tools: AWS CodePipeline, Jenkins, GitLab CI',
+    ],
+  },
+  {
+    title: 'AWS Cloud Development Kit (CDK)',
+    description:
+      'The AWS Cloud Development Kit (CDK) simplifies cloud infrastructure management by allowing developers to define AWS resources using familiar programming languages like Python, JavaScript, or TypeScript.',
+    points: [
+      'Defines cloud resources in code',
+      'Reduces manual configuration',
+      'Integrates seamlessly with AWS services',
+      'Languages: Python, TypeScript, Java, C#',
+    ],
+  },
+];
 
-  useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), index * 150);
-    return () => clearTimeout(timer);
-  }, [index]);
+const DotNetTools = () => {
+  const [showMore, setShowMore] = useState(false);
+  const visiblePractices = showMore ? practicesData : practicesData.slice(0, 2);
 
   return (
-    <div 
-      className={`transform transition-all duration-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
-    >
-      <div className="bg-orange-500 rounded-lg shadow-lg p-6 h-full hover:shadow-2xl hover:bg-gradient-to-br from-gray-900 to-teal-500 transition-shadow duration-300">
-        <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-blue-100">
-          <span className="text-orange-600 text-3xl">{icon}</span>
-        </div>
-        <h3 className="text-xl font-semibold text-white text-center">{title}</h3>
-      </div>
-    </div>
-  );
-};
-
-export default function AWSDevOpsLogo() {
-  const courseModules = [
-    { title: "Introduction to AWS", icon: "☁️" },
-    { title: "Cloud Computing Concepts", icon: "🌐" },
-    { title: "AWS Services Overview", icon: "📦" },
-    { title: "DevOps Fundamentals", icon: "⚙️" },
-    { title: "CI/CD Pipeline", icon: "🚀" },
-    { title: "Infrastructure as Code", icon: "💻" },
-    { title: "Monitoring & Logging", icon: "📊" },
-    { title: "Security & Compliance", icon: "🔒" },
-  ];
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-teal-600 py-16 px-4 sm:px-6 lg:px-8">
+    <section className="w-full bg-gray-100 py-12 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl font-extrabold text-white sm:text-5xl md:text-6xl">
-            AWS DevOps
-          </h1>
-          <p className="mt-3 max-w-md mx-auto text-base text-white sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-            Embark on a journey through our comprehensive AWS DevOps-focused curriculum
-          </p>
-        </div>
+        <motion.h3
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-3xl font-bold text-center text-gray-900 mb-10"
+        >
+          Essentials Practices Covered in AWS DevOps Course in Pune
+        </motion.h3>
 
-        <div className="bg-white rounded-xl shadow-2xl overflow-hidden mb-16">
-          <div className="p-6">
-            <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Curriculum</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {courseModules.map((module, index) => (
-                <CourseModule key={index} {...module} index={index} />
-              ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12 max-w-5xl mx-auto">
+          {visiblePractices.map((practice, idx) => (
+            <div key={idx}>
+              <h4 className="text-blue-600 text-2xl font-semibold mb-2">{practice.title}</h4>
+              <p className="text-black mb-3">{practice.description}</p>
+              <ul className="list-disc list-inside text-black space-y-1">
+                {practice.points.map((point, i) => (
+                  <li key={i}>{point}</li>
+                ))}
+              </ul>
             </div>
-          </div>
+          ))}
         </div>
 
-        <div className="text-center">
-          <button className="bg-orange-600 text-white py-2 px-4 rounded-[5px] hover:bg-orange-700  transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
-            Enroll Now
+        <div className="text-center mt-10">
+          <button
+            onClick={() => setShowMore(!showMore)}
+            className="bg-teal-600 text-white px-4 py-2 rounded-md shadow-md hover:bg-teal-700 transition"
+          >
+            {showMore ? 'View Less' : 'View More'}
           </button>
         </div>
       </div>
-    </div>
+    </section>
   );
-}
+};
+
+export default DotNetTools;
