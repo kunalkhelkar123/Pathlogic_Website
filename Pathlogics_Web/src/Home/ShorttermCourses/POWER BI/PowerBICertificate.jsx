@@ -1,43 +1,45 @@
-import React from 'react';
+import React from "react";
 import certificate from "../../../assets/certificate.jpg";
+import { Link } from "react-router-dom";
 
-export default function Blogs() {
+export default function PowerBICertificate() {
   return (
-    <div className="bg-gradient-to-br from-sky-50 via-white to-cyan-50 py-16 px-4 md:px-8 lg:px-16 xl:px-24 2xl:px-32">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-center text-gray-800 mb-10 leading-tight">
-          Industry Recognized Best Power BI Certification Course In Pune
-        </h2>
+    <div className="mt-0 pt-0 px-0 sm:px-0 lg:px-0 pb-4">
+      <div className="flex flex-col md:flex-row items-center bg-white p-0 md:p-0 rounded-none gap-2">
+        {/* Left Section: Text Content */}
+        <div className="w-full md:w-1/2 px-4 sm:px-6 lg:px-16">
+          <p className="text-gray-700 text-sm font-semibold mt-0">
+            Pathlogics Certificate
+          </p>
+          <h3 className="text-2xl font-extrabold text-black mt-2">
+            Industry Recognized Best Power BI Certification Course In Pune
+          </h3>
+          <p className="text-gray-800 mt-4 text-base sm:text-lg leading-relaxed">
+            Upon successful completion of the Power BI course with certificate at Pathlogics, 
+            you’ll receive an industry-recognized certification that highlights your expertise in 
+            data analysis, visualization, and business intelligence. This Power BI course certification 
+            is more than just a document, it’s a reflection of the hands-on experience you’ve gained 
+            through real-world projects and interactive dashboards.
+            <br /><br />
+            We proudly celebrate each batch with a certification ceremony, marking your transition 
+            into a job-ready data professional. This certification not only enhances your resume 
+            but also gives you a competitive edge, proving to employers that you're fully prepared 
+            to apply Power BI skills in real business environments.
+          </p>
+          <Link to="/ContactUs">
+            <button className="mt-6 bg-orange-500 text-white font-semibold px-6 py-2 rounded-md flex items-center gap-2 hover:bg-lime-600 transition">
+              Inquire Now →
+            </button>
+          </Link>
+        </div>
 
-        <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-12">
-          {/* Text Section */}
-          <div className="md:w-1/2">
-            <p className="text-gray-700 text-base md:text-lg lg:text-xl leading-relaxed mb-6">
-              Upon successful completion of the Power BI course with certificate at Pathlogics, you’ll receive an industry-recognized certification that highlights your expertise in data analysis, visualization, and business intelligence.
-              <br /><br />
-              This Power BI course certification is more than just a document — it’s a reflection of the hands-on experience you’ve gained through real-world projects and interactive dashboards.
-              <br /><br />
-              We proudly celebrate each batch with a certification ceremony, marking your transition into a job-ready data professional. This certification not only enhances your resume but also gives you a competitive edge, proving to employers that you're fully prepared to apply Power BI skills in real business environments.
-            </p>
-
-            <a
-              href="/Contact"
-              className="inline-block px-8 py-3 bg-gradient-to-r from-teal-600 to-cyan-600 text-white font-semibold rounded-xl shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300"
-            >
-              Inquire Now
-            </a>
-          </div>
-
-          {/* Image Section */}
-          <div className="md:w-1/2 flex justify-center">
-            <div className="rounded-3xl shadow-xl overflow-hidden transform hover:scale-105 transition duration-500">
-              <img
-                src={certificate}
-                alt="Power BI Certification"
-                className="w-full max-w-sm md:max-w-md lg:max-w-lg h-auto object-cover"
-              />
-            </div>
-          </div>
+        {/* Right Section: Certificate Image */}
+        <div className="w-full md:w-1/2 flex justify-center px-4 sm:px-6 lg:px-16">
+          <img
+            src={certificate}
+            alt="Power BI Certificate Preview"
+            className="w-full max-w-md border-2 rounded-md"
+          />
         </div>
       </div>
     </div>

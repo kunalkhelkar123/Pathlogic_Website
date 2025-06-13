@@ -67,9 +67,11 @@ export default function Digitalmarketpage() {
         transition={{ duration: 0.8 }}
         className="max-w-4xl text-center"
       >
-        <h1 className="text-[36px] md:text-[42px] font-bold mb-4 text-orange-600 whitespace-nowrap">
-          Best Digital Marketing Course in Pune with 15+ Certifications.
-        </h1>
+<div className="flex justify-center w-full px-2">
+  <h1 className="text-[36px] md:text-[42px] font-bold text-orange-600 whitespace-nowrap">
+    Best Digital Marketing Course in Pune with 15+ Certifications.
+  </h1>
+</div>
         <p className="text-lg leading-relaxed">
           Start your career with the best digital marketing course in Pune, offering 15+ certifications to boost your skills and expertise. Gain practical skills in SEO, SEM, content marketing, and more. Start learning today and become an in-demand expert in the digital world!
         </p>

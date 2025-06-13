@@ -1,9 +1,6 @@
 import React from 'react'
 import Manualpage from './Manualpage'
-import ManualOverview from './ManualOverview'
-import Manualstack from './Manualstack'
-import ManualTesting from './ManualTesting'
-import ManualModules from './ManualModules'
+
 import Testimonials from '../DigitalMarketing/Testimonials'
 import Company from '../DigitalMarketing/Company'
 import ManualFeatures from './ManualFeatures'
@@ -12,7 +9,7 @@ import ManualDrop from './ManualDrop'
 import Manualtest from './Manualtest'
 import ManualOver from './ManualOver'
 import ManualOptions from './ManualOptions'
-import ManualCertificate from './ManualCertificate'
+import ManualForm from './ManualForm'
 import ManualCourses from './ManualCourses'
 import ManualFaq from './ManualFaq'
 import Manualadvisor from './Manualadvisor'
@@ -30,10 +27,7 @@ function Manualall() {
 <ManualDrop/>
 <ManualOver/>
 <ManualOptions/>
-<ManualCertificate/>
-{/* 
-<ManualOverview/>
-<Manualstack/> */}
+<ManualForm/>
 <ManualCourses/>
 <Testimonials/>
 <Company/>

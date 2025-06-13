@@ -4,7 +4,7 @@ import DigitalPlacement from "./DigitalPlacement";
 import Courses from "./Courses";
 import Testimonials from "./Testimonials";
 import Company from "./Company";
-import DigitalStack from "./DigitalStack";
+
 import DigitalMarketingInfo from "./DigitalMarketingInfo";
 import Digitalmarketpage from "./Digitalmarketpage";
 import DigitalMarketing from "./DigitalMarketing";
@@ -21,8 +21,8 @@ function AllComponent(){
     return(<>
     
     <Digitalmarketpage/>
+      <DigitalMarketing/>
         <DigitalMarketingFeatures/>
-        <DigitalMarketing/>
     <DigitalMarketingInfo/>
     <DigitalMarketingTools/>
     <DigitalIpt/>
