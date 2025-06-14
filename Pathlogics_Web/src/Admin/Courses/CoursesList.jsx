@@ -352,7 +352,7 @@ const CoursesList = () => {
     { title: "FullStack .Net Developer", id: "17", name: "fullstacknetdeveloper", type: "Long Term Courses" },
     { title: "FullStack Devops Engineer", id: "18", name: "fullstackdevops", type: "Long Term Courses" },
     { title: "FullStack Salesforce Developer", id: "19", name: "fullstacksalesforce", type: "Long Term Courses" },
-    { title: "FullStack Testing", id: "20", name: "fullstacktesting", type: "Long Term Courses" },
+    { title: "FullStack Software Testing", id: "20", name: "fullstacktesting", type: "Long Term Courses" },
     { title: "FullStack Python Developer", id: "21", name: "fullstackpython", type: "Long Term Courses" },
     { title: "FullStack Development with AI", id: "22", name: "fullstackai", type: "Long Term Courses" },
     { title: "Diploma in Digital Marketing", id: "23", name: "diplomadigitalmarketing", type: "Long Term Courses" },

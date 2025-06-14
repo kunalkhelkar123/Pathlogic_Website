@@ -142,7 +142,7 @@ import Seleniumjavaall from "./Home/ShorttermCourses/SeleniumJAVA/Seleniumjavaal
 import Powerbiall from "./Home/ShorttermCourses/POWER BI/powerbiall";
 import Datascienceall from "./Home/ShorttermCourses/DATAscience/Datascienceall";
 import Manualall from "./Home/ShorttermCourses/MANUALtesting/Manualall";
-import Fullstackall from "./Home/ShorttermCourses/Full Stack Java/Fullstackall";
+import FullstackJavaComponent from "./Home/ShorttermCourses/Full Stack Java/FullstackJavaComponent.jsx";
 import WorkshopsPage from "./Workshops/WorkshopsPage.jsx";
 import WorkshopTechnologyPage from "./Workshops/components/WorkshopTechnologyPage.jsx";
 
@@ -319,7 +319,7 @@ function App() {
         <Route path="/AwsDevops" element={<Layout>  < AwsComponent /> </Layout>} />
         <Route path="/DigitalMarketing" element={<Layout>  < AllComponent /> </Layout>} />
         <Route path="/DataScience" element={<Layout>  < Datascienceall /> </Layout>} />
-        <Route path="/JavaDevelopmet" element={<Layout>  < Fullstackall /> </Layout>} />
+        <Route path="/JavaDevelopmet" element={<Layout>  < FullstackJavaComponent /> </Layout>} />
 
 
 

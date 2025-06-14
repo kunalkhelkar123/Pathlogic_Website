@@ -1,72 +1,85 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp } from 'lucide-react';
+import { motion } from 'framer-motion';
 
-const tools = [
+const toolsData = [
   {
-    title: 'JDBC (Java Database Connectivity)',
+    title: "JDBC (Java Database Connectivity)",
+    description:
+      "JDBC is a key API used to connect Java applications with relational databases. You'll learn how to write SQL queries in Java, handle database operations like insert, update, delete, and manage result sets.",
     points: [
-      'Connect Java apps to MySQL, Oracle, and more',
-      'Execute and manage SQL queries through Java',
-      'Handle transactions and error management',
+      "Connect Java apps to MySQL, Oracle, and more",
+      "Execute and manage SQL queries through Java",
+      "Handle transactions and error management",
     ],
   },
   {
-    title: 'Servlets',
+    title: "Servlets",
+    description:
+      "Servlets let your Java code talk to web browsers, making your apps interactive and dynamic. You’ll learn how to build smart, server-side features that respond to user actions.",
     points: [
-      'Handle form inputs and user requests',
-      'Manage sessions using cookies or URL rewriting',
-      'Build reusable backend components for web apps',
+      "Handle form inputs and user requests",
+      "Manage sessions using cookies or URL rewriting",
+      "Build reusable backend components for web apps",
     ],
   },
   {
-    title: 'JSP (JavaServer Pages)',
+    title: "JSP (JavaServer Pages)",
+    description:
+      "JSP makes it easy to build dynamic websites by mixing Java with HTML. You'll learn how to keep design and logic separate, making your code cleaner and easier to manage.",
     points: [
-      'Build interactive and user-friendly pages',
-      'Use simple tags and Java expressions',
-      'Connect seamlessly with Servlets and databases',
+      "Build interactive and user-friendly pages",
+      "Use simple tags and Java expressions",
+      "Connect seamlessly with Servlets and databases",
     ],
   },
   {
-    title: 'Spring Framework (Spring Core + Spring MVC)',
+    title: "Spring Framework (Spring Core + Spring MVC)",
+    description:
+      "Spring makes it easier to build clean, flexible apps by reducing tight code dependencies. You'll learn how to manage components smartly and build structured web applications.",
     points: [
-      'Set up and manage Spring Beans effortlessly',
-      'Build responsive web apps with Spring MVC',
-      'Handle forms, validations, and errors smoothly',
+      "Set up and manage Spring Beans effortlessly",
+      "Build responsive web apps with Spring MVC",
+      "Handle forms, validations, and errors smoothly",
     ],
   },
   {
-    title: 'Hibernate (ORM Tool)',
+    title: "Hibernate (ORM Tool)",
+    description:
+      "Hibernate makes it easier to work with databases by reducing repetitive code. You'll learn how to link Java classes to database tables and handle data smoothly.",
     points: [
-      'Work with databases using little to no SQL',
-      'Map classes with annotations or XML',
-      'Handle data relationships like OneToMany, ManyToOne, etc.',
+      "Work with databases using little to no SQL",
+      "Map classes with annotations or XML",
+      "Handle data relationships like OneToMany, ManyToOne, etc.",
     ],
   },
 ];
 
 const AdvanceJavaToolsSection = () => {
-  const [showAll, setShowAll] = useState(false);
+  const [showMore, setShowMore] = useState(false);
+
+  const visibleTools = showMore ? toolsData : toolsData.slice(0, 2);
 
   return (
-    <section className="bg-white  py-12 px-4 md:px-10">
-      <div className="max-w-5xl mx-auto">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-900  mb-6 text-center">
+    <section className="w-full bg-gray-100 py-12 px-6">
+      <div className="max-w-7xl mx-auto">
+        <motion.h3
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-3xl font-bold text-center text-gray-900 mb-10"
+        >
           Essential Tools Covered in the Advanced Java Course in Pune
-        </h2>
-        <p className="text-gray-700 dark:text-gray-900 text-sm md:text-base mb-10 text-center">
-          In our Advanced Java course, you'll dive deeper into real-world application development using powerful tools and frameworks like JDBC, Servlets, JSP, Spring, and Hibernate. This course equips you with the practical skills needed to develop enterprise-level solutions and prepares you for job-ready roles in software development.
+        </motion.h3>
+        <p className="text-lg text-center text-gray-700 max-w-3xl mx-auto mb-12">
+          In our Advanced Java course, you'll dive deeper into real-world application development using powerful tools and frameworks like  <strong>JDBC, Servlets, JSP, Spring, and Hibernate</strong>. You'll get hands-on experience in building dynamic web apps, connecting databases, and managing backend logic, just like professionals do. This course equips you with the practical skills needed to develop enterprise-level solutions and prepares you for job-ready roles in software development.
         </p>
 
-        <div className="grid gap-6">
-          {(showAll ? tools : tools.slice(0, 2)).map((tool, idx) => (
-            <div
-              key={idx}
-              className="bg-gradient-to-br from-blue-100 to-orange-100 dark:from-gray-800 dark:to-gray-700 rounded-xl p-6 shadow"
-            >
-              <h3 className="text-lg font-semibold text-blue-700 dark:text-orange-400 mb-3">
-                {tool.title}
-              </h3>
-              <ul className="list-disc list-inside text-gray-800 dark:text-gray-100 text-sm space-y-1">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12 max-w-5xl mx-auto">
+          {visibleTools.map((tool, idx) => (
+            <div key={idx}>
+              <h4 className="text-blue-600 text-2xl font-semibold mb-2">{tool.title}</h4>
+              <p className="text-black mb-3">{tool.description}</p>
+              <ul className="list-disc list-inside text-black space-y-1">
                 {tool.points.map((point, i) => (
                   <li key={i}>{point}</li>
                 ))}
@@ -75,14 +88,12 @@ const AdvanceJavaToolsSection = () => {
           ))}
         </div>
 
-        {/* CTA Button */}
-        <div className="flex justify-center mt-8">
+        <div className="text-center mt-10">
           <button
-            onClick={() => setShowAll(!showAll)}
-            className="inline-flex items-center px-5 py-2 bg-blue-600 hover:bg-blue-700 dark:bg-orange-500 dark:hover:bg-orange-600 text-white text-sm font-medium rounded-full transition"
+            onClick={() => setShowMore(!showMore)}
+            className="bg-orange-600 text-white text-center px-4 sm:mr-24 py-2 rounded-md shadow-md hover:bg-orange-700 transition"
           >
-            {showAll ? 'Show Less' : 'Know More'}
-            {showAll ? <ChevronUp className="ml-2 w-4 h-4" /> : <ChevronDown className="ml-2 w-4 h-4" />}
+            {showMore ? "View Less" : "View More"}
           </button>
         </div>
       </div>

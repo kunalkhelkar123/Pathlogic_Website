@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import curriculam from "../../assets/javacurriculam.jpg";
+import curriculam from "../../../assets/javacurriculam.jpg"
 
 const AccordionItem = ({ title, content, isOpen, onToggle }) => {
   return (
@@ -27,62 +27,62 @@ const AccordionItem = ({ title, content, isOpen, onToggle }) => {
   );
 };
 
-export default function AdvJavaCurriculum() {
+export default function FullStackJavaCurriculum() {
   const [openSection, setOpenSection] = useState(null);
 
   const modules = [
     {
-      title: "Core Java Recap",
+      title: "Core Java & OOPs",
       content: (
         <ul className="list-disc pl-5 space-y-2">
           <li>Object-Oriented Programming Concepts</li>
-          <li>Exception Handling and Multithreading</li>
+          <li>Exception Handling & File I/O</li>
           <li>Collections Framework</li>
-          <li>Input/Output Streams</li>
+          <li>Multithreading & Memory Management</li>
         </ul>
       )
     },
     {
-      title: "Servlets & JSP",
+      title: "Frontend Technologies (HTML, CSS, JavaScript, React)",
       content: (
         <ul className="list-disc pl-5 space-y-2">
-          <li>Introduction to Web Applications</li>
-          <li>Servlet Lifecycle & Configuration</li>
-          <li>Handling HTTP Requests and Responses</li>
-          <li>JSP Scripting, Directives, and Implicit Objects</li>
+          <li>HTML5 & Semantic Web Design</li>
+          <li>Responsive CSS & Flexbox/Grid</li>
+          <li>JavaScript DOM, ES6+ Features</li>
+          <li>React Basics, Components, Props, Hooks</li>
         </ul>
       )
     },
     {
-      title: "JDBC (Java Database Connectivity)",
+      title: "Backend Development with Servlets & Spring Boot",
       content: (
         <ul className="list-disc pl-5 space-y-2">
-          <li>Setting up JDBC with MySQL</li>
-          <li>Performing CRUD Operations</li>
-          <li>PreparedStatement and CallableStatement</li>
-          <li>Connection Pooling and Transactions</li>
+          <li>Servlets Lifecycle, HTTP Methods</li>
+          <li>Spring Boot Annotations & REST APIs</li>
+          <li>Form Handling, Validations, Exception Handling</li>
+          <li>Security & Dependency Injection</li>
         </ul>
       )
     },
     {
-      title: "MVC Architecture & Design Patterns",
+      title: "Database & Hibernate ORM",
       content: (
         <ul className="list-disc pl-5 space-y-2">
-          <li>Understanding MVC Design</li>
-          <li>DAO and DTO Patterns</li>
-          <li>Singleton, Factory, and Front Controller Patterns</li>
-          <li>Integration of Servlets, JSP, and JDBC</li>
+          <li>MySQL Database Design & SQL Queries</li>
+          <li>JDBC for Database Interaction</li>
+          <li>Hibernate ORM - Entity Mapping</li>
+          <li>Relationships: OneToMany, ManyToOne, Transactions</li>
         </ul>
       )
     },
     {
-      title: "Project & Interview Preparation",
+      title: "Project Work & Deployment",
       content: (
         <ul className="list-disc pl-5 space-y-2">
-          <li>Mini Project with Database Integration</li>
-          <li>Resume Building & LinkedIn Optimization</li>
-          <li>Mock Interviews & HR Screening</li>
-          <li>One-on-One Doubt Clearing Sessions</li>
+          <li>Full Stack Project: React + Spring Boot + MySQL</li>
+          <li>Resume Building & GitHub Portfolio</li>
+          <li>Mock Interviews & Placement Guidance</li>
+          <li>Deploying Apps on Cloud or Server</li>
         </ul>
       )
     }
@@ -90,14 +90,16 @@ export default function AdvJavaCurriculum() {
 
   return (
     <div className="min-h-screen bg-gray-100 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-20 py-10 px-4 sm:px-6 lg:px-8">
-      {/* image section */}
+      {/* Image section */}
       <div>
-        <img className="rounded-md" src={curriculam} alt="Curriculum" />
+        <img className="rounded-md" src={curriculam} alt="Full Stack Java Curriculum" />
       </div>
 
-      {/* Advanced Java Course Section */}
+      {/* Full Stack Java Course Section */}
       <div className="max-w-5xl mx-auto mt-[-50px] sm:mt-[0px]">
-        <h1 className="text-3xl font-extrabold text-center text-orange-600 mb-12">Advanced Java Course In Pune Curriculum</h1>
+        <h1 className="text-3xl font-extrabold text-center text-orange-600 mb-12">
+          Full Stack Java Development Course in Pune Curriculum
+        </h1>
         <div className="space-y-6">
           {modules.map((module, index) => (
             <AccordionItem
